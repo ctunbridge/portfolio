@@ -1,0 +1,344 @@
+# Cursor Rules for App Template
+
+## Design System - CRITICAL RULES
+
+### Colors - NEVER hardcode color values
+- ✅ ALWAYS use semantic color tokens via Tailwind utilities: `bg-primary`, `text-muted-foreground`, `border-border`
+- ✅ ALWAYS use CSS variables when needed: `var(--primary)`, `var(--muted-foreground)`
+- ❌ NEVER hardcode hex/rgb values: `#3b82f6`, `rgb(59, 130, 246)`
+- ❌ NEVER use raw Tailwind color scales: `bg-blue-600`, `text-slate-500`
+
+Available semantic colors (from `app/tokens.css`):
+- Base: `background`, `foreground`
+- Brand: `primary`, `primary-foreground`
+- UI: `secondary`, `secondary-foreground`, `muted`, `muted-foreground`, `accent`, `accent-foreground`
+- Status: `success`, `success-foreground`, `warning`, `warning-foreground`, `destructive`, `destructive-foreground`
+- Elements: `border`, `input`, `ring`, `card`, `card-foreground`, `popover`, `popover-foreground`
+
+### Typography - NEVER hardcode font sizes or weights
+- ✅ ALWAYS use typography utility classes: `typography-h1`, `typography-body`, `typography-small`
+- ✅ For Tailwind utilities, use relative sizes: `text-sm`, `text-base`, `text-lg`
+- ❌ NEVER hardcode font sizes: `font-size: 16px`, `text-[14px]`
+- ❌ NEVER hardcode font weights: `font-weight: 600`, use `font-semibold`, `font-bold`
+
+Available typography classes (from `app/globals.css`):
+- Display: `typography-display`
+- Headings: `typography-h1`, `typography-h2`, `typography-h3`, `typography-h4`, `typography-h5`, `typography-h6`
+- Body: `typography-body-lg`, `typography-body`, `typography-body-sm`
+- UI: `typography-small`, `typography-caption`, `typography-code`
+
+### Spacing - Use Tailwind's spacing scale
+- ✅ ALWAYS use Tailwind spacing utilities: `p-4`, `m-8`, `gap-2`, `space-y-4`
+- ✅ Use consistent spacing patterns: multiples of 4 (0.25rem base)
+- ❌ NEVER hardcode spacing: `margin: 20px`, `padding: 1.5rem`
+- ❌ NEVER use arbitrary values unless absolutely necessary: `p-[13px]`
+
+### Animations - Use design system animations
+- ✅ ALWAYS use provided animation classes: `animate-fade-in`, `animate-slide-in-left`, `animate-scale-in`
+- ✅ Control speed with utilities: `duration-300`, `duration-500`, `duration-1000`
+- ✅ Add delays when needed: `delay-100`, `delay-200`
+- ❌ NEVER create inline keyframe animations
+- Remember: Entrance animations play once on mount, use with conditional rendering
+
+## File and Directory Naming
+
+### Next.js App Router Conventions
+- ✅ Use lowercase with hyphens (kebab-case) for all directories and files
+- ✅ Special files: `page.tsx`, `layout.tsx`, `loading.tsx`, `error.tsx`, `not-found.tsx`
+- ✅ Route groups: `(auth)`, `(dashboard)` - use parentheses for organization without URL segments
+- ✅ Dynamic routes: `[id]`, `[slug]` - use square brackets
+- ✅ API routes: `app/api/route-name/route.ts`
+
+### Component Files
+- ✅ Components directory: `components/ui/component-name/component-name.tsx`
+- ✅ Stories: `components/ui/component-name/component-name.stories.tsx`
+- ✅ Tests: `components/ui/component-name/component-name.test.tsx`
+- ✅ Component names: PascalCase in code, kebab-case for files
+  - File: `button.tsx` → Export: `Button`
+  - File: `card.tsx` → Exports: `Card`, `CardHeader`, `CardTitle`, etc.
+
+### Other Directories
+- Custom hooks: `hooks/use-hook-name.ts`
+- Utilities: `lib/util-name.ts`
+- Types: `types/type-name.ts`
+- Tests: Co-located with source files using `.test.ts` or `.test.tsx`
+
+## Code Style and Consistency
+
+### TypeScript
+- ✅ ALWAYS use TypeScript - never plain JavaScript
+- ✅ ALWAYS define proper types for props, functions, and returns
+- ✅ Use interfaces for component props: `interface ButtonProps extends React.ComponentProps<"button">`
+- ✅ Use type for unions and utilities: `type Variant = "default" | "outline"`
+- ✅ Leverage type inference where obvious, but prefer explicit return types for functions
+
+### Imports
+Organize imports in this order:
+1. React and Next.js imports
+2. Third-party libraries (alphabetically)
+3. Local components (from `@/components`)
+4. Local utilities (from `@/lib`)
+5. Local types (from `@/types`)
+6. Styles (if any)
+
+Example:
+```typescript
+import * as React from "react"
+import { Slot } from "@radix-ui/react-slot"
+import { cva, type VariantProps } from "class-variance-authority"
+
+import { cn } from "@/lib/utils"
+```
+
+### Component Structure (shadcn/ui Pattern)
+```typescript
+// 1. Import statements (organized as above)
+import * as React from "react"
+import { cn } from "@/lib/utils"
+
+// 2. Variants (if using CVA)
+const componentVariants = cva(
+  "base-classes",
+  {
+    variants: {
+      variant: { /* ... */ },
+      size: { /* ... */ },
+    },
+    defaultVariants: { /* ... */ },
+  }
+)
+
+// 3. Component function with proper types
+function ComponentName({
+  className,
+  variant,
+  size,
+  ...props
+}: React.ComponentProps<"div"> & 
+  VariantProps<typeof componentVariants>) {
+  return (
+    <div 
+      className={cn(componentVariants({ variant, size, className }))}
+      {...props}
+    />
+  )
+}
+
+// 4. Named exports (not default for components)
+export { ComponentName, componentVariants }
+```
+
+### className Management
+- ✅ ALWAYS use `cn()` utility from `@/lib/utils` to merge classes
+- ✅ Accept `className` prop for component customization
+- ✅ Order: base classes, variant classes, conditional classes, `className` prop
+```typescript
+className={cn(
+  "base-classes",
+  variantClasses,
+  condition && "conditional-classes",
+  className
+)}
+```
+
+### Component Best Practices
+- ✅ Use functional components with TypeScript
+- ✅ Destructure props in function signature
+- ✅ Use `React.ComponentProps<"element">` for extending native element props
+- ✅ Forward refs when wrapping native elements: `React.forwardRef()`
+- ✅ Use `asChild` pattern for polymorphic components (via Radix Slot)
+- ✅ Add `data-slot` attributes for component identification: `data-slot="button"`
+
+### State Management
+- ✅ Use React hooks for local state: `useState`, `useReducer`
+- ✅ Use Context for shared state within feature boundaries
+- ✅ Consider Zustand/Jotai for global state (add when needed)
+- ❌ Don't prop drill more than 2-3 levels deep
+
+### Error Handling
+- ✅ Use `loading.tsx` for loading states (Suspense boundaries)
+- ✅ Use `error.tsx` for error boundaries
+- ✅ Provide meaningful error messages
+- ✅ Handle async operations with try-catch
+
+## Documentation and Comments
+
+### Component Documentation
+- ✅ Add JSDoc comments for complex components
+- ✅ Document props that aren't self-explanatory
+- ✅ Include usage examples for reusable utilities
+```typescript
+/**
+ * Primary button component supporting multiple variants.
+ * 
+ * @example
+ * <Button variant="outline" size="lg">Click me</Button>
+ */
+```
+
+### Inline Comments
+- ✅ Explain WHY, not WHAT (code should be self-documenting)
+- ✅ Comment complex logic or non-obvious decisions
+- ✅ Keep comments up-to-date with code changes
+- ❌ Don't comment obvious code
+
+### File Headers
+Add headers to utility files and complex components:
+```typescript
+/**
+ * Button Component
+ * 
+ * A versatile button component built on shadcn/ui patterns.
+ * Supports multiple variants, sizes, and can render as different elements.
+ */
+```
+
+## Accessibility
+
+- ✅ ALWAYS include proper ARIA labels: `aria-label`, `aria-labelledby`
+- ✅ ALWAYS use semantic HTML: `<button>`, `<nav>`, `<main>`, `<header>`
+- ✅ Ensure keyboard navigation works: `tabIndex`, focus states
+- ✅ Use `htmlFor` on `<Label>` components to connect to inputs
+- ✅ Include focus-visible styles (already in base styles)
+- ✅ Test with keyboard only navigation
+
+## Testing
+
+### Test Files
+- ✅ Co-locate tests with components: `button.test.tsx` next to `button.tsx`
+- ✅ Use descriptive test names: `it("should render with primary variant")`
+- ✅ Test user interactions, not implementation details
+- ✅ Use React Testing Library patterns
+
+### Test Coverage
+- ✅ Test all component variants and states
+- ✅ Test error conditions
+- ✅ Test accessibility features
+- ❌ Don't test Tailwind classes (test behavior, not styles)
+
+## Performance
+
+- ✅ Use `next/image` for images (automatic optimization)
+- ✅ Use `next/link` for internal navigation
+- ✅ Import icons from lucide-react (tree-shakeable)
+- ✅ Lazy load heavy components: `React.lazy()` with `Suspense`
+- ✅ Use `npm run analyze` to monitor bundle size
+- ❌ Don't import entire icon libraries
+
+## Storybook
+
+### Story Files
+- ✅ Create stories for all UI components
+- ✅ Name stories: `component-name.stories.tsx`
+- ✅ Include all variants and states
+- ✅ Add documentation and usage examples
+- ✅ Use controls for interactive props
+
+Example structure:
+```typescript
+import type { Meta, StoryObj } from '@storybook/react'
+import { Button } from './button'
+
+const meta: Meta<typeof Button> = {
+  title: 'Components/Button',
+  component: Button,
+  tags: ['autodocs'],
+}
+
+export default meta
+type Story = StoryObj<typeof Button>
+
+export const Default: Story = {
+  args: {
+    children: 'Button',
+  },
+}
+```
+
+## Git and Version Control
+
+- ✅ Write clear, descriptive commit messages
+- ✅ Use conventional commits: `feat:`, `fix:`, `docs:`, `refactor:`
+- ✅ Commit working code only
+- ❌ Don't commit `node_modules`, `.env.local`, or build artifacts (already in .gitignore)
+
+## When Adding New Features
+
+### Adding shadcn/ui Components
+```bash
+npx shadcn@latest add component-name
+```
+- ✅ Components are added to `components/ui/component-name/`
+- ✅ Review and customize component to match project patterns
+- ✅ Create stories for new components
+
+### Adding New Routes
+- ✅ Create `app/route-name/page.tsx`
+- ✅ Add metadata for SEO
+- ✅ Include loading and error states if needed
+- ✅ Follow kebab-case naming
+
+### Adding Dependencies
+- ✅ Check if functionality exists in current dependencies first
+- ✅ Prefer lighter alternatives when possible
+- ✅ Update package.json with specific versions
+- ✅ Document why the dependency is needed
+
+## Quick Reference
+
+### Common Patterns
+```typescript
+// Button with icon
+<Button>
+  <Icon className="size-4" />
+  Click me
+</Button>
+
+// Conditional rendering with animation
+{isVisible && (
+  <div className="animate-fade-in">
+    Content
+  </div>
+)}
+
+// Form field
+<div className="space-y-2">
+  <Label htmlFor="field">Label</Label>
+  <Input id="field" placeholder="Placeholder" />
+</div>
+
+// Grid layout
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {/* content */}
+</div>
+
+// Card with sections
+<Card>
+  <CardHeader>
+    <CardTitle>Title</CardTitle>
+    <CardDescription>Description</CardDescription>
+  </CardHeader>
+  <CardContent>
+    {/* content */}
+  </CardContent>
+</Card>
+```
+
+### Path Aliases
+- `@/components` → `./components`
+- `@/lib` → `./lib`
+- `@/app` → `./app`
+
+## Summary: Core Principles
+
+1. **Never hardcode design values** - Always use design tokens
+2. **Follow Next.js conventions** - Use App Router patterns correctly
+3. **Use TypeScript everywhere** - Type safety is non-negotiable
+4. **Keep components composable** - Small, single-responsibility components
+5. **Maintain consistency** - Follow established patterns in the codebase
+6. **Document non-obvious code** - Help future developers (including yourself)
+7. **Test component behavior** - Not implementation details
+8. **Build accessible interfaces** - Keyboard navigation, ARIA labels, semantic HTML
+9. **Optimize performance** - Tree-shaking, lazy loading, bundle analysis
+10. **Start simple, add intentionally** - Don't over-engineer
+

@@ -1,0 +1,393 @@
+/**
+ * Design System Tokens
+ * Pure CSS design tokens - source of truth for the design system
+ *
+ * Organization:
+ * 1. Primitive Color Palettes (Tailwind defaults)
+ * 2. Semantic Color Tokens (mapped to primitives)
+ * 3. Typography Tokens
+ * 4. Spacing Tokens
+ *
+ * To customize: Edit primitive colors, semantic mappings will follow
+ */
+
+:root {
+  /* ============================================
+     PRIMITIVE COLOR PALETTES
+     Tailwind standard color scales
+     Customize these to change your brand colors
+     ============================================ */
+
+  /* Base colors */
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Slate (primary neutral) */
+  --slate-50: #f8fafc;
+  --slate-100: #f1f5f9;
+  --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1;
+  --slate-400: #94a3b8;
+  --slate-500: #64748b;
+  --slate-600: #475569;
+  --slate-700: #334155;
+  --slate-800: #1e293b;
+  --slate-900: #0f172a;
+  --slate-950: #020617;
+
+  /* Blue (primary brand - customize this!) */
+  --blue-50: #eff6ff;
+  --blue-100: #dbeafe;
+  --blue-200: #bfdbfe;
+  --blue-300: #93c5fd;
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-800: #1e40af;
+  --blue-900: #1e3a8a;
+  --blue-950: #172554;
+
+  /* Red (for destructive/error) */
+  --red-50: #fef2f2;
+  --red-100: #fee2e2;
+  --red-200: #fecaca;
+  --red-300: #fca5a5;
+  --red-400: #f87171;
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  --red-700: #b91c1c;
+  --red-800: #991b1b;
+  --red-900: #7f1d1d;
+
+  /* Amber (for warning) */
+  --amber-50: #fffbeb;
+  --amber-100: #fef3c7;
+  --amber-200: #fde68a;
+  --amber-300: #fcd34d;
+  --amber-400: #fbbf24;
+  --amber-500: #f59e0b;
+  --amber-600: #d97706;
+  --amber-700: #b45309;
+  --amber-800: #92400e;
+
+  /* Green (for success) */
+  --green-50: #f0fdf4;
+  --green-100: #dcfce7;
+  --green-200: #bbf7d0;
+  --green-300: #86efac;
+  --green-400: #4ade80;
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --green-700: #15803d;
+  --green-800: #166534;
+  --green-900: #14532d;
+
+  /* ============================================
+     SEMANTIC COLOR TOKENS
+     Map these to primitives above
+     ============================================ */
+
+  /* Base colors */
+  --background: var(--white);
+  --foreground: var(--slate-900);
+
+  /* Primary (brand color) */
+  --primary: var(--blue-600);
+  --primary-foreground: var(--white);
+
+  /* Secondary */
+  --secondary: var(--slate-100);
+  --secondary-foreground: var(--slate-900);
+
+  /* Muted */
+  --muted: var(--slate-100);
+  --muted-foreground: var(--slate-500);
+
+  /* Accent */
+  --accent: var(--slate-100);
+  --accent-foreground: var(--slate-900);
+
+  /* Success */
+  --success: var(--green-600);
+  --success-foreground: var(--green-50);
+
+  /* Warning */
+  --warning: var(--amber-500);
+  --warning-foreground: var(--amber-50);
+
+  /* Destructive */
+  --destructive: var(--red-600);
+  --destructive-foreground: var(--white);
+
+  /* UI elements */
+  --border: var(--slate-200);
+  --input: var(--slate-200);
+  --ring: var(--blue-500);
+
+  /* Card */
+  --card: var(--white);
+  --card-foreground: var(--slate-900);
+
+  /* Popover */
+  --popover: var(--white);
+  --popover-foreground: var(--slate-900);
+
+  /* Radius */
+  --radius: 0.5rem;
+
+  /* ============================================
+     TYPOGRAPHY TOKENS
+     Font families, sizes, line heights, weights
+     Font families set by Next.js font loading
+     ============================================ */
+
+  /* Font families */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Display typography */
+  --typography-display-font-family: var(--font-sans);
+  --typography-display-font-size: 3.5rem;
+  --typography-display-line-height: 1;
+  --typography-display-font-weight: 700;
+  --typography-display-letter-spacing: -0.02em;
+
+  /* Headings */
+  --typography-h1-font-family: var(--font-sans);
+  --typography-h1-font-size: 2.25rem;
+  --typography-h1-line-height: 2.5rem;
+  --typography-h1-font-weight: 700;
+  --typography-h1-letter-spacing: -0.02em;
+
+  --typography-h2-font-family: var(--font-sans);
+  --typography-h2-font-size: 1.875rem;
+  --typography-h2-line-height: 2.25rem;
+  --typography-h2-font-weight: 600;
+  --typography-h2-letter-spacing: -0.01em;
+
+  --typography-h3-font-family: var(--font-sans);
+  --typography-h3-font-size: 1.5rem;
+  --typography-h3-line-height: 2rem;
+  --typography-h3-font-weight: 600;
+  --typography-h3-letter-spacing: -0.01em;
+
+  --typography-h4-font-family: var(--font-sans);
+  --typography-h4-font-size: 1.25rem;
+  --typography-h4-line-height: 1.75rem;
+  --typography-h4-font-weight: 600;
+
+  --typography-h5-font-family: var(--font-sans);
+  --typography-h5-font-size: 1.125rem;
+  --typography-h5-line-height: 1.75rem;
+  --typography-h5-font-weight: 600;
+
+  --typography-h6-font-family: var(--font-sans);
+  --typography-h6-font-size: 1rem;
+  --typography-h6-line-height: 1.5rem;
+  --typography-h6-font-weight: 600;
+
+  /* Body text */
+  --typography-body-lg-font-family: var(--font-sans);
+  --typography-body-lg-font-size: 1.125rem;
+  --typography-body-lg-line-height: 1.75rem;
+  --typography-body-lg-font-weight: 400;
+
+  --typography-body-font-family: var(--font-sans);
+  --typography-body-font-size: 1rem;
+  --typography-body-line-height: 1.5rem;
+  --typography-body-font-weight: 400;
+
+  --typography-body-sm-font-family: var(--font-sans);
+  --typography-body-sm-font-size: 0.875rem;
+  --typography-body-sm-line-height: 1.25rem;
+  --typography-body-sm-font-weight: 400;
+
+  /* Small/Caption text */
+  --typography-small-font-family: var(--font-sans);
+  --typography-small-font-size: 0.875rem;
+  --typography-small-line-height: 1.25rem;
+  --typography-small-font-weight: 500;
+
+  --typography-caption-font-family: var(--font-sans);
+  --typography-caption-font-size: 0.75rem;
+  --typography-caption-line-height: 1rem;
+  --typography-caption-font-weight: 400;
+
+  /* Code */
+  --typography-code-font-family: var(--font-mono);
+  --typography-code-font-size: 0.875rem;
+  --typography-code-line-height: 1.25rem;
+
+  /* ============================================
+     SPACING TOKENS
+     Using Tailwind's default spacing scale
+     Customize in tailwind.config.ts if needed
+     ============================================ */
+
+  /* ============================================
+     ANIMATION TOKENS
+     Custom animation durations and timing
+     ============================================ */
+  
+  --animation-duration-fast: 300ms;
+  --animation-duration-normal: 500ms;
+  --animation-duration-slow: 1000ms;
+}
+
+/* ============================================
+   ANIMATIONS
+   Custom entrance and utility animations
+   ============================================ */
+
+/* Fade Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide Animations */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale Animations */
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes flip-in {
+  from {
+    opacity: 0;
+    transform: rotateX(-90deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fade-in var(--animation-duration-normal) ease-out;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up var(--animation-duration-normal) ease-out;
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down var(--animation-duration-normal) ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slide-in-left var(--animation-duration-normal) ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right var(--animation-duration-normal) ease-out;
+}
+
+.animate-slide-in-up {
+  animation: slide-in-up var(--animation-duration-normal) ease-out;
+}
+
+.animate-slide-in-down {
+  animation: slide-in-down var(--animation-duration-normal) ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in var(--animation-duration-normal) ease-out;
+}
+
+.animate-zoom-in {
+  animation: zoom-in var(--animation-duration-normal) ease-out;
+}
+
+.animate-flip-in {
+  animation: flip-in var(--animation-duration-normal) ease-out;
+}

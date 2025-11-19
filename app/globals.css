@@ -1,0 +1,177 @@
+/**
+ * Global Styles - Single Entry Point
+ *
+ * This is the ONLY file you need to import.
+ * It combines all design tokens, Tailwind configuration, and utilities.
+ * 
+ * To customize your design system, edit tokens.css instead of this file.
+ */
+
+/* 1. Import Tailwind */
+@import "tailwindcss";
+
+/* 2. Import design tokens (includes custom animations) */
+@import "./tokens.css";
+
+/* 3. Expose tokens to Tailwind utilities via @theme */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/* 4. Base styles - applied to HTML elements */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  button,
+  [role="button"],
+  a {
+    @apply cursor-pointer;
+  }
+
+  button:disabled,
+  [role="button"]:disabled,
+  a:disabled,
+  input:disabled {
+    @apply cursor-not-allowed opacity-50;
+  }
+}
+
+/* 5. Typography utilities - prefixed to avoid conflicts with Tailwind */
+@layer utilities {
+  
+  /* Display */
+  .typography-display {
+    font-family: var(--typography-display-font-family);
+    font-size: var(--typography-display-font-size);
+    line-height: var(--typography-display-line-height);
+    font-weight: var(--typography-display-font-weight);
+    letter-spacing: var(--typography-display-letter-spacing);
+  }
+
+  /* Headings */
+  .typography-h1 {
+    font-family: var(--typography-h1-font-family);
+    font-size: var(--typography-h1-font-size);
+    line-height: var(--typography-h1-line-height);
+    font-weight: var(--typography-h1-font-weight);
+    letter-spacing: var(--typography-h1-letter-spacing);
+  }
+
+  .typography-h2 {
+    font-family: var(--typography-h2-font-family);
+    font-size: var(--typography-h2-font-size);
+    line-height: var(--typography-h2-line-height);
+    font-weight: var(--typography-h2-font-weight);
+    letter-spacing: var(--typography-h2-letter-spacing);
+  }
+
+  .typography-h3 {
+    font-family: var(--typography-h3-font-family);
+    font-size: var(--typography-h3-font-size);
+    line-height: var(--typography-h3-line-height);
+    font-weight: var(--typography-h3-font-weight);
+    letter-spacing: var(--typography-h3-letter-spacing);
+  }
+
+  .typography-h4 {
+    font-family: var(--typography-h4-font-family);
+    font-size: var(--typography-h4-font-size);
+    line-height: var(--typography-h4-line-height);
+    font-weight: var(--typography-h4-font-weight);
+  }
+
+  .typography-h5 {
+    font-family: var(--typography-h5-font-family);
+    font-size: var(--typography-h5-font-size);
+    line-height: var(--typography-h5-line-height);
+    font-weight: var(--typography-h5-font-weight);
+  }
+
+  .typography-h6 {
+    font-family: var(--typography-h6-font-family);
+    font-size: var(--typography-h6-font-size);
+    line-height: var(--typography-h6-line-height);
+    font-weight: var(--typography-h6-font-weight);
+  }
+  
+  /* Body text */
+  .typography-body-lg {
+    font-family: var(--typography-body-lg-font-family);
+    font-size: var(--typography-body-lg-font-size);
+    line-height: var(--typography-body-lg-line-height);
+    font-weight: var(--typography-body-lg-font-weight);
+  }
+  
+  .typography-body {
+    font-family: var(--typography-body-font-family);
+    font-size: var(--typography-body-font-size);
+    line-height: var(--typography-body-line-height);
+    font-weight: var(--typography-body-font-weight);
+  }
+  
+  .typography-body-sm {
+    font-family: var(--typography-body-sm-font-family);
+    font-size: var(--typography-body-sm-font-size);
+    line-height: var(--typography-body-sm-line-height);
+    font-weight: var(--typography-body-sm-font-weight);
+  }
+  
+  /* Small/UI text */
+  .typography-small {
+    font-family: var(--typography-small-font-family);
+    font-size: var(--typography-small-font-size);
+    line-height: var(--typography-small-line-height);
+    font-weight: var(--typography-small-font-weight);
+  }
+  
+  /* Caption */
+  .typography-caption {
+    font-family: var(--typography-caption-font-family);
+    font-size: var(--typography-caption-font-size);
+    line-height: var(--typography-caption-line-height);
+    font-weight: var(--typography-caption-font-weight);
+  }
+  
+  /* Code */
+  .typography-code {
+    font-family: var(--typography-code-font-family);
+    font-size: var(--typography-code-font-size);
+    line-height: var(--typography-code-line-height);
+  }
+}
