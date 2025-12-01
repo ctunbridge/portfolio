@@ -36,39 +36,52 @@ const TypographyShowcase = ({
 export const AllTypographyStyles: Story = {
   render: () => (
     <div className="max-w-4xl">
-      <h1 className="typography-h1 mb-8">Typography System</h1>
+      <h1 className="typography-h1-demibold mb-8">Typography System</h1>
 
       <div className="space-y-6">
         <section>
-          <h2 className="typography-h2 mb-4">Headings</h2>
-          <TypographyShowcase className="typography-h1" name="typography-h1" description="36px - Main page heading" />
-          <TypographyShowcase className="typography-h2" name="typography-h2" description="30px - Section heading" />
-          <TypographyShowcase className="typography-h3" name="typography-h3" description="24px - Subsection heading" />
-          <TypographyShowcase className="typography-h4" name="typography-h4" description="20px - Component heading" />
-          <TypographyShowcase className="typography-h5" name="typography-h5" description="18px - Small heading" />
-          <TypographyShowcase className="typography-h6" name="typography-h6" description="16px - Smallest heading" />
+          <h2 className="typography-h3-demibold mb-4">Headings - Demi Bold</h2>
+          <TypographyShowcase className="typography-h1-demibold" name="typography-h1-demibold" description="56px - Main page heading" />
+          <TypographyShowcase className="typography-h2-demibold" name="typography-h2-demibold" description="50px - Section heading" />
+          <TypographyShowcase className="typography-h3-demibold" name="typography-h3-demibold" description="44px - Subsection heading" />
+          <TypographyShowcase className="typography-h4-demibold" name="typography-h4-demibold" description="32px - Component heading" />
+          <TypographyShowcase className="typography-h5-demibold" name="typography-h5-demibold" description="24px - Small heading" />
         </section>
 
         <section>
-          <h2 className="typography-h2 mb-4">Body Text</h2>
-          <TypographyShowcase className="typography-body-lg" name="typography-body-lg" description="18px - Large body text" />
+          <h2 className="typography-h3-demibold mb-4">Headings - Normal</h2>
+          <TypographyShowcase className="typography-h1-normal" name="typography-h1-normal" description="56px - Main page heading" />
+          <TypographyShowcase className="typography-h2-normal" name="typography-h2-normal" description="50px - Section heading" />
+          <TypographyShowcase className="typography-h3-normal" name="typography-h3-normal" description="44px - Subsection heading" />
+          <TypographyShowcase className="typography-h4-normal" name="typography-h4-normal" description="32px - Component heading" />
+          <TypographyShowcase className="typography-h5-normal" name="typography-h5-normal" description="24px - Small heading" />
+        </section>
+
+        <section>
+          <h2 className="typography-h3-demibold mb-4">Body Text - Normal</h2>
           <TypographyShowcase className="typography-body" name="typography-body" description="16px - Regular body text" />
           <TypographyShowcase className="typography-body-sm" name="typography-body-sm" description="14px - Small body text" />
         </section>
 
         <section>
-          <h2 className="typography-h2 mb-4">UI Text</h2>
-          <TypographyShowcase className="typography-small" name="typography-small" description="14px/500 - Small UI text (buttons, labels)" />
+          <h2 className="typography-h3-demibold mb-4">Body Text - Bold</h2>
+          <TypographyShowcase className="typography-body-bold" name="typography-body-bold" description="16px - Bold body text" />
+          <TypographyShowcase className="typography-body-sm-bold" name="typography-body-sm-bold" description="14px - Small bold body text" />
+        </section>
+
+        <section>
+          <h2 className="typography-h3-demibold mb-4">UI Text</h2>
+          <TypographyShowcase className="typography-button" name="typography-button" description="14px/20px - Button text (medium)" />
           <TypographyShowcase className="typography-caption" name="typography-caption" description="12px - Caption text" />
         </section>
 
         <section>
-          <h2 className="typography-h2 mb-4">Display</h2>
-          <TypographyShowcase className="typography-display" name="typography-display" description="56px - Large display text" />
+          <h2 className="typography-h3-demibold mb-4">Code</h2>
+          <TypographyShowcase className="typography-code" name="typography-code" description="14px - Monospace code" />
         </section>
 
         <section>
-          <h2 className="typography-h2 mb-4">Text Colors</h2>
+          <h2 className="typography-h3-demibold mb-4">Text Colors</h2>
           <div className="space-y-3">
             <p className="typography-body text-foreground">Default Foreground Text</p>
             <p className="typography-body text-muted-foreground">Muted Foreground Text</p>

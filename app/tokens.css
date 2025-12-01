@@ -3,13 +3,43 @@
  * Pure CSS design tokens - source of truth for the design system
  *
  * Organization:
- * 1. Primitive Color Palettes (Tailwind defaults)
- * 2. Semantic Color Tokens (mapped to primitives)
- * 3. Typography Tokens
- * 4. Spacing Tokens
+ * 1. Font Faces
+ * 2. Primitive Color Palettes (Tailwind defaults)
+ * 3. Semantic Color Tokens (mapped to primitives)
+ * 4. Typography Tokens
+ * 5. Spacing Tokens
  *
  * To customize: Edit primitive colors, semantic mappings will follow
  */
+
+/* ============================================
+   FONT FACES
+   Articulat CF font family
+   ============================================ */
+
+@font-face {
+  font-family: 'Articulat CF Normal';
+  src: url('./fonts/Articulat CF Normal.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Articulat CF Medium';
+  src: url('./fonts/Articulat CF Medium.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Articulat CF Demi Bold';
+  src: url('./fonts/Articulat CF Demi Bold.ttf') format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Articulat CF Bold';
+  src: url('./fonts/Articulat CF Bold.ttf') format('truetype');
+  font-display: swap;
+}
 
 :root {
   /* ============================================
@@ -22,7 +52,7 @@
   --white: #ffffff;
   --black: #000000;
 
-  /* Slate (primary neutral) */
+  /* Slate (neutral) */
   --slate-50: #f8fafc;
   --slate-100: #f1f5f9;
   --slate-200: #e2e8f0;
@@ -35,7 +65,20 @@
   --slate-900: #0f172a;
   --slate-950: #020617;
 
-  /* Blue (primary brand - customize this!) */
+  /* Warm Grey (warm primary) */
+  --warmgrey-50: #faf9f5;
+  --warmgrey-100: #f0eee9;
+  --warmgrey-200: #e2e0db;
+  --warmgrey-300: #cfcdc8;
+  --warmgrey-400: #b0aea9;
+  --warmgrey-500: #8e8c87;
+  --warmgrey-600: #706e69;
+  --warmgrey-700: #56544f;
+  --warmgrey-800: #3a3835;
+  --warmgrey-900: #252321;
+  --warmgrey-950: #151413;
+
+  /* Blue (accent color) */
   --blue-50: #eff6ff;
   --blue-100: #dbeafe;
   --blue-200: #bfdbfe;
@@ -89,24 +132,24 @@
      ============================================ */
 
   /* Base colors */
-  --background: var(--white);
-  --foreground: var(--slate-900);
+  --background: var(--warmgrey-50);
+  --foreground: var(--warmgrey-950);
 
   /* Primary (brand color) */
-  --primary: var(--blue-600);
-  --primary-foreground: var(--white);
+  --primary: var(--warmgrey-900);
+  --primary-foreground: var(--warmgrey-50);
 
   /* Secondary */
-  --secondary: var(--slate-100);
-  --secondary-foreground: var(--slate-900);
+  --secondary: var(--warmgrey-500);
+  --secondary-foreground: var(--warmgrey-50);
 
   /* Muted */
-  --muted: var(--slate-100);
-  --muted-foreground: var(--slate-500);
+  --muted: var(--warmgrey-200);
+  --muted-foreground: var(--warmgrey-800);
 
   /* Accent */
-  --accent: var(--slate-100);
-  --accent-foreground: var(--slate-900);
+  --accent: var(--blue-700);
+  --accent-foreground: var(--blue-50);
 
   /* Success */
   --success: var(--green-600);
@@ -121,17 +164,17 @@
   --destructive-foreground: var(--white);
 
   /* UI elements */
-  --border: var(--slate-200);
-  --input: var(--slate-200);
-  --ring: var(--blue-500);
+  --border: var(--warmgrey-200);
+  --input: var(--warmgrey-100);
+  --ring: var(--warmgrey-500);
 
   /* Card */
   --card: var(--white);
-  --card-foreground: var(--slate-900);
+  --card-foreground: var(--warmgrey-900);
 
   /* Popover */
   --popover: var(--white);
-  --popover-foreground: var(--slate-900);
+  --popover-foreground: var(--warmgrey-900);
 
   /* Radius */
   --radius: 0.5rem;
@@ -139,85 +182,103 @@
   /* ============================================
      TYPOGRAPHY TOKENS
      Font families, sizes, line heights, weights
-     Font families set by Next.js font loading
+     Font families
      ============================================ */
 
   /* Font families */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-normal: 'Articulat CF Normal', system-ui, sans-serif;
+  --font-medium: 'Articulat CF Medium', system-ui, sans-serif;
+  --font-demibold: 'Articulat CF Demi Bold', system-ui, sans-serif;
+  --font-bold: 'Articulat CF Bold', system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 
-  /* Display typography */
-  --typography-display-font-family: var(--font-sans);
-  --typography-display-font-size: 3.5rem;
-  --typography-display-line-height: 1;
-  --typography-display-font-weight: 700;
-  --typography-display-letter-spacing: -0.02em;
+  /* OpenType features - stylistic alternates */
+  --font-features: "salt" 1, "ss01" 1;
 
-  /* Headings */
-  --typography-h1-font-family: var(--font-sans);
-  --typography-h1-font-size: 2.25rem;
-  --typography-h1-line-height: 2.5rem;
-  --typography-h1-font-weight: 700;
-  --typography-h1-letter-spacing: -0.02em;
+  /* Headings - Demi Bold */
+  --typography-h1-demibold-font-family: var(--font-demibold);
+  --typography-h1-demibold-font-size: 56px;
+  --typography-h1-demibold-line-height: 72px;
+  --typography-h1-demibold-letter-spacing: -2%;
 
-  --typography-h2-font-family: var(--font-sans);
-  --typography-h2-font-size: 1.875rem;
-  --typography-h2-line-height: 2.25rem;
-  --typography-h2-font-weight: 600;
-  --typography-h2-letter-spacing: -0.01em;
+  --typography-h2-demibold-font-family: var(--font-demibold);
+  --typography-h2-demibold-font-size: 50px;
+  --typography-h2-demibold-line-height: 64px;
+  --typography-h2-demibold-letter-spacing: -2%;
 
-  --typography-h3-font-family: var(--font-sans);
-  --typography-h3-font-size: 1.5rem;
-  --typography-h3-line-height: 2rem;
-  --typography-h3-font-weight: 600;
-  --typography-h3-letter-spacing: -0.01em;
+  --typography-h3-demibold-font-family: var(--font-demibold);
+  --typography-h3-demibold-font-size: 44px;
+  --typography-h3-demibold-line-height: 56px;
+  --typography-h3-demibold-letter-spacing: -2%;
 
-  --typography-h4-font-family: var(--font-sans);
-  --typography-h4-font-size: 1.25rem;
-  --typography-h4-line-height: 1.75rem;
-  --typography-h4-font-weight: 600;
+  --typography-h4-demibold-font-family: var(--font-demibold);
+  --typography-h4-demibold-font-size: 32px;
+  --typography-h4-demibold-line-height: 42px;
+  --typography-h4-demibold-letter-spacing: -2%;
 
-  --typography-h5-font-family: var(--font-sans);
-  --typography-h5-font-size: 1.125rem;
-  --typography-h5-line-height: 1.75rem;
-  --typography-h5-font-weight: 600;
+  --typography-h5-demibold-font-family: var(--font-demibold);
+  --typography-h5-demibold-font-size: 24px;
+  --typography-h5-demibold-line-height: 32px;
+  --typography-h5-demibold-letter-spacing: -2%;
 
-  --typography-h6-font-family: var(--font-sans);
-  --typography-h6-font-size: 1rem;
-  --typography-h6-line-height: 1.5rem;
-  --typography-h6-font-weight: 600;
+  /* Headings - Normal */
+  --typography-h1-normal-font-family: var(--font-normal);
+  --typography-h1-normal-font-size: 56px;
+  --typography-h1-normal-line-height: 72px;
+  --typography-h1-normal-letter-spacing: -2%;
 
-  /* Body text */
-  --typography-body-lg-font-family: var(--font-sans);
-  --typography-body-lg-font-size: 1.125rem;
-  --typography-body-lg-line-height: 1.75rem;
-  --typography-body-lg-font-weight: 400;
+  --typography-h2-normal-font-family: var(--font-normal);
+  --typography-h2-normal-font-size: 50px;
+  --typography-h2-normal-line-height: 64px;
+  --typography-h2-normal-letter-spacing: -2%;
 
-  --typography-body-font-family: var(--font-sans);
-  --typography-body-font-size: 1rem;
-  --typography-body-line-height: 1.5rem;
-  --typography-body-font-weight: 400;
+  --typography-h3-normal-font-family: var(--font-normal);
+  --typography-h3-normal-font-size: 44px;
+  --typography-h3-normal-line-height: 56px;
+  --typography-h3-normal-letter-spacing: -2%;
 
-  --typography-body-sm-font-family: var(--font-sans);
-  --typography-body-sm-font-size: 0.875rem;
-  --typography-body-sm-line-height: 1.25rem;
-  --typography-body-sm-font-weight: 400;
+  --typography-h4-normal-font-family: var(--font-normal);
+  --typography-h4-normal-font-size: 32px;
+  --typography-h4-normal-line-height: 42px;
+  --typography-h4-normal-letter-spacing: -2%;
 
-  /* Small/Caption text */
-  --typography-small-font-family: var(--font-sans);
-  --typography-small-font-size: 0.875rem;
-  --typography-small-line-height: 1.25rem;
-  --typography-small-font-weight: 500;
+  --typography-h5-normal-font-family: var(--font-normal);
+  --typography-h5-normal-font-size: 24px;
+  --typography-h5-normal-line-height: 32px;
+  --typography-h5-normal-letter-spacing: -2%;
 
-  --typography-caption-font-family: var(--font-sans);
-  --typography-caption-font-size: 0.75rem;
-  --typography-caption-line-height: 1rem;
-  --typography-caption-font-weight: 400;
+  /* Body - Normal */
+  --typography-body-font-family: var(--font-normal);
+  --typography-body-font-size: 16px;
+  --typography-body-line-height: 24px;
+
+  --typography-body-sm-font-family: var(--font-normal);
+  --typography-body-sm-font-size: 14px;
+  --typography-body-sm-line-height: 18px;
+
+  /* Body - Bold */
+  --typography-body-bold-font-family: var(--font-bold);
+  --typography-body-bold-font-size: 16px;
+  --typography-body-bold-line-height: 24px;
+
+  --typography-body-sm-bold-font-family: var(--font-bold);
+  --typography-body-sm-bold-font-size: 14px;
+  --typography-body-sm-bold-line-height: 18px;
+
+  /* Button */
+  --typography-button-font-family: var(--font-medium);
+  --typography-button-font-size: 14px;
+  --typography-button-line-height: 16px;
+
+  /* Caption */
+  --typography-caption-font-family: var(--font-normal);
+  --typography-caption-font-size: 12px;
+  --typography-caption-line-height: 20px;
 
   /* Code */
   --typography-code-font-family: var(--font-mono);
-  --typography-code-font-size: 0.875rem;
-  --typography-code-line-height: 1.25rem;
+  --typography-code-font-size: 14px;
+  --typography-code-line-height: 18px;
 
   /* ============================================
      SPACING TOKENS
