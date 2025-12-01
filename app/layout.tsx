@@ -15,21 +15,21 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
   title: {
-    default: 'App Template',
-    template: '%s | App Template',
+    default: 'Portfolio',
+    template: '%s | Portfolio',
   },
   description: 'A modern Next.js application template with shadcn/ui, Tailwind CSS, and a comprehensive design system.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: '/',
-    siteName: 'App Template',
-    title: 'App Template',
+    siteName: 'Portfolio',
+    title: 'Portfolio',
     description: 'A modern Next.js application template with shadcn/ui, Tailwind CSS, and a comprehensive design system.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'App Template',
+    title: 'Portfolio',
     description: 'A modern Next.js application template with shadcn/ui, Tailwind CSS, and a comprehensive design system.',
   },
 };
