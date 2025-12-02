@@ -29,16 +29,16 @@ export default function Home() {
     <>
       <HomeIntro onComplete={handleIntroComplete} />
 
-      <main
+      <div
         className={cn(
-          "min-h-screen p-8 transition-opacity duration-500",
+          "min-h-screen transition-opacity duration-500",
           showContent ? "opacity-100" : "opacity-0"
         )}
       >
         <div className="space-y-8">
           <h1 className="typography-h1-demibold">Portfolio</h1>
         </div>
-      </main>
+      </div>
     </>
   );
 }

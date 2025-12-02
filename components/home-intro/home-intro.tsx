@@ -63,7 +63,7 @@ function HomeIntro({ onComplete, className }: HomeIntroProps) {
     <div
       data-slot="home-intro"
       className={cn(
-        "fixed inset-0 z-50 bg-background pt-[280px] px-8",
+        "fixed inset-0 z-50 bg-background pt-[120px] md:pt-[200px] lg:pt-[280px] px-8",
         isExiting && "pointer-events-none",
         className
       )}
@@ -71,7 +71,7 @@ function HomeIntro({ onComplete, className }: HomeIntroProps) {
       <div className="grid grid-cols-12 gap-4">
         <div
           className={cn(
-            "col-start-4 col-span-9 flex flex-col items-start text-left",
+            "col-span-12 lg:col-start-4 lg:col-span-9 flex flex-col items-start text-left",
             isExiting ? "animate-fade-out-up" : "animate-fade-in"
           )}
         >

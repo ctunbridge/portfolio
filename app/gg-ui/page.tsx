@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function GGUIPage() {
   return (
-    <div className="space-y-8 px-14">
+    <div className="space-y-8">
       <h1 className="typography-h1-demibold">GG UI</h1>
       <p className="typography-body text-muted-foreground">
         This is a test page for navigation routing. Click the name in the
