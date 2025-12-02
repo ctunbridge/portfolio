@@ -126,6 +126,26 @@ import { Search, User, Settings } from 'lucide-react'
 
 Browse all available icons at [lucide.dev/icons](https://lucide.dev/icons).
 
+### Layout
+
+The site uses a centered container (max 1280px) with responsive margins from the viewport edge:
+
+| Breakpoint       | Margin from edge |
+|------------------|------------------|
+| Mobile (< 768px) | 24px (`px-6`)    |
+| Tablet (≥ 768px) | 32px (`px-8`)    |
+| Desktop (≥ 1024px) | 56px (`px-14`) |
+
+Content sits at the edge of the container (no inner padding). The container is defined in `app/layout.tsx`:
+
+```tsx
+<main className="flex-1 px-6 md:px-8 lg:px-14">
+  <div className="mx-auto max-w-7xl">
+    {children}
+  </div>
+</main>
+```
+
 ### Grid System
 
 Standard 12-column Tailwind grid:

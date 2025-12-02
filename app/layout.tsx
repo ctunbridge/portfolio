@@ -35,8 +35,8 @@ export default function RootLayout({
       <body className="antialiased">
         <div className="min-h-screen flex flex-col">
           <TopNav />
-          <main className="flex-1">
-            <div className="mx-auto max-w-7xl py-8">
+          <main className="flex-1 px-6 md:px-8 lg:px-14">
+            <div className="mx-auto max-w-7xl">
               {children}
             </div>
           </main>

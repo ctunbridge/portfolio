@@ -18,7 +18,7 @@ function TopNav({ className, name = "Chris Tunbridge", ...props }: TopNavProps) 
     <nav
       data-slot="top-nav"
       className={cn(
-        "sticky top-0 z-50 flex h-20 w-full items-center bg-transparent px-14",
+        "sticky top-0 z-50 flex h-20 w-full items-center bg-transparent px-6 md:px-8 lg:px-14",
         className
       )}
       {...props}
