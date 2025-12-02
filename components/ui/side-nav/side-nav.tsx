@@ -48,15 +48,28 @@ function SideNav({ items, name = "CT", className, ...props }: SideNavProps) {
   }, [items])
 
 
-  const handleItemClick = (item: SideNavItem) => {
+  const handleItemClick = (item: SideNavItem, index: number) => {
     if (item.action) {
       // Execute the action callback
       item.action()
     } else if (item.id) {
-      // Scroll to the section
-      const element = document.getElementById(item.id)
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" })
+      // First item scrolls to absolute top (0), others scroll with 80px offset
+      if (index === 0) {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        })
+      } else {
+        const element = document.getElementById(item.id)
+        if (element) {
+          const elementPosition = element.getBoundingClientRect().top + window.scrollY
+          const offsetPosition = elementPosition - 80
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          })
+        }
       }
     }
   }
@@ -82,7 +95,7 @@ function SideNav({ items, name = "CT", className, ...props }: SideNavProps) {
           {items.map((item, index) => (
             <button
               key={`${item.id || item.label}-${index}`}
-              onClick={() => handleItemClick(item)}
+              onClick={() => handleItemClick(item, index)}
               className={cn(
                 "typography-body whitespace-nowrap text-secondary transition-colors hover:text-primary",
                 !item.action && activeSection === item.id && "typography-body-bold text-primary"
@@ -106,13 +119,13 @@ function SideNav({ items, name = "CT", className, ...props }: SideNavProps) {
         )}
         {...props}
       >
-        <Link href="/" className="typography-body-bold mb-70 text-secondary">
+        <Link href="/" className="typography-body-bold mb-50 text-secondary">
           {name}
         </Link>
         {items.map((item, index) => (
           <button
             key={`${item.id || item.label}-${index}`}
-            onClick={() => handleItemClick(item)}
+            onClick={() => handleItemClick(item, index)}
             className={cn(
               "typography-body text-left text-secondary transition-colors hover:text-primary",
               !item.action && activeSection === item.id && "typography-body-bold text-primary"

@@ -57,7 +57,7 @@ export default function Home() {
         <div className="grid grid-cols-12 gap-4">
           <SideNav items={navItems} />
 
-          <div className="col-span-12 space-y-8 pt-60 lg:col-span-9">
+          <div className="col-span-12 space-y-8 pt-45 lg:col-span-9">
             {/* Welcome Section */}
             <section id="welcome" className="min-h-screen">
               <h1 className="typography-h1-demibold mb-6">Welcome</h1>
