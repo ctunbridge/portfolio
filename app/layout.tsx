@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { TopNav } from "@/components/ui/top-nav/top-nav";
-
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
   title: {
@@ -34,7 +32,6 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         <div className="min-h-screen flex flex-col">
-          <TopNav />
           <main className="flex-1 px-6 md:px-8 lg:px-14">
             <div className="mx-auto max-w-7xl">
               {children}

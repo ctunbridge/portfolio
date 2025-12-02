@@ -1,18 +1,15 @@
 /**
- * GG UI Page
- *
- * Test page for navigation routing.
+ * Sage Design System Page
  */
 "use client"
 
-import type { Metadata } from "next"
 import { SideNav } from "@/components/ui/side-nav/side-nav"
 
-export default function GGUIPage() {
+export default function SageDSPage() {
   const navItems = [
     { label: "Overview", id: "overview" },
     { label: "Components", id: "components" },
-    { label: "Examples", id: "examples" },
+    { label: "Guidelines", id: "guidelines" },
   ]
 
   return (
@@ -20,14 +17,15 @@ export default function GGUIPage() {
       <SideNav items={navItems} />
 
       <div className="col-span-12 space-y-8 pt-45 lg:col-span-9">
+        {/* Overview Section */}
         <section id="overview" className="min-h-screen">
-          <h1 className="typography-h1-demibold mb-6">GG UI</h1>
-          <p className="typography-body text-muted-foreground">
-            This is a test page for navigation routing. Click the name in the
-            navigation to return home.
+          <h1 className="typography-h1-demibold mb-6">Sage Design System</h1>
+          <p className="typography-body text-secondary">
+            Overview section content goes here.
           </p>
         </section>
 
+        {/* Components Section */}
         <section id="components" className="min-h-screen">
           <h2 className="typography-h2-demibold mb-6">Components</h2>
           <p className="typography-body text-secondary">
@@ -35,14 +33,14 @@ export default function GGUIPage() {
           </p>
         </section>
 
-        <section id="examples" className="min-h-screen">
-          <h2 className="typography-h2-demibold mb-6">Examples</h2>
+        {/* Guidelines Section */}
+        <section id="guidelines" className="min-h-screen">
+          <h2 className="typography-h2-demibold mb-6">Guidelines</h2>
           <p className="typography-body text-secondary">
-            Examples section content goes here.
+            Guidelines section content goes here.
           </p>
         </section>
       </div>
     </div>
   )
 }
-
