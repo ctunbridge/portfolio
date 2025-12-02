@@ -9,8 +9,17 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { HomeIntro } from "@/components/home-intro/home-intro";
 
+const INTRO_SHOWN_KEY = "home-intro-shown";
+
 export default function Home() {
   const [showContent, setShowContent] = React.useState(false);
+
+  // Check if intro was already shown to avoid content flash
+  React.useEffect(() => {
+    if (sessionStorage.getItem(INTRO_SHOWN_KEY) === "true") {
+      setShowContent(true);
+    }
+  }, []);
 
   const handleIntroComplete = React.useCallback(() => {
     setShowContent(true);

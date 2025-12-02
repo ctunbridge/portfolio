@@ -14,29 +14,48 @@ interface HomeIntroProps {
   className?: string;
 }
 
+const INTRO_SHOWN_KEY = "home-intro-shown";
+
 function HomeIntro({ onComplete, className }: HomeIntroProps) {
   const [isExiting, setIsExiting] = React.useState(false);
   const [isComplete, setIsComplete] = React.useState(false);
+  const [hasBeenShown, setHasBeenShown] = React.useState<boolean | null>(null);
+
+  // Check sessionStorage on mount
+  React.useEffect(() => {
+    const shown = sessionStorage.getItem(INTRO_SHOWN_KEY) === "true";
+    setHasBeenShown(shown);
+
+    if (shown) {
+      setIsComplete(true);
+      onComplete?.();
+    }
+  }, [onComplete]);
 
   React.useEffect(() => {
+    // Skip animation if already shown this session or still checking
+    if (hasBeenShown !== false) return;
+
     // Start exit animation after initial display
     const exitTimer = setTimeout(() => {
       setIsExiting(true);
-    }, 1800);
+    }, 1000);
 
     // Complete the intro after exit animation finishes
     const completeTimer = setTimeout(() => {
       setIsComplete(true);
+      sessionStorage.setItem(INTRO_SHOWN_KEY, "true");
       onComplete?.();
-    }, 2600);
+    }, 2000);
 
     return () => {
       clearTimeout(exitTimer);
       clearTimeout(completeTimer);
     };
-  }, [onComplete]);
+  }, [hasBeenShown, onComplete]);
 
-  if (isComplete) {
+  // Don't render while checking sessionStorage or after complete
+  if (hasBeenShown === null || isComplete) {
     return null;
   }
 
