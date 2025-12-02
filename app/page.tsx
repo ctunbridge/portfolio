@@ -9,6 +9,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { HomeIntro } from "@/components/home-intro/home-intro";
 import { SideNav } from "@/components/ui/side-nav/side-nav";
+import { CyclingText } from "@/components/cycling-text";
 
 const INTRO_SHOWN_KEY = "home-intro-shown";
 
@@ -60,10 +61,21 @@ export default function Home() {
           <div className="col-span-12 space-y-8 pt-45 lg:col-span-9">
             {/* Welcome Section */}
             <section id="welcome" className="min-h-screen">
-              <h1 className="typography-h1-demibold mb-6">Welcome</h1>
-              <p className="typography-body text-secondary">
-                Welcome section content goes here.
-              </p>
+              <div className="grid grid-cols-9">
+                <h1 className="typography-h1-demibold col-span-9 mb-6 h-[300px] md:col-span-8">
+                  I'm a product designer, founder and builder of things, like{" "}
+                  <CyclingText
+                    texts={[
+                      "this portfolio",
+                      "design systems",
+                      "next.js and tailwind.css sites",
+                      "mobile native apps",
+                      "react apps",
+                    ]}
+                  />
+                  .
+                </h1>
+              </div>
             </section>
 
             {/* Work Section */}

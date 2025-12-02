@@ -195,89 +195,94 @@
   /* OpenType features - stylistic alternates */
   --font-features: "salt" 1, "ss01" 1;
 
-  /* Headings - Demi Bold */
+  /* ============================================
+     TYPOGRAPHY TOKENS - Mobile First (base values)
+     Scales up at tablet (768px) and desktop (1024px)
+     ============================================ */
+
+  /* Headings - Demi Bold (Mobile: base) */
   --typography-h1-demibold-font-family: var(--font-demibold);
-  --typography-h1-demibold-font-size: 56px;
-  --typography-h1-demibold-line-height: 72px;
+  --typography-h1-demibold-font-size: 32px;
+  --typography-h1-demibold-line-height: 40px;
   --typography-h1-demibold-letter-spacing: -2%;
 
   --typography-h2-demibold-font-family: var(--font-demibold);
-  --typography-h2-demibold-font-size: 50px;
-  --typography-h2-demibold-line-height: 64px;
+  --typography-h2-demibold-font-size: 28px;
+  --typography-h2-demibold-line-height: 36px;
   --typography-h2-demibold-letter-spacing: -2%;
 
   --typography-h3-demibold-font-family: var(--font-demibold);
-  --typography-h3-demibold-font-size: 44px;
-  --typography-h3-demibold-line-height: 56px;
+  --typography-h3-demibold-font-size: 24px;
+  --typography-h3-demibold-line-height: 32px;
   --typography-h3-demibold-letter-spacing: -2%;
 
   --typography-h4-demibold-font-family: var(--font-demibold);
-  --typography-h4-demibold-font-size: 32px;
-  --typography-h4-demibold-line-height: 42px;
+  --typography-h4-demibold-font-size: 20px;
+  --typography-h4-demibold-line-height: 28px;
   --typography-h4-demibold-letter-spacing: -2%;
 
   --typography-h5-demibold-font-family: var(--font-demibold);
-  --typography-h5-demibold-font-size: 24px;
-  --typography-h5-demibold-line-height: 32px;
+  --typography-h5-demibold-font-size: 18px;
+  --typography-h5-demibold-line-height: 24px;
   --typography-h5-demibold-letter-spacing: -2%;
 
-  /* Headings - Normal */
+  /* Headings - Normal (Mobile: base) */
   --typography-h1-normal-font-family: var(--font-normal);
-  --typography-h1-normal-font-size: 56px;
-  --typography-h1-normal-line-height: 72px;
+  --typography-h1-normal-font-size: 32px;
+  --typography-h1-normal-line-height: 40px;
   --typography-h1-normal-letter-spacing: -2%;
 
   --typography-h2-normal-font-family: var(--font-normal);
-  --typography-h2-normal-font-size: 50px;
-  --typography-h2-normal-line-height: 64px;
+  --typography-h2-normal-font-size: 28px;
+  --typography-h2-normal-line-height: 36px;
   --typography-h2-normal-letter-spacing: -2%;
 
   --typography-h3-normal-font-family: var(--font-normal);
-  --typography-h3-normal-font-size: 44px;
-  --typography-h3-normal-line-height: 56px;
+  --typography-h3-normal-font-size: 24px;
+  --typography-h3-normal-line-height: 32px;
   --typography-h3-normal-letter-spacing: -2%;
 
   --typography-h4-normal-font-family: var(--font-normal);
-  --typography-h4-normal-font-size: 32px;
-  --typography-h4-normal-line-height: 42px;
+  --typography-h4-normal-font-size: 20px;
+  --typography-h4-normal-line-height: 28px;
   --typography-h4-normal-letter-spacing: -2%;
 
   --typography-h5-normal-font-family: var(--font-normal);
-  --typography-h5-normal-font-size: 24px;
-  --typography-h5-normal-line-height: 32px;
+  --typography-h5-normal-font-size: 18px;
+  --typography-h5-normal-line-height: 24px;
   --typography-h5-normal-letter-spacing: -2%;
 
-  /* Body - Normal */
+  /* Body - Normal (Mobile: base) */
   --typography-body-font-family: var(--font-normal);
-  --typography-body-font-size: 16px;
-  --typography-body-line-height: 24px;
+  --typography-body-font-size: 14px;
+  --typography-body-line-height: 22px;
 
   --typography-body-sm-font-family: var(--font-normal);
-  --typography-body-sm-font-size: 14px;
+  --typography-body-sm-font-size: 12px;
   --typography-body-sm-line-height: 18px;
 
-  /* Body - Bold */
+  /* Body - Bold (Mobile: base) */
   --typography-body-bold-font-family: var(--font-bold);
-  --typography-body-bold-font-size: 16px;
-  --typography-body-bold-line-height: 24px;
+  --typography-body-bold-font-size: 14px;
+  --typography-body-bold-line-height: 22px;
 
   --typography-body-sm-bold-font-family: var(--font-bold);
-  --typography-body-sm-bold-font-size: 14px;
+  --typography-body-sm-bold-font-size: 12px;
   --typography-body-sm-bold-line-height: 18px;
 
-  /* Button */
+  /* Button (fixed across all sizes) */
   --typography-button-font-family: var(--font-medium);
   --typography-button-font-size: 14px;
   --typography-button-line-height: 16px;
 
-  /* Caption */
+  /* Caption (Mobile: base) */
   --typography-caption-font-family: var(--font-normal);
-  --typography-caption-font-size: 12px;
-  --typography-caption-line-height: 20px;
+  --typography-caption-font-size: 11px;
+  --typography-caption-line-height: 16px;
 
-  /* Code */
+  /* Code (Mobile: base) */
   --typography-code-font-family: var(--font-mono);
-  --typography-code-font-size: 14px;
+  --typography-code-font-size: 13px;
   --typography-code-line-height: 18px;
 
   /* ============================================
@@ -294,6 +299,128 @@
   --animation-duration-fast: 300ms;
   --animation-duration-normal: 500ms;
   --animation-duration-slow: 1000ms;
+}
+
+/* ============================================
+   TYPOGRAPHY - Tablet (768px+)
+   Intermediate sizes between mobile and desktop
+   ============================================ */
+@media (min-width: 768px) {
+  :root {
+    /* Headings - Demi Bold (Tablet) */
+    --typography-h1-demibold-font-size: 44px;
+    --typography-h1-demibold-line-height: 56px;
+
+    --typography-h2-demibold-font-size: 38px;
+    --typography-h2-demibold-line-height: 48px;
+
+    --typography-h3-demibold-font-size: 32px;
+    --typography-h3-demibold-line-height: 42px;
+
+    --typography-h4-demibold-font-size: 26px;
+    --typography-h4-demibold-line-height: 34px;
+
+    --typography-h5-demibold-font-size: 21px;
+    --typography-h5-demibold-line-height: 28px;
+
+    /* Headings - Normal (Tablet) */
+    --typography-h1-normal-font-size: 44px;
+    --typography-h1-normal-line-height: 56px;
+
+    --typography-h2-normal-font-size: 38px;
+    --typography-h2-normal-line-height: 48px;
+
+    --typography-h3-normal-font-size: 32px;
+    --typography-h3-normal-line-height: 42px;
+
+    --typography-h4-normal-font-size: 26px;
+    --typography-h4-normal-line-height: 34px;
+
+    --typography-h5-normal-font-size: 21px;
+    --typography-h5-normal-line-height: 28px;
+
+    /* Body (Tablet) */
+    --typography-body-font-size: 15px;
+    --typography-body-line-height: 23px;
+
+    --typography-body-sm-font-size: 13px;
+    --typography-body-sm-line-height: 20px;
+
+    --typography-body-bold-font-size: 15px;
+    --typography-body-bold-line-height: 23px;
+
+    --typography-body-sm-bold-font-size: 13px;
+    --typography-body-sm-bold-line-height: 20px;
+
+    /* Caption (Tablet) */
+    --typography-caption-font-size: 12px;
+    --typography-caption-line-height: 18px;
+
+    /* Code (Tablet) */
+    --typography-code-font-size: 13px;
+    --typography-code-line-height: 18px;
+  }
+}
+
+/* ============================================
+   TYPOGRAPHY - Desktop (1024px+)
+   Full-size typography for larger screens
+   ============================================ */
+@media (min-width: 1024px) {
+  :root {
+    /* Headings - Demi Bold (Desktop) */
+    --typography-h1-demibold-font-size: 56px;
+    --typography-h1-demibold-line-height: 72px;
+
+    --typography-h2-demibold-font-size: 50px;
+    --typography-h2-demibold-line-height: 64px;
+
+    --typography-h3-demibold-font-size: 44px;
+    --typography-h3-demibold-line-height: 56px;
+
+    --typography-h4-demibold-font-size: 32px;
+    --typography-h4-demibold-line-height: 42px;
+
+    --typography-h5-demibold-font-size: 24px;
+    --typography-h5-demibold-line-height: 32px;
+
+    /* Headings - Normal (Desktop) */
+    --typography-h1-normal-font-size: 56px;
+    --typography-h1-normal-line-height: 72px;
+
+    --typography-h2-normal-font-size: 50px;
+    --typography-h2-normal-line-height: 64px;
+
+    --typography-h3-normal-font-size: 44px;
+    --typography-h3-normal-line-height: 56px;
+
+    --typography-h4-normal-font-size: 32px;
+    --typography-h4-normal-line-height: 42px;
+
+    --typography-h5-normal-font-size: 24px;
+    --typography-h5-normal-line-height: 32px;
+
+    /* Body (Desktop) */
+    --typography-body-font-size: 16px;
+    --typography-body-line-height: 24px;
+
+    --typography-body-sm-font-size: 14px;
+    --typography-body-sm-line-height: 18px;
+
+    --typography-body-bold-font-size: 16px;
+    --typography-body-bold-line-height: 24px;
+
+    --typography-body-sm-bold-font-size: 14px;
+    --typography-body-sm-bold-line-height: 18px;
+
+    /* Caption (Desktop) */
+    --typography-caption-font-size: 12px;
+    --typography-caption-line-height: 20px;
+
+    /* Code (Desktop) */
+    --typography-code-font-size: 14px;
+    --typography-code-line-height: 18px;
+  }
 }
 
 /* ============================================
