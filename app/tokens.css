@@ -452,3 +452,32 @@
 .animate-flip-in {
   animation: flip-in var(--animation-duration-normal) ease-out;
 }
+
+/* Exit Animations */
+@keyframes fade-out-up {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.animate-fade-out-up {
+  animation: fade-out-up 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-fade-out {
+  animation: fade-out var(--animation-duration-normal) ease-out forwards;
+}

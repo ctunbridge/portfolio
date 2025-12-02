@@ -1,0 +1,72 @@
+/**
+ * Home Intro Component
+ *
+ * Full-screen intro/loading state that displays name and title,
+ * then animates up and out to reveal the main content.
+ */
+"use client";
+
+import * as React from "react";
+import { cn } from "@/lib/utils";
+
+interface HomeIntroProps {
+  onComplete?: () => void;
+  className?: string;
+}
+
+function HomeIntro({ onComplete, className }: HomeIntroProps) {
+  const [isExiting, setIsExiting] = React.useState(false);
+  const [isComplete, setIsComplete] = React.useState(false);
+
+  React.useEffect(() => {
+    // Start exit animation after initial display
+    const exitTimer = setTimeout(() => {
+      setIsExiting(true);
+    }, 1800);
+
+    // Complete the intro after exit animation finishes
+    const completeTimer = setTimeout(() => {
+      setIsComplete(true);
+      onComplete?.();
+    }, 2600);
+
+    return () => {
+      clearTimeout(exitTimer);
+      clearTimeout(completeTimer);
+    };
+  }, [onComplete]);
+
+  if (isComplete) {
+    return null;
+  }
+
+  return (
+    <div
+      data-slot="home-intro"
+      className={cn(
+        "fixed inset-0 z-50 bg-background pt-[280px] px-8",
+        isExiting && "pointer-events-none",
+        className
+      )}
+    >
+      <div className="grid grid-cols-12 gap-4">
+        <div
+          className={cn(
+            "col-start-4 col-span-9 flex flex-col items-start text-left",
+            isExiting ? "animate-fade-out-up" : "animate-fade-in"
+          )}
+        >
+          <h1 className="typography-h1-demibold text-foreground">
+            Chris Tunbridge
+          </h1>
+          <p className="typography-h1-normal text-secondary">
+            Product Designer
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export { HomeIntro };
+
