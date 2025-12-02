@@ -8,6 +8,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { HomeIntro } from "@/components/home-intro/home-intro";
+import { SideNav } from "@/components/ui/side-nav/side-nav";
 
 const INTRO_SHOWN_KEY = "home-intro-shown";
 
@@ -25,6 +26,24 @@ export default function Home() {
     setShowContent(true);
   }, []);
 
+  const handleSendEnquiry = () => {
+    // TODO: Implement enquiry form/modal
+    console.log("Send enquiry clicked");
+  };
+
+  const handleDownloadCV = () => {
+    // TODO: Implement CV download
+    console.log("Download CV clicked");
+  };
+
+  const navItems = [
+    { label: "Welcome", id: "welcome" },
+    { label: "Work", id: "work" },
+    { label: "Experience", id: "experience" },
+    { label: "Send an enquiry", action: handleSendEnquiry },
+    { label: "Download CV", action: handleDownloadCV },
+  ];
+
   return (
     <>
       <HomeIntro onComplete={handleIntroComplete} />
@@ -35,8 +54,34 @@ export default function Home() {
           showContent ? "opacity-100" : "opacity-0"
         )}
       >
-        <div className="space-y-8">
-          <h1 className="typography-h1-demibold">Portfolio</h1>
+        <div className="grid grid-cols-12 gap-4">
+          <SideNav items={navItems} />
+
+          <div className="col-span-12 space-y-8 pt-60 lg:col-span-9">
+            {/* Welcome Section */}
+            <section id="welcome" className="min-h-screen">
+              <h1 className="typography-h1-demibold mb-6">Welcome</h1>
+              <p className="typography-body text-secondary">
+                Welcome section content goes here.
+              </p>
+            </section>
+
+            {/* Work Section */}
+            <section id="work" className="min-h-screen">
+              <h2 className="typography-h2-demibold mb-6">Work</h2>
+              <p className="typography-body text-secondary">
+                Work section content goes here.
+              </p>
+            </section>
+
+            {/* Experience Section */}
+            <section id="experience" className="min-h-screen">
+              <h2 className="typography-h2-demibold mb-6">Experience</h2>
+              <p className="typography-body text-secondary">
+                Experience section content goes here.
+              </p>
+            </section>
+          </div>
         </div>
       </div>
     </>

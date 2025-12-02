@@ -194,4 +194,14 @@
     font-size: var(--typography-code-font-size);
     line-height: var(--typography-code-line-height);
   }
+
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
