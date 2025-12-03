@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import { Building2, Briefcase, Code, Palette } from 'lucide-react';
 import { ExperienceCard } from './experience-card';
 
 const meta: Meta<typeof ExperienceCard> = {
@@ -41,9 +40,8 @@ export const Default: Story = {
   },
 };
 
-export const WithCustomIcon: Story = {
+export const CurrentRole: Story = {
   args: {
-    icon: Briefcase,
     employer: 'Tech Startup',
     dates: '2023 - Present',
     jobTitle: 'Lead UX Designer',
@@ -53,7 +51,6 @@ export const WithCustomIcon: Story = {
 
 export const DesignRole: Story = {
   args: {
-    icon: Palette,
     employer: 'Creative Design Agency',
     dates: '2018 - 2020',
     jobTitle: 'UI/UX Designer',
@@ -61,9 +58,8 @@ export const DesignRole: Story = {
   },
 };
 
-export const DevelopmentRole: Story = {
+export const EarlyCareer: Story = {
   args: {
-    icon: Code,
     employer: 'Innovation Labs',
     dates: '2017 - 2018',
     jobTitle: 'Junior Designer',
@@ -75,28 +71,24 @@ export const Timeline: Story = {
   render: () => (
     <div className="flex flex-col gap-8 max-w-3xl">
       <ExperienceCard
-        icon={Building2}
         employer="Tech Innovations Inc."
         dates="2023 - Present"
         jobTitle="Lead Product Designer"
         summary="Driving design strategy for a B2B SaaS platform serving 10,000+ users. Established design operations and mentored a team of 5 designers."
       />
       <ExperienceCard
-        icon={Briefcase}
         employer="Digital Solutions Co."
         dates="2020 - 2023"
         jobTitle="Senior UX Designer"
         summary="Led end-to-end design for mobile and web applications. Conducted user research and usability testing that improved conversion rates by 35%."
       />
       <ExperienceCard
-        icon={Palette}
         employer="Creative Studio"
         dates="2018 - 2020"
         jobTitle="Product Designer"
         summary="Collaborated with product teams to design and ship features for consumer-facing applications. Contributed to the company's design system."
       />
       <ExperienceCard
-        icon={Code}
         employer="Design Agency"
         dates="2016 - 2018"
         jobTitle="Junior Designer"
