@@ -93,8 +93,6 @@ export function CyclingText({
       )}
       style={{
         transitionTimingFunction: "cubic-bezier(0.33, 1, 0.68, 1)",
-        textDecorationThickness: "5%",
-        textUnderlineOffset: "25%",
       }}
       onTransitionEnd={handleTransitionEnd}
     >
