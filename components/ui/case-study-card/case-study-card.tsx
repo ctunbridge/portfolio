@@ -45,14 +45,14 @@ export function CaseStudyCard({
         className
       )}
     >
-      {/* Business name and year */}
-      <div className="flex items-baseline gap-2">
-        <span className="typography-body-bold">{businessName}</span>
-        <span className="typography-body text-secondary">{year}</span>
-      </div>
-
       {/* Project title */}
-      <h3 className="typography-h5-demibold mb-4">{projectTitle}</h3>
+      <h3 className="typography-h5-demibold">{projectTitle}</h3>
+
+      {/* Business name and year */}
+      <div className="flex items-baseline gap-2 mb-4">
+        <span className="typography-body-bold text-muted-foreground">{businessName}</span>
+        <span className="typography-body text-muted-foreground">{year}</span>
+      </div>
 
       {/* 1:1 aspect ratio image */}
       <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-muted">

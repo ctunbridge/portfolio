@@ -11,6 +11,7 @@ import { HomeIntro } from "@/components/home-intro/home-intro";
 import { SideNav } from "@/components/ui/side-nav/side-nav";
 import { CyclingText } from "@/components/ui/cycling-text/cycling-text";
 import { CaseStudyCard } from "@/components/ui/case-study-card/case-study-card";
+import { ExperienceCard } from "@/components/ui/experience-card/experience-card";
 
 const INTRO_SHOWN_KEY = "home-intro-shown";
 
@@ -117,10 +118,39 @@ export default function Home() {
 
             {/* Experience Section */}
             <section id="experience" className="min-h-screen">
-              <h2 className="typography-h2-demibold mb-6">Experience</h2>
-              <p className="typography-body text-secondary">
-                Experience section content goes here.
-              </p>
+              <div className="grid grid-cols-9 gap-y-20">
+                <h5 className="typography-h5-normal col-span-7 col-start-3 text-right mb-20">
+                  <span className="typography-h5-demibold">10 years product design</span>{" "}
+                  experience doing this that and all the product things, I need to think of something to put in here that isn't stale and boring
+                </h5>
+
+                <div className="col-span-9 md:col-span-7 flex flex-col gap-20">
+                  <ExperienceCard
+                    employer="GetGround"
+                    dates="2024 to Present"
+                    jobTitle="Lead Product Designer"
+                    summary="Responsible for multiple features across the GetGround customer platform, allowing 30,000 investors to manage their property from sourcing, to bookkeeping, to tax submissions and portfolio optimisation, and owner of our Capcom design system."
+                  />
+                  <ExperienceCard
+                    employer="Sage"
+                    dates="2021 to 2023"
+                    jobTitle="Senior Product Designer"
+                    summary="Took a lead role in the creation and delivery of the Sage Individual native app for Android and iOS. Targeted the UKs 4.5 million small business owners, Sage individual allowed users to tracking income and expenses, get paid faster using native tap to pay, send and receive invoices, and submit tax obligations."
+                  />
+                  <ExperienceCard
+                    employer="Football Survivor"
+                    dates="2019-2021"
+                    jobTitle="Founding Product Designer"
+                    summary="Football Survivor was a peer to peer iOS and Android app based on the popular game betting game 'Last Man Standing'. As the founding Lead Product Designer responsibilities included: reimagining user needs and requirements for the game to be viable on a mobile platform; creating the UX and UI; curating the design system; content design; creating app store assets and marketing materials; supporting the development team; continual improvements, fixes and the design delivery of new features."
+                  />
+                  <ExperienceCard
+                    employer="Maverick"
+                    dates="2018 to 2019"
+                    jobTitle="Product Designer"
+                    summary="Part of the digital transformation team increasing employee engagement at DHL. We built a react native mobile app from the ground up, enabling DHL employees to discover worldwide community events and updates, perform various admin tasks and updating employee details."
+                  />
+                </div>
+              </div>
             </section>
           </div>
         </div>

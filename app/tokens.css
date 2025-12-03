@@ -145,7 +145,7 @@
 
   /* Muted */
   --muted: var(--warmgrey-200);
-  --muted-foreground: var(--warmgrey-800);
+  --muted-foreground: var(--warmgrey-700);
 
   /* Accent */
   --accent: var(--blue-700);
@@ -165,7 +165,7 @@
 
   /* UI elements */
   --border: var(--warmgrey-200);
-  --input: var(--warmgrey-100);
+  --input: var(--white);
   --ring: var(--warmgrey-500);
 
   /* Card */
@@ -341,16 +341,16 @@
 
     /* Body (Tablet) */
     --typography-body-font-size: 15px;
-    --typography-body-line-height: 23px;
+    --typography-body-line-height: 25px;
 
     --typography-body-sm-font-size: 13px;
-    --typography-body-sm-line-height: 20px;
+    --typography-body-sm-line-height: 21px;
 
     --typography-body-bold-font-size: 15px;
-    --typography-body-bold-line-height: 23px;
+    --typography-body-bold-line-height: 25px;
 
     --typography-body-sm-bold-font-size: 13px;
-    --typography-body-sm-bold-line-height: 20px;
+    --typography-body-sm-bold-line-height: 21px;
 
     /* Caption (Tablet) */
     --typography-caption-font-size: 12px;
@@ -405,13 +405,13 @@
     --typography-body-line-height: 24px;
 
     --typography-body-sm-font-size: 14px;
-    --typography-body-sm-line-height: 18px;
+    --typography-body-sm-line-height: 20px;
 
     --typography-body-bold-font-size: 16px;
     --typography-body-bold-line-height: 24px;
 
     --typography-body-sm-bold-font-size: 14px;
-    --typography-body-sm-bold-line-height: 18px;
+    --typography-body-sm-bold-line-height: 20px;
 
     /* Caption (Desktop) */
     --typography-caption-font-size: 12px;
