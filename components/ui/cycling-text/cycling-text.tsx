@@ -87,14 +87,12 @@ export function CyclingText({
   return (
     <span
       className={cn(
-        "underline transition-opacity duration-300",
+        "transition-opacity duration-300",
         phase === "visible" ? "opacity-100" : "opacity-0",
         className
       )}
       style={{
         transitionTimingFunction: "cubic-bezier(0.33, 1, 0.68, 1)",
-        textDecorationThickness: "5%",
-        textUnderlineOffset: "25%",
       }}
       onTransitionEnd={handleTransitionEnd}
     >
