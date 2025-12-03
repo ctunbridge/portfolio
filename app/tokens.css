@@ -402,13 +402,13 @@
 
     /* Body (Desktop) */
     --typography-body-font-size: 16px;
-    --typography-body-line-height: 24px;
+    --typography-body-line-height: 26px;
 
     --typography-body-sm-font-size: 14px;
     --typography-body-sm-line-height: 20px;
 
     --typography-body-bold-font-size: 16px;
-    --typography-body-bold-line-height: 24px;
+    --typography-body-bold-line-height: 26px;
 
     --typography-body-sm-bold-font-size: 14px;
     --typography-body-sm-bold-line-height: 20px;

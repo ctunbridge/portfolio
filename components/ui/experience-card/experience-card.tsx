@@ -17,8 +17,8 @@ export interface ExperienceCardProps {
   dates: string;
   /** Job title */
   jobTitle: string;
-  /** Job description/summary */
-  summary: string;
+  /** Job description/summary - can be a string or array of strings for multiple paragraphs */
+  summary: string | string[];
   /** Additional CSS classes */
   className?: string;
 }
@@ -63,7 +63,17 @@ export function ExperienceCard({
 
       {/* Summary - Expandable */}
       {isOpen && (
-        <p className="typography-body text-foreground">{summary}</p>
+        <div className="flex flex-col gap-4">
+          {Array.isArray(summary) ? (
+            summary.map((paragraph, index) => (
+              <p key={index} className="typography-body text-foreground">
+                {paragraph}
+              </p>
+            ))
+          ) : (
+            <p className="typography-body text-foreground whitespace-pre-line">{summary}</p>
+          )}
+        </div>
       )}
     </div>
   );
