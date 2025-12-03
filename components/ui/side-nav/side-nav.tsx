@@ -120,8 +120,8 @@ function SideNav({ items, name = "CT", className, ...props }: SideNavProps) {
               key={`${item.id || item.label}-${index}`}
               onClick={() => handleItemClick(item, index)}
               className={cn(
-                "typography-body whitespace-nowrap text-secondary transition-colors hover:text-primary",
-                !item.action && activeSection === item.id && "typography-body-bold text-primary"
+                "typography-body whitespace-nowrap text-secondary transition-colors hover:text-foreground",
+                !item.action && activeSection === item.id && "typography-body-bold text-foreground"
               )}
             >
               {item.label}

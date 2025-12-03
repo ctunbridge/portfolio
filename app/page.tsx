@@ -12,6 +12,7 @@ import { SideNav } from "@/components/ui/side-nav/side-nav";
 import { CyclingText } from "@/components/ui/cycling-text/cycling-text";
 import { CaseStudyCard } from "@/components/ui/case-study-card/case-study-card";
 import { ExperienceCard } from "@/components/ui/experience-card/experience-card";
+import { Footer } from "@/components/ui/footer/footer";
 
 const INTRO_SHOWN_KEY = "home-intro-shown";
 
@@ -35,8 +36,12 @@ export default function Home() {
   };
 
   const handleDownloadCV = () => {
-    // TODO: Implement CV download
-    console.log("Download CV clicked");
+    const link = document.createElement("a");
+    link.href = "/cv/Chris Tunbridge CV '25.pdf";
+    link.download = "Chris Tunbridge CV '25.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const navItems = [
@@ -80,7 +85,7 @@ export default function Home() {
               </div>
 
               {/* Work Section */}
-              <div id="work" className="grid grid-cols-1 gap-x-10 gap-y-20 mb-80 md:grid-cols-2">
+              <div id="work" className="grid grid-cols-1 gap-x-10 gap-y-25 mb-80 md:grid-cols-2">
                 <CaseStudyCard
                   businessName="GetGround"
                   year="2025"
@@ -117,7 +122,7 @@ export default function Home() {
             </section>
 
             {/* Experience Section */}
-            <section id="experience" className="min-h-screen">
+            <section id="experience">
               <div className="grid grid-cols-9 gap-y-20">
                 <h5 className="typography-h5-normal col-span-7 col-start-3 text-right mb-20">
                   <span className="typography-h5-demibold">10 years product design</span>{" "}
@@ -129,19 +134,30 @@ export default function Home() {
                     employer="GetGround"
                     dates="2024 to Present"
                     jobTitle="Lead Product Designer"
-                    summary="Responsible for multiple features across the GetGround customer platform, allowing 30,000 investors to manage their property from sourcing, to bookkeeping, to tax submissions and portfolio optimisation, and owner of our Capcom design system."
+                    summary={[
+                      "Responsible for multiple features across the GetGround customer platform, allowing 30,000 investors to manage their property from sourcing, to bookkeeping, to tax submissions and portfolio optimisation, and owner of our Capcom design system.",
+                      "Most recently delivered the new Bookkeeping and tax submissions area from end to end, whilst pioneering new ways of working to embed ai into our workflow. This included: business impact modelling; ai enabled prototyping directly in our codebase; synthesising test results and research in notion to create a searchable resource database; creation of bespoke agents such as CopyKat, a copywriting agent with GetGround context and tone of voice baked in to a Slackbot."
+                    ]}
                   />
                   <ExperienceCard
                     employer="Sage"
                     dates="2021 to 2023"
                     jobTitle="Senior Product Designer"
-                    summary="Took a lead role in the creation and delivery of the Sage Individual native app for Android and iOS. Targeted the UKs 4.5 million small business owners, Sage individual allowed users to tracking income and expenses, get paid faster using native tap to pay, send and receive invoices, and submit tax obligations."
+                    summary={[
+                      "Took a lead role in the creation and delivery of the Sage Individual native app for Android and iOS. Targeted the UKs 4.5 million small business owners, Sage individual allowed users to tracking income and expenses, get paid faster using native tap to pay, send and receive invoices, and submit tax obligations.",
+                      "Introduced a number of new ways of working to improve team efficiency, psychological safety, skills and quality of output. This included: team retrospectives; design feedback pathways; a number of workshop formats for wire framing, user journey mapping and prioritisation; training on how to frame problem statements within feature briefs; design delivery templates; processes to ensure consistency and pixel perfect design delivery to developers.",
+                      "Accessibility Champion for native mobile, ensuring the Sage Individual product meets WCAG 2.1 standards.",
+                      "Introduced and led the curation of the Native Mobile Design System. Built from the ground up to be robust and usable by all Sage's mobile products."
+                    ]}
                   />
                   <ExperienceCard
                     employer="Football Survivor"
                     dates="2019-2021"
                     jobTitle="Founding Product Designer"
-                    summary="Football Survivor was a peer to peer iOS and Android app based on the popular game betting game 'Last Man Standing'. As the founding Lead Product Designer responsibilities included: reimagining user needs and requirements for the game to be viable on a mobile platform; creating the UX and UI; curating the design system; content design; creating app store assets and marketing materials; supporting the development team; continual improvements, fixes and the design delivery of new features."
+                    summary={[
+                      "Football Survivor was a peer to peer iOS and Android app based on the popular game betting game 'Last Man Standing'. As the founding Lead Product Designer responsibilities included: reimagining user needs and requirements for the game to be viable on a mobile platform; creating the UX and UI; curating the design system; content design; creating app store assets and marketing materials; supporting the development team; continual improvements, fixes and the design delivery of new features.",
+                      "Football Survivor grew to 15,000+ sign ups and 8,000+ active users within 18 months of launching."
+                    ]}
                   />
                   <ExperienceCard
                     employer="Maverick"
@@ -151,6 +167,11 @@ export default function Home() {
                   />
                 </div>
               </div>
+            </section>
+
+            {/* Footer Section */}
+            <section className="mt-80 mb-40">
+              <Footer />
             </section>
           </div>
         </div>
