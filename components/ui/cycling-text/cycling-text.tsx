@@ -87,7 +87,7 @@ export function CyclingText({
   return (
     <span
       className={cn(
-        "underline transition-opacity duration-300",
+        "transition-opacity duration-300",
         phase === "visible" ? "opacity-100" : "opacity-0",
         className
       )}
