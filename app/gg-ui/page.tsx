@@ -5,8 +5,7 @@
  */
 "use client"
 
-import type { Metadata } from "next"
-import { SideNav } from "@/components/ui/side-nav/side-nav"
+import { TopNav } from "@/components/ui/top-nav/top-nav"
 
 export default function GGUIPage() {
   const navItems = [
@@ -16,10 +15,9 @@ export default function GGUIPage() {
   ]
 
   return (
-    <div className="grid grid-cols-12 gap-4">
-      <SideNav items={navItems} />
-
-      <div className="col-span-12 space-y-8 pt-45 lg:col-span-9">
+    <>
+      <TopNav items={navItems} />
+      <div className="space-y-8">
         <section id="overview" className="min-h-screen">
           <h1 className="typography-h1-demibold mb-6">GG UI</h1>
           <p className="typography-body text-muted-foreground">
@@ -42,7 +40,6 @@ export default function GGUIPage() {
           </p>
         </section>
       </div>
-    </div>
+    </>
   )
 }
-
