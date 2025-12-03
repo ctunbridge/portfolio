@@ -20,16 +20,30 @@ function SideNav({ items, name = "CT", className, ...props }: SideNavProps) {
 
   // Intersection Observer for scroll-based active state
   React.useEffect(() => {
+    // Handle scroll to detect when at top of page
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+
+      // If at or near the top of the page (within 100px), set to first section
+      if (scrollY < 100) {
+        const firstItem = items.find(item => item.id && !item.action)
+        if (firstItem?.id) {
+          setActiveSection(firstItem.id)
+        }
+        return
+      }
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && window.scrollY >= 100) {
             setActiveSection(entry.target.id)
           }
         })
       },
       {
-        rootMargin: "-20% 0px -70% 0px",
+        rootMargin: "-10% 0px -80% 0px",
         threshold: 0,
       }
     )
@@ -44,7 +58,16 @@ function SideNav({ items, name = "CT", className, ...props }: SideNavProps) {
       }
     })
 
-    return () => observer.disconnect()
+    // Set initial state
+    handleScroll()
+
+    // Listen to scroll events
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [items])
 
 

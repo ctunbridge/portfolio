@@ -9,7 +9,8 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { HomeIntro } from "@/components/home-intro/home-intro";
 import { SideNav } from "@/components/ui/side-nav/side-nav";
-import { CyclingText } from "@/components/ui/cycling-text";
+import { CyclingText } from "@/components/ui/cycling-text/cycling-text";
+import { CaseStudyCard } from "@/components/ui/case-study-card/case-study-card";
 
 const INTRO_SHOWN_KEY = "home-intro-shown";
 
@@ -41,7 +42,7 @@ export default function Home() {
     { label: "Welcome", id: "welcome" },
     { label: "Work", id: "work" },
     { label: "Experience", id: "experience" },
-    { label: "Send an enquiry", action: handleSendEnquiry },
+    { label: "Get in touch", action: handleSendEnquiry },
     { label: "Download CV", action: handleDownloadCV },
   ];
 
@@ -58,11 +59,11 @@ export default function Home() {
         <div className="grid grid-cols-12 gap-4">
           <SideNav items={navItems} />
 
-          <div className="col-span-12 space-y-8 pt-45 lg:col-span-9">
+          <div className="col-span-12 space-y-8 pt-60 lg:col-span-9">
             {/* Welcome Section */}
             <section id="welcome" className="min-h-screen">
               <div className="grid grid-cols-9">
-                <h1 className="typography-h1-demibold col-span-9 mb-6 h-[300px] md:col-span-8">
+                <h1 className="typography-h1-demibold col-span-9 mb-50 h-75 md:col-span-8">
                   I'm a product designer, founder and builder of things, like{" "}
                   <CyclingText
                     texts={[
@@ -76,14 +77,42 @@ export default function Home() {
                   .
                 </h1>
               </div>
-            </section>
 
-            {/* Work Section */}
-            <section id="work" className="min-h-screen">
-              <h2 className="typography-h2-demibold mb-6">Work</h2>
-              <p className="typography-body text-secondary">
-                Work section content goes here.
-              </p>
+              {/* Work Section */}
+              <div id="work" className="grid grid-cols-1 gap-x-10 gap-y-20 mb-80 md:grid-cols-2">
+                <CaseStudyCard
+                  businessName="GetGround"
+                  year="2025"
+                  projectTitle="Platform UI Refresh"
+                  imageSrc="/images/case-studies/GG Home - UI.jpg"
+                  imageAlt="GetGround Platform UI Refresh"
+                  href="/gg-ui"
+                />
+                <CaseStudyCard
+                  businessName="GetGround"
+                  year="2025"
+                  projectTitle="Bookkeeping & MTD"
+                  imageSrc="/images/case-studies/GG Home - BK.jpg"
+                  imageAlt="GetGround Bookkeeping & MTD"
+                  href="/gg-bookkeeping"
+                />
+                <CaseStudyCard
+                  businessName="Sage"
+                  year="2021-2024"
+                  projectTitle="Sage Individual"
+                  imageSrc="/images/case-studies/Sage-Home-Individual.jpg"
+                  imageAlt="Sage Individual mobile app"
+                  href="/sage-individual"
+                />
+                <CaseStudyCard
+                  businessName="Sage"
+                  year="2021-2024"
+                  projectTitle="Graphite Design System"
+                  imageSrc="/images/case-studies/Individual DS 2.jpg"
+                  imageAlt="Sage GraphiteDesign System"
+                  href="/sage-ds"
+                />
+              </div>
             </section>
 
             {/* Experience Section */}

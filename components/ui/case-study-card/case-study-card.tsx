@@ -1,0 +1,79 @@
+/**
+ * CaseStudyCard Component
+ *
+ * A card component for displaying case study information with business name,
+ * year, project title, and a 1:1 aspect ratio image.
+ */
+"use client";
+
+import * as React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
+
+export interface CaseStudyCardProps {
+  /** Business or employer name */
+  businessName: string;
+  /** Year of the project */
+  year: string;
+  /** Project title */
+  projectTitle: string;
+  /** Image source URL */
+  imageSrc: string;
+  /** Alt text for the image */
+  imageAlt: string;
+  /** Optional link URL */
+  href?: string;
+  /** Additional CSS classes */
+  className?: string;
+}
+
+export function CaseStudyCard({
+  businessName,
+  year,
+  projectTitle,
+  imageSrc,
+  imageAlt,
+  href,
+  className,
+}: CaseStudyCardProps) {
+  const content = (
+    <div
+      className={cn(
+        "group flex flex-col gap-1 transition-transform duration-300 ease-out",
+        href && "cursor-pointer hover:scale-[1.005]",
+        className
+      )}
+    >
+      {/* Business name and year */}
+      <div className="flex items-baseline gap-2">
+        <span className="typography-body-bold">{businessName}</span>
+        <span className="typography-body text-secondary">{year}</span>
+      </div>
+
+      {/* Project title */}
+      <h3 className="typography-h5-demibold mb-4">{projectTitle}</h3>
+
+      {/* 1:1 aspect ratio image */}
+      <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-muted">
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.01]"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
+      </div>
+    </div>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className="block">
+        {content}
+      </Link>
+    );
+  }
+
+  return content;
+}
