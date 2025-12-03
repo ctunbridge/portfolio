@@ -9,7 +9,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { HomeIntro } from "@/components/home-intro/home-intro";
 import { SideNav } from "@/components/ui/side-nav/side-nav";
-import { CyclingText } from "@/components/ui/cycling-text";
+import { CyclingText } from "@/components/ui/cycling-text/cycling-text";
 import { CaseStudyCard } from "@/components/ui/case-study-card/case-study-card";
 
 const INTRO_SHOWN_KEY = "home-intro-shown";
