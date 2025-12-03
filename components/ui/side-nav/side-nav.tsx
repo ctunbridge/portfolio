@@ -19,19 +19,29 @@ function SideNav({ items, name = "CT", className, ...props }: SideNavProps) {
   const [activeSection, setActiveSection] = React.useState<string>("")
   const scrollContainerRef = React.useRef<HTMLDivElement>(null)
 
-  // Scroll active item into view on mobile/tablet
+  // Scroll active item into view on mobile/tablet (horizontal scroll only)
   React.useEffect(() => {
     if (!activeSection || !scrollContainerRef.current) return
 
-    const activeButton = scrollContainerRef.current.querySelector(
+    const container = scrollContainerRef.current
+    const activeButton = container.querySelector(
       `[data-section-id="${activeSection}"]`
     ) as HTMLElement
 
     if (activeButton) {
-      activeButton.scrollIntoView({
+      // Calculate scroll position to center the button in the container
+      const containerRect = container.getBoundingClientRect()
+      const buttonRect = activeButton.getBoundingClientRect()
+      const scrollLeft =
+        buttonRect.left -
+        containerRect.left +
+        container.scrollLeft -
+        containerRect.width / 2 +
+        buttonRect.width / 2
+
+      container.scrollTo({
+        left: Math.max(0, scrollLeft),
         behavior: "smooth",
-        block: "nearest",
-        inline: "center",
       })
     }
   }, [activeSection])
@@ -104,7 +114,7 @@ function SideNav({ items, name = "CT", className, ...props }: SideNavProps) {
         const element = document.getElementById(item.id)
         if (element) {
           const elementPosition = element.getBoundingClientRect().top + window.scrollY
-          const offsetPosition = elementPosition - 80
+          const offsetPosition = elementPosition - 100
 
           window.scrollTo({
             top: offsetPosition,
