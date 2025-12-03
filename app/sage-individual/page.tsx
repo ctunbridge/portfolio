@@ -3,7 +3,7 @@
  */
 "use client"
 
-import { SideNav } from "@/components/ui/side-nav/side-nav"
+import { TopNav } from "@/components/ui/top-nav/top-nav"
 
 export default function SageIndividualPage() {
   const navItems = [
@@ -13,10 +13,9 @@ export default function SageIndividualPage() {
   ]
 
   return (
-    <div className="grid grid-cols-12 gap-4">
-      <SideNav items={navItems} />
-
-      <div className="col-span-12 space-y-8 pt-45 lg:col-span-9">
+    <>
+      <TopNav items={navItems} />
+      <div className="space-y-8">
         {/* Overview Section */}
         <section id="overview" className="min-h-screen">
           <h1 className="typography-h1-demibold mb-6">Sage Individual</h1>
@@ -41,6 +40,6 @@ export default function SageIndividualPage() {
           </p>
         </section>
       </div>
-    </div>
+    </>
   )
 }
