@@ -31,8 +31,7 @@ export default function Home() {
   }, []);
 
   const handleSendEnquiry = () => {
-    // TODO: Implement enquiry form/modal
-    console.log("Send enquiry clicked");
+    window.location.href = "mailto:hello@christunbridge.co.uk";
   };
 
   const handleDownloadCV = () => {
