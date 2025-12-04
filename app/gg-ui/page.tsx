@@ -26,7 +26,7 @@ export default function GGUIPage() {
     <>
       <TopNav items={navItems} />
 
-      <div className="space-y-45 md:space-y-65 lg:space-y-80 pt-60">
+      <div className="space-y-45 md:space-y-65 lg:space-y-80 pt-40">
         {/* Introduction Section */}
         <section id="introduction" className="space-y-8">
           <h1 className="typography-h2-demibold">GetGround Platform Refresh</h1>
@@ -71,10 +71,10 @@ export default function GGUIPage() {
           <img
             src="/images/case-studies/gg-ui/Portfolio UI Refresh.jpg"
             alt="Portfolio page UI refresh showing the new dashboard design"
-            className="mt-6 md:mt-8 lg:mt-10 w-full h-auto rounded-lg"
+            className="w-full h-auto rounded-lg mt-12 mb-15"
           />
 
-          <div className="mt-8 md:mt-10 lg:mt-14 grid grid-cols-12">
+          <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">What&apos;s changed?</h3>
               <p className="typography-body text-foreground">
@@ -99,7 +99,7 @@ export default function GGUIPage() {
         <section id="getground-ai" className="space-y-8">
           <h2 className="typography-h3-demibold">GetGround AI</h2>
 
-          <div className="mt-6 md:mt-8 lg:mt-10 space-y-6 lg:space-y-10">
+          <div className="space-y-6 lg:space-y-10 mt-12 mb-15">
             <img
               src="/images/case-studies/gg-ui/GGAI 1.jpg"
               alt="GetGround AI chat interface"
@@ -119,7 +119,7 @@ export default function GGUIPage() {
             </div>
           </div>
 
-          <div className="mt-8 md:mt-10 lg:mt-14 grid grid-cols-12">
+          <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">What&apos;s changed?</h3>
               <p className="typography-body text-foreground">
@@ -147,10 +147,10 @@ export default function GGUIPage() {
           <img
             src="/images/case-studies/gg-ui/Transactions UI Refresh.jpg"
             alt="Transactions screen UI refresh"
-            className="mt-6 md:mt-8 lg:mt-10 w-full h-auto rounded-lg"
+            className="w-full h-auto rounded-lg mt-12 mb-15"
           />
 
-          <div className="mt-8 md:mt-10 lg:mt-14 grid grid-cols-12">
+          <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">What&apos;s changed?</h3>
               <p className="typography-body text-foreground">
@@ -170,10 +170,10 @@ export default function GGUIPage() {
           <img
             src="/images/case-studies/gg-ui/Property UI Refresh.jpg"
             alt="Property details page UI refresh"
-            className="mt-6 md:mt-8 lg:mt-10 w-full h-auto rounded-lg"
+            className="w-full h-auto rounded-lg mt-12 mb-15"
           />
 
-          <div className="mt-8 md:mt-10 lg:mt-14 grid grid-cols-12">
+          <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">What&apos;s changed?</h3>
               <p className="typography-body text-foreground">
@@ -198,10 +198,10 @@ export default function GGUIPage() {
           <img
             src="/images/case-studies/gg-ui/Financial Account UI Refresh.jpg"
             alt="Financial accounts screen UI refresh"
-            className="mt-6 md:mt-8 lg:mt-10 w-full h-auto rounded-lg"
+            className="w-full h-auto rounded-lg mt-12 mb-15"
           />
 
-          <div className="mt-8 md:mt-10 lg:mt-14 grid grid-cols-12">
+          <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">What&apos;s changed?</h3>
               <p className="typography-body text-foreground">
@@ -223,9 +223,9 @@ export default function GGUIPage() {
       </div>
 
       {/* Next Project Button */}
-      <div className="mt-40 flex justify-center">
+      <div className="mt-60 flex justify-center">
         <Button variant="outline" asChild>
-          <Link href="/gg-bookkeeping">Next project</Link>
+          <Link href="/sage-individual">Next project</Link>
         </Button>
       </div>
 

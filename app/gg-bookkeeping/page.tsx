@@ -80,41 +80,39 @@ function ProductPrinciplesSection() {
     <section
       id="product-principles"
       ref={sectionRef}
-      className="relative"
-      style={{ height: "300vh" }}
+      className="relative my-20 md:my-30 lg:my-40 h-[120vh] md:h-[150vh] lg:h-[200vh]"
     >
       <div className="sticky top-0 h-screen flex items-center">
         <div className="w-full">
-          <h2 className="typography-h3-demibold mb-12">Product Principles</h2>
 
           <div className="grid grid-cols-12 gap-8">
             {/* Left side - Principle titles */}
-            <div className="col-span-12 lg:col-span-5 space-y-6">
+            <div className="col-span-12 lg:col-span-7 space-y-6">
               {principles.map((principle, index) => (
                 <button
                   key={principle.number}
                   onClick={() => setActivePrinciple(index)}
                   className={`block text-left transition-all duration-300 ${
                     activePrinciple === index
-                      ? "typography-body-bold text-foreground"
-                      : "typography-body text-muted-foreground"
+                      ? "typography-h5-demibold text-foreground"
+                      : "typography-h5-normal text-muted-foreground"
                   }`}
                 >
-                  {principle.number}. {principle.title}
+                  {principle.title}
                 </button>
               ))}
             </div>
 
             {/* Right side - Active principle description */}
-            <div className="col-span-12 lg:col-span-6 lg:col-start-7">
+            <div className="col-span-12 lg:col-span-5">
               <div className="relative min-h-[120px]">
                 {principles.map((principle, index) => (
                   <p
                     key={principle.number}
                     className={`typography-body text-foreground absolute top-0 left-0 right-0 transition-all duration-500 ${
                       activePrinciple === index
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 translate-y-4 pointer-events-none"
+                        ? "opacity-100"
+                        : "opacity-0 pointer-events-none"
                     }`}
                   >
                     {principle.description}
@@ -146,7 +144,7 @@ export default function GGBookkeepingPage() {
     <>
       <TopNav items={navItems} />
 
-      <div className="space-y-45 md:space-y-65 lg:space-y-80 pt-60">
+      <div className="space-y-45 md:space-y-65 lg:space-y-80 pt-40">
         {/* Introduction Section */}
         <section id="introduction" className="space-y-8">
           <h1 className="typography-h2-demibold">
@@ -186,7 +184,7 @@ export default function GGBookkeepingPage() {
           <img
             src="/images/case-studies/gg-bookkeeping/MTD Model.jpg"
             alt="Making Tax Digital impact model showing revenue projections"
-            className="w-full h-auto rounded-lg"
+            className="w-full h-auto rounded-lg mt-12 mb-15"
           />
 
           <div className="grid grid-cols-12">
@@ -209,12 +207,6 @@ export default function GGBookkeepingPage() {
         <section id="discovery" className="space-y-8">
           <h2 className="typography-h3-demibold">Discovery</h2>
 
-          <img
-            src="/images/case-studies/gg-bookkeeping/Ballpark.jpg"
-            alt="Discovery research and user insights"
-            className="w-full h-auto rounded-lg"
-          />
-
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">
@@ -230,9 +222,16 @@ export default function GGBookkeepingPage() {
             </div>
           </div>
 
-          {/* User Sentiment Stats */}
-          <div className="grid grid-cols-12">
-            <div className="col-span-12 lg:col-span-9 space-y-8">
+          <img
+            src="/images/case-studies/gg-bookkeeping/Ballpark.jpg"
+            alt="Discovery research and user insights"
+            className="w-full h-auto rounded-lg mt-12 mb-15"
+          />
+
+          {/* User Sentiment & Platform Requirements - Side by Side */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* User Sentiment Stats */}
+            <div className="space-y-4">
               <h3 className="typography-h4-demibold">User sentiment</h3>
 
               <div className="space-y-6">
@@ -271,11 +270,9 @@ export default function GGBookkeepingPage() {
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Platform Requirements */}
-          <div className="grid grid-cols-12">
-            <div className="col-span-12 lg:col-span-9 space-y-4">
+            {/* Platform Requirements */}
+            <div className="space-y-4">
               <h3 className="typography-h4-demibold">
                 What does this mean for the platform?
               </h3>
@@ -315,20 +312,6 @@ export default function GGBookkeepingPage() {
         <section id="ideation" className="space-y-8">
           <h2 className="typography-h3-demibold">Ideation and Testing</h2>
 
-          {/* Journey Mapping */}
-          <div className="space-y-6 lg:space-y-10">
-            <img
-              src="/images/case-studies/gg-bookkeeping/Technical Whiteboard.jpg"
-              alt="Technical whiteboard showing journey mapping and user flows"
-              className="w-full h-auto rounded-lg"
-            />
-            <img
-              src="/images/case-studies/gg-bookkeeping/Service Blueprint.jpg"
-              alt="Service blueprint mapping the bookkeeping experience"
-              className="w-full h-auto rounded-lg"
-            />
-          </div>
-
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">
@@ -343,13 +326,21 @@ export default function GGBookkeepingPage() {
             </div>
           </div>
 
-          {/* Interactive Prototyping */}
-          <img
-            src="/images/case-studies/gg-bookkeeping/UT Make.jpg"
-            alt="User testing the Making Tax Digital prototype"
-            className="w-full h-auto rounded-lg"
-          />
+          {/* Journey Mapping */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 mt-12 mb-40">
+            <img
+              src="/images/case-studies/gg-bookkeeping/Technical Whiteboard.jpg"
+              alt="Technical whiteboard showing journey mapping and user flows"
+              className="w-full h-auto rounded-lg"
+            />
+            <img
+              src="/images/case-studies/gg-bookkeeping/Service Blueprint.jpg"
+              alt="Service blueprint mapping the bookkeeping experience"
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
 
+          {/* Interactive Prototyping */}
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">Interactive prototyping</h3>
@@ -367,31 +358,33 @@ export default function GGBookkeepingPage() {
             </div>
           </div>
 
-          {/* Data Points */}
-          <div className="grid grid-cols-12">
-            <div className="col-span-12 lg:col-span-9">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="space-y-2">
-                  <p className="typography-h4-demibold text-foreground">
-                    40% confidence uplift
-                  </p>
-                  <p className="typography-body text-foreground">
-                    Before using the prototype only 20% of participants said they
-                    were confident with MTD changes, after 60% said they were
-                    confident with the MTD changes, a jump of 40%.
-                  </p>
-                </div>
+          <img
+            src="/images/case-studies/gg-bookkeeping/UT Make.jpg"
+            alt="User testing the Making Tax Digital prototype"
+            className="w-full h-auto rounded-lg mt-12 mb-15"
+          />
 
-                <div className="space-y-2">
-                  <p className="typography-h4-demibold text-foreground">
-                    90% clarity
-                  </p>
-                  <p className="typography-body text-foreground">
-                    90% of participants said it was clear what needed to be
-                    submitted and when while looking at the Personal Tax screen
-                  </p>
-                </div>
-              </div>
+          {/* Data Points */}
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 md:col-span-6 space-y-2">
+              <p className="typography-h5-demibold text-foreground">
+                40% confidence uplift
+              </p>
+              <p className="typography-body text-foreground">
+                Before using the prototype only 20% of participants said they
+                were confident with MTD changes, after 60% said they were
+                confident with the MTD changes, a jump of 40%.
+              </p>
+            </div>
+
+            <div className="col-span-12 md:col-span-6 space-y-2">
+              <p className="typography-h5-demibold text-foreground">
+                90% clarity
+              </p>
+              <p className="typography-body text-foreground">
+                90% of participants said it was clear what needed to be
+                submitted and when while looking at the Personal Tax screen
+              </p>
             </div>
           </div>
         </section>
@@ -400,8 +393,24 @@ export default function GGBookkeepingPage() {
         <section id="delivery" className="space-y-8">
           <h2 className="typography-h3-demibold">Code first delivery</h2>
 
+          <div className="grid grid-cols-12">
+            <div className="col-span-12 lg:col-span-9 space-y-4">
+              <h3 className="typography-h4-demibold">
+                Nextjs & Tailwind, directly in our codebase
+              </h3>
+              <p className="typography-body text-foreground">
+                Using cursor I created the core Bookkeeping and MTD front-end in
+                our codebase. By delivering the feature in this way I was able to
+                craft the experience to a level that is not possible through
+                figma frames, use real data and staging accounts to validate
+                design decisions, save precious engineering time, and raise the
+                quality of our overall output.
+              </p>
+            </div>
+          </div>
+
           {/* Codebase Images */}
-          <div className="space-y-6 lg:space-y-10">
+          <div className="space-y-6 lg:space-y-10 mt-12 mb-40">
             <img
               src="/images/case-studies/gg-bookkeeping/CodebaseUI.jpg"
               alt="Bookkeeping UI built directly in the codebase"
@@ -421,36 +430,7 @@ export default function GGBookkeepingPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-12">
-            <div className="col-span-12 lg:col-span-9 space-y-4">
-              <h3 className="typography-h4-demibold">
-                Nextjs & Tailwind, directly in our codebase
-              </h3>
-              <p className="typography-body text-foreground">
-                Using cursor I created the core Bookkeeping and MTD front-end in
-                our codebase. By delivering the feature in this way I was able to
-                craft the experience to a level that is not possible through
-                figma frames, use real data and staging accounts to validate
-                design decisions, save precious engineering time, and raise the
-                quality of our overall output.
-              </p>
-            </div>
-          </div>
-
           {/* Supplementary Designs */}
-          <div className="space-y-6 lg:space-y-10">
-            <img
-              src="/images/case-studies/gg-bookkeeping/FigmaDesign1.jpg"
-              alt="Supplementary Figma designs for bookkeeping"
-              className="w-full h-auto rounded-lg"
-            />
-            <img
-              src="/images/case-studies/gg-bookkeeping/FigmaDesign2.jpg"
-              alt="Additional Figma design specifications"
-              className="w-full h-auto rounded-lg"
-            />
-          </div>
-
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">Supplementary designs</h3>
@@ -462,33 +442,46 @@ export default function GGBookkeepingPage() {
               </p>
             </div>
           </div>
+
+          <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen mt-12 mb-15">
+            <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-4">
+              <img
+                src="/images/case-studies/gg-bookkeeping/FigmaDesign2.jpg"
+                alt="Additional Figma design specifications"
+                className="w-full h-[400px] md:h-[500px] object-cover"
+              />
+              <img
+                src="/images/case-studies/gg-bookkeeping/FigmaDesign1.jpg"
+                alt="Supplementary Figma designs for bookkeeping"
+                className="w-full h-[400px] md:h-[500px] object-cover"
+              />
+            </div>
+          </div>
         </section>
 
         {/* Build Section */}
         <section id="build" className="space-y-8">
           <h2 className="typography-h3-demibold">Build</h2>
 
-          <div className="grid grid-cols-12">
-            <div className="col-span-12 lg:col-span-9 space-y-8">
-              <div className="space-y-4">
-                <h3 className="typography-h4-demibold">Developer Support</h3>
-                <p className="typography-body text-foreground">
-                  As a feature branch, and comprehensive designs were handed
-                  over, support during build was able to be more focussed on
-                  smaller more deliberate decision making, enabling a higher
-                  quality output compared to previous features and ways of
-                  working.
-                </p>
-              </div>
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 md:col-span-6 space-y-4">
+              <h3 className="typography-h4-demibold">Developer Support</h3>
+              <p className="typography-body text-foreground">
+                As a feature branch, and comprehensive designs were handed
+                over, support during build was able to be more focussed on
+                smaller more deliberate decision making, enabling a higher
+                quality output compared to previous features and ways of
+                working.
+              </p>
+            </div>
 
-              <div className="space-y-4">
-                <h3 className="typography-h4-demibold">UXQA</h3>
-                <p className="typography-body text-foreground">
-                  The higher quality output we suspected with this feature was
-                  borne out in UXQA, we found significantly less UI bugs and
-                  differences from the intended design.
-                </p>
-              </div>
+            <div className="col-span-12 md:col-span-6 space-y-4">
+              <h3 className="typography-h4-demibold">UXQA</h3>
+              <p className="typography-body text-foreground">
+                The higher quality output we suspected with this feature was
+                borne out in UXQA, we found significantly less UI bugs and
+                differences from the intended design.
+              </p>
             </div>
           </div>
         </section>
@@ -496,12 +489,6 @@ export default function GGBookkeepingPage() {
         {/* Impact Section */}
         <section id="impact" className="space-y-8">
           <h2 className="typography-h3-demibold">Impact</h2>
-
-          <img
-            src="/images/case-studies/gg-bookkeeping/Mixpanel.jpg"
-            alt="Mixpanel analytics showing bookkeeping feature usage"
-            className="w-full h-auto rounded-lg"
-          />
 
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-4">
@@ -528,48 +515,52 @@ export default function GGBookkeepingPage() {
               </p>
             </div>
           </div>
+
+          <img
+            src="/images/case-studies/gg-bookkeeping/Analytics-Dashboard.jpg"
+            alt="Analytics dashboard showing bookkeeping feature usage"
+            className="w-full h-auto rounded-lg mt-12 mb-15"
+          />
         </section>
 
         {/* Next Steps Section */}
         <section id="next-steps" className="space-y-8">
           <h2 className="typography-h3-demibold">Next steps</h2>
 
-          <div className="grid grid-cols-12">
-            <div className="col-span-12 lg:col-span-9 space-y-8">
-              <div className="space-y-4">
-                <h3 className="typography-h4-demibold">Bookkeeping x AI</h3>
-                <p className="typography-body text-foreground">
-                  Combined with other foundational features, including open
-                  banking, enhanced transaction management, and insight
-                  improvements, we are now in the position to start bringing
-                  smarter, ai enhanced, experiences into the Bookkeeping
-                  experience. Discovery work is ongoing, but user data is showing
-                  a desire for deeper and more personal experiences powered by
-                  AI.
-                </p>
-              </div>
+          <div className="grid grid-cols-12 gap-8">
+            <div className="col-span-12 md:col-span-6 space-y-4">
+              <h3 className="typography-h4-demibold">Bookkeeping x AI</h3>
+              <p className="typography-body text-foreground">
+                Combined with other foundational features, including open
+                banking, enhanced transaction management, and insight
+                improvements, we are now in the position to start bringing
+                smarter, ai enhanced, experiences into the Bookkeeping
+                experience. Discovery work is ongoing, but user data is showing
+                a desire for deeper and more personal experiences powered by
+                AI.
+              </p>
+            </div>
 
-              <div className="space-y-4">
-                <h3 className="typography-h4-demibold">MTD April 2026</h3>
-                <p className="typography-body text-foreground">
-                  Combined with other foundational features, including open
-                  banking, enhanced transaction management, and insight
-                  improvements, we are now in the position to start bringing
-                  smarter, ai enhanced, experiences into the Bookkeeping
-                  experience. Discovery work is ongoing, but user data is showing
-                  a desire for deeper and more personal experiences powered by
-                  AI.
-                </p>
-              </div>
+            <div className="col-span-12 md:col-span-6 space-y-4">
+              <h3 className="typography-h4-demibold">MTD April 2026</h3>
+              <p className="typography-body text-foreground">
+                Combined with other foundational features, including open
+                banking, enhanced transaction management, and insight
+                improvements, we are now in the position to start bringing
+                smarter, ai enhanced, experiences into the Bookkeeping
+                experience. Discovery work is ongoing, but user data is showing
+                a desire for deeper and more personal experiences powered by
+                AI.
+              </p>
             </div>
           </div>
         </section>
       </div>
 
       {/* Next Project Button */}
-      <div className="mt-40 flex justify-center">
+      <div className="mt-60 flex justify-center">
         <Button variant="outline" asChild>
-          <Link href="/sage-ds">Next project</Link>
+          <Link href="/gg-ui">Next project</Link>
         </Button>
       </div>
 

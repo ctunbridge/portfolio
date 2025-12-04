@@ -89,18 +89,18 @@ export default function Home() {
                 <CaseStudyCard
                   businessName="GetGround"
                   year="2025"
-                  projectTitle="Platform UI Refresh"
-                  imageSrc="/images/case-studies/GG Home - UI.jpg"
-                  imageAlt="GetGround Platform UI Refresh"
-                  href="/gg-ui"
-                />
-                <CaseStudyCard
-                  businessName="GetGround"
-                  year="2025"
                   projectTitle="Bookkeeping & MTD"
                   imageSrc="/images/case-studies/GG Home - BK.jpg"
                   imageAlt="GetGround Bookkeeping & MTD"
                   href="/gg-bookkeeping"
+                />
+                <CaseStudyCard
+                  businessName="GetGround"
+                  year="2025"
+                  projectTitle="Platform UI Refresh"
+                  imageSrc="/images/case-studies/GG Home - UI.jpg"
+                  imageAlt="GetGround Platform UI Refresh"
+                  href="/gg-ui"
                 />
                 <CaseStudyCard
                   businessName="Sage"

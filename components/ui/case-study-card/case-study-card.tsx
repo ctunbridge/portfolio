@@ -55,7 +55,7 @@ export function CaseStudyCard({
       </div>
 
       {/* 1:1 aspect ratio image */}
-      <div className="relative aspect-square w-full overflow-hidden bg-muted">
+      <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-muted">
         <Image
           src={imageSrc}
           alt={imageAlt}
