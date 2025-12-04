@@ -7,9 +7,11 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button/button"
+import { cn } from "@/lib/utils"
 import { Footer } from "@/components/ui/footer/footer"
 import { TopNav } from "@/components/ui/top-nav/top-nav"
 
@@ -92,11 +94,12 @@ function ProductPrinciplesSection() {
                 <button
                   key={principle.number}
                   onClick={() => setActivePrinciple(index)}
-                  className={`block text-left transition-all duration-300 ${
+                  className={cn(
+                    "block text-left transition-all duration-300",
                     activePrinciple === index
                       ? "typography-h5-demibold text-foreground"
                       : "typography-h5-normal text-muted-foreground"
-                  }`}
+                  )}
                 >
                   {principle.title}
                 </button>
@@ -109,11 +112,12 @@ function ProductPrinciplesSection() {
                 {principles.map((principle, index) => (
                   <p
                     key={principle.number}
-                    className={`typography-body text-foreground absolute top-0 left-0 right-0 transition-all duration-500 ${
+                    className={cn(
+                      "typography-body text-foreground absolute top-0 left-0 right-0 transition-all duration-500",
                       activePrinciple === index
                         ? "opacity-100"
                         : "opacity-0 pointer-events-none"
-                    }`}
+                    )}
                   >
                     {principle.description}
                   </p>
@@ -167,9 +171,11 @@ export default function GGBookkeepingPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/gg-bookkeeping/GG Hero - BK.jpg"
             alt="GetGround Bookkeeping and Making Tax Digital overview"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg"
           />
         </section>
@@ -181,9 +187,11 @@ export default function GGBookkeepingPage() {
         <section id="impact-model" className="space-y-8">
           <h2 className="typography-h3-demibold">Impact Model</h2>
 
-          <img
+          <Image
             src="/images/case-studies/gg-bookkeeping/MTD Model.jpg"
             alt="Making Tax Digital impact model showing revenue projections"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-15"
           />
 
@@ -222,9 +230,11 @@ export default function GGBookkeepingPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/gg-bookkeeping/Ballpark.jpg"
             alt="Discovery research and user insights"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-15"
           />
 
@@ -328,14 +338,18 @@ export default function GGBookkeepingPage() {
 
           {/* Journey Mapping */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 mt-12 mb-40">
-            <img
+            <Image
               src="/images/case-studies/gg-bookkeeping/Technical Whiteboard.jpg"
               alt="Technical whiteboard showing journey mapping and user flows"
+              width={960}
+              height={720}
               className="w-full h-auto rounded-lg"
             />
-            <img
+            <Image
               src="/images/case-studies/gg-bookkeeping/Service Blueprint.jpg"
               alt="Service blueprint mapping the bookkeeping experience"
+              width={960}
+              height={720}
               className="w-full h-auto rounded-lg"
             />
           </div>
@@ -358,9 +372,11 @@ export default function GGBookkeepingPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/gg-bookkeeping/UT Make.jpg"
             alt="User testing the Making Tax Digital prototype"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-15"
           />
 
@@ -411,20 +427,26 @@ export default function GGBookkeepingPage() {
 
           {/* Codebase Images */}
           <div className="space-y-6 lg:space-y-10 mt-12 mb-40">
-            <img
+            <Image
               src="/images/case-studies/gg-bookkeeping/CodebaseUI.jpg"
               alt="Bookkeeping UI built directly in the codebase"
+              width={1920}
+              height={1080}
               className="w-full h-auto rounded-lg"
             />
             <div className="grid grid-cols-1 gap-6 lg:gap-10 md:grid-cols-2">
-              <img
+              <Image
                 src="/images/case-studies/gg-bookkeeping/CodebaseUIMobile.jpg"
                 alt="Mobile view of the codebase UI"
+                width={960}
+                height={720}
                 className="w-full h-auto rounded-lg"
               />
-              <img
+              <Image
                 src="/images/case-studies/gg-bookkeeping/Cursor&CI.jpg"
                 alt="Using Cursor and CI for development"
+                width={960}
+                height={720}
                 className="w-full h-auto rounded-lg"
               />
             </div>
@@ -445,14 +467,18 @@ export default function GGBookkeepingPage() {
 
           <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen mt-12 mb-15">
             <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-4">
-              <img
+              <Image
                 src="/images/case-studies/gg-bookkeeping/FigmaDesign2.jpg"
                 alt="Additional Figma design specifications"
+                width={1280}
+                height={500}
                 className="w-full h-[400px] md:h-[500px] object-cover"
               />
-              <img
+              <Image
                 src="/images/case-studies/gg-bookkeeping/FigmaDesign1.jpg"
                 alt="Supplementary Figma designs for bookkeeping"
+                width={640}
+                height={500}
                 className="w-full h-[400px] md:h-[500px] object-cover"
               />
             </div>
@@ -516,9 +542,11 @@ export default function GGBookkeepingPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/gg-bookkeeping/Analytics-Dashboard.jpg"
             alt="Analytics dashboard showing bookkeeping feature usage"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-15"
           />
         </section>

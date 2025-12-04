@@ -7,9 +7,11 @@
 "use client"
 
 import * as React from "react"
+import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button/button"
+import { cn } from "@/lib/utils"
 import { Footer } from "@/components/ui/footer/footer"
 import { TopNav } from "@/components/ui/top-nav/top-nav"
 
@@ -89,11 +91,12 @@ function ProductPrinciplesSection() {
                 <button
                   key={principle.number}
                   onClick={() => setActivePrinciple(index)}
-                  className={`block text-left transition-all duration-300 ${
+                  className={cn(
+                    "block text-left transition-all duration-300",
                     activePrinciple === index
                       ? "typography-h5-demibold text-foreground"
                       : "typography-h5-normal text-muted-foreground"
-                  }`}
+                  )}
                 >
                   {principle.title}
                 </button>
@@ -106,11 +109,12 @@ function ProductPrinciplesSection() {
                 {principles.map((principle, index) => (
                   <p
                     key={principle.number}
-                    className={`typography-body text-foreground absolute top-0 left-0 right-0 transition-all duration-500 ${
+                    className={cn(
+                      "typography-body text-foreground absolute top-0 left-0 right-0 transition-all duration-500",
                       activePrinciple === index
                         ? "opacity-100"
                         : "opacity-0 pointer-events-none"
-                    }`}
+                    )}
                   >
                     {principle.description}
                   </p>
@@ -152,9 +156,11 @@ export default function SageIndividualPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/sage-individual/IndividualHero.jpg"
             alt="Sage Individual app showing transaction splitting interface"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-10"
           />
         </section>
@@ -201,9 +207,11 @@ export default function SageIndividualPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/sage-individual/Value Prop Image.jpg"
             alt="Initial research findings and value proposition"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-15"
           />
 
@@ -307,14 +315,18 @@ export default function SageIndividualPage() {
 
           {/* Sprint Images */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10 mt-12 mb-15">
-            <img
+            <Image
               src="/images/case-studies/sage-individual/Sprint Image 1 1.jpg"
               alt="Design sprint workshop and ideation"
+              width={960}
+              height={720}
               className="w-full h-auto rounded-lg"
             />
-            <img
+            <Image
               src="/images/case-studies/sage-individual/Sprint Image 2 1.jpg"
               alt="Design sprint prototyping and testing"
+              width={960}
+              height={720}
               className="w-full h-auto rounded-lg"
             />
           </div>
@@ -338,14 +350,18 @@ export default function SageIndividualPage() {
 
           <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen mt-12 mb-40">
             <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-4">
-              <img
+              <Image
                 src="/images/case-studies/sage-individual/User Journey Image.jpg"
                 alt="Detailed user journey map"
+                width={1280}
+                height={500}
                 className="w-full h-[400px] md:h-[500px] object-cover"
               />
-              <img
+              <Image
                 src="/images/case-studies/sage-individual/Journey Workshop.jpg"
                 alt="Journey mapping workshop"
+                width={640}
+                height={500}
                 className="w-full h-[400px] md:h-[500px] object-cover"
               />
             </div>
@@ -363,9 +379,11 @@ export default function SageIndividualPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/sage-individual/Wireframe Image.jpg"
             alt="Wireframes and prototypes for transaction splitting"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-40"
           />
 
@@ -381,9 +399,11 @@ export default function SageIndividualPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/sage-individual/Testing Image.jpg"
             alt="User testing sessions with sole traders"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-40"
           />
 
@@ -399,9 +419,11 @@ export default function SageIndividualPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/sage-individual/Blueprint Image.jpg"
             alt="Service blueprint for transaction splitting"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-40"
           />
 
@@ -417,9 +439,11 @@ export default function SageIndividualPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/sage-individual/Feedback Image.jpg"
             alt="Designer and developer feedback sessions"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-40"
           />
 
@@ -435,9 +459,11 @@ export default function SageIndividualPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/sage-individual/Individual DS 1.jpg"
             alt="Design system components for transaction splitting"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-40"
           />
 
@@ -454,23 +480,29 @@ export default function SageIndividualPage() {
           </div>
 
           {/* Final UI */}
-          <img
+          <Image
             src="/images/case-studies/sage-individual/User Journey 1 1.jpg"
             alt="Final split transaction UI"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12"
           />
 
           {/* UI Flow */}
-          <img
+          <Image
             src="/images/case-studies/sage-individual/Sage_Split UI.jpg"
             alt="Add Split happy paths iOS user flow"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12"
           />
 
           {/* Accessibility */}
-          <img
+          <Image
             src="/images/case-studies/sage-individual/Sage_Accessibility Guidelines.jpg"
             alt="Accessibility considerations including resize text, focus order, dark mode, and landscape"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-15"
           />
         </section>
@@ -529,7 +561,7 @@ export default function SageIndividualPage() {
       {/* Next Project Button */}
       <div className="mt-60 flex justify-center">
         <Button variant="outline" asChild>
-          <Link href="/gg-bookkeeping">Next project</Link>
+          <Link href="/sage-ds">Next project</Link>
         </Button>
       </div>
 

@@ -6,6 +6,7 @@
  */
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button/button"
@@ -27,7 +28,7 @@ export default function SageDSPage() {
       <div className="space-y-45 md:space-y-65 lg:space-y-80 pt-40">
         {/* Introduction Section */}
         <section id="introduction" className="space-y-8">
-          <h1 className="typography-h2-demibold">Sage Design System</h1>
+          <h1 className="typography-h2-demibold">Graphite Design System</h1>
 
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-6">
@@ -45,9 +46,11 @@ export default function SageDSPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/sage-ds/SageDSHero.jpg"
             alt="Sage Design System overview showing components, navigation, and design tokens"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg"
           />
         </section>
@@ -89,9 +92,11 @@ export default function SageDSPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/sage-ds/Foundations 1.jpg"
             alt="Design system foundations showing colour variables, typography, and icon library"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-15"
           />
         </section>
@@ -125,9 +130,11 @@ export default function SageDSPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/sage-ds/Components 1.jpg"
             alt="Design system components showing native and bespoke implementations"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-15"
           />
         </section>
@@ -136,9 +143,11 @@ export default function SageDSPage() {
         <section id="documentation" className="space-y-8">
           <h2 className="typography-h3-demibold">Documentation</h2>
 
-          <img
+          <Image
             src="/images/case-studies/sage-ds/Zeroheight 1.jpg"
             alt="Documentation platforms showing Figma and Zeroheight implementation"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-15"
           />
 

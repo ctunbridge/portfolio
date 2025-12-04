@@ -6,6 +6,7 @@
  */
 "use client"
 
+import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button/button"
@@ -29,7 +30,7 @@ export default function GGUIPage() {
       <div className="space-y-45 md:space-y-65 lg:space-y-80 pt-40">
         {/* Introduction Section */}
         <section id="introduction" className="space-y-8">
-          <h1 className="typography-h2-demibold">GetGround Platform Refresh</h1>
+          <h1 className="typography-h2-demibold">Platform UI Refresh</h1>
 
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-6">
@@ -57,9 +58,11 @@ export default function GGUIPage() {
             </div>
           </div>
 
-          <img
+          <Image
             src="/images/case-studies/gg-ui/GG-UI-Intro.jpg"
             alt="GetGround Platform Refresh overview showing before and after UI designs"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg"
           />
         </section>
@@ -68,9 +71,11 @@ export default function GGUIPage() {
         <section id="portfolio" className="space-y-8">
           <h2 className="typography-h3-demibold">Portfolio</h2>
 
-          <img
+          <Image
             src="/images/case-studies/gg-ui/Portfolio UI Refresh.jpg"
             alt="Portfolio page UI refresh showing the new dashboard design"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-15"
           />
 
@@ -100,20 +105,26 @@ export default function GGUIPage() {
           <h2 className="typography-h3-demibold">GetGround AI</h2>
 
           <div className="space-y-6 lg:space-y-10 mt-12 mb-15">
-            <img
+            <Image
               src="/images/case-studies/gg-ui/GGAI 1.jpg"
               alt="GetGround AI chat interface"
+              width={1920}
+              height={1080}
               className="w-full h-auto rounded-lg"
             />
             <div className="grid grid-cols-1 gap-6 lg:gap-10 md:grid-cols-2">
-              <img
+              <Image
                 src="/images/case-studies/gg-ui/GG AI 2.jpg"
                 alt="GetGround AI contextual suggestions"
+                width={960}
+                height={720}
                 className="w-full h-auto rounded-lg"
               />
-              <img
+              <Image
                 src="/images/case-studies/gg-ui/GG AI 3.jpg"
                 alt="GetGround AI dynamic UI panel"
+                width={960}
+                height={720}
                 className="w-full h-auto rounded-lg"
               />
             </div>
@@ -144,9 +155,11 @@ export default function GGUIPage() {
         <section id="transactions" className="space-y-8">
           <h2 className="typography-h3-demibold">Transactions</h2>
 
-          <img
+          <Image
             src="/images/case-studies/gg-ui/Transactions UI Refresh.jpg"
             alt="Transactions screen UI refresh"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-15"
           />
 
@@ -167,9 +180,11 @@ export default function GGUIPage() {
         <section id="property-details" className="space-y-8">
           <h2 className="typography-h3-demibold">Property Details</h2>
 
-          <img
+          <Image
             src="/images/case-studies/gg-ui/Property UI Refresh.jpg"
             alt="Property details page UI refresh"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-15"
           />
 
@@ -195,9 +210,11 @@ export default function GGUIPage() {
         <section id="financial-accounts" className="space-y-8">
           <h2 className="typography-h3-demibold">Financial Accounts</h2>
 
-          <img
+          <Image
             src="/images/case-studies/gg-ui/Financial Account UI Refresh.jpg"
             alt="Financial accounts screen UI refresh"
+            width={1920}
+            height={1080}
             className="w-full h-auto rounded-lg mt-12 mb-15"
           />
 

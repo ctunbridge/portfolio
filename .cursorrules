@@ -27,9 +27,10 @@ Available typography classes (from `app/globals.css`):
 - Body: `typography-body-lg`, `typography-body`, `typography-body-sm`
 - UI: `typography-small`, `typography-caption`, `typography-code`
 
-### Spacing - Use Tailwind's spacing scale
+### Spacing - Use a 4px grid
 - ✅ ALWAYS use Tailwind spacing utilities: `p-4`, `m-8`, `gap-2`, `space-y-4`
-- ✅ Use consistent spacing patterns: multiples of 4 (0.25rem base)
+- ✅ Use any spacing value that fits a 4px grid (e.g., `p-15` = 60px, `m-25` = 100px)
+- ✅ Common values: `4`, `8`, `10`, `12`, `15`, `16`, `20`, `25`, `30`, `40`, `50`, `60`, `80`
 - ❌ NEVER hardcode spacing: `margin: 20px`, `padding: 1.5rem`
 - ❌ NEVER use arbitrary values unless absolutely necessary: `p-[13px]`
 
