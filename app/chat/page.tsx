@@ -9,9 +9,9 @@
 import * as React from "react"
 import Link from "next/link"
 import ReactMarkdown from "react-markdown"
-import { ArrowLeft, Send, Sparkles, AlertCircle } from "lucide-react"
+import { ArrowLeft, Sparkles, AlertCircle } from "lucide-react"
 
-import { Button } from "@/components/ui/button/button"
+import { ChatInput } from "@/components/ui/chat-input/chat-input"
 import { cn } from "@/lib/utils"
 
 interface Message {
@@ -33,14 +33,13 @@ export default function ChatPage() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [messages])
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!input.trim() || isLoading) return
+  const handleSubmit = async (value: string) => {
+    if (!value.trim() || isLoading) return
 
     const userMessage: Message = {
       id: Date.now().toString(),
       role: "user",
-      content: input.trim(),
+      content: value.trim(),
     }
 
     setMessages((prev) => [...prev, userMessage])
@@ -295,29 +294,13 @@ export default function ChatPage() {
 
       {/* Input Form */}
       <div className="sticky bottom-0 bg-background/80 backdrop-blur-sm border-t border-border py-4">
-        <form onSubmit={handleSubmit} className="flex gap-3">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask about Chris's work..."
-            className="flex-1 h-11 px-4 rounded-full border border-border bg-card typography-body placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring/50 focus:border-ring transition-all"
-            disabled={isLoading}
-          />
-          <Button
-            type="submit"
-            disabled={isLoading || !input.trim()}
-            size="icon"
-            className="size-11 rounded-full"
-          >
-            {isLoading ? (
-              <Sparkles className="size-4 animate-pulse" />
-            ) : (
-              <Send className="size-4" />
-            )}
-            <span className="sr-only">Send message</span>
-          </Button>
-        </form>
+        <ChatInput
+          value={input}
+          onChange={setInput}
+          onSubmit={handleSubmit}
+          isLoading={isLoading}
+          placeholder="Ask about Chris's work..."
+        />
         {isLoading && (
           <p className="typography-caption text-muted-foreground text-center mt-2">
             Generating response...
