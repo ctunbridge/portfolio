@@ -8,6 +8,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import ReactMarkdown from "react-markdown"
 import { ArrowLeft, Send, Sparkles, AlertCircle } from "lucide-react"
 
 import { Button } from "@/components/ui/button/button"
@@ -187,13 +188,65 @@ export default function ChatPage() {
                 )}
                 <div
                   className={cn(
-                    "typography-body whitespace-pre-wrap",
+                    "typography-body",
                     message.role === "user"
                       ? "text-primary-foreground"
                       : "text-foreground"
                   )}
                 >
-                  {message.content || (
+                  {message.content ? (
+                    <div className="space-y-3">
+                    <ReactMarkdown
+                      components={{
+                        // Style links with accent color
+                        a: ({ href, children }) => (
+                          <Link
+                            href={href || "#"}
+                            className="text-accent underline hover:no-underline"
+                          >
+                            {children}
+                          </Link>
+                        ),
+                        // Style bold text
+                        strong: ({ children }) => (
+                          <strong className="font-bold">{children}</strong>
+                        ),
+                        // Style lists - no extra margins
+                        ul: ({ children }) => (
+                          <ul className="list-disc pl-5">{children}</ul>
+                        ),
+                        ol: ({ children }) => (
+                          <ol className="list-decimal pl-5">{children}</ol>
+                        ),
+                        li: ({ children }) => (
+                          <li>{children}</li>
+                        ),
+                        // Style headings
+                        h1: ({ children }) => (
+                          <h1 className="typography-h5-demibold">{children}</h1>
+                        ),
+                        h2: ({ children }) => (
+                          <h2 className="typography-body-bold">{children}</h2>
+                        ),
+                        h3: ({ children }) => (
+                          <h3 className="typography-body-bold">{children}</h3>
+                        ),
+                        // Style paragraphs - no margin, natural flow
+                        p: ({ children }) => (
+                          <p>{children}</p>
+                        ),
+                        // Style code
+                        code: ({ children }) => (
+                          <code className="bg-muted px-1 py-0.5 rounded text-sm font-mono">
+                            {children}
+                          </code>
+                        ),
+                      }}
+                    >
+                      {message.content}
+                    </ReactMarkdown>
+                    </div>
+                  ) : (
                     <span className="text-muted-foreground italic">
                       Thinking...
                     </span>
