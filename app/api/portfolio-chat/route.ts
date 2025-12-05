@@ -46,7 +46,7 @@ export async function POST(req: Request) {
       system: config.systemPrompt,
       messages: coreMessages,
       temperature: config.temperature,
-      maxTokens: config.maxTokens,
+      maxOutputTokens: config.maxTokens,
     })
 
     // Use toTextStreamResponse for simple plain text streaming
