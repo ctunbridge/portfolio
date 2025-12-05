@@ -22,6 +22,15 @@ interface ChatMessage {
 
 export async function POST(req: Request) {
   try {
+    // Check for API key
+    if (!process.env.OPENAI_API_KEY) {
+      console.error("OPENAI_API_KEY is not set")
+      return new Response(
+        JSON.stringify({ error: "API key not configured" }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      )
+    }
+
     const body = await req.json()
     const messages: ChatMessage[] = body.messages
 
@@ -34,6 +43,7 @@ export async function POST(req: Request) {
 
     // Get assistant configuration with system prompt
     const config = getAssistantConfig()
+    console.log("Chat request received, messages:", messages.length)
 
     // Convert simple messages to CoreMessage format
     const coreMessages: CoreMessage[] = messages.map((msg) => ({
@@ -53,8 +63,9 @@ export async function POST(req: Request) {
     return result.toTextStreamResponse()
   } catch (error) {
     console.error("Portfolio chat error:", error)
+    const errorMessage = error instanceof Error ? error.message : "Unknown error"
     return new Response(
-      JSON.stringify({ error: "Internal server error" }),
+      JSON.stringify({ error: errorMessage }),
       { status: 500, headers: { "Content-Type": "application/json" } }
     )
   }
