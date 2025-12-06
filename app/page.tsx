@@ -72,14 +72,13 @@ export default function Home() {
                   I'm a product designer, founder and builder of things, like{" "}
                   <CyclingText
                     texts={[
-                      "this portfolio",
-                      "design systems",
-                      "next.js and tailwind.css sites",
-                      "mobile native apps",
-                      "react apps",
+                      "this portfolio.",
+                      "design systems.",
+                      "next.js and tailwind.css sites.",
+                      "mobile native apps.",
+                      "react apps.",
                     ]}
                   />
-                  .
                 </h1>
               </div>
 
