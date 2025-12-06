@@ -25,7 +25,7 @@ function UserChatBubble({ children, className }: UserChatBubbleProps) {
     <div
       data-slot="user-chat-bubble"
       className={cn(
-        "min-w-80 max-w-120 bg-background border border-border rounded-2xl rounded-br-none px-4 py-3",
+        "min-w-80 max-w-120 bg-background border border-border rounded-2xl rounded-br-none px-4 py-3 mr-6",
         "typography-body text-foreground",
         className
       )}

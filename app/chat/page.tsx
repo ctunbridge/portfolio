@@ -8,11 +8,11 @@
 
 import * as React from "react"
 import Link from "next/link"
-import ReactMarkdown from "react-markdown"
 import { ArrowLeft, Sparkles, AlertCircle } from "lucide-react"
 
 import { ChatInput } from "@/components/ui/chat-input/chat-input"
-import { UserChatBubble } from "@/components/ui/user-chat-bubble"
+import { UserChatBubble } from "@/components/ui/user-chat-bubble/user-chat-bubble"
+import { AssistantMessage } from "@/components/ui/assistant-message/assistant-message"
 import { cn } from "@/lib/utils"
 
 interface Message {
@@ -28,6 +28,14 @@ export default function ChatPage() {
   const [error, setError] = React.useState<string | null>(null)
 
   const messagesEndRef = React.useRef<HTMLDivElement>(null)
+
+  // Set body background to white for this page
+  React.useEffect(() => {
+    document.body.style.background = "white"
+    return () => {
+      document.body.style.background = ""
+    }
+  }, [])
 
   // Auto-scroll to bottom when new messages arrive
   React.useEffect(() => {
@@ -113,9 +121,9 @@ export default function ChatPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col">
       {/* Header */}
-      <header className="sticky top-0 z-10 bg-background/80 backdrop-blur-sm border-b border-border">
+      <header className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm border-b border-border">
         <div className="flex items-center justify-between py-4">
           <Link
             href="/"
@@ -175,87 +183,14 @@ export default function ChatPage() {
                   {message.content}
                 </UserChatBubble>
               ) : (
-                <div className="max-w-[80%] md:max-w-[70%] bg-card border border-border rounded-2xl px-4 py-3">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Sparkles className="size-3 text-accent" />
-                    <span className="typography-caption text-muted-foreground">
-                      Assistant
-                    </span>
-                  </div>
-                  <div className="typography-body text-foreground">
-                    {message.content ? (
-                      <div className="space-y-3">
-                      <ReactMarkdown
-                        components={{
-                          // Style links with accent color
-                          a: ({ href, children }) => (
-                            <Link
-                              href={href || "#"}
-                              className="text-accent underline hover:no-underline"
-                            >
-                              {children}
-                            </Link>
-                          ),
-                          // Style bold text
-                          strong: ({ children }) => (
-                            <strong className="font-bold">{children}</strong>
-                          ),
-                          // Style lists - no extra margins
-                          ul: ({ children }) => (
-                            <ul className="list-disc pl-5">{children}</ul>
-                          ),
-                          ol: ({ children }) => (
-                            <ol className="list-decimal pl-5">{children}</ol>
-                          ),
-                          li: ({ children }) => (
-                            <li>{children}</li>
-                          ),
-                          // Style headings
-                          h1: ({ children }) => (
-                            <h1 className="typography-h5-demibold">{children}</h1>
-                          ),
-                          h2: ({ children }) => (
-                            <h2 className="typography-body-bold">{children}</h2>
-                          ),
-                          h3: ({ children }) => (
-                            <h3 className="typography-body-bold">{children}</h3>
-                          ),
-                          // Style paragraphs - no margin, natural flow
-                          p: ({ children }) => (
-                            <p>{children}</p>
-                          ),
-                          // Style code
-                          code: ({ children }) => (
-                            <code className="bg-muted px-1 py-0.5 rounded text-sm font-mono">
-                              {children}
-                            </code>
-                          ),
-                        }}
-                      >
-                        {message.content}
-                      </ReactMarkdown>
-                      </div>
-                    ) : (
-                      <span className="text-muted-foreground italic">
-                        Thinking...
-                      </span>
-                    )}
-                  </div>
-                </div>
+                <AssistantMessage content={message.content} />
               )}
             </div>
           ))}
 
           {isLoading && messages[messages.length - 1]?.role !== "assistant" && (
             <div className="flex justify-start animate-fade-in">
-              <div className="bg-card border border-border rounded-2xl px-4 py-3">
-                <div className="flex items-center gap-2">
-                  <Sparkles className="size-3 text-accent animate-pulse" />
-                  <span className="typography-caption text-muted-foreground">
-                    Thinking...
-                  </span>
-                </div>
-              </div>
+              <AssistantMessage content="" />
             </div>
           )}
 
@@ -284,7 +219,7 @@ export default function ChatPage() {
       </div>
 
       {/* Input Form */}
-      <div className="sticky bottom-0 bg-background/80 backdrop-blur-sm border-t border-border py-4">
+      <div className="sticky bottom-0 bg-white/80 backdrop-blur-sm border-t border-border py-4">
         <ChatInput
           value={input}
           onChange={setInput}
