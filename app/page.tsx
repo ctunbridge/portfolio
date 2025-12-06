@@ -6,6 +6,7 @@
 "use client";
 
 import * as React from "react";
+import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { HomeIntro } from "@/components/home-intro/home-intro";
 import { SideNav } from "@/components/ui/side-nav/side-nav";
@@ -13,11 +14,15 @@ import { CyclingText } from "@/components/ui/cycling-text/cycling-text";
 import { CaseStudyCard } from "@/components/ui/case-study-card/case-study-card";
 import { ExperienceCard } from "@/components/ui/experience-card/experience-card";
 import { Footer } from "@/components/ui/footer/footer";
+import { ChatInput } from "@/components/ui/chat-input/chat-input";
 
 const INTRO_SHOWN_KEY = "home-intro-shown";
 
 export default function Home() {
+  const router = useRouter();
   const [showContent, setShowContent] = React.useState(false);
+  const [showFloatingInput, setShowFloatingInput] = React.useState(false);
+  const inlineInputRef = React.useRef<HTMLDivElement>(null);
 
   // Check if intro was already shown to avoid content flash
   React.useEffect(() => {
@@ -25,6 +30,29 @@ export default function Home() {
       setShowContent(true);
     }
   }, []);
+
+  // Track when inline input goes out of view
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry) {
+          setShowFloatingInput(!entry.isIntersecting);
+        }
+      },
+      { threshold: 0 }
+    );
+
+    if (inlineInputRef.current) {
+      observer.observe(inlineInputRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleChatFocus = () => {
+    router.push("/chat");
+  };
 
   const handleIntroComplete = React.useCallback(() => {
     setShowContent(true);
@@ -68,7 +96,7 @@ export default function Home() {
             {/* Welcome Section */}
             <section id="welcome" className="min-h-screen">
               <div className="grid grid-cols-9">
-                <h1 className="typography-h1-demibold col-span-9 mb-50 h-75 md:col-span-8">
+                <h1 className="typography-h1-demibold col-span-9 mb-10 h-75 md:col-span-8">
                   I'm a product designer, founder and builder of things, like{" "}
                   <CyclingText
                     texts={[
@@ -81,6 +109,12 @@ export default function Home() {
                   />
                   .
                 </h1>
+                <div ref={inlineInputRef} className="col-span-9 mb-50 w-80">
+                  <ChatInput
+                    placeholder="Ask something..."
+                    onFocus={handleChatFocus}
+                  />
+                </div>
               </div>
 
               {/* Work Section */}
@@ -175,6 +209,19 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Floating Chat Input */}
+      {showFloatingInput && (
+        <div className="fixed bottom-4 left-0 right-0 z-50 px-4 animate-fade-in">
+          <div className="w-80 mx-auto">
+            <ChatInput
+              placeholder="Ask something..."
+              onFocus={handleChatFocus}
+              className="shadow-[0_4px_12px_rgba(0,0,0,0.25)]"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }
