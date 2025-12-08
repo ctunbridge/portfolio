@@ -7,17 +7,22 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { useChatContext } from "@/lib/chat-context";
 import { HomeIntro } from "@/components/home-intro/home-intro";
 import { SideNav } from "@/components/ui/side-nav/side-nav";
 import { CyclingText } from "@/components/ui/cycling-text/cycling-text";
 import { CaseStudyCard } from "@/components/ui/case-study-card/case-study-card";
 import { ExperienceCard } from "@/components/ui/experience-card/experience-card";
 import { Footer } from "@/components/ui/footer/footer";
+import { ChatInput } from "@/components/ui/chat-input/chat-input";
 
 const INTRO_SHOWN_KEY = "home-intro-shown";
 
 export default function Home() {
+  const { isOpen: isChatPanelOpen, setIsOpen: setIsChatPanelOpen } = useChatContext();
   const [showContent, setShowContent] = React.useState(false);
+  const [showFloatingInput, setShowFloatingInput] = React.useState(false);
+  const inlineInputRef = React.useRef<HTMLDivElement>(null);
 
   // Check if intro was already shown to avoid content flash
   React.useEffect(() => {
@@ -25,6 +30,41 @@ export default function Home() {
       setShowContent(true);
     }
   }, []);
+
+  // Track when inline input goes out of view
+  React.useEffect(() => {
+    // Don't show floating input when chat panel is open
+    if (isChatPanelOpen) {
+      setShowFloatingInput(false);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry) {
+          setShowFloatingInput(!entry.isIntersecting);
+        }
+      },
+      { threshold: 0 }
+    );
+
+    // Small delay to ensure the element is rendered after chat panel closes
+    const timeoutId = setTimeout(() => {
+      if (inlineInputRef.current) {
+        observer.observe(inlineInputRef.current);
+      }
+    }, 100);
+
+    return () => {
+      clearTimeout(timeoutId);
+      observer.disconnect();
+    };
+  }, [isChatPanelOpen]);
+
+  const handleChatFocus = () => {
+    setIsChatPanelOpen(true);
+  };
 
   const handleIntroComplete = React.useCallback(() => {
     setShowContent(true);
@@ -57,18 +97,18 @@ export default function Home() {
 
       <div
         className={cn(
-          "min-h-screen transition-opacity duration-500",
+          "min-h-screen transition-all duration-300",
           showContent ? "opacity-100" : "opacity-0"
         )}
       >
         <div className="grid grid-cols-12 gap-4">
           <SideNav items={navItems} />
 
-          <div className="col-span-12 space-y-8 pt-60 lg:col-span-9">
+          <div className="col-span-12 space-y-8 pt-60 @5xl:col-span-9">
             {/* Welcome Section */}
             <section id="welcome" className="min-h-screen">
               <div className="grid grid-cols-9">
-                <h1 className="typography-h1-demibold col-span-9 mb-50 h-75 md:col-span-8">
+                <h1 className="typography-h1-demibold col-span-9 mb-10 h-75 @3xl:col-span-8">
                   I'm a product designer, founder and builder of things, like{" "}
                   <CyclingText
                     texts={[
@@ -80,10 +120,18 @@ export default function Home() {
                     ]}
                   />
                 </h1>
+                {!isChatPanelOpen && (
+                  <div ref={inlineInputRef} className="col-span-9 mb-50 w-80">
+                    <ChatInput
+                      placeholder="Ask something..."
+                      onFocus={handleChatFocus}
+                    />
+                  </div>
+                )}
               </div>
 
               {/* Work Section */}
-              <div id="work" className="grid grid-cols-1 gap-x-10 gap-y-25 mb-80 md:grid-cols-2">
+              <div id="work" className="grid grid-cols-1 gap-x-10 gap-y-25 mb-80 @3xl:grid-cols-2">
                 <CaseStudyCard
                   businessName="GetGround"
                   year="2025"
@@ -127,7 +175,7 @@ export default function Home() {
                   experience doing this that and all the product things, I need to think of something to put in here that isn't stale and boring
                 </h5>
 
-                <div className="col-span-9 md:col-span-7 flex flex-col gap-20">
+                <div className="col-span-9 @3xl:col-span-7 flex flex-col gap-20">
                   <ExperienceCard
                     employer="GetGround"
                     dates="2024 to Present"
@@ -174,6 +222,19 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* Floating Chat Input */}
+      {showFloatingInput && !isChatPanelOpen && (
+        <div className="fixed bottom-4 left-0 right-0 z-50 px-4 animate-fade-in">
+          <div className="w-80 mx-auto">
+            <ChatInput
+              placeholder="Ask something..."
+              onFocus={handleChatFocus}
+              className="shadow-[0_4px_12px_rgba(0,0,0,0.25)]"
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 }
