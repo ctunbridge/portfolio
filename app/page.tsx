@@ -15,6 +15,7 @@ import { CaseStudyCard } from "@/components/ui/case-study-card/case-study-card";
 import { ExperienceCard } from "@/components/ui/experience-card/experience-card";
 import { Footer } from "@/components/ui/footer/footer";
 import { ChatInput } from "@/components/ui/chat-input/chat-input";
+import { Button } from "@/components/ui/button/button";
 
 const INTRO_SHOWN_KEY = "home-intro-shown";
 
@@ -22,6 +23,7 @@ export default function Home() {
   const { isOpen: isChatPanelOpen, setIsOpen: setIsChatPanelOpen } = useChatContext();
   const [showContent, setShowContent] = React.useState(false);
   const [showFloatingInput, setShowFloatingInput] = React.useState(false);
+  const [showMoreExperience, setShowMoreExperience] = React.useState(false);
   const inlineInputRef = React.useRef<HTMLDivElement>(null);
 
   // Check if intro was already shown to avoid content flash
@@ -198,19 +200,56 @@ export default function Home() {
                   />
                   <ExperienceCard
                     employer="Football Survivor"
-                    dates="2019-2021"
+                    dates="2019 to 2021"
                     jobTitle="Founding Product Designer"
                     summary={[
                       "Football Survivor was a peer to peer iOS and Android app based on the popular game betting game 'Last Man Standing'. As the founding Lead Product Designer responsibilities included: reimagining user needs and requirements for the game to be viable on a mobile platform; creating the UX and UI; curating the design system; content design; creating app store assets and marketing materials; supporting the development team; continual improvements, fixes and the design delivery of new features.",
                       "Football Survivor grew to 15,000+ sign ups and 8,000+ active users within 18 months of launching."
                     ]}
                   />
-                  <ExperienceCard
-                    employer="Maverick"
-                    dates="2018 to 2019"
-                    jobTitle="Product Designer"
-                    summary="Part of the digital transformation team increasing employee engagement at DHL. We built a react native mobile app from the ground up, enabling DHL employees to discover worldwide community events and updates, perform various admin tasks and updating employee details."
-                  />
+                  {showMoreExperience && (
+                    <>
+                      <ExperienceCard
+                        employer="Hogarth WPP"
+                        dates="2019 to 2020"
+                        jobTitle="Product Designer"
+                        summary="Worked on a range of projects, from client facing landing pages and micro-sites to internal web applications. This included the creation of robust design systems for ZONZA, a Digital Asset Management platform, and Hoxton, a marketing tool for generating variations of full HTML banner ads."
+                      />
+                      <ExperienceCard
+                        employer="Maverick"
+                        dates="2018 to 2019"
+                        jobTitle="Product Designer"
+                        summary="Part of the digital transformation team increasing employee engagement at DHL. We built a react native mobile app from the ground up, enabling DHL employees to discover worldwide community events and updates, perform various admin tasks and updating employee details."
+                      />
+                      <ExperienceCard
+                        employer="Ayima"
+                        dates="2017 to 2019"
+                        jobTitle="Junior UX Designer"
+                        summary="Involved in the full design process for Ayima's SEO tools and web products, including: the creation and implementation of design systems; prototyping; communicating designs to in house developers."
+                      />
+                      <ExperienceCard
+                        employer="Boots"
+                        dates="2014 to 2015"
+                        jobTitle="UX Design Student"
+                        summary=""
+                        nonInteractive
+                      />
+                      <ExperienceCard
+                        employer="Loughborough University"
+                        dates="2012 to 2016"
+                        jobTitle="BSc Product Design"
+                        summary=""
+                        nonInteractive
+                      />
+                    </>
+                  )}
+                  <Button
+                    variant="outline"
+                    onClick={() => setShowMoreExperience(!showMoreExperience)}
+                    className="self-start"
+                  >
+                    {showMoreExperience ? "Hide experience" : "Show more experience"}
+                  </Button>
                 </div>
               </div>
             </section>
