@@ -81,12 +81,40 @@ export const portfolioContext: PortfolioContext = {
       ],
     },
     {
+      employer: "Hogarth WPP",
+      jobTitle: "Product Designer",
+      dates: "2019 to 2020",
+      summary: [
+        "Worked on a range of projects, from client facing landing pages and micro-sites to internal web applications. This included the creation of robust design systems for ZONZA, a Digital Asset Management platform, and Hoxton, a marketing tool for generating variations of full HTML banner ads.",
+      ],
+    },
+    {
       employer: "Maverick",
       jobTitle: "Product Designer",
       dates: "2018 to 2019",
       summary: [
         "Part of the digital transformation team increasing employee engagement at DHL. Built a React Native mobile app from the ground up, enabling DHL employees to discover worldwide community events and updates, perform various admin tasks and update employee details.",
       ],
+    },
+    {
+      employer: "Ayima",
+      jobTitle: "Junior UX Designer",
+      dates: "2017 to 2019",
+      summary: [
+        "Involved in the full design process for Ayima's SEO tools and web products, including: the creation and implementation of design systems; prototyping; communicating designs to in house developers.",
+      ],
+    },
+    {
+      employer: "Boots",
+      jobTitle: "UX Design Student",
+      dates: "2014 to 2015",
+      summary: [],
+    },
+    {
+      employer: "Loughborough University",
+      jobTitle: "BSc Product Design",
+      dates: "2012 to 2016",
+      summary: [],
     },
   ],
 
