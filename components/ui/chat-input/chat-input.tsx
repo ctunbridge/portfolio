@@ -52,6 +52,13 @@ function ChatInput({
   const [internalValue, setInternalValue] = React.useState("")
   const inputRef = React.useRef<HTMLInputElement>(null)
 
+  // Focus input when autoFocus prop becomes true
+  React.useEffect(() => {
+    if (autoFocus && inputRef.current) {
+      inputRef.current.focus()
+    }
+  }, [autoFocus])
+
   // Use controlled or uncontrolled value
   const inputValue = value !== undefined ? value : internalValue
 
@@ -107,7 +114,7 @@ function ChatInput({
         disabled={disabled || isLoading}
         autoFocus={autoFocus}
         className={cn(
-          "flex-1 h-11 pl-4 pr-2 py-2 bg-transparent typography-body",
+          "flex-1 h-11 pl-4 pr-2 py-2 bg-transparent typography-body-sm",
           "placeholder:text-muted-foreground",
           "outline-none border-none",
           "disabled:cursor-not-allowed"

@@ -15,6 +15,8 @@ export const portfolioContext: PortfolioContext = {
       "Product designer, founder and builder with 10 years of experience. Specialises in design systems, Next.js and Tailwind CSS sites, mobile native apps, and React applications. Currently Lead Product Designer at GetGround.",
     email: "hello@christunbridge.co.uk",
     location: "United Kingdom",
+    personalLife:
+      "Originally from the Warwickshire countryside, Chris now lives in east London. Having always asked why and how things work, a career in product design seemed inevitable. Outside of work, Chris enjoys long cycles through the city and countryside, exploring London's food scene, and spending weekends watching sports - particularly F1 and football. He's also a keen traveller, always planning the next adventure. Beyond personal interests, Chris channels his design and building skills into side projects, including developing digital products for his partner's therapy practice - applying the same user-centred approach to help small businesses thrive.",
   },
 
   siteLinks: [
@@ -505,6 +507,22 @@ export const portfolioContext: PortfolioContext = {
 
   availability:
     "Currently employed as Lead Product Designer at GetGround. Open to discussing interesting opportunities and collaborations.",
+
+  personalLife: {
+    background:
+      "Originally from the Warwickshire countryside, Chris now lives in east London. Having always asked why and how things work—taking apart gadgets as a kid and questioning every design decision as an adult—a career in product design seemed inevitable.",
+    interests: [
+      "Cycling - enjoys long rides through the countryside and exploring new routes, a great way to clear the head and think through design problems",
+      "Food - an enthusiast of all cuisines, always on the hunt for the best local spots and happy to travel for a great meal",
+      "Sports - a keen follower of F1, football, rugby, and cricket, with weekends often spent watching live sport or catching up on the latest races and matches",
+      "Travel - enjoys the odd holiday to recharge, experience new cultures, and find design inspiration in unexpected places",
+    ],
+    sideProjects: [
+      "Building digital products for his partner's therapy practice - applying product design skills to help small businesses, from booking systems to client communication tools",
+      "This portfolio site - built from scratch using Next.js, Tailwind CSS, and Cursor to showcase both design and technical skills",
+      "Experimenting with AI tools and integrations - always exploring new ways to incorporate AI into design workflows and products",
+    ],
+  },
 }
 
 /**

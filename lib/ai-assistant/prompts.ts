@@ -11,8 +11,15 @@ import type { PortfolioContext } from "./types"
  * Format portfolio context as markdown for the AI system prompt
  */
 export function formatContextAsMarkdown(context: PortfolioContext): string {
-  const { bio, experience, caseStudies, skills, availability, siteLinks } =
-    context
+  const {
+    bio,
+    experience,
+    caseStudies,
+    skills,
+    availability,
+    siteLinks,
+    personalLife,
+  } = context
 
   const experienceSection = experience
     .map(
@@ -60,6 +67,10 @@ ${sectionsText}
 **Email:** ${bio.email}
 
 ${bio.summary}
+
+## Personal Life
+
+${bio.personalLife || ""}
 
 ## Site Navigation
 

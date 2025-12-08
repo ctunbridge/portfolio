@@ -27,7 +27,7 @@ interface AssistantMessageProps {
 function AssistantMessage({ content, className }: AssistantMessageProps) {
   if (!content) {
     return (
-      <div className={cn("flex items-center gap-2 min-w-80 max-w-225 pl-6", className)}>
+      <div className={cn("flex items-center gap-2 w-full max-w-225", className)}>
         <div className="pb-0.5">
           <Loader2 className="size-3 text-muted-foreground animate-spin" />
         </div>
@@ -39,7 +39,7 @@ function AssistantMessage({ content, className }: AssistantMessageProps) {
   }
 
   return (
-    <div className={cn("space-y-3 typography-body min-w-80 max-w-225 pl-6", className)}>
+    <div className={cn("space-y-3 typography-body w-full max-w-225", className)}>
       <ReactMarkdown
         components={{
           // Style links with accent color

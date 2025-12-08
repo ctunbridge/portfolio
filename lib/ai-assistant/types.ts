@@ -40,6 +40,7 @@ export interface Bio {
   summary: string
   email: string
   location?: string
+  personalLife?: string
 }
 
 /**
@@ -95,6 +96,15 @@ export interface SiteLink {
 }
 
 /**
+ * Personal life and interests information
+ */
+export interface PersonalLife {
+  background: string
+  interests: string[]
+  sideProjects?: string[]
+}
+
+/**
  * Complete portfolio context for the AI
  */
 export interface PortfolioContext {
@@ -104,4 +114,5 @@ export interface PortfolioContext {
   skills: string[]
   availability: string
   siteLinks: SiteLink[]
+  personalLife?: PersonalLife
 }

@@ -131,8 +131,8 @@ function SideNav({ items, name = "CT", className, ...props }: SideNavProps) {
       <nav
         data-slot="side-nav-mobile"
         className={cn(
-          "sticky top-0 z-10 col-span-12 h-15 md:h-20 lg:hidden",
-          "-mx-6 md:-mx-8 lg:mx-0",
+          "sticky top-0 z-10 col-span-12 h-15 @3xl:h-20 @5xl:hidden",
+          "-mx-6 @3xl:-mx-8 @5xl:mx-0",
           "bg-background",
           className
         )}
@@ -140,7 +140,7 @@ function SideNav({ items, name = "CT", className, ...props }: SideNavProps) {
       >
         <div className="relative flex h-full items-center">
           {/* Fixed CT link with background */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 flex items-center bg-background pl-6 pr-4 md:pl-8 md:pr-6">
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 flex items-center bg-background pl-6 pr-4 @3xl:pl-8 @3xl:pr-6">
             <Link href="/" className="typography-body-bold pointer-events-auto text-secondary">
               {name}
             </Link>
@@ -148,7 +148,7 @@ function SideNav({ items, name = "CT", className, ...props }: SideNavProps) {
           {/* Scrollable section items */}
           <div
             ref={scrollContainerRef}
-            className="scrollbar-hide flex h-full w-full items-center gap-6 overflow-x-auto pl-16 pr-6 md:gap-8 md:pl-20 md:pr-8"
+            className="scrollbar-hide flex h-full w-full items-center gap-6 overflow-x-auto pl-16 pr-6 @3xl:gap-8 @3xl:pl-20 @3xl:pr-8"
           >
             {items.map((item, index) => (
               <button
@@ -171,7 +171,7 @@ function SideNav({ items, name = "CT", className, ...props }: SideNavProps) {
       <nav
         data-slot="side-nav-desktop"
         className={cn(
-          "hidden lg:flex lg:flex-col",
+          "hidden @5xl:flex @5xl:flex-col",
           "col-span-3 gap-3",
           "sticky top-0 h-fit",
           "pt-10",
