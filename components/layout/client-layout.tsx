@@ -26,9 +26,14 @@ function LayoutContent({ children }: ClientLayoutProps) {
   // Track when chat panel is opened
   React.useEffect(() => {
     if (isOpen) {
-      track("assistant_panel_opened", {
-        location: "home_page",
-      })
+      try {
+        track("assistant_panel_opened", {
+          location: "home_page",
+        })
+      } catch (error) {
+        // Silently fail if analytics is blocked
+        console.debug("Analytics tracking failed:", error)
+      }
     }
   }, [isOpen])
 
@@ -38,12 +43,17 @@ function LayoutContent({ children }: ClientLayoutProps) {
       ? `${content.substring(0, 50)}...` 
       : content
     
-    track("assistant_message_sent", {
-      location: "home_page",
-      question_preview: questionPreview,
-      question_length: content.length,
-      message_count: messages.length + 1,
-    })
+    try {
+      track("assistant_message_sent", {
+        location: "home_page",
+        question_preview: questionPreview,
+        question_length: content.length,
+        message_count: messages.length + 1,
+      })
+    } catch (error) {
+      // Silently fail if analytics is blocked
+      console.debug("Analytics tracking failed:", error)
+    }
 
     // Add user message
     const userMessage: Message = {
@@ -101,10 +111,15 @@ function LayoutContent({ children }: ClientLayoutProps) {
         }
         
         // Track successful response
-        track("assistant_response_completed", {
-          location: "home_page",
-          response_length: content.length,
-        })
+        try {
+          track("assistant_response_completed", {
+            location: "home_page",
+            response_length: content.length,
+          })
+        } catch (error) {
+          // Silently fail if analytics is blocked
+          console.debug("Analytics tracking failed:", error)
+        }
       }
     } catch (error) {
       console.error("Chat error:", error)
