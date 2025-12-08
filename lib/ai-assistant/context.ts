@@ -114,7 +114,9 @@ export const portfolioContext: PortfolioContext = {
       employer: "Loughborough University",
       jobTitle: "BSc Product Design",
       dates: "2012 to 2016",
-      summary: [],
+      summary: [
+        "Graduated with a 2:1 degree. Final year project focused on a system to help patients with tendon injuries recover. The system consisted of a wearable muscle sensor to track exercises and repetitions, and a companion app that both the patient and physio could use to track progress.",
+      ],
     },
   ],
 
