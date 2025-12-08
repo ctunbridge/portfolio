@@ -21,6 +21,8 @@ export interface ExperienceCardProps {
   summary: string | string[];
   /** Additional CSS classes */
   className?: string;
+  /** If true, disables interactivity and hides the expand/collapse icon */
+  nonInteractive?: boolean;
 }
 
 export function ExperienceCard({
@@ -29,6 +31,7 @@ export function ExperienceCard({
   jobTitle,
   summary,
   className,
+  nonInteractive = false,
 }: ExperienceCardProps) {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -40,20 +43,24 @@ export function ExperienceCard({
       )}
     >
       {/* Header with Job Title and Toggle Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between gap-4 mb-1 w-full text-left hover:opacity-80 transition-opacity"
-        aria-label={isOpen ? "Collapse details" : "Expand details"}
-      >
-        <h4 className="typography-h4-demibold text-foreground flex-1">{jobTitle}</h4>
-        <div className="flex-shrink-0">
-          {isOpen ? (
-            <Minus className="h-5 w-5 text-muted-foreground" />
-          ) : (
-            <Plus className="h-5 w-5 text-muted-foreground" />
-          )}
-        </div>
-      </button>
+      {nonInteractive ? (
+        <h4 className="typography-h4-demibold text-foreground mb-1">{jobTitle}</h4>
+      ) : (
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex items-center justify-between gap-4 mb-1 w-full text-left hover:opacity-80 transition-opacity"
+          aria-label={isOpen ? "Collapse details" : "Expand details"}
+        >
+          <h4 className="typography-h4-demibold text-foreground flex-1">{jobTitle}</h4>
+          <div className="flex-shrink-0">
+            {isOpen ? (
+              <Minus className="h-5 w-5 text-muted-foreground" />
+            ) : (
+              <Plus className="h-5 w-5 text-muted-foreground" />
+            )}
+          </div>
+        </button>
+      )}
 
       {/* Employer and Dates */}
       <div className="flex items-baseline gap-3 mb-6">
