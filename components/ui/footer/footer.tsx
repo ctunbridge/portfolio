@@ -45,14 +45,25 @@ export function Footer({ className }: FooterProps) {
 
         {/* Links */}
         <div className="flex flex-col gap-2 mt-8 md:mt-0 pb-6">
-          <Link
-            href="https://www.linkedin.com/in/chris-tunbridge/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="typography-body-sm text-secondary hover:text-foreground transition-colors"
-          >
-            LinkedIn
-          </Link>
+          <div className="typography-body-sm">
+            <Link
+              href="https://www.linkedin.com/in/chris-tunbridge/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-foreground transition-colors"
+            >
+              LinkedIn
+            </Link>
+            <span className="text-secondary"> • </span>
+            <Link
+              href="https://github.com/ctunbridge"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-secondary hover:text-foreground transition-colors"
+            >
+              GitHub
+            </Link>
+          </div>
           <a
             href="mailto:hello@christunbridge.co.uk"
             className="typography-body-sm text-secondary hover:text-foreground transition-colors"
