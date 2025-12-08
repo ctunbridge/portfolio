@@ -151,7 +151,7 @@ function TopNav({ className, name = "CT", items = [], ...props }: TopNavProps) {
     >
       <div className="relative flex h-full items-center lg:h-auto">
         {/* Fixed CT link with background - matches column padding on mobile/tablet */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 flex items-center bg-background pl-6 pr-4 md:pl-8 md:pr-6 lg:static lg:pl-0 lg:pr-0">
+        <div className="pointer-events-none absolute inset-y-0 left-0 z-10 flex items-center bg-background pl-6 pr-4 md:pl-8 md:pr-6 lg:static lg:pl-0 lg:pr-8">
           <Link
             href="/"
             className="typography-body-bold pointer-events-auto text-secondary"
