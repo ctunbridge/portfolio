@@ -12,7 +12,7 @@ export const portfolioContext: PortfolioContext = {
     name: "Chris Tunbridge",
     title: "Product Designer",
     summary:
-      "Product designer, founder and builder with 10 years of experience. Specialises in design systems, Next.js and Tailwind CSS sites, mobile native apps, and React applications. Currently Lead Product Designer at GetGround.",
+      "Product designer, founder and builder with 10 years of experience. Specialises in design systems, Next.js and Tailwind CSS sites, mobile native apps, and React applications. Currently Lead Product Designer at GetGround. While not an engineer by training, Chris takes an AI-first approach to coding, using tools like Cursor to work directly in codebases and build prototypes from scratch—demonstrating his ability to bridge design and development through modern AI-assisted workflows.",
     email: "hello@christunbridge.co.uk",
     location: "United Kingdom",
     personalLife:
@@ -549,7 +549,7 @@ export const portfolioContext: PortfolioContext = {
     ],
     sideProjects: [
       "Building digital products for his partner's therapy practice - applying product design skills to help small businesses, from booking systems to client communication tools",
-      "This portfolio site - built from scratch using Next.js, Tailwind CSS, and Cursor to showcase both design and technical skills",
+      "This portfolio site - built entirely from scratch using an AI-first approach with Cursor, Next.js, and Tailwind CSS. As a designer (not an engineer), Chris leverages AI coding assistants to work directly in codebases, enabling him to prototype and build functional products that showcase both design and technical execution",
       "Experimenting with AI tools and integrations - always exploring new ways to incorporate AI into design workflows and products",
     ],
   },
