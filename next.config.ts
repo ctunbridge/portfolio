@@ -9,6 +9,14 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/analytics/:path*',
+        destination: '/_vercel/insights/:path*',
+      },
+    ];
+  },
 };
 
 // Wrap with bundle analyzer if ANALYZE env var is set

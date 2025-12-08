@@ -32,7 +32,12 @@ export default function ChatPage() {
 
   // Track when chat page is visited
   React.useEffect(() => {
-    track("assistant_page_visited")
+    try {
+      track("assistant_page_visited")
+    } catch (error) {
+      // Silently fail if analytics is blocked
+      console.debug("Analytics tracking failed:", error)
+    }
   }, [])
 
   // Set body background to white for this page
@@ -56,12 +61,17 @@ export default function ChatPage() {
       ? `${value.trim().substring(0, 50)}...` 
       : value.trim()
     
-    track("assistant_message_sent", {
-      location: "chat_page",
-      question_preview: questionPreview,
-      question_length: value.trim().length,
-      message_count: messages.length + 1,
-    })
+    try {
+      track("assistant_message_sent", {
+        location: "chat_page",
+        question_preview: questionPreview,
+        question_length: value.trim().length,
+        message_count: messages.length + 1,
+      })
+    } catch (error) {
+      // Silently fail if analytics is blocked
+      console.debug("Analytics tracking failed:", error)
+    }
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -128,10 +138,15 @@ export default function ChatPage() {
       }
       
       // Track successful response
-      track("assistant_response_completed", {
-        location: "chat_page",
-        response_length: fullContent.length,
-      })
+      try {
+        track("assistant_response_completed", {
+          location: "chat_page",
+          response_length: fullContent.length,
+        })
+      } catch (error) {
+        // Silently fail if analytics is blocked
+        console.debug("Analytics tracking failed:", error)
+      }
     } catch (err) {
       console.error("Chat error:", err)
       setError(err instanceof Error ? err.message : "Something went wrong")
