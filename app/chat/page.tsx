@@ -9,6 +9,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { ArrowLeft, Sparkles, AlertCircle } from "lucide-react"
+import { track } from "@vercel/analytics"
 
 import { ChatInput } from "@/components/ui/chat-input/chat-input"
 import { UserChatBubble } from "@/components/ui/user-chat-bubble/user-chat-bubble"
@@ -29,6 +30,11 @@ export default function ChatPage() {
 
   const messagesEndRef = React.useRef<HTMLDivElement>(null)
 
+  // Track when chat page is visited
+  React.useEffect(() => {
+    track("assistant_page_visited")
+  }, [])
+
   // Set body background to white for this page
   React.useEffect(() => {
     document.body.style.background = "white"
@@ -44,6 +50,18 @@ export default function ChatPage() {
 
   const handleSubmit = async (value: string) => {
     if (!value.trim() || isLoading) return
+
+    // Track message sent
+    const questionPreview = value.trim().length > 50 
+      ? `${value.trim().substring(0, 50)}...` 
+      : value.trim()
+    
+    track("assistant_message_sent", {
+      location: "chat_page",
+      question_preview: questionPreview,
+      question_length: value.trim().length,
+      message_count: messages.length + 1,
+    })
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -108,6 +126,12 @@ export default function ChatPage() {
           )
         )
       }
+      
+      // Track successful response
+      track("assistant_response_completed", {
+        location: "chat_page",
+        response_length: fullContent.length,
+      })
     } catch (err) {
       console.error("Chat error:", err)
       setError(err instanceof Error ? err.message : "Something went wrong")

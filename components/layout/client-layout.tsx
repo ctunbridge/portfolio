@@ -8,6 +8,7 @@
 
 import * as React from "react"
 import { Sparkles, Bike, Send } from "lucide-react"
+import { track } from "@vercel/analytics"
 
 import { cn } from "@/lib/utils"
 import { ChatProvider, useChatContext } from "@/lib/chat-context"
@@ -22,7 +23,28 @@ function LayoutContent({ children }: ClientLayoutProps) {
   const [messages, setMessages] = React.useState<Message[]>([])
   const [isLoading, setIsLoading] = React.useState(false)
 
+  // Track when chat panel is opened
+  React.useEffect(() => {
+    if (isOpen) {
+      track("assistant_panel_opened", {
+        location: "home_page",
+      })
+    }
+  }, [isOpen])
+
   const handleSubmit = async (content: string) => {
+    // Track message sent
+    const questionPreview = content.length > 50 
+      ? `${content.substring(0, 50)}...` 
+      : content
+    
+    track("assistant_message_sent", {
+      location: "home_page",
+      question_preview: questionPreview,
+      question_length: content.length,
+      message_count: messages.length + 1,
+    })
+
     // Add user message
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -77,6 +99,12 @@ function LayoutContent({ children }: ClientLayoutProps) {
             )
           )
         }
+        
+        // Track successful response
+        track("assistant_response_completed", {
+          location: "home_page",
+          response_length: content.length,
+        })
       }
     } catch (error) {
       console.error("Chat error:", error)

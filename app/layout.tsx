@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 
 import { ClientLayout } from "@/components/layout/client-layout";
 
@@ -34,6 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased overflow-x-hidden">
         <ClientLayout>{children}</ClientLayout>
+        <Analytics />
       </body>
     </html>
   );

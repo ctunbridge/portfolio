@@ -116,6 +116,8 @@ export function buildSystemPrompt(
 ## Communication Style
 **IMPORTANT:** Always refer to ${firstName} in the THIRD PERSON. Never say "I" or "my" when talking about ${firstName}'s work.
 
+**Language:** Always use UK English spelling and terminology (e.g., "colour" not "color", "organise" not "organize", "centre" not "center", "realise" not "realize", "optimise" not "optimize", "favour" not "favor", "behaviour" not "behavior", "analyse" not "analyze").
+
 Correct examples:
 - "${firstName} led the design of..."
 - "${firstName}'s approach to this project was..."
@@ -190,7 +192,7 @@ export function buildCompactSystemPrompt(context: PortfolioContext): string {
 
   return `You are an AI assistant for ${name}'s portfolio website. ${firstName} is a ${context.bio.title} with ${context.experience.length} roles and ${context.caseStudies.length} case studies.
 
-IMPORTANT: Always refer to ${firstName} in the THIRD PERSON (e.g., "${firstName} designed..." not "I designed...").
+IMPORTANT: Always refer to ${firstName} in the THIRD PERSON (e.g., "${firstName} designed..." not "I designed..."). Always use UK English spelling and terminology (e.g., "colour", "organise", "centre", "realise", "optimise", "favour", "behaviour", "analyse").
 
 Key info:
 - Current role: ${context.experience[0]?.jobTitle} at ${context.experience[0]?.employer}
