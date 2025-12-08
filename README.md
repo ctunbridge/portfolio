@@ -1,232 +1,119 @@
-# Design Portfolio
+# Portfolio
 
-A personal design portfolio showcasing product work and experience, built with Next.js 15 and a custom design system.
+A personal portfolio website showcasing product design work and professional experience. Built with modern web technologies and a custom design system.
 
-## ✨ Features
+## Overview
 
-**Current:**
-- Showcase product work and experience
-- Contact/enquiry via email
+This is the codebase for my personal portfolio site, featuring case studies from my work at GetGround and Sage, along with an interactive AI assistant that can answer questions about my experience and projects.
 
-**Tech Stack:**
-- ✅ **Next.js 15** with App Router
-- ✅ **TypeScript** for type safety
-- ✅ **Tailwind CSS v4** for styling
-- ✅ **shadcn/ui** components
-- ✅ **Lucide Icons** - 1000+ beautiful icons
-- ✅ **Custom Design System** with customizable colors and typography
-- ✅ **CSS Animations** (fade, slide, scale effects)
-- ✅ **Storybook** for component development
-- ✅ **Testing** with Vitest and React Testing Library
-- ✅ **Responsive Layout** with 12-column grid system
+## Tech Stack
 
-## Getting Started
-
-### Installation
-
-```bash
-npm install
-```
-
-### Development
-
-Run the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) to see the site.
-
-### Storybook
-
-View and develop components in isolation:
-
-```bash
-npm run storybook
-```
-
-Open [http://localhost:6006](http://localhost:6006) to browse the component library.
-
-### Testing
-
-Run tests with Vitest:
-
-```bash
-npm test              # Run tests in watch mode
-npm run test:ui       # Run tests with UI
-```
+- **Next.js 15** - React framework with App Router
+- **TypeScript** - Type-safe development
+- **Tailwind CSS v4** - Utility-first styling
+- **shadcn/ui** - Accessible component primitives
+- **Vercel AI SDK** - AI assistant integration
+- **Storybook** - Component development and documentation
+- **Vitest** - Unit testing framework
+- **React Testing Library** - Component testing utilities
 
 ## Design System
 
-### Customizing Colors
+The portfolio uses a custom design system built on semantic tokens and CSS variables:
 
-Colors are defined in `app/tokens.css` with a two-layer system:
+- **Color System**: Two-layer token system with primitive colors mapped to semantic tokens
+- **Typography**: Pre-styled HTML elements with CSS variable-based sizing
+- **Animations**: Custom CSS animations for entrance effects (fade, slide, scale)
+- **Spacing**: 4px grid system using Tailwind utilities
+- **Icons**: Lucide React icons (tree-shakeable)
 
-**1. Primitive Colors** - Raw color scales:
-```css
---blue-500: #3b82f6;
---blue-600: #2563eb;
-```
+All design tokens are defined in `app/tokens.css` and `app/globals.css`, ensuring consistency across components.
 
-**2. Semantic Tokens** - Mapped to primitives:
-```css
---primary: var(--blue-600);
---primary-foreground: var(--white);
-```
+## Architecture Decisions
 
-**To change brand colors:**
-1. Update the primitive color values in `app/tokens.css`
-2. Semantic tokens automatically update
-3. All components inherit the changes
+### Component Structure
+- Components follow the shadcn/ui pattern with variants using `class-variance-authority`
+- Co-located stories and tests with components
+- Semantic HTML and accessibility built-in
 
-### Typography
+### Layout System
+- Centered container (max-width: 1280px) with responsive viewport margins
+- 12-column grid system for responsive layouts
+- Mobile-first approach with breakpoints at 768px and 1024px
 
-Typography is defined with CSS variables in `app/globals.css`:
+### AI Assistant
+- Server-side streaming responses using Vercel AI SDK
+- Context-aware system prompts for portfolio-specific information
+- Client-side chat interface with message history
 
-```css
---typography-h1-font-size: 2.25rem;
---typography-h1-line-height: 2.5rem;
---typography-h1-font-weight: 700;
-```
-
-HTML elements are pre-styled:
-```tsx
-<h1>This is automatically styled</h1>
-<p>Body text is also pre-styled</p>
-```
-
-### Animations
-
-Custom CSS animations built into the design system. View all animations in Storybook under "Design System > Animations".
-
-```tsx
-// Show/hide with animation
-{isVisible && (
-  <div className="animate-fade-in">
-    This fades in when isVisible becomes true
-  </div>
-)}
-
-// Control speed and delay
-<div className="animate-fade-in duration-500 delay-200">
-  Slower, delayed animation
-</div>
-```
-
-### Icons
-
-Uses [Lucide Icons](https://lucide.dev) - tree-shakeable, so only icons you use are bundled.
-
-```tsx
-import { Search, User, Settings } from 'lucide-react'
-
-<Search className="w-6 h-6 text-primary" />
-```
-
-Browse all available icons at [lucide.dev/icons](https://lucide.dev/icons).
-
-### Layout
-
-The site uses a centered container (max 1280px) with responsive margins from the viewport edge:
-
-| Breakpoint       | Margin from edge |
-|------------------|------------------|
-| Mobile (< 768px) | 24px (`px-6`)    |
-| Tablet (≥ 768px) | 32px (`px-8`)    |
-| Desktop (≥ 1024px) | 56px (`px-14`) |
-
-Content sits at the edge of the container (no inner padding). The container is defined in `app/layout.tsx`:
-
-```tsx
-<main className="flex-1 px-6 md:px-8 lg:px-14">
-  <div className="mx-auto max-w-7xl">
-    {children}
-  </div>
-</main>
-```
-
-### Grid System
-
-Standard 12-column Tailwind grid:
-
-```tsx
-<div className="grid grid-cols-12 gap-4">
-  <div className="col-span-12 md:col-span-6">Half width on tablet+</div>
-  <div className="col-span-12 md:col-span-6">Half width on tablet+</div>
-</div>
-```
-
-## Adding Components
-
-Add more shadcn components as needed:
-
-```bash
-npx shadcn@latest add dialog
-npx shadcn@latest add dropdown-menu
-```
-
-Browse available components at [ui.shadcn.com](https://ui.shadcn.com).
+### Performance
+- Next.js Image optimization for all assets
+- Tree-shakeable icon imports
+- Bundle analysis available via `npm run analyze`
 
 ## Project Structure
 
 ```
 app/
-├── layout.tsx          # Root layout with SEO metadata
-├── page.tsx            # Home page
-├── loading.tsx         # Loading UI (Suspense)
-├── error.tsx           # Error boundary
-├── not-found.tsx       # 404 page
-├── globals.css         # Global styles & typography
-└── tokens.css          # Design system color tokens
+├── api/portfolio-chat/    # AI assistant API endpoint
+├── chat/                   # Chat interface page
+├── [case-studies]/         # Individual case study pages
+├── layout.tsx              # Root layout with metadata
+├── page.tsx                # Home page
+├── globals.css             # Global styles and typography
+└── tokens.css              # Design system color tokens
 
 components/
-└── ui/                 # shadcn components
-    ├── button/
-    ├── card/
-    ├── input/
-    ├── label/
-    └── textarea/
-
-stories/
-└── design-system/      # Storybook docs
-    ├── overview.stories.tsx
-    ├── colors.stories.tsx
-    ├── typography.stories.tsx
-    └── animations.stories.tsx
+├── ui/                     # Reusable UI components
+├── home-intro/             # Home page intro animation
+└── layout/                 # Layout components
 
 lib/
-└── utils.ts            # cn() utility
+├── ai-assistant/           # AI assistant configuration
+├── chat-context.tsx        # Chat state management
+└── utils.ts                # Utility functions
+
+stories/
+└── design-system/          # Storybook documentation
 ```
 
-## Performance Monitoring
+## Development
 
-Analyze bundle size:
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
+
+### Getting Started
 
 ```bash
-npm run analyze
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
 ```
 
-## Deployment
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-### Vercel (Recommended)
-
-1. Push to GitHub
-2. Import on [vercel.com](https://vercel.com)
-3. Deploy automatically
-
-### Other Platforms
-
-Build for production:
+### Component Development
 
 ```bash
-npm run build
-npm start
+# Run Storybook
+npm run storybook
 ```
 
-## Learn More
+Open [http://localhost:6006](http://localhost:6006) to browse components in isolation.
 
-- [Next.js Documentation](https://nextjs.org/docs)
-- [shadcn/ui Documentation](https://ui.shadcn.com)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [Storybook Documentation](https://storybook.js.org/docs)
+### Testing
+
+```bash
+# Run tests in watch mode
+npm test
+
+# Run tests with UI
+npm run test:ui
+```
+
+## License
+
+MIT License - see [LICENSE](LICENSE) file for details.
