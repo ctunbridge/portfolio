@@ -111,7 +111,7 @@ export default function Home() {
             <section id="welcome" className="min-h-screen">
               <div className="grid grid-cols-9">
                 <h1 className="typography-h1-demibold col-span-9 mb-10 h-75 @3xl:col-span-8">
-                  I'm a product designer, founder and builder of things, like{" "}
+                  I'm a product designer, founder, and builder of things, like{" "}
                   <CyclingText
                     texts={[
                       "this portfolio.",
@@ -174,7 +174,7 @@ export default function Home() {
               <div className="grid grid-cols-9 gap-y-20">
                 <h5 className="typography-h5-normal col-span-7 col-start-3 text-right mb-20">
                   <span className="typography-h5-demibold">10 years product design</span>{" "}
-                  experience in start-up, agency and enterprise environments building web responsive, mobile native and design systems.
+                  experience in start-up, agency, and enterprise environments building web-responsive, mobile-native products and design systems.
                 </h5>
 
                 <div className="col-span-9 @3xl:col-span-7 flex flex-col gap-20">
@@ -183,8 +183,8 @@ export default function Home() {
                     dates="2024 to Present"
                     jobTitle="Lead Product Designer"
                     summary={[
-                      "Responsible for multiple features across the GetGround customer platform, allowing 30,000 investors to manage their property from sourcing, to bookkeeping, to tax submissions and portfolio optimisation, and owner of our Capcom design system.",
-                      "Most recently delivered the new Bookkeeping and tax submissions area from end to end, whilst pioneering new ways of working to embed ai into our workflow. This included: business impact modelling; ai enabled prototyping directly in our codebase; synthesising test results and research in notion to create a searchable resource database; creation of bespoke agents such as CopyKat, a copywriting agent with GetGround context and tone of voice baked in to a Slackbot."
+                      "Lead Product Designer for multiple features across the GetGround platform, serving 30,000+ property investors. Built and maintain the Capcom design system.",
+                      "Recently delivered the bookkeeping and tax submissions area end-to-end, integrating AI into the design process through code-first prototyping in Next.js and custom agents like CopyKat, a context-aware copywriting tool."
                     ]}
                   />
                   <ExperienceCard
@@ -192,10 +192,8 @@ export default function Home() {
                     dates="2021 to 2023"
                     jobTitle="Senior Product Designer"
                     summary={[
-                      "Took a lead role in the creation and delivery of the Sage Individual native app for Android and iOS. Targeted the UKs 4.5 million small business owners, Sage individual allowed users to tracking income and expenses, get paid faster using native tap to pay, send and receive invoices, and submit tax obligations.",
-                      "Introduced a number of new ways of working to improve team efficiency, psychological safety, skills and quality of output. This included: team retrospectives; design feedback pathways; a number of workshop formats for wire framing, user journey mapping and prioritisation; training on how to frame problem statements within feature briefs; design delivery templates; processes to ensure consistency and pixel perfect design delivery to developers.",
-                      "Accessibility Champion for native mobile, ensuring the Sage Individual product meets WCAG 2.1 standards.",
-                      "Introduced and led the curation of the Native Mobile Design System. Built from the ground up to be robust and usable by all Sage's mobile products."
+                      "Created and delivered the Sage Individual native app for Android and iOS, targeting the UK's 4.5 million small business owners with features for expense tracking, native tap-to-pay, and tax submissions.",
+                      "Established team practices including retrospectives and design feedback pathways, served as Accessibility Champion for native mobile (WCAG 2.1), and built the Native Mobile Design System from the ground up."
                     ]}
                   />
                   <ExperienceCard
@@ -203,8 +201,8 @@ export default function Home() {
                     dates="2019 to 2021"
                     jobTitle="Founding Product Designer"
                     summary={[
-                      "Football Survivor was a peer to peer iOS and Android app based on the popular game betting game 'Last Man Standing'. As the founding Lead Product Designer responsibilities included: reimagining user needs and requirements for the game to be viable on a mobile platform; creating the UX and UI; curating the design system; content design; creating app store assets and marketing materials; supporting the development team; continual improvements, fixes and the design delivery of new features.",
-                      "Football Survivor grew to 15,000+ sign ups and 8,000+ active users within 18 months of launching."
+                      "Founding Lead Product Designer for a peer-to-peer iOS and Android betting app based on Last Man Standing. Designed the end-to-end experience including UX/UI, design system, content, and marketing materials.",
+                      "Grew to 15,000+ sign-ups and 8,000+ active users within 18 months of launch."
                     ]}
                   />
                   {showMoreExperience && (
@@ -213,19 +211,19 @@ export default function Home() {
                         employer="Hogarth WPP"
                         dates="2019 to 2020"
                         jobTitle="Product Designer"
-                        summary="Worked on a range of projects, from client facing landing pages and micro-sites to internal web applications. This included the creation of robust design systems for ZONZA, a Digital Asset Management platform, and Hoxton, a marketing tool for generating variations of full HTML banner ads."
+                        summary="Designed client-facing landing pages, micro-sites, and internal web applications. Built robust design systems for ZONZA, a Digital Asset Management platform, and Hoxton, a marketing tool for generating variations of HTML banner ads."
                       />
                       <ExperienceCard
                         employer="Maverick"
                         dates="2018 to 2019"
                         jobTitle="Product Designer"
-                        summary="Part of the digital transformation team increasing employee engagement at DHL. We built a react native mobile app from the ground up, enabling DHL employees to discover worldwide community events and updates, perform various admin tasks and updating employee details."
+                        summary="Worked with the digital transformation team to increase employee engagement at DHL. Built a React Native mobile app from the ground up, enabling employees to discover community events, perform admin tasks, and update their details."
                       />
                       <ExperienceCard
                         employer="Ayima"
                         dates="2017 to 2019"
                         jobTitle="Junior UX Designer"
-                        summary="Involved in the full design process for Ayima's SEO tools and web products, including: the creation and implementation of design systems; prototyping; communicating designs to in house developers."
+                        summary="Designed SEO tools and web products through the full design process, including creating and implementing design systems, prototyping, and working with in-house developers."
                       />
                       <ExperienceCard
                         employer="Boots"

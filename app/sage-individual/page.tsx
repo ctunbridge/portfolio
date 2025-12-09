@@ -151,7 +151,7 @@ export default function SageIndividualPage() {
               <h1 className="typography-h2-demibold">Sage Individual</h1>
               <p className="typography-h4-normal text-foreground">
                 Helping self-employed individuals run their business, track income and expenses,
-                get paid by their customers faster, and submit their self assessment.
+                get paid by their customers faster, and submit their self-assessment.
               </p>
             </div>
           </div>
@@ -173,9 +173,8 @@ export default function SageIndividualPage() {
             <div className="col-span-12 lg:col-span-9 space-y-6">
               <p className="typography-body text-foreground">
                 <span className="typography-body-bold">Problem Statement</span> ·{" "}
-                Helping small businesses handle the complexity of managing both business and
-                personal finances from all of their transactions from a single account, and
-                keeping these separate for accounting and tax purposes.
+                Helping small businesses manage both business and personal finances from a single
+                account while keeping them separate for accounting and tax purposes.
               </p>
 
               <p className="typography-body text-foreground">
@@ -199,10 +198,10 @@ export default function SageIndividualPage() {
                 Initial Research & Value Proposition
               </h3>
               <p className="typography-body text-foreground">
-                I kicked off user research with sole traders to understand their current behaviours,
+                I led user research with sole traders to understand their current behaviours,
                 pain points, and needs around managing mixed business and personal transactions. Through
-                interviews and surveys, we validated that transaction splitting was a significant pain
-                point and would provide clear value.
+                interviews and surveys, we validated that transaction splitting was a significant
+                pain point and would provide clear value.
               </p>
             </div>
           </div>
@@ -238,7 +237,7 @@ export default function SageIndividualPage() {
                   </p>
                   <p className="typography-body text-foreground">
                     Sole traders commonly use spreadsheets, separate bank accounts, or memory to track
-                    which transactions are business vs personal - all time consuming approaches.
+                    which transactions are business vs personal; all time-consuming approaches.
                   </p>
                 </div>
 
@@ -372,7 +371,7 @@ export default function SageIndividualPage() {
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">Wireframes & Prototyping</h3>
               <p className="typography-body text-foreground">
-                I created low and mid-fidelity wireframes to explore different UI patterns for
+                I created low- and mid-fidelity wireframes to explore different UI patterns for
                 splitting transactions. These wireframes helped us quickly iterate on the interaction
                 model and information architecture before committing to high-fidelity designs.
               </p>
@@ -392,9 +391,9 @@ export default function SageIndividualPage() {
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">User Testing</h3>
               <p className="typography-body text-foreground">
-                I conducted moderated usability testing sessions with sole traders to validate the
-                design direction. Testing revealed several key insights that shaped the final design,
-                including simplifying the split interface and providing clearer feedback after splitting.
+                I ran moderated usability tests with sole traders to validate the design direction.
+                Testing revealed key insights that shaped the final design, including simplifying
+                the split interface and providing clearer feedback after splitting.
               </p>
             </div>
           </div>
@@ -432,7 +431,7 @@ export default function SageIndividualPage() {
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">Designer and Developer Feedback</h3>
               <p className="typography-body text-foreground">
-                Throughout the design process, I gathered regular feedback from other designers
+                Throughout the design process, I collected regular feedback from other designers
                 and engineers. This collaborative approach helped refine the design, ensure technical
                 feasibility, and maintain consistency with our design system.
               </p>
@@ -472,9 +471,9 @@ export default function SageIndividualPage() {
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">UI</h3>
               <p className="typography-body text-foreground">
-                The pixel perfect user interface was then created in Figma in collaboration with
-                Content Design, whilst also ensuring that developer reviews and refinements happened
-                often to continue to validate feasibility.
+                I created the pixel-perfect user interface in Figma in collaboration with
+                Content Design, with frequent developer reviews and refinements to validate
+                feasibility.
               </p>
             </div>
           </div>
@@ -517,7 +516,7 @@ export default function SageIndividualPage() {
               <p className="typography-body text-foreground">
                 During development, I provided ongoing support to engineers, answering questions,
                 clarifying edge cases, and making small design adjustments as technical constraints
-                emerged. This collaborative approach ensured high quality implementation.
+                emerged. This collaborative approach ensured high-quality implementation.
               </p>
             </div>
 

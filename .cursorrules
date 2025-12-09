@@ -263,6 +263,182 @@ export const Default: Story = {
 - ✅ Commit working code only
 - ❌ Don't commit `node_modules`, `.env.local`, or build artifacts (already in .gitignore)
 
+## Tone of Voice & Content Guidelines
+
+### Core Principles
+The portfolio content should be:
+- **Readable** - Clear, concise, easy to understand
+- **Professional** - Well-written and credible
+- **Confident** - Shows ability without being boastful
+- **Humble** - Collaborative, not show-offy
+- **Specific** - Uses concrete details and metrics, not superlatives
+
+### Writing Style
+
+#### 1. Lead with Outcomes, Not Effort
+Focus on what was achieved and its impact, not the process of doing it.
+
+- ✅ "Redesigned the platform, increasing user retention by 40%"
+- ✅ "Built the Native Mobile Design System from the ground up"
+- ❌ "Was responsible for redesigning the platform"
+- ❌ "Took a lead role in the creation of the design system"
+
+#### 2. Use Active Voice and Strong Verbs
+Be direct and use powerful action verbs.
+
+Strong verbs to use:
+- Created, built, designed, delivered, shipped
+- Established, introduced, implemented
+- Led (not "took a lead role in")
+
+Weak phrases to avoid:
+- ❌ "Was responsible for" → ✅ "Led" or just describe what you did
+- ❌ "Took a lead role in" → ✅ "Led" or "Created"
+- ❌ "Involved in" → ✅ "Designed" or "Built"
+- ❌ "Worked on" → ✅ "Designed" or "Created"
+- ❌ "Owner and curator of" → ✅ "Built and maintain"
+- ❌ "Responsibilities included" → ✅ "Designed the end-to-end experience"
+
+#### 3. Be Specific, Not Superlative
+Use concrete details, metrics, and specifics instead of vague praise or buzzwords.
+
+- ✅ "Serving 30,000+ property investors"
+- ✅ "40% confidence uplift in user testing"
+- ✅ "First in the company to integrate AI into the design process"
+- ❌ "Pioneering AI-integrated workflows"
+- ❌ "Revolutionary new approach"
+- ❌ "Cutting-edge technology"
+- ❌ "Game-changing solution"
+
+Avoid these buzzwords:
+- Pioneering, revolutionary, cutting-edge, game-changing
+- Groundbreaking, innovative (unless backed by specifics)
+- World-class, best-in-class, leading
+
+#### 4. Show Humility Through Collaboration
+Acknowledge teamwork and let the work speak for itself.
+
+- ✅ "Working with the product team, we transformed..."
+- ✅ "Built a React Native mobile app from the ground up"
+- ❌ "I single-handedly transformed..."
+- ❌ "I pioneered a revolutionary approach..."
+
+#### 5. Keep It Concise
+Remove unnecessary words and compress long lists to the most important items.
+
+- ✅ "Integrated AI into the design process through code-first prototyping and custom agents"
+- ❌ "Pioneering new ways of working to embed AI into our workflow including: business impact modeling; AI-enabled prototyping directly in our codebase; synthesizing test results and research in Notion to create a searchable resource database; creation of bespoke agents..."
+
+When listing achievements:
+- Focus on the 2-3 most impressive items
+- Combine related items
+- Remove obvious or less impactful details
+
+#### 6. Let Details Speak for Themselves
+Impressive specifics don't need promotional language around them.
+
+- ✅ "Code-first prototyping directly in the codebase"
+- ✅ "Built custom agents like CopyKat, a context-aware copywriting tool"
+- ❌ "Pioneering code-first prototyping"
+- ❌ "Revolutionary AI agent CopyKat"
+
+The fact that you built prototypes in the codebase is impressive enough without calling it "pioneering".
+
+### Grammar and Style Rules
+
+#### Punctuation
+- ✅ ALWAYS use Oxford commas: "design, code, and test"
+- ✅ Hyphenate compound adjectives: "code-first prototyping", "AI-enhanced experiences"
+- ✅ Hyphenate when used as adjectives: "user-facing", "client-facing", "data-led", "in-house"
+- ✅ Use "self-assessment" not "self assessment"
+- ✅ Use semicolons (;) for parenthetical breaks or to introduce elaborations
+- ❌ DO NOT use em dashes (—) for any purpose
+
+#### Capitalization
+- ✅ Proper names and technologies: "Next.js", "React Native", "Cursor", "Figma", "AI"
+- ✅ Official names: "Making Tax Digital" (when referring to HMRC's program)
+- ❌ Don't capitalize: "ai", "react native", "nextjs"
+
+#### Number Style
+- ✅ Use "+" for approximate large numbers: "30,000+", "15,000+"
+- ✅ Use commas in numbers over 999: "4.5 million", "30,000"
+- ✅ Include context with percentages: "40% confidence uplift", "90% said it was clear"
+
+#### Sentence Structure
+- ✅ Vary sentence length for readability
+- ✅ Keep most sentences under 25 words
+- ✅ Break complex ideas into shorter statements
+- ❌ Avoid run-on sentences with multiple clauses
+
+### Content Structure
+
+#### Case Study Sections
+Follow this pattern for case studies:
+1. **Problem Statement** - Clear, user-focused problem (starting with "As a [user]...")
+2. **Discovery** - Research findings with specific metrics
+3. **Solution** - What was built and key decisions
+4. **Impact** - Concrete results and metrics
+
+#### Experience Summaries
+Keep role summaries to 1-2 paragraphs:
+- **Paragraph 1**: Core responsibilities and scope (who you served, what you built)
+- **Paragraph 2**: Key achievements and notable work (focus on 2-3 highlights)
+
+For older/smaller roles, use a single paragraph.
+
+### Example Transformations
+
+#### Before and After: GetGround Summary
+
+❌ **Before:**
+> Lead Product Designer responsible for multiple features across the GetGround customer platform, allowing 30,000 investors to manage their property investments from sourcing, to bookkeeping, to tax submissions and portfolio optimization. Also owner and curator of our Capcom design system.
+>
+> Most recently delivered the new bookkeeping and tax submissions area from end to end, whilst pioneering new ways of working to embed AI into our workflow. This included: business impact modelling; AI-enabled prototyping directly in our codebase; synthesising test results and research in Notion to create a searchable resource database; creation of bespoke agents such as CopyKat, a copywriting agent with GetGround context and tone of voice baked in to a Slackbot.
+
+✅ **After:**
+> Lead Product Designer for multiple features across the GetGround platform, serving 30,000+ property investors. Built and maintain the Capcom design system.
+>
+> Recently delivered the bookkeeping and tax submissions area end-to-end, integrating AI into the design process through code-first prototyping in Next.js and custom agents like CopyKat, a context-aware copywriting tool.
+
+**Key improvements:**
+- Removed "responsible for" (passive)
+- Changed "owner and curator" to "built and maintain" (active)
+- Removed "pioneering" (let work speak for itself)
+- Condensed long list to most impressive items
+- Made it clear what CopyKat is without excessive detail
+
+#### Before and After: Sage Summary
+
+❌ **Before:**
+> Took a lead role in the creation and delivery of the Sage Individual native app for Android and iOS. Targeted the UKs 4.5 million small business owners, Sage individual allowed users to tracking income and expenses, get paid faster using native tap to pay, send and receive invoices, and submit tax obligations.
+
+✅ **After:**
+> Created and delivered the Sage Individual native app for Android and iOS, targeting the UK's 4.5 million small business owners with features for expense tracking, native tap-to-pay, and tax submissions.
+
+**Key improvements:**
+- "Took a lead role in the creation and delivery" → "Created and delivered" (more direct)
+- Fixed "UK's" apostrophe
+- Fixed verb tense consistency
+- Tightened sentence structure
+- Added hyphens to compound adjectives
+
+### Quick Reference: Common Fixes
+
+| Weak Phrase | Strong Alternative |
+|-------------|-------------------|
+| responsible for | [state what you did directly] |
+| was involved in | designed, built, created |
+| took a lead role in | led, created, delivered |
+| owner and curator of | built and maintain |
+| pioneering | integrating, introducing |
+| cutting-edge | [describe specifically] |
+| pain-points | pain points |
+| data backed | data-backed |
+| user facing | user-facing |
+| end to end | end-to-end |
+| ai enhanced | AI-enhanced |
+| less bugs | fewer bugs |
+
 ## When Adding New Features
 
 ### Adding shadcn/ui Components

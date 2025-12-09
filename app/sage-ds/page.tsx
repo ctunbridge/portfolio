@@ -65,9 +65,9 @@ export default function SageDSPage() {
             <div className="space-y-4">
               <h3 className="typography-h4-demibold">Colour Variables</h3>
               <p className="typography-body text-foreground">
-                Colour variables define the foundational colour palette and semantic tokens
-                used throughout the design system. This includes primary, secondary, and
-                functional colours that maintain accessibility standards and brand consistency.
+                Colour variables establish the foundational colour palette and semantic tokens
+                used throughout the design system; primary, secondary, and functional colours
+                that maintain accessibility standards and brand consistency.
               </p>
             </div>
 
@@ -76,7 +76,7 @@ export default function SageDSPage() {
               <h3 className="typography-h4-demibold">Typography</h3>
               <p className="typography-body text-foreground">
                 Typography systems define the hierarchy, scale, and styling of text across
-                all platforms. This ensures readability and consistency in how information
+                all platforms, ensuring readability and consistency in how information
                 is presented to users.
               </p>
             </div>
@@ -85,9 +85,9 @@ export default function SageDSPage() {
             <div className="space-y-4">
               <h3 className="typography-h4-demibold">Icons</h3>
               <p className="typography-body text-foreground">
-                Icons are designed to help Sage Design System users clearly communicate actions,
-                navigate products, and understand information. Icons are created to be accessible,
-                consistent, and recognizable across all platforms.
+                Icons help users clearly communicate actions, navigate products, and understand
+                information. Designed to be accessible, consistent, and recognizable across all
+                platforms.
               </p>
             </div>
           </div>
@@ -111,10 +111,10 @@ export default function SageDSPage() {
             <div className="space-y-4">
               <h3 className="typography-h4-demibold">Native</h3>
               <p className="typography-body text-foreground">
-                Native components are designed and implemented for iOS and Android using
-                platform-specific technologies. These components are built to feel natural
-                on each platform while maintaining the Sage brand and experience. The native
-                components work with the shared iOS/Android library of variables.
+                Native components for iOS and Android use platform-specific technologies,
+                designed to feel natural on each platform while maintaining the Sage brand
+                and experience. These components work with the shared iOS/Android library
+                of variables.
               </p>
             </div>
 
@@ -122,10 +122,10 @@ export default function SageDSPage() {
             <div className="space-y-4">
               <h3 className="typography-h4-demibold">Bespoke</h3>
               <p className="typography-body text-foreground">
-                Bespoke components are custom-built for specific use cases within Sage products.
-                These are built for Sage.com and custom web services using React. These components
-                work with the web library of variables allowing for teams to create bespoke
-                components suited to their products.
+                Bespoke components are custom-built for specific use cases within Sage products,
+                created for Sage.com and custom web services using React. These components work
+                with the web library of variables, allowing teams to create bespoke components
+                suited to their products.
               </p>
             </div>
           </div>
@@ -157,10 +157,9 @@ export default function SageDSPage() {
             <div className="space-y-4">
               <h3 className="typography-h4-demibold">Figma</h3>
               <p className="typography-body text-foreground">
-                All components, styles and variables are documented in Figma with guidelines
-                for designers to follow when designing. Each component is fully documented
-                with usage guidelines, variants, and best practices to ensure consistent
-                implementation across designs.
+                All components, styles, and variables are documented in Figma with guidelines
+                for designers. Each component includes usage guidelines, variants, and best
+                practices to ensure consistent implementation across designs.
               </p>
             </div>
 
@@ -168,8 +167,8 @@ export default function SageDSPage() {
             <div className="space-y-4">
               <h3 className="typography-h4-demibold">Zeroheight</h3>
               <p className="typography-body text-foreground">
-                Comprehensive end-to-end documentation in Zeroheight for developers. This allows
-                developers access all components, usage guidelines, code examples and design token
+                Comprehensive end-to-end documentation in Zeroheight for developers. Developers
+                can access all components, usage guidelines, code examples, and design token
                 values to ensure accurate implementation. Zeroheight acts as the single source
                 of truth for the design system.
               </p>

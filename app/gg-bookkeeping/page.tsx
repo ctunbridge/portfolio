@@ -26,7 +26,7 @@ const principles = [
     number: "2",
     title: "Build confidence with every interaction",
     description:
-      "Make it easy to understand, hard to get lost, and reassuring to use. Guide naturally, place support where it's needed, and use data led insights where possible to build trust and confidence.",
+      "Make it easy to understand, hard to get lost, and reassuring to use. Guide naturally, place support where it's needed, and use data-led insights where possible to build trust and confidence.",
   },
   {
     number: "3",
@@ -159,9 +159,9 @@ export default function GGBookkeepingPage() {
             <div className="col-span-12 lg:col-span-9 space-y-6">
               <p className="typography-body text-foreground">
                 <span className="typography-body-bold">Problem Statement</span> ·{" "}
-                As a landlord I need to keep track of and manage my income and
-                expenses, understand my tax obligations, and submit my self
-                assessment online according to HMRC&apos;s making tax digital rules.
+                As a landlord, I need to keep track of and manage my income and
+                expenses, understand my tax obligations, and submit my self-assessment
+                online according to HMRC&apos;s Making Tax Digital rules.
               </p>
 
               <p className="typography-body text-foreground">
@@ -197,15 +197,14 @@ export default function GGBookkeepingPage() {
 
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-4">
-              <h3 className="typography-h4-demibold">Data backed decisions</h3>
+              <h3 className="typography-h4-demibold">Data-backed decisions</h3>
               <p className="typography-body text-foreground">
-                Maximising the impact of large project is essential for
-                GetGround&apos;s short and long term business ambitions. Working with
-                our product managers we produced a model to understand how many
-                users we could capture, conservatively and aggressively, and how
-                this could result in revenue for the business. Using real market
-                data to create the model played a huge role in putting forward a
-                strong value proposition to leaders within the business.
+                Maximising the impact of a large project is essential for
+                GetGround&apos;s short-term and long-term business ambitions. Working with
+                our product managers, we built a model to understand how many
+                users we could capture (conservatively and aggressively) and the
+                resulting revenue. Using real market data helped us present a
+                strong value proposition to business leaders.
               </p>
             </div>
           </div>
@@ -223,9 +222,9 @@ export default function GGBookkeepingPage() {
               <p className="typography-body text-foreground">
                 We&apos;d established that the market was there for a more
                 comprehensive bookkeeping experience that included Making Tax
-                Digital, next we needed to understand the current frustrations
+                Digital. Next, we needed to understand the current frustrations
                 users face with tax and bookkeeping and the new technical and
-                user facing requirements this would bring.
+                user-facing requirements this would bring.
               </p>
             </div>
           </div>
@@ -252,7 +251,7 @@ export default function GGBookkeepingPage() {
                   </p>
                   <p className="typography-body text-foreground">
                     Landlords want clarity without complexity when making tax
-                    submissions. Common pain-points centred around lack of
+                    submissions. Common pain points centred around lack of
                     correct figures, which figures to use, and how to find them
                   </p>
                 </div>
@@ -274,7 +273,7 @@ export default function GGBookkeepingPage() {
                   </p>
                   <p className="typography-body text-foreground">
                     MTD is not on every landlord&apos;s radar, and not well
-                    understood, of those that were familiar there was a mixed
+                    understood, of those who were familiar, there was mixed
                     understanding of what was required from them.
                   </p>
                 </div>
@@ -290,27 +289,25 @@ export default function GGBookkeepingPage() {
               <div className="space-y-4">
                 <div className="space-y-2">
                   <p className="typography-body-bold text-foreground">
-                    Bookkeeping, a new and improved transaction, tax deadline,
+                    Bookkeeping: a comprehensive transaction, tax deadline,
                     and submission management tool
                   </p>
                   <p className="typography-body text-foreground">
-                    The current transactions list experience is too basic to
-                    provide value to our users. Users need to be able to see
-                    their property income and expenses from all sources, manage
-                    these transactions efficiently and effectively, and be able
-                    to see and submit their tax obligations.
+                    The current transactions list is too basic to provide
+                    real value. Users need to see their property income and
+                    expenses from all sources, manage these transactions
+                    efficiently, and submit their tax obligations.
                   </p>
                 </div>
 
                 <div className="space-y-2">
                   <p className="typography-body-bold text-foreground">
-                    Complying with HMRC rules, and integrating with APIs
+                    Complying with HMRC rules and integrating with APIs
                   </p>
                   <p className="typography-body text-foreground">
                     To build an effective Making Tax Digital solution, we needed
-                    a solid understanding of HMRC&apos;s full requirements to allow
-                    our users to send a complete and compliant tax submission, to
-                    HMRC, via their MTD APIs.
+                    a solid understanding of HMRC&apos;s requirements to enable
+                    complete and compliant tax submissions via their MTD APIs.
                   </p>
                 </div>
               </div>
@@ -359,9 +356,9 @@ export default function GGBookkeepingPage() {
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">Interactive prototyping</h3>
               <p className="typography-body text-foreground">
-                We move fast at GetGround, and so ideation, prototyping and
-                testing had to be efficient. I focussed on the largest unknown,
-                Making Tax Digital submissions, and created a code first
+                We move fast at GetGround, so ideation, prototyping, and
+                testing had to be efficient. I focused on the largest unknown,
+                Making Tax Digital submissions, and created a code-first
                 prototype to test with users.
               </p>
               <p className="typography-body text-foreground">
@@ -412,14 +409,13 @@ export default function GGBookkeepingPage() {
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">
-                Nextjs & Tailwind, directly in our codebase
+                Next.js & Tailwind, directly in our codebase
               </h3>
               <p className="typography-body text-foreground">
-                Using cursor I created the core Bookkeeping and MTD front-end in
-                our codebase. By delivering the feature in this way I was able to
-                craft the experience to a level that is not possible through
-                figma frames, use real data and staging accounts to validate
-                design decisions, save precious engineering time, and raise the
+                Using Cursor, I created the core Bookkeeping and MTD front-end in
+                our codebase. This approach let me craft the experience beyond what's
+                possible in Figma, use real data and staging accounts to validate
+                design decisions, save engineering time, and raise the
                 quality of our overall output.
               </p>
             </div>
@@ -457,10 +453,10 @@ export default function GGBookkeepingPage() {
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">Supplementary designs</h3>
               <p className="typography-body text-foreground">
-                Alongside the feature branch I delivered a comprehensive set of
-                designs in Figma to fill in the gaps. This approach meant
-                engineers had a full understanding of the experience from both a
-                technical and design perspective.
+                Alongside the feature branch, I delivered a comprehensive set of
+                designs in Figma to fill in the gaps, giving engineers a full
+                understanding of the experience from both a technical and design
+                perspective.
               </p>
             </div>
           </div>
@@ -493,20 +489,18 @@ export default function GGBookkeepingPage() {
             <div className="col-span-12 md:col-span-6 space-y-4">
               <h3 className="typography-h4-demibold">Developer Support</h3>
               <p className="typography-body text-foreground">
-                As a feature branch, and comprehensive designs were handed
-                over, support during build was able to be more focussed on
-                smaller more deliberate decision making, enabling a higher
-                quality output compared to previous features and ways of
-                working.
+                With the feature branch and comprehensive designs in place,
+                I focused support during build on smaller, more deliberate
+                decision-making, enabling higher quality output compared to
+                previous features.
               </p>
             </div>
 
             <div className="col-span-12 md:col-span-6 space-y-4">
               <h3 className="typography-h4-demibold">UXQA</h3>
               <p className="typography-body text-foreground">
-                The higher quality output we suspected with this feature was
-                borne out in UXQA, we found significantly less UI bugs and
-                differences from the intended design.
+                This approach delivered significantly higher quality output in UXQA,
+                with fewer UI bugs and differences from the intended design.
               </p>
             </div>
           </div>
@@ -520,23 +514,22 @@ export default function GGBookkeepingPage() {
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h3 className="typography-h4-demibold">Initial Usage</h3>
               <p className="typography-body text-foreground">
-                Delivery has been broken up to ensure we continue to provide
-                value and not to overwhelm users, with Bookkeeping coming first
-                and MTD later.
+                We broke delivery into phases to provide value without overwhelming
+                users, launching Bookkeeping first with MTD to follow.
               </p>
               <p className="typography-body text-foreground">
-                We have been tracking organic traffic to understand how landlords
-                are using the feature compared to the old transactions list.
-                Results are positive, with bookkeeping usage steadily increasing,
-                and the previous transactions page remaining static.
+                We're tracking organic traffic to understand how landlords use
+                the feature compared to the old transactions list. Bookkeeping
+                usage is steadily increasing while the previous transactions page
+                remains static.
               </p>
               <p className="typography-body text-foreground">
-                Combined with NPS capture we can see the feature naturally
-                gathering increased usage.
+                Combined with NPS capture, the data shows the feature gaining
+                steady adoption.
               </p>
               <p className="typography-body text-foreground">
-                We&apos;ve also seen a healthy appetite for Making Tax Digital, with
-                a CTR on emails of ~9%, and ~35% of those signing up to the MTD
+                We've also seen strong appetite for Making Tax Digital, with
+                a ~9% CTR on emails and ~35% of recipients signing up to the MTD
                 waitlist.
               </p>
             </div>
@@ -562,7 +555,7 @@ export default function GGBookkeepingPage() {
                 Combined with other foundational features, including open
                 banking, enhanced transaction management, and insight
                 improvements, we are now in the position to start bringing
-                smarter, ai enhanced, experiences into the Bookkeeping
+                smarter, AI-enhanced, experiences into the Bookkeeping
                 experience. Discovery work is ongoing, but user data is showing
                 a desire for deeper and more personal experiences powered by
                 AI.
@@ -572,13 +565,7 @@ export default function GGBookkeepingPage() {
             <div className="col-span-12 md:col-span-6 space-y-4">
               <h3 className="typography-h4-demibold">MTD April 2026</h3>
               <p className="typography-body text-foreground">
-                Combined with other foundational features, including open
-                banking, enhanced transaction management, and insight
-                improvements, we are now in the position to start bringing
-                smarter, ai enhanced, experiences into the Bookkeeping
-                experience. Discovery work is ongoing, but user data is showing
-                a desire for deeper and more personal experiences powered by
-                AI.
+                The first cohort of landlords who must use MTD starts in April 2026 (income over £50k). The design and engineering work we have done so far means we are now recognised as an MTD developer by HMRC, the next step is to put our MTD solution into the hands of our users.
               </p>
             </div>
           </div>
