@@ -174,7 +174,7 @@ export default function Home() {
               <div className="grid grid-cols-9 gap-y-20">
                 <h5 className="typography-h5-normal col-span-7 col-start-3 text-right mb-20">
                   <span className="typography-h5-demibold">10 years product design</span>{" "}
-                  experience doing this that and all the product things, I need to think of something to put in here that isn't stale and boring
+                  experience in start-up, agency and enterprise environments building web responsive, mobile native and design systems.
                 </h5>
 
                 <div className="col-span-9 @3xl:col-span-7 flex flex-col gap-20">
