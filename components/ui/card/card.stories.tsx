@@ -1,18 +1,19 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
-import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from './card';
-import { Button } from '../button/button';
+import type { Meta, StoryObj } from "@storybook/nextjs"
+
+import { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent } from "./card"
+import { Button } from "../button/button"
 
 const meta: Meta<typeof Card> = {
-  title: 'Components/Card',
+  title: "Components/Card",
   component: Card,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
-};
+  tags: ["autodocs"],
+}
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   render: () => (

@@ -1,3 +1,15 @@
+/**
+ * ESLint Configuration
+ *
+ * Code Style Conventions (see .cursorrules for full details):
+ * - Use double quotes for strings
+ * - No semicolons (except where required)
+ * - Import order: React/Next.js → Third-party → Components → Utils → Types → Styles
+ *
+ * Note: Quote and semicolon rules are documented in .cursorrules rather than
+ * enforced via ESLint due to compatibility issues with Next.js flat config.
+ */
+
 // For more info, see https://github.com/storybookjs/eslint-plugin-storybook#configuration-flat-config-format
 import storybook from "eslint-plugin-storybook";
 

@@ -9,10 +9,10 @@
 import Image from "next/image"
 import Link from "next/link"
 
+import { CaseStudyLayout } from "@/components/layout/case-study-layout/case-study-layout"
 import { Button } from "@/components/ui/button/button"
 import { Footer } from "@/components/ui/footer/footer"
 import { TopNav } from "@/components/ui/top-nav/top-nav"
-import { CaseStudyLayout } from "@/components/layout/case-study-layout/case-study-layout"
 
 export default function SageDSPage() {
   const navItems = [

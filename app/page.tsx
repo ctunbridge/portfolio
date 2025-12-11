@@ -6,16 +6,17 @@
 "use client";
 
 import * as React from "react";
-import { cn } from "@/lib/utils";
-import { useChatContext } from "@/lib/chat-context";
-import { HomeIntro } from "@/components/home-intro/home-intro";
-import { SideNav } from "@/components/ui/side-nav/side-nav";
-import { CyclingText } from "@/components/ui/cycling-text/cycling-text";
+
+import { Button } from "@/components/ui/button/button";
 import { CaseStudyCard } from "@/components/ui/case-study-card/case-study-card";
+import { ChatInput } from "@/components/ui/chat-input/chat-input";
+import { CyclingText } from "@/components/ui/cycling-text/cycling-text";
 import { ExperienceCard } from "@/components/ui/experience-card/experience-card";
 import { Footer } from "@/components/ui/footer/footer";
-import { ChatInput } from "@/components/ui/chat-input/chat-input";
-import { Button } from "@/components/ui/button/button";
+import { HomeIntro } from "@/components/home-intro/home-intro";
+import { SideNav } from "@/components/ui/side-nav/side-nav";
+import { cn } from "@/lib/utils";
+import { useChatContext } from "@/lib/chat-context";
 
 const INTRO_SHOWN_KEY = "home-intro-shown";
 
@@ -267,7 +268,7 @@ export default function Home() {
             <ChatInput
               placeholder="Ask something..."
               onFocus={handleChatFocus}
-              className="shadow-[0_4px_12px_rgba(0,0,0,0.25)]"
+              className="shadow-elevated"
             />
           </div>
         </div>

@@ -10,9 +10,9 @@ import * as React from "react"
 import { Sparkles, Bike, Send } from "lucide-react"
 import { track } from "@vercel/analytics"
 
-import { cn } from "@/lib/utils"
-import { ChatProvider, useChatContext } from "@/lib/chat-context"
 import { ChatPanel, type Message } from "@/components/ui/chat-panel/chat-panel"
+import { ChatProvider, useChatContext } from "@/lib/chat-context"
+import { cn } from "@/lib/utils"
 
 interface ClientLayoutProps {
   children: React.ReactNode

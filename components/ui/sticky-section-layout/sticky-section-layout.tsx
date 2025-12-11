@@ -55,7 +55,7 @@ export function StickySectionLayout({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
         {/* Sticky title - desktop only */}
         <div className="hidden lg:block lg:col-span-4">
-          <div className="sticky transition-opacity duration-500" style={{ top: '280px' }}>
+          <div className="sticky top-70 transition-opacity duration-500">
             <h2
               className={cn(
                 "typography-h4-normal transition-opacity duration-500",

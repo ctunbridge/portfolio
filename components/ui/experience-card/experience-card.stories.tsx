@@ -1,71 +1,72 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
-import { ExperienceCard } from './experience-card';
+import type { Meta, StoryObj } from "@storybook/nextjs"
+
+import { ExperienceCard } from "./experience-card"
 
 const meta: Meta<typeof ExperienceCard> = {
-  title: 'Components/ExperienceCard',
+  title: "Components/ExperienceCard",
   component: ExperienceCard,
   parameters: {
-    layout: 'padded',
+    layout: "padded",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     employer: {
-      control: { type: 'text' },
-      description: 'Employer name',
+      control: { type: "text" },
+      description: "Employer name",
     },
     dates: {
-      control: { type: 'text' },
-      description: 'Employment dates',
+      control: { type: "text" },
+      description: "Employment dates",
     },
     jobTitle: {
-      control: { type: 'text' },
-      description: 'Job title',
+      control: { type: "text" },
+      description: "Job title",
     },
     summary: {
-      control: { type: 'text' },
-      description: 'Job description/summary',
+      control: { type: "text" },
+      description: "Job description/summary",
     },
   },
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    employer: 'Acme Corporation',
-    dates: '2020 - 2023',
-    jobTitle: 'Senior Product Designer',
-    summary: 'Led design initiatives for the core product suite, establishing design systems and processes that improved team efficiency by 40%. Collaborated with cross-functional teams to deliver user-centered solutions.',
+    employer: "Acme Corporation",
+    dates: "2020 - 2023",
+    jobTitle: "Senior Product Designer",
+    summary: "Led design initiatives for the core product suite, establishing design systems and processes that improved team efficiency by 40%. Collaborated with cross-functional teams to deliver user-centered solutions.",
   },
-};
+}
 
 export const CurrentRole: Story = {
   args: {
-    employer: 'Tech Startup',
-    dates: '2023 - Present',
-    jobTitle: 'Lead UX Designer',
-    summary: 'Driving design strategy and execution for a fast-growing SaaS platform. Managing a team of designers and implementing user research practices that directly informed product decisions.',
+    employer: "Tech Startup",
+    dates: "2023 - Present",
+    jobTitle: "Lead UX Designer",
+    summary: "Driving design strategy and execution for a fast-growing SaaS platform. Managing a team of designers and implementing user research practices that directly informed product decisions.",
   },
-};
+}
 
 export const DesignRole: Story = {
   args: {
-    employer: 'Creative Design Agency',
-    dates: '2018 - 2020',
-    jobTitle: 'UI/UX Designer',
-    summary: 'Designed digital experiences for clients across various industries including healthcare, finance, and e-commerce. Contributed to multiple award-winning projects.',
+    employer: "Creative Design Agency",
+    dates: "2018 - 2020",
+    jobTitle: "UI/UX Designer",
+    summary: "Designed digital experiences for clients across various industries including healthcare, finance, and e-commerce. Contributed to multiple award-winning projects.",
   },
-};
+}
 
 export const EarlyCareer: Story = {
   args: {
-    employer: 'Innovation Labs',
-    dates: '2017 - 2018',
-    jobTitle: 'Junior Designer',
-    summary: 'Supported senior designers in creating wireframes, prototypes, and visual designs for web and mobile applications.',
+    employer: "Innovation Labs",
+    dates: "2017 - 2018",
+    jobTitle: "Junior Designer",
+    summary: "Supported senior designers in creating wireframes, prototypes, and visual designs for web and mobile applications.",
   },
-};
+}
 
 export const Timeline: Story = {
   render: () => (

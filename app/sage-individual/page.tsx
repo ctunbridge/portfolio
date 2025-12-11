@@ -11,10 +11,10 @@ import Image from "next/image"
 import Link from "next/link"
 
 import { Button } from "@/components/ui/button/button"
-import { cn } from "@/lib/utils"
+import { CaseStudyLayout } from "@/components/layout/case-study-layout/case-study-layout"
 import { Footer } from "@/components/ui/footer/footer"
 import { TopNav } from "@/components/ui/top-nav/top-nav"
-import { CaseStudyLayout } from "@/components/layout/case-study-layout/case-study-layout"
+import { cn } from "@/lib/utils"
 
 const principles = [
   {

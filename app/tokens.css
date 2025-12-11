@@ -292,6 +292,19 @@
      ============================================ */
 
   /* ============================================
+     SHADOW TOKENS
+     Semantic shadow values for elevation
+     ============================================ */
+
+  /* Panel shadow - subtle elevation for panels and cards */
+  --shadow-panel: 0 0 4px 0 var(--black);
+  --shadow-panel-opacity: 0.1;
+
+  /* Elevated shadow - higher elevation for floating elements */
+  --shadow-elevated: 0 4px 12px var(--black);
+  --shadow-elevated-opacity: 0.25;
+
+  /* ============================================
      ANIMATION TOKENS
      Custom animation durations and timing
      ============================================ */

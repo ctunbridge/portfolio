@@ -68,13 +68,10 @@ export function CyclingText({
   return (
     <span
       className={cn(
-        "transition-opacity duration-300",
+        "transition-opacity duration-300 ease-out-quart",
         phase === "visible" ? "opacity-100" : "opacity-0",
         className
       )}
-      style={{
-        transitionTimingFunction: "cubic-bezier(0.33, 1, 0.68, 1)",
-      }}
       onTransitionEnd={handleTransitionEnd}
     >
       {texts[currentIndex]}

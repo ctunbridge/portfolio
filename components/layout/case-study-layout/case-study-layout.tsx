@@ -66,7 +66,7 @@ export function CaseStudyLayout({ sections }: CaseStudyLayoutProps) {
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
       {/* Fixed title column - desktop only */}
       <div className="hidden lg:block lg:col-span-4">
-        <div className="sticky" style={{ top: '280px' }}>
+        <div className="sticky top-70">
           <div className="relative min-h-[3rem]">
             {sections.map((section, index) => (
               <h2

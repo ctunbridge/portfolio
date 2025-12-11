@@ -21,10 +21,10 @@
 import * as React from "react"
 import { X, SquarePen } from "lucide-react"
 
-import { cn } from "@/lib/utils"
+import { AssistantMessage } from "@/components/ui/assistant-message/assistant-message"
 import { ChatInput } from "@/components/ui/chat-input/chat-input"
 import { UserChatBubble } from "@/components/ui/user-chat-bubble/user-chat-bubble"
-import { AssistantMessage } from "@/components/ui/assistant-message/assistant-message"
+import { cn } from "@/lib/utils"
 
 interface Suggestion {
   /** Icon element to display */
@@ -136,7 +136,7 @@ function ChatPanel({
           // Desktop: side panel anchored to bottom, fills to max height
           "lg:top-auto lg:right-4 lg:bottom-4 lg:h-[min(1200px,calc(100vh-32px))]",
           "lg:w-[356px] lg:rounded-3xl lg:border lg:border-border",
-          "lg:shadow-[0_0_4px_0_rgba(0,0,0,0.1)]",
+          "lg:shadow-panel",
           // Transitions
           "transition-transform duration-300",
           isOpen ? "translate-x-0" : "translate-x-full",

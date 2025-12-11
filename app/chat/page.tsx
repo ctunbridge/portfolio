@@ -11,9 +11,9 @@ import Link from "next/link"
 import { ArrowLeft, Sparkles, AlertCircle } from "lucide-react"
 import { track } from "@vercel/analytics"
 
+import { AssistantMessage } from "@/components/ui/assistant-message/assistant-message"
 import { ChatInput } from "@/components/ui/chat-input/chat-input"
 import { UserChatBubble } from "@/components/ui/user-chat-bubble/user-chat-bubble"
-import { AssistantMessage } from "@/components/ui/assistant-message/assistant-message"
 import { cn } from "@/lib/utils"
 
 interface Message {

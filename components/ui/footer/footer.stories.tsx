@@ -1,23 +1,24 @@
-import type { Meta, StoryObj } from '@storybook/nextjs';
-import { Footer } from './footer';
+import type { Meta, StoryObj } from "@storybook/nextjs"
+
+import { Footer } from "./footer"
 
 const meta: Meta<typeof Footer> = {
-  title: 'Components/Footer',
+  title: "Components/Footer",
   component: Footer,
   parameters: {
-    layout: 'padded',
+    layout: "padded",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     className: {
-      control: { type: 'text' },
-      description: 'Additional CSS classes',
+      control: { type: "text" },
+      description: "Additional CSS classes",
     },
   },
-};
+}
 
-export default meta;
-type Story = StoryObj<typeof meta>;
+export default meta
+type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {},
