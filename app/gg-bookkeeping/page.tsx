@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button/button"
 import { cn } from "@/lib/utils"
 import { Footer } from "@/components/ui/footer/footer"
 import { TopNav } from "@/components/ui/top-nav/top-nav"
-import { CaseStudyLayout } from "@/components/ui/case-study-layout/case-study-layout"
+import { CaseStudyLayout } from "@/components/layout/case-study-layout/case-study-layout"
 
 const principles = [
   {
@@ -44,8 +44,11 @@ function ProductPrinciplesSection() {
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting)
+      (entries) => {
+        const entry = entries[0]
+        if (entry) {
+          setIsVisible(entry.isIntersecting)
+        }
       },
       {
         threshold: [0, 0.1],
@@ -113,7 +116,7 @@ function ProductPrinciplesSection() {
                 isVisible ? "opacity-100" : "opacity-0"
               )}
             >
-              Product Principles
+              Product principles
             </h2>
           </div>
         </div>
@@ -121,7 +124,7 @@ function ProductPrinciplesSection() {
         {/* Content - Cycling principles */}
         <div className="col-span-1 lg:col-span-8">
           {/* Mobile/Tablet title */}
-          <h2 className="typography-h3-demibold lg:hidden mb-8">Product Principles</h2>
+          <h2 className="typography-h3-demibold lg:hidden mb-8">Product principles</h2>
 
           <div className="sticky top-40 h-screen flex items-center">
             <div className="w-full space-y-6">
@@ -174,20 +177,20 @@ function ProductPrinciplesSection() {
 export default function GGBookkeepingPage() {
   const navItems = [
     { label: "Introduction", id: "introduction" },
-    { label: "Product Principles", id: "product-principles" },
-    { label: "Impact Model", id: "impact-model" },
+    { label: "Product principles", id: "product-principles" },
+    { label: "Impact model", id: "impact-model" },
     { label: "Discovery", id: "discovery" },
     { label: "Ideation", id: "ideation" },
     { label: "Delivery", id: "delivery" },
     { label: "Build", id: "build" },
     { label: "Impact", id: "impact" },
-    { label: "Next Steps", id: "next-steps" },
+    { label: "Next steps", id: "next-steps" },
   ]
 
   const caseStudySections = [
     {
       id: "product-principles",
-      title: "Product Principles",
+      title: "Product principles",
       content: (
         <div className="space-y-8">
           {principles.map((principle) => (
@@ -205,7 +208,7 @@ export default function GGBookkeepingPage() {
     },
     {
       id: "impact-model",
-      title: "Impact Model",
+      title: "Impact model",
       content: (
         <>
           <div className="space-y-4 mb-8">
@@ -224,7 +227,7 @@ export default function GGBookkeepingPage() {
             alt="Making Tax Digital impact model showing revenue projections"
             width={1920}
             height={1080}
-            className="w-full h-auto rounded-lg"
+            className="w-full h-auto rounded-lg mb-8"
           />
         </>
       ),
@@ -252,11 +255,11 @@ export default function GGBookkeepingPage() {
             alt="Discovery research and user insights"
             width={1920}
             height={1080}
-            className="w-full h-auto rounded-lg my-8"
+            className="w-full h-auto rounded-lg mb-8"
           />
 
           <div className="space-y-12">
-            <div className="space-y-4">
+            <div className="space-y-4 mt-30 lg:mt-45">
               <h3 className="typography-h4-demibold">User sentiment</h3>
               <div className="space-y-6">
                 <div className="space-y-2">
@@ -293,7 +296,7 @@ export default function GGBookkeepingPage() {
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 mt-30 lg:mt-45">
               <h3 className="typography-h4-demibold">
                 What does this mean for the platform?
               </h3>
@@ -328,7 +331,7 @@ export default function GGBookkeepingPage() {
     },
     {
       id: "ideation",
-      title: "Ideation and Testing",
+      title: "Ideation and testing",
       content: (
         <>
           <div className="space-y-4">
@@ -343,7 +346,7 @@ export default function GGBookkeepingPage() {
             </p>
           </div>
 
-          <div className="space-y-6 lg:space-y-10 my-8">
+          <div className="space-y-6 lg:space-y-10">
             <Image
               src="/images/case-studies/gg-bookkeeping/Technical Whiteboard.jpg"
               alt="Technical whiteboard showing journey mapping and user flows"
@@ -360,7 +363,7 @@ export default function GGBookkeepingPage() {
             />
           </div>
 
-          <div className="space-y-4 mt-12">
+          <div className="space-y-4 mt-30 lg:mt-45">
             <h3 className="typography-h4-demibold">Interactive prototyping</h3>
             <p className="typography-body text-foreground">
               We move fast at GetGround, so ideation, prototyping, and
@@ -380,10 +383,10 @@ export default function GGBookkeepingPage() {
             alt="User testing the Making Tax Digital prototype"
             width={1920}
             height={1080}
-            className="w-full h-auto rounded-lg my-8"
+            className="w-full h-auto rounded-lg mb-20"
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="space-y-8">
             <div className="space-y-2">
               <p className="typography-h5-demibold text-foreground">
                 40% confidence uplift
@@ -425,7 +428,7 @@ export default function GGBookkeepingPage() {
             </p>
           </div>
 
-          <div className="space-y-6 lg:space-y-10 my-8">
+          <div className="space-y-6 lg:space-y-10">
             <Image
               src="/images/case-studies/gg-bookkeeping/CodebaseUI.jpg"
               alt="Bookkeeping UI built directly in the codebase"
@@ -449,7 +452,7 @@ export default function GGBookkeepingPage() {
             />
           </div>
 
-          <div className="space-y-4 mt-12">
+          <div className="space-y-4 mt-30 lg:mt-45">
             <h3 className="typography-h4-demibold">Supplementary designs</h3>
             <p className="typography-body text-foreground">
               Alongside the feature branch, I delivered a comprehensive set of
@@ -482,9 +485,9 @@ export default function GGBookkeepingPage() {
       id: "build",
       title: "Build",
       content: (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="space-y-8">
           <div className="space-y-4">
-            <h3 className="typography-h4-demibold">Developer Support</h3>
+            <h3 className="typography-h4-demibold">Developer support</h3>
             <p className="typography-body text-foreground">
               With the feature branch and comprehensive designs in place,
               I focused support during build on smaller, more deliberate
@@ -492,7 +495,7 @@ export default function GGBookkeepingPage() {
               previous features.
             </p>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-4 mt-30 lg:mt-45">
             <h3 className="typography-h4-demibold">UXQA</h3>
             <p className="typography-body text-foreground">
               This approach delivered significantly higher quality output in UXQA,
@@ -508,7 +511,7 @@ export default function GGBookkeepingPage() {
       content: (
         <>
           <div className="space-y-4">
-            <h3 className="typography-h4-demibold">Initial Usage</h3>
+            <h3 className="typography-h4-demibold">Initial usage</h3>
             <p className="typography-body text-foreground">
               We broke delivery into phases to provide value without overwhelming
               users, launching Bookkeeping first with MTD to follow.
@@ -535,7 +538,7 @@ export default function GGBookkeepingPage() {
             alt="Analytics dashboard showing bookkeeping feature usage"
             width={1920}
             height={1080}
-            className="w-full h-auto rounded-lg mt-8"
+            className="w-full h-auto rounded-lg mb-8"
           />
         </>
       ),
@@ -557,13 +560,13 @@ export default function GGBookkeepingPage() {
               AI.
             </p>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-4 mt-30 lg:mt-45">
             <h3 className="typography-h4-demibold">MTD April 2026</h3>
             <p className="typography-body text-foreground">
               The first cohort of landlords who must use MTD starts in April 2026 (income over £50k). The design and engineering work we have done so far means we are now recognised as an MTD developer by HMRC, the next step is to put our MTD solution into the hands of our users.
             </p>
           </div>
-          <div className="mt-30 flex">
+          <div className="mt-30 lg:mt-45 flex">
             <Button variant="outline" asChild>
               <Link href="/gg-ui">Next project</Link>
             </Button>
@@ -581,7 +584,7 @@ export default function GGBookkeepingPage() {
         {/* Introduction Section */}
         <section id="introduction" className="space-y-8">
           <h1 className="typography-h2-demibold">
-            Bookkeeping & Making Tax Digital
+            Bookkeeping & Tax
           </h1>
 
           <div className="grid grid-cols-12">

@@ -12,6 +12,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button/button"
 import { Footer } from "@/components/ui/footer/footer"
 import { TopNav } from "@/components/ui/top-nav/top-nav"
+import { CaseStudyLayout } from "@/components/layout/case-study-layout/case-study-layout"
 
 export default function SageDSPage() {
   const navItems = [
@@ -21,49 +22,17 @@ export default function SageDSPage() {
     { label: "Documentation", id: "documentation" },
   ]
 
-  return (
-    <>
-      <TopNav items={navItems} />
-
-      <div className="space-y-45 md:space-y-65 lg:space-y-80 pt-40">
-        {/* Introduction Section */}
-        <section id="introduction" className="space-y-8">
-          <h1 className="typography-h2-demibold">Graphite Design System</h1>
-
-          <div className="grid grid-cols-12">
-            <div className="col-span-12 lg:col-span-9 space-y-6">
-              <p className="typography-body text-foreground">
-                <span className="typography-body-bold">Platform</span> · Native iOS/Android
-              </p>
-
-              <p className="typography-body text-foreground">
-                <span className="typography-body-bold">Team</span> · Built in Figma, documented using Zeroheight
-              </p>
-
-              <p className="typography-body text-foreground">
-                <span className="typography-body-bold">Role</span> · Lead Product Designer
-              </p>
-            </div>
-          </div>
-
-          <Image
-            src="/images/case-studies/sage-ds/SageDSHero.jpg"
-            alt="Sage Design System overview showing components, navigation, and design tokens"
-            width={1920}
-            height={1080}
-            className="w-full h-auto rounded-lg"
-          />
-        </section>
-
-        {/* Foundations Section */}
-        <section id="foundations" className="space-y-8">
-          <h2 className="typography-h3-demibold">Foundations</h2>
-
-          {/* Foundations Text Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+  const caseStudySections = [
+    {
+      id: "foundations",
+      title: "Foundations",
+      content: (
+        <>
+          {/* Foundations Text Blocks */}
+          <div className="space-y-8 mb-8">
             {/* Colour Variables */}
             <div className="space-y-4">
-              <h3 className="typography-h4-demibold">Colour Variables</h3>
+              <h3 className="typography-h4-demibold">Colour variables</h3>
               <p className="typography-body text-foreground">
                 Colour variables establish the foundational colour palette and semantic tokens
                 used throughout the design system; primary, secondary, and functional colours
@@ -97,16 +66,18 @@ export default function SageDSPage() {
             alt="Design system foundations showing colour variables, typography, and icon library"
             width={1920}
             height={1080}
-            className="w-full h-auto rounded-lg mt-12 mb-15"
+            className="w-full h-auto rounded-lg"
           />
-        </section>
-
-        {/* Components Section */}
-        <section id="components" className="space-y-8">
-          <h2 className="typography-h3-demibold">Components</h2>
-
-          {/* Components Text Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        </>
+      ),
+    },
+    {
+      id: "components",
+      title: "Components",
+      content: (
+        <>
+          {/* Components Text Blocks */}
+          <div className="space-y-8 mb-8">
             {/* Native */}
             <div className="space-y-4">
               <h3 className="typography-h4-demibold">Native</h3>
@@ -135,24 +106,18 @@ export default function SageDSPage() {
             alt="Design system components showing native and bespoke implementations"
             width={1920}
             height={1080}
-            className="w-full h-auto rounded-lg mt-12 mb-15"
+            className="w-full h-auto rounded-lg"
           />
-        </section>
-
-        {/* Documentation Section */}
-        <section id="documentation" className="space-y-8">
-          <h2 className="typography-h3-demibold">Documentation</h2>
-
-          <Image
-            src="/images/case-studies/sage-ds/Zeroheight 1.jpg"
-            alt="Documentation platforms showing Figma and Zeroheight implementation"
-            width={1920}
-            height={1080}
-            className="w-full h-auto rounded-lg mt-12 mb-15"
-          />
-
-          {/* Documentation Text Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        </>
+      ),
+    },
+    {
+      id: "documentation",
+      title: "Documentation",
+      content: (
+        <>
+          {/* Documentation Text Blocks */}
+          <div className="space-y-8 mb-8">
             {/* Figma */}
             <div className="space-y-4">
               <h3 className="typography-h4-demibold">Figma</h3>
@@ -174,18 +139,64 @@ export default function SageDSPage() {
               </p>
             </div>
           </div>
-        </section>
-      </div>
 
-      {/* Next Project Button */}
-      <div className="mt-60 flex justify-center">
-        <Button variant="outline" asChild>
-          <Link href="/gg-bookkeeping">Next project</Link>
-        </Button>
+          <Image
+            src="/images/case-studies/sage-ds/Zeroheight 1.jpg"
+            alt="Documentation platforms showing Figma and Zeroheight implementation"
+            width={1920}
+            height={1080}
+            className="w-full h-auto rounded-lg"
+          />
+          <div className="mt-30 lg:mt-45 flex">
+            <Button variant="outline" asChild>
+              <Link href="/gg-bookkeeping">Next project</Link>
+            </Button>
+          </div>
+        </>
+      ),
+    },
+  ]
+
+  return (
+    <>
+      <TopNav items={navItems} />
+
+      <div className="space-y-100 pt-40">
+        {/* Introduction Section */}
+        <section id="introduction" className="space-y-8">
+          <h1 className="typography-h2-demibold">Graphite design system</h1>
+
+          <div className="grid grid-cols-12">
+            <div className="col-span-12 lg:col-span-9 space-y-6">
+              <p className="typography-body text-foreground">
+                <span className="typography-body-bold">Platform</span> · Native iOS/Android
+              </p>
+
+              <p className="typography-body text-foreground">
+                <span className="typography-body-bold">Team</span> · Built in Figma, documented using Zeroheight
+              </p>
+
+              <p className="typography-body text-foreground">
+                <span className="typography-body-bold">Role</span> · Lead Product Designer
+              </p>
+            </div>
+          </div>
+
+          <Image
+            src="/images/case-studies/sage-ds/SageDSHero.jpg"
+            alt="Sage Design System overview showing components, navigation, and design tokens"
+            width={1920}
+            height={1080}
+            className="w-full h-auto rounded-lg"
+          />
+        </section>
+
+        {/* Case Study Sections with Fixed Left Title */}
+        <CaseStudyLayout sections={caseStudySections} />
       </div>
 
       {/* Footer */}
-      <div className="grid grid-cols-12 mt-40 pb-40">
+      <div className="grid grid-cols-12 mt-80 pb-40">
         <div className="col-span-12 lg:col-span-9 lg:col-start-3">
           <Footer />
         </div>

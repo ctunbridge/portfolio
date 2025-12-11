@@ -21,9 +21,12 @@ export function StickySectionLayout({
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
+      (entries) => {
         // Section is visible when any part of it is in the viewport
-        setIsVisible(entry.isIntersecting)
+        const entry = entries[0]
+        if (entry) {
+          setIsVisible(entry.isIntersecting)
+        }
       },
       {
         // Trigger when section enters viewport

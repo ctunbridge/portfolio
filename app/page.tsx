@@ -137,7 +137,7 @@ export default function Home() {
                 <CaseStudyCard
                   businessName="GetGround"
                   year="2025"
-                  projectTitle="Bookkeeping & MTD"
+                  projectTitle="Bookkeeping & Tax"
                   imageSrc="/images/case-studies/GG Home - BK.jpg"
                   imageAlt="GetGround Bookkeeping & MTD"
                   href="/gg-bookkeeping"

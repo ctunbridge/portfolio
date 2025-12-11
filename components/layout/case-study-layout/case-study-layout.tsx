@@ -105,3 +105,4 @@ export function CaseStudyLayout({ sections }: CaseStudyLayoutProps) {
     </div>
   )
 }
+

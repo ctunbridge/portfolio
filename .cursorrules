@@ -359,6 +359,12 @@ The fact that you built prototypes in the codebase is impressive enough without 
 - ✅ Official names: "Making Tax Digital" (when referring to HMRC's program)
 - ❌ Don't capitalize: "ai", "react native", "nextjs"
 
+#### Title Capitalization
+- ✅ ALWAYS use sentence case for section titles and navigation labels: "Product principles", "Impact model", "Next steps"
+- ✅ Only capitalize the first word (and proper nouns/acronyms): "GetGround AI", "Design, test & deliver"
+- ❌ NEVER use title case for section titles: "Product Principles", "Impact Model", "Next Steps"
+- ✅ Exception: Keep proper nouns and acronyms capitalized: "GetGround AI", "MTD", "HMRC"
+
 #### Number Style
 - ✅ Use "+" for approximate large numbers: "30,000+", "15,000+"
 - ✅ Use commas in numbers over 999: "4.5 million", "30,000"
