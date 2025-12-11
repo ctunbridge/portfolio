@@ -544,7 +544,7 @@ export default function GGBookkeepingPage() {
       id: "next-steps",
       title: "Next steps",
       content: (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="space-y-8">
           <div className="space-y-4">
             <h3 className="typography-h4-demibold">Bookkeeping x AI</h3>
             <p className="typography-body text-foreground">
@@ -563,6 +563,11 @@ export default function GGBookkeepingPage() {
               The first cohort of landlords who must use MTD starts in April 2026 (income over £50k). The design and engineering work we have done so far means we are now recognised as an MTD developer by HMRC, the next step is to put our MTD solution into the hands of our users.
             </p>
           </div>
+          <div className="mt-30 flex">
+            <Button variant="outline" asChild>
+              <Link href="/gg-ui">Next project</Link>
+            </Button>
+          </div>
         </div>
       ),
     },
@@ -572,7 +577,7 @@ export default function GGBookkeepingPage() {
     <>
       <TopNav items={navItems} />
 
-      <div className="space-y-[400px] pt-40">
+      <div className="space-y-100 pt-40">
         {/* Introduction Section */}
         <section id="introduction" className="space-y-8">
           <h1 className="typography-h2-demibold">
@@ -608,15 +613,8 @@ export default function GGBookkeepingPage() {
         <CaseStudyLayout sections={caseStudySections} />
       </div>
 
-      {/* Next Project Button */}
-      <div className="mt-60 flex justify-center">
-        <Button variant="outline" asChild>
-          <Link href="/gg-ui">Next project</Link>
-        </Button>
-      </div>
-
       {/* Footer */}
-      <div className="grid grid-cols-12 mt-40 pb-40">
+      <div className="grid grid-cols-12 mt-80 pb-40">
         <div className="col-span-12 lg:col-span-9 lg:col-start-3">
           <Footer />
         </div>
