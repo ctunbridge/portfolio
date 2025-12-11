@@ -55,13 +55,17 @@ function TopNav({ className, name = "CT", items = [], ...props }: TopNavProps) {
     }
   }, [activeSection])
 
-  // Intersection Observer for scroll-based active state
+  // Scroll-based active state
   React.useEffect(() => {
     if (items.length === 0) return
 
-    // Handle scroll to detect when at top of page
     const handleScroll = () => {
       const scrollY = window.scrollY
+      const viewportHeight = window.innerHeight
+      
+      // Trigger point at 70% down from top of viewport (30% up from bottom)
+      // This triggers earlier when scrolling down
+      const triggerPoint = viewportHeight * 0.7
 
       // If at or near the top of the page (within 100px), set to first section
       if (scrollY < 100) {
@@ -71,40 +75,38 @@ function TopNav({ className, name = "CT", items = [], ...props }: TopNavProps) {
         }
         return
       }
+
+      // Find the last section whose top has passed the trigger point
+      let activeId = ""
+
+      items.forEach((item) => {
+        if (!item.id || item.action) return
+
+        const element = document.getElementById(item.id)
+        if (!element) return
+
+        const rect = element.getBoundingClientRect()
+        
+        // Section becomes active when its top passes the trigger point
+        if (rect.top <= triggerPoint) {
+          activeId = item.id
+        }
+      })
+
+      if (activeId) {
+        setActiveSection(activeId)
+      }
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && window.scrollY >= 100) {
-            setActiveSection(entry.target.id)
-          }
-        })
-      },
-      {
-        rootMargin: "-10% 0px -80% 0px",
-        threshold: 0,
-      }
-    )
-
-    items.forEach((item) => {
-      // Only observe items with section IDs (not action items)
-      if (item.id && !item.action) {
-        const element = document.getElementById(item.id)
-        if (element) {
-          observer.observe(element)
-        }
-      }
-    })
-
     // Set initial state
-    handleScroll()
+    const timer = setTimeout(() => {
+      handleScroll()
+    }, 100)
 
-    // Listen to scroll events
     window.addEventListener("scroll", handleScroll, { passive: true })
 
     return () => {
-      observer.disconnect()
+      clearTimeout(timer)
       window.removeEventListener("scroll", handleScroll)
     }
   }, [items])
