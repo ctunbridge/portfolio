@@ -56,8 +56,8 @@ export const portfolioContext: PortfolioContext = {
       jobTitle: "Lead Product Designer",
       dates: "2024 to Present",
       summary: [
-        "Responsible for multiple features across the GetGround customer platform, allowing 30,000 investors to manage their property from sourcing, to bookkeeping, to tax submissions and portfolio optimisation, and owner of our Capcom design system.",
-        "Most recently delivered the new Bookkeeping and tax submissions area from end to end, whilst pioneering new ways of working to embed AI into our workflow. This included: business impact modelling; AI enabled prototyping directly in our codebase; synthesising test results and research in Notion to create a searchable resource database; creation of bespoke agents such as CopyKat, a copywriting agent with GetGround context and tone of voice baked into a Slackbot.",
+        "Lead Product Designer for multiple features across the GetGround platform, serving 30,000+ property investors. Designed and delivered the bookkeeping and tax submissions area end-to-end, led the platform UI refresh across portfolio, transactions, property details, and financial accounts, and built and maintain the Capcom design system.",
+        "Designed AI interaction models and dynamic experiences that generate actions and reports based on portfolio, market, and user context. Built business impact models to inform product decisions, integrated AI into the design process through code-first prototyping in Next.js, and created custom agents like CopyKat, a context-aware copywriting tool.",
       ],
     },
     {
