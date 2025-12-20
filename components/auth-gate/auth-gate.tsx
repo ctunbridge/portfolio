@@ -114,14 +114,11 @@ function AuthGate({ children }: AuthGateProps) {
                       autoFocus
                       className="w-80"
                     />
-                    <p className="typography-caption text-secondary mt-2">
-                      Contact hello@christunbridge.co.uk to receive a password
-                    </p>
                     <p className={cn(
-                      "typography-caption text-destructive mt-1 h-5 lg:hidden",
-                      error ? "visible" : "invisible"
+                      "typography-caption mt-2 w-80",
+                      error ? "text-destructive" : "text-secondary"
                     )}>
-                      {error || "\u00A0"}
+                      {error ? "Incorrect password, contact hello@christunbridge.co.uk" : "Contact hello@christunbridge.co.uk to receive a password"}
                     </p>
                   </div>
                   <Button
@@ -132,12 +129,6 @@ function AuthGate({ children }: AuthGateProps) {
                     {isLoading ? "Verifying..." : "Enter"}
                   </Button>
                 </div>
-                <p className={cn(
-                  "typography-caption text-destructive mt-1 h-5 hidden lg:block",
-                  error ? "lg:visible" : "lg:invisible"
-                )}>
-                  {error || "\u00A0"}
-                </p>
               </form>
             )}
           </div>
