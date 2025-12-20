@@ -47,6 +47,17 @@
     @apply border-border outline-ring/50;
   }
 
+  html,
+  body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
   body {
     @apply text-foreground font-sans antialiased;
     background: linear-gradient(to bottom, var(--background), var(--warmgrey-100));

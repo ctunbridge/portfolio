@@ -17,9 +17,11 @@ interface AuthGateProps {
 }
 
 const AUTH_KEY = "site-authenticated";
+const INTRO_SHOWN_KEY = "home-intro-shown";
 
 function AuthGate({ children }: AuthGateProps) {
   const [isAuthenticated, setIsAuthenticated] = React.useState<boolean | null>(null);
+  const [isExiting, setIsExiting] = React.useState(false);
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState("");
   const [isLoading, setIsLoading] = React.useState(false);
@@ -46,7 +48,11 @@ function AuthGate({ children }: AuthGateProps) {
 
       if (data.success) {
         sessionStorage.setItem(AUTH_KEY, "true");
-        setIsAuthenticated(true);
+        sessionStorage.setItem(INTRO_SHOWN_KEY, "true");
+        setIsExiting(true);
+        setTimeout(() => {
+          setIsAuthenticated(true);
+        }, 800);
       } else {
         setError("Incorrect password");
         setPassword("");
@@ -68,49 +74,73 @@ function AuthGate({ children }: AuthGateProps) {
     return <>{children}</>;
   }
 
-  // Show password gate
+  // Render children in background (hidden) so they're preloaded
+  // Show password gate on top
   return (
-    <div
-      data-slot="auth-gate"
-      className={cn(
-        "fixed inset-0 z-[100] bg-background pt-[120px] md:pt-[200px] lg:pt-[280px] px-8"
+    <>
+      {isExiting && (
+        <div className="opacity-0">
+          {children}
+        </div>
       )}
-    >
-      <div className="grid grid-cols-12 gap-4">
-        <div className="col-span-12 lg:col-start-4 lg:col-span-9 flex flex-col items-start text-left animate-fade-in">
-          <h1 className="typography-h1-demibold text-foreground">
-            Chris Tunbridge
-          </h1>
-          <p className="typography-h1-normal text-secondary mb-10">
-            Product Designer
-          </p>
+      <div
+        data-slot="auth-gate"
+        className={cn(
+          "fixed inset-0 z-[100] bg-background pt-[120px] md:pt-[200px] lg:pt-[280px] px-8"
+        )}
+      >
+        <div className="grid grid-cols-12 gap-4">
+          <div className={cn(
+            "col-span-12 lg:col-start-4 lg:col-span-9 flex flex-col items-start text-left",
+            isExiting && "animate-fade-out-up"
+          )}>
+            <h1 className="typography-h1-demibold text-foreground">
+              Chris Tunbridge
+            </h1>
+            <p className="typography-h1-normal text-secondary">
+              Product Designer
+            </p>
 
-          <form onSubmit={handleSubmit} className="w-full max-w-sm space-y-4">
-            <div className="space-y-2">
-              <Input
-                type="password"
-                placeholder="Enter password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                disabled={isLoading}
-                autoFocus
-                className="h-12 text-base"
-              />
-              {error && (
-                <p className="text-sm text-destructive">{error}</p>
-              )}
-            </div>
-            <Button
-              type="submit"
-              disabled={isLoading || !password}
-              className="w-full"
-            >
-              {isLoading ? "Verifying..." : "Enter"}
-            </Button>
-          </form>
+            {!isExiting && (
+              <form onSubmit={handleSubmit} className="flex flex-col mt-10">
+                <div className="flex flex-col lg:flex-row gap-4 lg:gap-6">
+                  <div className="flex flex-col">
+                    <Input
+                      type="password"
+                      placeholder="Enter password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      disabled={isLoading}
+                      autoFocus
+                      className="w-65"
+                    />
+                    <p className={cn(
+                      "typography-caption text-destructive mt-1 h-5 lg:hidden",
+                      error ? "visible" : "invisible"
+                    )}>
+                      {error || "\u00A0"}
+                    </p>
+                  </div>
+                  <Button
+                    type="submit"
+                    disabled={isLoading || !password}
+                    className="w-30"
+                  >
+                    {isLoading ? "Verifying..." : "Enter"}
+                  </Button>
+                </div>
+                <p className={cn(
+                  "typography-caption text-destructive mt-1 h-5 hidden lg:block",
+                  error ? "lg:visible" : "lg:invisible"
+                )}>
+                  {error || "\u00A0"}
+                </p>
+              </form>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

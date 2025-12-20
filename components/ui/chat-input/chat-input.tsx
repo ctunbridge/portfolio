@@ -114,7 +114,7 @@ function ChatInput({
         disabled={disabled || isLoading}
         autoFocus={autoFocus}
         className={cn(
-          "flex-1 h-11 pl-4 pr-2 py-2 bg-transparent typography-body-sm",
+          "flex-1 h-11 pl-4 pr-2 pt-2.5 pb-2 bg-transparent typography-body-sm",
           "placeholder:text-muted-foreground",
           "outline-none border-none",
           "disabled:cursor-not-allowed"
