@@ -112,8 +112,11 @@ function AuthGate({ children }: AuthGateProps) {
                       onChange={(e) => setPassword(e.target.value)}
                       disabled={isLoading}
                       autoFocus
-                      className="w-65"
+                      className="w-80"
                     />
+                    <p className="typography-caption text-secondary mt-2">
+                      Contact hello@christunbridge.co.uk to receive a password
+                    </p>
                     <p className={cn(
                       "typography-caption text-destructive mt-1 h-5 lg:hidden",
                       error ? "visible" : "invisible"
