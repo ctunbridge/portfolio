@@ -118,7 +118,11 @@ function AuthGate({ children }: AuthGateProps) {
                       "typography-caption mt-2 w-80",
                       error ? "text-destructive" : "text-secondary"
                     )}>
-                      {error ? "Incorrect password, contact hello@christunbridge.co.uk" : "Contact hello@christunbridge.co.uk to receive a password"}
+                      {error ? (
+                        <>Incorrect password, contact <a href="mailto:hello@christunbridge.co.uk">hello@christunbridge.co.uk</a></>
+                      ) : (
+                        <>Contact <a href="mailto:hello@christunbridge.co.uk">hello@christunbridge.co.uk</a> to receive a password</>
+                      )}
                     </p>
                   </div>
                   <Button
