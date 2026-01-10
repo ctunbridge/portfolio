@@ -417,7 +417,7 @@ export default function SageIndividualPage() {
               these opportunities as part of the product roadmap.
             </p>
           </div>
-          <div className="mt-30 lg:mt-45 flex">
+          <div className="mt-30 lg:mt-45 flex justify-center">
             <Button variant="outline" asChild>
               <Link href="/sage-ds">Next project</Link>
             </Button>

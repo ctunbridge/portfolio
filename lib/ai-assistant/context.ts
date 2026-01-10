@@ -33,7 +33,7 @@ export const portfolioContext: PortfolioContext = {
     },
     {
       label: "Platform UI Refresh Case Study",
-      url: "/gg-ui",
+      url: "/gg-plg",
       description:
         "Case study on GetGround's platform redesign and AI integration",
     },
@@ -257,8 +257,8 @@ export const portfolioContext: PortfolioContext = {
       ],
     },
     {
-      slug: "gg-ui",
-      url: "/gg-ui",
+      slug: "gg-plg",
+      url: "/gg-plg",
       businessName: "GetGround",
       projectTitle: "Platform UI Refresh",
       year: "2025",

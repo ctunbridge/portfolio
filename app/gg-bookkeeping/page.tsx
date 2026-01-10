@@ -566,9 +566,9 @@ export default function GGBookkeepingPage() {
               The first cohort of landlords who must use MTD starts in April 2026 (income over £50k). The design and engineering work we have done so far means we are now recognised as an MTD developer by HMRC, the next step is to put our MTD solution into the hands of our users.
             </p>
           </div>
-          <div className="mt-30 lg:mt-45 flex">
+          <div className="mt-30 lg:mt-45 flex justify-center">
             <Button variant="outline" asChild>
-              <Link href="/gg-ui">Next project</Link>
+              <Link href="/sage-individual">Next project</Link>
             </Button>
           </div>
         </div>

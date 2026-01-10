@@ -165,7 +165,7 @@ ${context.siteLinks.map((link) => `- ${link.url} - ${link.label}: ${link.descrip
 Examples of when to include links:
 - Asked about GetGround bookkeeping → Include link to /gg-bookkeeping
 - Asked about design systems → Include links to /sage-ds and mention ${firstName}'s work at GetGround
-- Asked about AI integration → Include link to /gg-ui which covers GetGround AI
+- Asked about AI integration → Include link to /gg-plg which covers GetGround AI
 - Asked about mobile app design → Include link to /sage-individual
 - General questions about ${firstName}'s work → Suggest visiting / (home) for an overview
 
