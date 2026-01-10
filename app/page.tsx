@@ -137,19 +137,19 @@ export default function Home() {
               <div id="work" className="grid grid-cols-1 gap-x-10 gap-y-25 mb-80 @3xl:grid-cols-2">
                 <CaseStudyCard
                   businessName="GetGround"
+                  year="2025/26"
+                  projectTitle="Enabling Product Led Growth"
+                  imageSrc="/images/case-studies/GG Home - UI.jpg"
+                  imageAlt="GetGround Platform UI Refresh"
+                  href="/gg-plg"
+                />
+                <CaseStudyCard
+                  businessName="GetGround"
                   year="2025"
                   projectTitle="Bookkeeping & Tax"
                   imageSrc="/images/case-studies/GG Home - BK.jpg"
                   imageAlt="GetGround Bookkeeping & MTD"
                   href="/gg-bookkeeping"
-                />
-                <CaseStudyCard
-                  businessName="GetGround"
-                  year="2025"
-                  projectTitle="Platform UI Refresh"
-                  imageSrc="/images/case-studies/GG Home - UI.jpg"
-                  imageAlt="GetGround Platform UI Refresh"
-                  href="/gg-ui"
                 />
                 <CaseStudyCard
                   businessName="Sage"

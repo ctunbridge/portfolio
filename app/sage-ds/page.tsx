@@ -147,7 +147,7 @@ export default function SageDSPage() {
             height={1080}
             className="w-full h-auto rounded-lg"
           />
-          <div className="mt-30 lg:mt-45 flex">
+          <div className="mt-30 lg:mt-45 flex justify-center">
             <Button variant="outline" asChild>
               <Link href="/gg-bookkeeping">Next project</Link>
             </Button>
