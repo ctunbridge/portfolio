@@ -62,7 +62,7 @@ export default function SageDSPage() {
           </div>
 
           <Image
-            src="/images/case-studies/sage-ds/Foundations 1.jpg"
+            src="/images/case-studies/sage-ds/foundations-1.jpg"
             alt="Design system foundations showing colour variables, typography, and icon library"
             width={1920}
             height={1080}
@@ -102,7 +102,7 @@ export default function SageDSPage() {
           </div>
 
           <Image
-            src="/images/case-studies/sage-ds/Components 1.jpg"
+            src="/images/case-studies/sage-ds/components-1.jpg"
             alt="Design system components showing native and bespoke implementations"
             width={1920}
             height={1080}
@@ -141,7 +141,7 @@ export default function SageDSPage() {
           </div>
 
           <Image
-            src="/images/case-studies/sage-ds/Zeroheight 1.jpg"
+            src="/images/case-studies/sage-ds/zeroheight-1.jpg"
             alt="Documentation platforms showing Figma and Zeroheight implementation"
             width={1920}
             height={1080}
@@ -183,7 +183,7 @@ export default function SageDSPage() {
           </div>
 
           <Image
-            src="/images/case-studies/sage-ds/SageDSHero.jpg"
+            src="/images/case-studies/sage-ds/sagedshero.jpg"
             alt="Sage Design System overview showing components, navigation, and design tokens"
             width={1920}
             height={1080}

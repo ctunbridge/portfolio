@@ -26,7 +26,7 @@ export function Footer({ className }: FooterProps) {
       {/* Portrait Image */}
       <div className="col-span-9 md:col-span-3 md:col-start-2 relative aspect-[3/4] w-full overflow-hidden rounded-lg bg-muted">
         <Image
-          src="/images/footer/FooterImage.jpg"
+          src="/images/footer/footerimage.jpg"
           alt="Chris Tunbridge portrait"
           fill
           sizes="(max-width: 768px) 100vw, 33vw"

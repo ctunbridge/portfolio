@@ -139,7 +139,7 @@ export default function Home() {
                   businessName="GetGround"
                   year="2025/26"
                   projectTitle="Enabling Product Led Growth"
-                  imageSrc="/images/case-studies/GG Home - UI.jpg"
+                  imageSrc="/images/case-studies/gg-home-ui.jpg"
                   imageAlt="GetGround Platform UI Refresh"
                   href="/gg-plg"
                 />
@@ -147,7 +147,7 @@ export default function Home() {
                   businessName="GetGround"
                   year="2025"
                   projectTitle="Bookkeeping & Tax"
-                  imageSrc="/images/case-studies/GG Home - BK.jpg"
+                  imageSrc="/images/case-studies/gg-home-bk.jpg"
                   imageAlt="GetGround Bookkeeping & MTD"
                   href="/gg-bookkeeping"
                 />
@@ -155,7 +155,7 @@ export default function Home() {
                   businessName="Sage"
                   year="2021-2024"
                   projectTitle="Sage Individual"
-                  imageSrc="/images/case-studies/Sage-Home-Individual.jpg"
+                  imageSrc="/images/case-studies/sage-home-individual.jpg"
                   imageAlt="Sage Individual mobile app"
                   href="/sage-individual"
                 />
@@ -163,7 +163,7 @@ export default function Home() {
                   businessName="Sage"
                   year="2021-2024"
                   projectTitle="Graphite Design System"
-                  imageSrc="/images/case-studies/Individual DS 2.jpg"
+                  imageSrc="/images/case-studies/individual-ds-2.jpg"
                   imageAlt="Sage GraphiteDesign System"
                   href="/sage-ds"
                 />

@@ -40,14 +40,14 @@ export default function GGPLGPage() {
               Conversion rates dropped as we asked users to find their own way as they moved deeper into the funnel.
             </p>
             <Image
-              src="/images/case-studies/gg-plg/MTD-CX.jpg"
+              src="/images/case-studies/gg-plg/mtd-cx.jpg"
               alt="Customer experience data"
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
             />
             <Image
-              src="/images/case-studies/gg-plg/MTD-mixpanel.jpg"
+              src="/images/case-studies/gg-plg/mtd-mixpanel.jpg"
               alt="Mixpanel analytics data"
               width={1920}
               height={1080}
@@ -90,14 +90,14 @@ export default function GGPLGPage() {
               </div>
             </div>
             <Image
-              src="/images/case-studies/gg-plg/MTD-newFlow1.jpg"
+              src="/images/case-studies/gg-plg/mtd-newflow1.jpg"
               alt="New onboarding flow - part 1"
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
             />
             <Image
-              src="/images/case-studies/gg-plg/MTD-newFlow2.jpg"
+              src="/images/case-studies/gg-plg/mtd-newflow2.jpg"
               alt="New onboarding flow - part 2"
               width={1920}
               height={1080}

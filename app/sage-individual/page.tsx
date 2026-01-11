@@ -86,7 +86,7 @@ export default function SageIndividualPage() {
           </div>
 
           <Image
-            src="/images/case-studies/sage-individual/Value Prop Image.jpg"
+            src="/images/case-studies/sage-individual/value-prop-image.jpg"
             alt="Initial research findings and value proposition"
             width={1920}
             height={1080}
@@ -194,14 +194,14 @@ export default function SageIndividualPage() {
           {/* Sprint Images */}
           <div className="space-y-6 mb-8">
             <Image
-              src="/images/case-studies/sage-individual/Sprint Image 1 1.jpg"
+              src="/images/case-studies/sage-individual/sprint-image-1-1.jpg"
               alt="Design sprint workshop and ideation"
               width={960}
               height={720}
               className="w-full h-auto rounded-lg"
             />
             <Image
-              src="/images/case-studies/sage-individual/Sprint Image 2 1.jpg"
+              src="/images/case-studies/sage-individual/sprint-image-2-1.jpg"
               alt="Design sprint prototyping and testing"
               width={960}
               height={720}
@@ -228,14 +228,14 @@ export default function SageIndividualPage() {
 
           <div className="space-y-6 mb-8">
             <Image
-              src="/images/case-studies/sage-individual/User Journey Image.jpg"
+              src="/images/case-studies/sage-individual/user-journey-image.jpg"
               alt="Detailed user journey map"
               width={1280}
               height={500}
               className="w-full h-auto rounded-lg"
             />
             <Image
-              src="/images/case-studies/sage-individual/Journey Workshop.jpg"
+              src="/images/case-studies/sage-individual/journey-workshop.jpg"
               alt="Journey mapping workshop"
               width={640}
               height={500}
@@ -254,7 +254,7 @@ export default function SageIndividualPage() {
           </div>
 
           <Image
-            src="/images/case-studies/sage-individual/Wireframe Image.jpg"
+            src="/images/case-studies/sage-individual/wireframe-image.jpg"
             alt="Wireframes and prototypes for transaction splitting"
             width={1920}
             height={1080}
@@ -272,7 +272,7 @@ export default function SageIndividualPage() {
           </div>
 
           <Image
-            src="/images/case-studies/sage-individual/Testing Image.jpg"
+            src="/images/case-studies/sage-individual/testing-image.jpg"
             alt="User testing sessions with sole traders"
             width={1920}
             height={1080}
@@ -290,7 +290,7 @@ export default function SageIndividualPage() {
           </div>
 
           <Image
-            src="/images/case-studies/sage-individual/Blueprint Image.jpg"
+            src="/images/case-studies/sage-individual/blueprint-image.jpg"
             alt="Service blueprint for transaction splitting"
             width={1920}
             height={1080}
@@ -308,7 +308,7 @@ export default function SageIndividualPage() {
           </div>
 
           <Image
-            src="/images/case-studies/sage-individual/Feedback Image.jpg"
+            src="/images/case-studies/sage-individual/feedback-image.jpg"
             alt="Designer and developer feedback sessions"
             width={1920}
             height={1080}
@@ -326,7 +326,7 @@ export default function SageIndividualPage() {
           </div>
 
           <Image
-            src="/images/case-studies/sage-individual/Individual DS 1.jpg"
+            src="/images/case-studies/sage-individual/individual-ds-1.jpg"
             alt="Design system components for transaction splitting"
             width={1920}
             height={1080}
@@ -345,7 +345,7 @@ export default function SageIndividualPage() {
 
           {/* Final UI */}
           <Image
-            src="/images/case-studies/sage-individual/User Journey 1 1.jpg"
+            src="/images/case-studies/sage-individual/user-journey-1-1.jpg"
             alt="Final split transaction UI"
             width={1920}
             height={1080}
@@ -354,7 +354,7 @@ export default function SageIndividualPage() {
 
           {/* UI Flow */}
           <Image
-            src="/images/case-studies/sage-individual/Sage_Split UI.jpg"
+            src="/images/case-studies/sage-individual/sage-split-ui.jpg"
             alt="Add Split happy paths iOS user flow"
             width={1920}
             height={1080}
@@ -363,7 +363,7 @@ export default function SageIndividualPage() {
 
           {/* Accessibility */}
           <Image
-            src="/images/case-studies/sage-individual/Sage_Accessibility Guidelines.jpg"
+            src="/images/case-studies/sage-individual/sage-accessibility-guidelines.jpg"
             alt="Accessibility considerations including resize text, focus order, dark mode, and landscape"
             width={1920}
             height={1080}
@@ -445,7 +445,7 @@ export default function SageIndividualPage() {
           </div>
 
           <Image
-            src="/images/case-studies/sage-individual/IndividualHero.jpg"
+            src="/images/case-studies/sage-individual/individualhero.jpg"
             alt="Sage Individual app showing transaction splitting interface"
             width={1920}
             height={1080}

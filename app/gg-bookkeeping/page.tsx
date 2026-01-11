@@ -223,7 +223,7 @@ export default function GGBookkeepingPage() {
             </p>
           </div>
           <Image
-            src="/images/case-studies/gg-bookkeeping/MTD%20Model.jpg"
+            src="/images/case-studies/gg-bookkeeping/mtd-model.jpg"
             alt="Making Tax Digital impact model showing revenue projections"
             width={1920}
             height={1080}
@@ -251,7 +251,7 @@ export default function GGBookkeepingPage() {
           </div>
 
           <Image
-            src="/images/case-studies/gg-bookkeeping/Ballpark.jpg"
+            src="/images/case-studies/gg-bookkeeping/ballpark.jpg"
             alt="Discovery research and user insights"
             width={1920}
             height={1080}
@@ -348,14 +348,14 @@ export default function GGBookkeepingPage() {
 
           <div className="space-y-6 lg:space-y-10">
             <Image
-              src="/images/case-studies/gg-bookkeeping/Technical Whiteboard.jpg"
+              src="/images/case-studies/gg-bookkeeping/technical-whiteboard.jpg"
               alt="Technical whiteboard showing journey mapping and user flows"
               width={960}
               height={720}
               className="w-full h-auto rounded-lg"
             />
             <Image
-              src="/images/case-studies/gg-bookkeeping/Service Blueprint.jpg"
+              src="/images/case-studies/gg-bookkeeping/service-blueprint.jpg"
               alt="Service blueprint mapping the bookkeeping experience"
               width={960}
               height={720}
@@ -379,7 +379,7 @@ export default function GGBookkeepingPage() {
           </div>
 
           <Image
-            src="/images/case-studies/gg-bookkeeping/UT Make.jpg"
+            src="/images/case-studies/gg-bookkeeping/ut-make.jpg"
             alt="User testing the Making Tax Digital prototype"
             width={1920}
             height={1080}
@@ -430,21 +430,21 @@ export default function GGBookkeepingPage() {
 
           <div className="space-y-6 lg:space-y-10">
             <Image
-              src="/images/case-studies/gg-bookkeeping/CodebaseUI.jpg"
+              src="/images/case-studies/gg-bookkeeping/codebaseui.jpg"
               alt="Bookkeeping UI built directly in the codebase"
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
             />
             <Image
-              src="/images/case-studies/gg-bookkeeping/CodebaseUIMobile.jpg"
+              src="/images/case-studies/gg-bookkeeping/codebaseuimobile.jpg"
               alt="Mobile view of the codebase UI"
               width={960}
               height={720}
               className="w-full h-auto rounded-lg"
             />
             <Image
-              src="/images/case-studies/gg-bookkeeping/Cursor&CI.jpg"
+              src="/images/case-studies/gg-bookkeeping/cursor-ci.jpg"
               alt="Using Cursor and CI for development"
               width={960}
               height={720}
@@ -464,14 +464,14 @@ export default function GGBookkeepingPage() {
 
           <div className="space-y-6 lg:space-y-10 mt-8">
             <Image
-              src="/images/case-studies/gg-bookkeeping/FigmaDesign2.jpg"
+              src="/images/case-studies/gg-bookkeeping/figmadesign2.jpg"
               alt="Additional Figma design specifications"
               width={1280}
               height={500}
               className="w-full h-auto rounded-lg"
             />
             <Image
-              src="/images/case-studies/gg-bookkeeping/FigmaDesign1.jpg"
+              src="/images/case-studies/gg-bookkeeping/figmadesign1.jpg"
               alt="Supplementary Figma designs for bookkeeping"
               width={640}
               height={500}
@@ -534,7 +534,7 @@ export default function GGBookkeepingPage() {
           </div>
 
           <Image
-            src="/images/case-studies/gg-bookkeeping/Mixpanel.jpg"
+            src="/images/case-studies/gg-bookkeeping/mixpanel.jpg"
             alt="Analytics dashboard showing bookkeeping feature usage"
             width={1920}
             height={1080}
@@ -604,7 +604,7 @@ export default function GGBookkeepingPage() {
           </div>
 
           <Image
-            src="/images/case-studies/gg-bookkeeping/GG Hero - BK.jpg"
+            src="/images/case-studies/gg-bookkeeping/gg-hero-bk.jpg"
             alt="GetGround Bookkeeping and Making Tax Digital overview"
             width={1920}
             height={1080}
