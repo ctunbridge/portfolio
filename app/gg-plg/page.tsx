@@ -45,6 +45,7 @@ export default function GGPLGPage() {
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
             <Image
               src="/images/case-studies/gg-plg/mtd-mixpanel.jpg"
@@ -52,6 +53,7 @@ export default function GGPLGPage() {
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
           </div>
 
@@ -95,6 +97,7 @@ export default function GGPLGPage() {
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
             <Image
               src="/images/case-studies/gg-plg/mtd-newflow2.jpg"
@@ -102,6 +105,7 @@ export default function GGPLGPage() {
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
           </div>
 
@@ -150,6 +154,7 @@ export default function GGPLGPage() {
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
             <Image
               src="/images/case-studies/gg-plg/brand-inconsistency2.jpg"
@@ -157,6 +162,7 @@ export default function GGPLGPage() {
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
           </div>
 
@@ -174,6 +180,7 @@ export default function GGPLGPage() {
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
             <Image
               src="/images/case-studies/gg-plg/brand-consistency1.jpg"
@@ -181,6 +188,7 @@ export default function GGPLGPage() {
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
             <Image
               src="/images/case-studies/gg-plg/brand-consistency2.jpg"
@@ -188,6 +196,7 @@ export default function GGPLGPage() {
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
           </div>
         </>
@@ -201,7 +210,7 @@ export default function GGPLGPage() {
 
       <div className="space-y-100 pt-40">
         {/* Introduction Section */}
-        <section id="introduction" className="space-y-8">
+        <section id="introduction" className="space-y-8 animate-stagger-1">
           <h1 className="typography-h2-demibold">Enabling Product Led Growth</h1>
 
           <div className="grid grid-cols-12">
@@ -226,17 +235,22 @@ export default function GGPLGPage() {
             </div>
           </div>
 
-          <Image
-            src="/images/case-studies/gg-plg/gg-plg-intro.jpg"
-            alt="GetGround Platform Refresh overview showing before and after UI designs"
-            width={1920}
-            height={1080}
-            className="w-full h-auto rounded-lg"
-          />
+          <div className="animate-stagger-2">
+            <Image
+              src="/images/case-studies/gg-plg/gg-plg-intro.jpg"
+              alt="GetGround Platform Refresh overview showing before and after UI designs"
+              width={1920}
+              height={1080}
+              className="w-full h-auto rounded-lg"
+              priority
+            />
+          </div>
         </section>
 
         {/* Case Study Sections with Fixed Left Title */}
-        <CaseStudyLayout sections={caseStudySections} />
+        <div className="animate-stagger-3">
+          <CaseStudyLayout sections={caseStudySections} />
+        </div>
 
         {/* Next Project Button */}
         <div className="flex justify-center mt-30 lg:mt-45">
@@ -249,7 +263,7 @@ export default function GGPLGPage() {
       {/* Footer */}
       <div className="grid grid-cols-12 mt-80 pb-40">
         <div className="col-span-12 lg:col-span-9 lg:col-start-3">
-          <Footer />
+          <Footer staggerClass="animate-stagger-7" />
         </div>
       </div>
     </>

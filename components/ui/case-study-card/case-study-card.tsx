@@ -26,6 +26,10 @@ export interface CaseStudyCardProps {
   href?: string;
   /** Additional CSS classes */
   className?: string;
+  /** Priority loading for above-the-fold images */
+  priority?: boolean;
+  /** Optional stagger animation class for coordinated page load animations */
+  staggerClass?: string;
 }
 
 export function CaseStudyCard({
@@ -36,13 +40,16 @@ export function CaseStudyCard({
   imageAlt,
   href,
   className,
+  priority,
+  staggerClass,
 }: CaseStudyCardProps) {
   const content = (
     <div
       className={cn(
-        "group flex flex-col gap-1 transition-transform duration-300 ease-out",
-        href && "cursor-pointer hover:scale-[1.005]",
-        className
+        "group flex flex-col gap-1",
+        href && "cursor-pointer hover:scale-[1.005] transition-transform duration-300 ease-out",
+        className,
+        staggerClass
       )}
     >
       {/* Project title */}
@@ -60,8 +67,9 @@ export function CaseStudyCard({
           src={imageSrc}
           alt={imageAlt}
           fill
-          className="object-cover transition-transform duration-300 ease-out group-hover:scale-[1.01]"
+          className="object-cover"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority={priority}
         />
       </div>
     </div>

@@ -67,6 +67,7 @@ export default function SageDSPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg"
+            loading="lazy"
           />
         </>
       ),
@@ -107,6 +108,7 @@ export default function SageDSPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg"
+            loading="lazy"
           />
         </>
       ),
@@ -146,6 +148,7 @@ export default function SageDSPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg"
+            loading="lazy"
           />
           <div className="mt-30 lg:mt-45 flex justify-center">
             <Button variant="outline" asChild>
@@ -163,7 +166,7 @@ export default function SageDSPage() {
 
       <div className="space-y-100 pt-40">
         {/* Introduction Section */}
-        <section id="introduction" className="space-y-8">
+        <section id="introduction" className="space-y-8 animate-stagger-1">
           <h1 className="typography-h2-demibold">Graphite design system</h1>
 
           <div className="grid grid-cols-12">
@@ -182,23 +185,28 @@ export default function SageDSPage() {
             </div>
           </div>
 
-          <Image
-            src="/images/case-studies/sage-ds/sagedshero.jpg"
-            alt="Sage Design System overview showing components, navigation, and design tokens"
-            width={1920}
-            height={1080}
-            className="w-full h-auto rounded-lg"
-          />
+          <div className="animate-stagger-2">
+            <Image
+              src="/images/case-studies/sage-ds/sagedshero.jpg"
+              alt="Sage Design System overview showing components, navigation, and design tokens"
+              width={1920}
+              height={1080}
+              className="w-full h-auto rounded-lg"
+              priority
+            />
+          </div>
         </section>
 
         {/* Case Study Sections with Fixed Left Title */}
-        <CaseStudyLayout sections={caseStudySections} />
+        <div className="animate-stagger-3">
+          <CaseStudyLayout sections={caseStudySections} />
+        </div>
       </div>
 
       {/* Footer */}
       <div className="grid grid-cols-12 mt-80 pb-40">
         <div className="col-span-12 lg:col-span-9 lg:col-start-3">
-          <Footer />
+          <Footer staggerClass="animate-stagger-7" />
         </div>
       </div>
     </>

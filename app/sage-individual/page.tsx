@@ -91,6 +91,7 @@ export default function SageIndividualPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg mb-8"
+            loading="lazy"
           />
 
           {/* Initial Research & Business Needs - Stacked */}
@@ -199,6 +200,7 @@ export default function SageIndividualPage() {
               width={960}
               height={720}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
             <Image
               src="/images/case-studies/sage-individual/sprint-image-2-1.jpg"
@@ -206,6 +208,7 @@ export default function SageIndividualPage() {
               width={960}
               height={720}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
           </div>
         </>
@@ -233,6 +236,7 @@ export default function SageIndividualPage() {
               width={1280}
               height={500}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
             <Image
               src="/images/case-studies/sage-individual/journey-workshop.jpg"
@@ -240,6 +244,7 @@ export default function SageIndividualPage() {
               width={640}
               height={500}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
           </div>
 
@@ -259,6 +264,7 @@ export default function SageIndividualPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg mb-8"
+            loading="lazy"
           />
 
           {/* User Testing */}
@@ -277,6 +283,7 @@ export default function SageIndividualPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg mb-8"
+            loading="lazy"
           />
 
           {/* Service Blueprint */}
@@ -295,6 +302,7 @@ export default function SageIndividualPage() {
             width={1920}
             height={1080}
             className="w-full h-[480px] object-cover rounded-lg mb-8"
+            loading="lazy"
           />
 
           {/* Designer and Developer Feedback */}
@@ -313,6 +321,7 @@ export default function SageIndividualPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg mb-8"
+            loading="lazy"
           />
 
           {/* Design System */}
@@ -331,6 +340,7 @@ export default function SageIndividualPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg mb-8"
+            loading="lazy"
           />
 
           {/* UI */}
@@ -350,6 +360,7 @@ export default function SageIndividualPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg mb-8"
+            loading="lazy"
           />
 
           {/* UI Flow */}
@@ -359,6 +370,7 @@ export default function SageIndividualPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg mb-8"
+            loading="lazy"
           />
 
           {/* Accessibility */}
@@ -368,6 +380,7 @@ export default function SageIndividualPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg"
+            loading="lazy"
           />
         </>
       ),
@@ -433,7 +446,7 @@ export default function SageIndividualPage() {
 
       <div className="space-y-100 pt-40">
         {/* Introduction Section */}
-        <section id="introduction" className="space-y-8">
+        <section id="introduction" className="space-y-8 animate-stagger-1">
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-4">
               <h1 className="typography-h2-demibold">Sage Individual</h1>
@@ -444,17 +457,20 @@ export default function SageIndividualPage() {
             </div>
           </div>
 
-          <Image
-            src="/images/case-studies/sage-individual/individualhero.jpg"
-            alt="Sage Individual app showing transaction splitting interface"
-            width={1920}
-            height={1080}
-            className="w-full h-auto rounded-lg mt-10"
-          />
+          <div className="animate-stagger-2">
+            <Image
+              src="/images/case-studies/sage-individual/individualhero.jpg"
+              alt="Sage Individual app showing transaction splitting interface"
+              width={1920}
+              height={1080}
+              className="w-full h-auto rounded-lg mt-10"
+              priority
+            />
+          </div>
         </section>
 
         {/* Splitting Transactions Section */}
-        <section className="space-y-8">
+        <section className="space-y-8 animate-stagger-3">
           <h2 className="typography-h3-demibold">Splitting transactions</h2>
 
           <div className="grid grid-cols-12">
@@ -473,13 +489,15 @@ export default function SageIndividualPage() {
         </section>
 
         {/* Case Study Sections with Fixed Left Title */}
-        <CaseStudyLayout sections={caseStudySections} />
+        <div className="animate-stagger-4">
+          <CaseStudyLayout sections={caseStudySections} />
+        </div>
       </div>
 
       {/* Footer */}
       <div className="grid grid-cols-12 mt-80 pb-40">
         <div className="col-span-12 lg:col-span-9 lg:col-start-3">
-          <Footer />
+          <Footer staggerClass="animate-stagger-7" />
         </div>
       </div>
     </>

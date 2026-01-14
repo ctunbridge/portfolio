@@ -228,6 +228,7 @@ export default function GGBookkeepingPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg mb-8"
+            loading="lazy"
           />
         </>
       ),
@@ -256,6 +257,7 @@ export default function GGBookkeepingPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg mb-8"
+            loading="lazy"
           />
 
           <div className="space-y-12">
@@ -353,6 +355,7 @@ export default function GGBookkeepingPage() {
               width={960}
               height={720}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
             <Image
               src="/images/case-studies/gg-bookkeeping/service-blueprint.jpg"
@@ -360,6 +363,7 @@ export default function GGBookkeepingPage() {
               width={960}
               height={720}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
           </div>
 
@@ -384,6 +388,7 @@ export default function GGBookkeepingPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg mb-20"
+            loading="lazy"
           />
 
           <div className="space-y-8">
@@ -435,6 +440,7 @@ export default function GGBookkeepingPage() {
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
             <Image
               src="/images/case-studies/gg-bookkeeping/codebaseuimobile.jpg"
@@ -442,6 +448,7 @@ export default function GGBookkeepingPage() {
               width={960}
               height={720}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
             <Image
               src="/images/case-studies/gg-bookkeeping/cursor-ci.jpg"
@@ -449,6 +456,7 @@ export default function GGBookkeepingPage() {
               width={960}
               height={720}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
           </div>
 
@@ -469,6 +477,7 @@ export default function GGBookkeepingPage() {
               width={1280}
               height={500}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
             <Image
               src="/images/case-studies/gg-bookkeeping/figmadesign1.jpg"
@@ -476,6 +485,7 @@ export default function GGBookkeepingPage() {
               width={640}
               height={500}
               className="w-full h-auto rounded-lg"
+              loading="lazy"
             />
           </div>
         </>
@@ -539,6 +549,7 @@ export default function GGBookkeepingPage() {
             width={1920}
             height={1080}
             className="w-full h-auto rounded-lg mb-8"
+            loading="lazy"
           />
         </>
       ),
@@ -582,7 +593,7 @@ export default function GGBookkeepingPage() {
 
       <div className="space-y-100 pt-40">
         {/* Introduction Section */}
-        <section id="introduction" className="space-y-8">
+        <section id="introduction" className="space-y-8 animate-stagger-1">
           <h1 className="typography-h2-demibold">
             Bookkeeping & Tax
           </h1>
@@ -603,23 +614,28 @@ export default function GGBookkeepingPage() {
             </div>
           </div>
 
-          <Image
-            src="/images/case-studies/gg-bookkeeping/gg-hero-bk.jpg"
-            alt="GetGround Bookkeeping and Making Tax Digital overview"
-            width={1920}
-            height={1080}
-            className="w-full h-auto rounded-lg"
-          />
+          <div className="animate-stagger-2">
+            <Image
+              src="/images/case-studies/gg-bookkeeping/gg-hero-bk.jpg"
+              alt="GetGround Bookkeeping and Making Tax Digital overview"
+              width={1920}
+              height={1080}
+              className="w-full h-auto rounded-lg"
+              priority
+            />
+          </div>
         </section>
 
         {/* Case Study Sections with Fixed Left Title */}
-        <CaseStudyLayout sections={caseStudySections} />
+        <div className="animate-stagger-3">
+          <CaseStudyLayout sections={caseStudySections} />
+        </div>
       </div>
 
       {/* Footer */}
       <div className="grid grid-cols-12 mt-80 pb-40">
         <div className="col-span-12 lg:col-span-9 lg:col-start-3">
-          <Footer />
+          <Footer staggerClass="animate-stagger-7" />
         </div>
       </div>
     </>

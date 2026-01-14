@@ -100,8 +100,8 @@ export default function Home() {
 
       <div
         className={cn(
-          "min-h-screen transition-all duration-300",
-          showContent ? "opacity-100" : "opacity-0"
+          "min-h-screen",
+          !showContent && "hidden"
         )}
       >
         <div className="grid grid-cols-12 gap-4">
@@ -111,7 +111,7 @@ export default function Home() {
             {/* Welcome Section */}
             <section id="welcome" className="min-h-screen">
               <div className="grid grid-cols-9">
-                <h1 className="typography-h1-demibold col-span-9 mb-10 h-75 @3xl:col-span-8">
+                <h1 className="typography-h1-demibold col-span-9 mb-10 h-75 @3xl:col-span-8 animate-stagger-1">
                   I'm a product designer, founder, and builder of things, like{" "}
                   <CyclingText
                     texts={[
@@ -124,7 +124,7 @@ export default function Home() {
                   />
                 </h1>
                 {!isChatPanelOpen && (
-                  <div ref={inlineInputRef} className="col-span-9 mb-50 w-80">
+                  <div ref={inlineInputRef} className="col-span-9 mb-50 w-80 animate-stagger-2">
                     <ChatInput
                       placeholder="Ask something..."
                       onFocus={handleChatFocus}
@@ -142,6 +142,8 @@ export default function Home() {
                   imageSrc="/images/case-studies/gg-home-ui.jpg"
                   imageAlt="GetGround Platform UI Refresh"
                   href="/gg-plg"
+                  priority
+                  staggerClass="animate-stagger-card-1"
                 />
                 <CaseStudyCard
                   businessName="GetGround"
@@ -150,6 +152,8 @@ export default function Home() {
                   imageSrc="/images/case-studies/gg-home-bk.jpg"
                   imageAlt="GetGround Bookkeeping & MTD"
                   href="/gg-bookkeeping"
+                  priority
+                  staggerClass="animate-stagger-card-2"
                 />
                 <CaseStudyCard
                   businessName="Sage"
@@ -158,6 +162,7 @@ export default function Home() {
                   imageSrc="/images/case-studies/sage-home-individual.jpg"
                   imageAlt="Sage Individual mobile app"
                   href="/sage-individual"
+                  staggerClass="animate-stagger-card-3"
                 />
                 <CaseStudyCard
                   businessName="Sage"
@@ -166,6 +171,7 @@ export default function Home() {
                   imageSrc="/images/case-studies/individual-ds-2.jpg"
                   imageAlt="Sage GraphiteDesign System"
                   href="/sage-ds"
+                  staggerClass="animate-stagger-card-4"
                 />
               </div>
             </section>
@@ -173,7 +179,7 @@ export default function Home() {
             {/* Experience Section */}
             <section id="experience">
               <div className="grid grid-cols-9 gap-y-20">
-                <h5 className="typography-h5-normal col-span-7 col-start-3 text-right mb-20">
+                <h5 className="typography-h5-normal col-span-7 col-start-3 text-right mb-20 animate-stagger-5">
                   <span className="typography-h5-demibold">10 years product design</span>{" "}
                   experience in start-up, agency, and enterprise environments building web-responsive, mobile-native products and design systems.
                 </h5>
@@ -255,7 +261,7 @@ export default function Home() {
 
             {/* Footer Section */}
             <section className="mt-80 mb-40">
-              <Footer />
+              <Footer staggerClass="animate-stagger-8" />
             </section>
           </div>
         </div>

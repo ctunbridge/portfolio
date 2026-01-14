@@ -13,14 +13,17 @@ import { cn } from "@/lib/utils";
 export interface FooterProps {
   /** Additional CSS classes */
   className?: string;
+  /** Optional stagger animation class for coordinated page load animations */
+  staggerClass?: string;
 }
 
-export function Footer({ className }: FooterProps) {
+export function Footer({ className, staggerClass }: FooterProps) {
   return (
     <footer
       className={cn(
         "grid grid-cols-9",
-        className
+        className,
+        staggerClass
       )}
     >
       {/* Portrait Image */}
@@ -31,6 +34,7 @@ export function Footer({ className }: FooterProps) {
           fill
           sizes="(max-width: 768px) 100vw, 33vw"
           className="object-cover"
+          loading="lazy"
         />
       </div>
 
