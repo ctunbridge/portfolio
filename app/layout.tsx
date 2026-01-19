@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 
 import { ClientLayout } from "@/components/layout/client-layout";
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
@@ -32,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={dmSans.variable}>
       <body className="antialiased overflow-x-hidden">
         <ClientLayout>{children}</ClientLayout>
         <Analytics />

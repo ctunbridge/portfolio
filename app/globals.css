@@ -95,6 +95,7 @@
     font-size: var(--typography-h1-demibold-font-size);
     line-height: var(--typography-h1-demibold-line-height);
     letter-spacing: var(--typography-h1-demibold-letter-spacing);
+    font-weight: 600;
   }
 
   .typography-h2-demibold {
@@ -102,6 +103,7 @@
     font-size: var(--typography-h2-demibold-font-size);
     line-height: var(--typography-h2-demibold-line-height);
     letter-spacing: var(--typography-h2-demibold-letter-spacing);
+    font-weight: 600;
   }
 
   .typography-h3-demibold {
@@ -109,6 +111,7 @@
     font-size: var(--typography-h3-demibold-font-size);
     line-height: var(--typography-h3-demibold-line-height);
     letter-spacing: var(--typography-h3-demibold-letter-spacing);
+    font-weight: 600;
   }
 
   .typography-h4-demibold {
@@ -116,6 +119,7 @@
     font-size: var(--typography-h4-demibold-font-size);
     line-height: var(--typography-h4-demibold-line-height);
     letter-spacing: var(--typography-h4-demibold-letter-spacing);
+    font-weight: 600;
   }
 
   .typography-h5-demibold {
@@ -123,6 +127,7 @@
     font-size: var(--typography-h5-demibold-font-size);
     line-height: var(--typography-h5-demibold-line-height);
     letter-spacing: var(--typography-h5-demibold-letter-spacing);
+    font-weight: 600;
   }
 
   /* Headings - Normal */
@@ -131,6 +136,7 @@
     font-size: var(--typography-h1-normal-font-size);
     line-height: var(--typography-h1-normal-line-height);
     letter-spacing: var(--typography-h1-normal-letter-spacing);
+    font-weight: 400;
   }
 
   .typography-h2-normal {
@@ -138,6 +144,7 @@
     font-size: var(--typography-h2-normal-font-size);
     line-height: var(--typography-h2-normal-line-height);
     letter-spacing: var(--typography-h2-normal-letter-spacing);
+    font-weight: 400;
   }
 
   .typography-h3-normal {
@@ -145,6 +152,7 @@
     font-size: var(--typography-h3-normal-font-size);
     line-height: var(--typography-h3-normal-line-height);
     letter-spacing: var(--typography-h3-normal-letter-spacing);
+    font-weight: 400;
   }
 
   .typography-h4-normal {
@@ -152,6 +160,7 @@
     font-size: var(--typography-h4-normal-font-size);
     line-height: var(--typography-h4-normal-line-height);
     letter-spacing: var(--typography-h4-normal-letter-spacing);
+    font-weight: 400;
   }
 
   .typography-h5-normal {
@@ -159,6 +168,7 @@
     font-size: var(--typography-h5-normal-font-size);
     line-height: var(--typography-h5-normal-line-height);
     letter-spacing: var(--typography-h5-normal-letter-spacing);
+    font-weight: 400;
   }
 
   /* Body - Normal */
@@ -166,12 +176,14 @@
     font-family: var(--typography-body-font-family);
     font-size: var(--typography-body-font-size);
     line-height: var(--typography-body-line-height);
+    font-weight: 400;
   }
 
   .typography-body-sm {
     font-family: var(--typography-body-sm-font-family);
     font-size: var(--typography-body-sm-font-size);
     line-height: var(--typography-body-sm-line-height);
+    font-weight: 400;
   }
 
   /* Body - Bold */
@@ -179,12 +191,14 @@
     font-family: var(--typography-body-bold-font-family);
     font-size: var(--typography-body-bold-font-size);
     line-height: var(--typography-body-bold-line-height);
+    font-weight: 700;
   }
 
   .typography-body-sm-bold {
     font-family: var(--typography-body-sm-bold-font-family);
     font-size: var(--typography-body-sm-bold-font-size);
     line-height: var(--typography-body-sm-bold-line-height);
+    font-weight: 700;
   }
 
   /* Button */
@@ -192,6 +206,7 @@
     font-family: var(--typography-button-font-family);
     font-size: var(--typography-button-font-size);
     line-height: var(--typography-button-line-height);
+    font-weight: 500;
   }
 
   /* Caption */
@@ -199,6 +214,7 @@
     font-family: var(--typography-caption-font-family);
     font-size: var(--typography-caption-font-size);
     line-height: var(--typography-caption-line-height);
+    font-weight: 400;
   }
 
   /* Code */

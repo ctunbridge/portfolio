@@ -14,32 +14,8 @@
 
 /* ============================================
    FONT FACES
-   Articulat CF font family
+   DM Sans font family (loaded via next/font/google)
    ============================================ */
-
-@font-face {
-  font-family: 'Articulat CF Normal';
-  src: url('./fonts/Articulat CF Normal.ttf') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Articulat CF Medium';
-  src: url('./fonts/Articulat CF Medium.otf') format('opentype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Articulat CF Demi Bold';
-  src: url('./fonts/Articulat CF Demi Bold.ttf') format('truetype');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Articulat CF Bold';
-  src: url('./fonts/Articulat CF Bold.ttf') format('truetype');
-  font-display: swap;
-}
 
 :root {
   /* ============================================
@@ -186,14 +162,14 @@
      ============================================ */
 
   /* Font families */
-  --font-normal: 'Articulat CF Normal', system-ui, sans-serif;
-  --font-medium: 'Articulat CF Medium', system-ui, sans-serif;
-  --font-demibold: 'Articulat CF Demi Bold', system-ui, sans-serif;
-  --font-bold: 'Articulat CF Bold', system-ui, sans-serif;
+  --font-normal: var(--font-dm-sans), system-ui, sans-serif;
+  --font-medium: var(--font-dm-sans), system-ui, sans-serif;
+  --font-demibold: var(--font-dm-sans), system-ui, sans-serif;
+  --font-bold: var(--font-dm-sans), system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
 
-  /* OpenType features - stylistic alternates */
-  --font-features: "salt" 1, "ss01" 1;
+  /* OpenType features - DM Sans doesn't use stylistic alternates */
+  --font-features: normal;
 
   /* ============================================
      TYPOGRAPHY TOKENS - Mobile First (base values)
