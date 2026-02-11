@@ -26,16 +26,16 @@ export const portfolioContext: PortfolioContext = {
       description: "Portfolio homepage with overview of work and experience",
     },
     {
-      label: "Bookkeeping & MTD Case Study",
+      label: "Bookkeeping & Tax Case Study",
       url: "/gg-bookkeeping",
       description:
         "Detailed case study on GetGround's bookkeeping and Making Tax Digital feature",
     },
     {
-      label: "Platform UI Refresh Case Study",
+      label: "Enabling Product Led Growth Case Study",
       url: "/gg-plg",
       description:
-        "Case study on GetGround's platform redesign and AI integration",
+        "Case study on GetGround's product led growth: onboarding refactoring and design language",
     },
     {
       label: "Sage Individual Case Study",
@@ -56,7 +56,7 @@ export const portfolioContext: PortfolioContext = {
       jobTitle: "Lead Product Designer",
       dates: "2024 to Present",
       summary: [
-        "Lead Product Designer for multiple features across the GetGround platform, serving 30,000+ property investors. Designed and delivered the bookkeeping and tax submissions area end-to-end, led the platform UI refresh across portfolio, transactions, property details, and financial accounts, and built and maintain the Capcom design system.",
+        "Lead Product Designer for multiple features across the GetGround platform, serving 30,000+ property investors. Designed and delivered the bookkeeping and tax submissions area end-to-end, enabled product led growth through onboarding refactoring and a consistent design language, and built and maintain the Capcom design system.",
         "Designed AI interaction models and dynamic experiences that generate actions and reports based on portfolio, market, and user context. Built business impact models to inform product decisions, integrated AI into the design process through code-first prototyping in Next.js, and created custom agents like CopyKat, a context-aware copywriting tool.",
       ],
     },
@@ -122,10 +122,67 @@ export const portfolioContext: PortfolioContext = {
 
   caseStudies: [
     {
+      slug: "gg-plg",
+      url: "/gg-plg",
+      businessName: "GetGround",
+      projectTitle: "Enabling Product Led Growth",
+      year: "2025",
+      role: "Lead Product Designer",
+      problemStatement:
+        "GetGround's move to product led growth introduced new features, subscriptions including a free tier, and support for personal and limited company landlords. Many areas of the platform were the outcome of previous experiments and iterations that were either out of date or needed deprecating. The team needed to create a foundation for the next stage of user growth by removing what was no longer needed, bringing in a cohesive design language and user experience, and amending onboarding flows so they facilitate onward free-to-paid journeys.",
+      sections: [
+        {
+          title: "Refactoring onboarding",
+          content: [
+            "Onboarding had been built sales-first, focused on landlords who had already purchased; the first-time experience did not gather the right data at the right time to guide users to the right product.",
+            "End-to-end customer journey experiments with Making Tax Digital as the hook showed conversion rates dropped as users moved deeper into the funnel.",
+            "Identified three areas to reduce friction and persist the correct data: marketing website (quiz cut from 7 to 4 questions, data persisted); sign-up (A/B tested sign-up wall placement); adding a property (flow updated to ask about ownership, enabling focused MTD experience and other service suggestions).",
+          ],
+          metrics: [
+            {
+              label: "22%",
+              value: "through top of funnel",
+              description:
+                "Uplift in users making it through to sign up after reworking the quiz.",
+            },
+            {
+              label: "38%",
+              value: "more sign ups",
+              description:
+                "From A/B testing when the sign-up wall was later in the flow.",
+            },
+            {
+              label: "41%",
+              value: "more funnel completions",
+              description: "By changing the add property flow.",
+            },
+          ],
+        },
+        {
+          title: "Creating a consistent design language",
+          content: [
+            "Mapping the customer journey revealed inconsistency in brand, design language, and identity across touchpoints. Product led growth requires consistent brand from meta ads through to sign-up or purchase; inconsistency erodes trust and conversion.",
+            "Design team split focus across top of funnel (meta ads, sales decks, marketing site) and the platform. Created a refreshed brand identity, standardising colour, dropping outdated serif fonts, and refining the logo.",
+            "Chris's main focus was the platform refresh: updating the Capcom design system to reflect the new brand and introducing more consistent UI patterns and tools.",
+          ],
+        },
+      ],
+      skills: [
+        "Onboarding design",
+        "Conversion optimisation",
+        "A/B testing",
+        "Design systems",
+        "Brand consistency",
+        "User research",
+        "Funnel design",
+        "Figma",
+      ],
+    },
+    {
       slug: "gg-bookkeeping",
       url: "/gg-bookkeeping",
       businessName: "GetGround",
-      projectTitle: "Bookkeeping & Making Tax Digital",
+      projectTitle: "Bookkeeping & Tax",
       year: "2025",
       role: "Lead Product Designer",
       problemStatement:
@@ -254,66 +311,6 @@ export const portfolioContext: PortfolioContext = {
         "Figma",
         "HMRC API integration",
         "UXQA",
-      ],
-    },
-    {
-      slug: "gg-plg",
-      url: "/gg-plg",
-      businessName: "GetGround",
-      projectTitle: "Platform UI Refresh",
-      year: "2025",
-      role: "Lead Product Designer",
-      problemStatement:
-        "As GetGround aims for product led growth by pivoting to a subscription based model with AI enhanced features, many areas of the platform are out of date or need deprecating. The refresh aims to create a foundation for the next stage of GetGround.",
-      sections: [
-        {
-          title: "Portfolio Page",
-          content: [
-            "The portfolio page is where users land after logging in. It needs to direct users to what they need, when they need it, and alert them of anything needing attention.",
-            "Asked users what was most important, looked at data to understand current usage, and looked ahead for scalability.",
-            "Found: quick actions were most used elements, investment goals and taxes were top of mind, needed to scale for dynamic AI-driven experiences.",
-          ],
-        },
-        {
-          title: "GetGround AI",
-          content: [
-            "Current AI experience was a simple chat for property investment questions, GetGround services info, and basic tasks like downloading bank statements.",
-            "Completely reimagined how AI surfaces in the platform as AI is woven into the foundations.",
-            "Created scalable and dynamic UI patterns: contextual surfaces, dynamic UI in side panels within transactions, modal experiences that generate actions and reports based on portfolio, market and user context.",
-          ],
-        },
-        {
-          title: "Transactions",
-          content: [
-            "Functionality was still relevant but needed updating to align with the rest of the platform.",
-            "Made subtle changes to use new design patterns and brand colours.",
-          ],
-        },
-        {
-          title: "Property Details",
-          content: [
-            "One of the most important pages - where users manage day-to-day investment, understand performance, and see cashflow.",
-            "Previous iteration was overwhelmed with old experiments, creating a noisy and overwhelming experience.",
-            "Refresh focused on keeping what works, removing the unnecessary, and creating a cleaner, more deliberate interface.",
-          ],
-        },
-        {
-          title: "Financial Accounts",
-          content: [
-            "Design was out of date and much functionality (like profit per account) was not relevant and even misleading.",
-            "User recordings and usage data showed the screen was used for frequent, specific actions: depositing/sending money, downloading statements.",
-            "Refresh focused on utility - making actions clear and easy to find while removing noise.",
-          ],
-        },
-      ],
-      skills: [
-        "UI design",
-        "Design systems",
-        "AI integration",
-        "User research",
-        "Data analysis",
-        "Figma",
-        "Product strategy",
       ],
     },
     {
