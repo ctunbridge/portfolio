@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from "@storybook/nextjs"
-import { Sparkles, Bike, Send } from "lucide-react"
 
 import { ChatPanel } from "./chat-panel"
 
@@ -32,17 +31,14 @@ export const Default: Story = {
     placeholder: "Ask something...",
     suggestions: [
       {
-        icon: <Sparkles className="size-5" />,
         label: "Tell me about recent work...",
         onClick: () => console.log("Suggestion 1 clicked"),
       },
       {
-        icon: <Bike className="size-5" />,
         label: "What does Chris do outside of design...?",
         onClick: () => console.log("Suggestion 2 clicked"),
       },
       {
-        icon: <Send className="size-5" />,
         label: "Get in touch",
         onClick: () => console.log("Suggestion 3 clicked"),
       },
@@ -127,7 +123,6 @@ export const Closed: Story = {
     placeholder: "Ask something...",
     suggestions: [
       {
-        icon: <Sparkles className="size-5" />,
         label: "Tell me about recent work...",
       },
     ],

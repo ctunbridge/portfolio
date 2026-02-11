@@ -12,7 +12,7 @@
  *   isOpen={true}
  *   onClose={() => setIsOpen(false)}
  *   suggestions={[
- *     { icon: <Icon />, label: "Tell me about recent work..." },
+ *     { label: "Tell me about recent work...", onClick: () => {} },
  *   ]}
  * />
  */
@@ -27,8 +27,6 @@ import { UserChatBubble } from "@/components/ui/user-chat-bubble/user-chat-bubbl
 import { cn } from "@/lib/utils"
 
 interface Suggestion {
-  /** Icon element to display */
-  icon: React.ReactNode
   /** Label text for the suggestion */
   label: string
   /** Optional callback when suggestion is clicked */
@@ -197,16 +195,13 @@ function ChatPanel({
                     key={index}
                     onClick={suggestion.onClick}
                     className={cn(
-                      "w-full flex items-center gap-2 p-3",
+                      "w-full flex items-center p-3",
                       "bg-background rounded-2xl",
                       "hover:bg-muted/50 transition-colors",
                       "outline-none focus-visible:ring-ring/50 focus-visible:ring-[3px]",
                       "text-left"
                     )}
                   >
-                    <div className="flex-shrink-0 text-muted-foreground [&_svg]:size-4 pb-0.5">
-                      {suggestion.icon}
-                    </div>
                     <span className="typography-body-sm text-foreground">
                       {suggestion.label}
                     </span>

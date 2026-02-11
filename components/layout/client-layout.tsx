@@ -7,7 +7,6 @@
 "use client"
 
 import * as React from "react"
-import { Sparkles, Bike, Send } from "lucide-react"
 import { track } from "@vercel/analytics"
 
 import { AuthGate } from "@/components/auth-gate/auth-gate"
@@ -177,17 +176,14 @@ function LayoutContent({ children }: ClientLayoutProps) {
         isLoading={isLoading}
         suggestions={[
           {
-            icon: <Sparkles className="size-5" />,
             label: "Tell me about recent work...",
             onClick: () => handleSuggestionClick("Tell me about recent work"),
           },
           {
-            icon: <Bike className="size-5" />,
             label: "What does Chris do outside of design...?",
             onClick: () => handleSuggestionClick("What does Chris do outside of design?"),
           },
           {
-            icon: <Send className="size-5" />,
             label: "Get in touch",
             onClick: () => handleSuggestionClick("How can I get in touch with Chris?"),
           },

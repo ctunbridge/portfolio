@@ -95,7 +95,7 @@
     font-size: var(--typography-h1-demibold-font-size);
     line-height: var(--typography-h1-demibold-line-height);
     letter-spacing: var(--typography-h1-demibold-letter-spacing);
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .typography-h2-demibold {
@@ -103,7 +103,7 @@
     font-size: var(--typography-h2-demibold-font-size);
     line-height: var(--typography-h2-demibold-line-height);
     letter-spacing: var(--typography-h2-demibold-letter-spacing);
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .typography-h3-demibold {
@@ -111,7 +111,7 @@
     font-size: var(--typography-h3-demibold-font-size);
     line-height: var(--typography-h3-demibold-line-height);
     letter-spacing: var(--typography-h3-demibold-letter-spacing);
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .typography-h4-demibold {
@@ -119,7 +119,7 @@
     font-size: var(--typography-h4-demibold-font-size);
     line-height: var(--typography-h4-demibold-line-height);
     letter-spacing: var(--typography-h4-demibold-letter-spacing);
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .typography-h5-demibold {
@@ -127,7 +127,7 @@
     font-size: var(--typography-h5-demibold-font-size);
     line-height: var(--typography-h5-demibold-line-height);
     letter-spacing: var(--typography-h5-demibold-letter-spacing);
-    font-weight: 600;
+    font-weight: 700;
   }
 
   /* Headings - Normal */
