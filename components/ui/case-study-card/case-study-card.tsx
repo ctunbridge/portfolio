@@ -18,6 +18,8 @@ export interface CaseStudyCardProps {
   year: string;
   /** Project title */
   projectTitle: string;
+  /** Short impact statement focusing on metrics */
+  impact: string;
   /** Image source URL */
   imageSrc: string;
   /** Alt text for the image */
@@ -36,6 +38,7 @@ export function CaseStudyCard({
   businessName,
   year,
   projectTitle,
+  impact,
   imageSrc,
   imageAlt,
   href,
@@ -47,7 +50,7 @@ export function CaseStudyCard({
     <div
       className={cn(
         "group flex flex-col gap-1",
-        href && "cursor-pointer hover:scale-[1.005] transition-transform duration-300 ease-out",
+        href && "cursor-pointer",
         className,
         staggerClass
       )}
@@ -55,13 +58,12 @@ export function CaseStudyCard({
       {/* Project title */}
       <h3 className="typography-h5-demibold">{projectTitle}</h3>
 
-      {/* Business name and year */}
-      <div className="flex items-baseline gap-2 mb-4">
-        <span className="typography-body-bold text-muted-foreground">{businessName}</span>
-        <span className="typography-body text-muted-foreground">{year}</span>
+      {/* Impact statement - min height keeps images level across cards */}
+      <div className="typography-body text-muted-foreground mb-4 min-h-[2lh]">
+        {impact}
       </div>
 
-      {/* 1:1 aspect ratio image */}
+      {/* Image container with overlay */}
       <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-muted">
         <Image
           src={imageSrc}
@@ -71,6 +73,16 @@ export function CaseStudyCard({
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority={priority}
         />
+
+        {/* Solid background overlay with business name and year - shown on hover */}
+        <div className="absolute bottom-0 left-0 right-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <div className="bg-black/60 px-4 py-4">
+            <div className="flex items-baseline gap-2">
+              <span className="typography-body-bold text-white">{businessName}</span>
+              <span className="typography-body text-white">{year}</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

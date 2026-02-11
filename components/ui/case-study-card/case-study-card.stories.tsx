@@ -22,6 +22,10 @@ const meta: Meta<typeof CaseStudyCard> = {
       control: { type: "text" },
       description: "Project title",
     },
+    impact: {
+      control: { type: "text" },
+      description: "Short impact statement focusing on metrics",
+    },
     imageSrc: {
       control: { type: "text" },
       description: "Image source URL",
@@ -45,6 +49,7 @@ export const Default: Story = {
     businessName: "Acme Corporation",
     year: "2024",
     projectTitle: "E-commerce Platform Redesign",
+    impact: "45% increase in conversion rate, 60% faster checkout flow",
     imageSrc: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=800&fit=crop",
     imageAlt: "E-commerce platform interface",
   },
@@ -55,6 +60,7 @@ export const WithLink: Story = {
     businessName: "Tech Startup",
     year: "2023",
     projectTitle: "Mobile App Development",
+    impact: "Native iOS/Android app with 4.8 star rating",
     imageSrc: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=800&fit=crop",
     imageAlt: "Mobile app screens",
     href: "/case-studies/mobile-app",
@@ -66,6 +72,7 @@ export const DesignSystem: Story = {
     businessName: "Global Bank",
     year: "2024",
     projectTitle: "Design System Implementation",
+    impact: "50% reduction in design-to-dev handoff time",
     imageSrc: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=800&fit=crop",
     imageAlt: "Design system components",
     href: "/case-studies/design-system",
@@ -79,6 +86,7 @@ export const Grid: Story = {
         businessName="Acme Corporation"
         year="2024"
         projectTitle="E-commerce Platform Redesign"
+        impact="45% increase in conversion rate, 60% faster checkout flow"
         imageSrc="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=800&fit=crop"
         imageAlt="E-commerce platform"
         href="/case-studies/ecommerce"
@@ -87,6 +95,7 @@ export const Grid: Story = {
         businessName="Tech Startup"
         year="2023"
         projectTitle="Mobile App Development"
+        impact="Native iOS/Android app with 4.8 star rating"
         imageSrc="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=800&fit=crop"
         imageAlt="Mobile app"
         href="/case-studies/mobile-app"
@@ -95,6 +104,7 @@ export const Grid: Story = {
         businessName="Global Bank"
         year="2024"
         projectTitle="Design System Implementation"
+        impact="50% reduction in design-to-dev handoff time"
         imageSrc="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&h=800&fit=crop"
         imageAlt="Design system"
         href="/case-studies/design-system"
@@ -103,6 +113,7 @@ export const Grid: Story = {
         businessName="Retail Chain"
         year="2023"
         projectTitle="Customer Portal Redesign"
+        impact="35% improvement in user satisfaction scores"
         imageSrc="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=800&fit=crop"
         imageAlt="Customer portal"
         href="/case-studies/portal"
@@ -111,6 +122,7 @@ export const Grid: Story = {
         businessName="SaaS Company"
         year="2024"
         projectTitle="Dashboard UI Overhaul"
+        impact="40% reduction in support tickets, clearer data visualization"
         imageSrc="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=800&fit=crop"
         imageAlt="Dashboard interface"
         href="/case-studies/dashboard"
@@ -119,6 +131,7 @@ export const Grid: Story = {
         businessName="Healthcare Provider"
         year="2023"
         projectTitle="Patient Management System"
+        impact="80% faster patient record access, HIPAA compliant"
         imageSrc="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=800&fit=crop"
         imageAlt="Healthcare system"
         href="/case-studies/healthcare"

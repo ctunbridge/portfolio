@@ -521,25 +521,9 @@ export default function GGBookkeepingPage() {
       content: (
         <>
           <div className="space-y-4">
-            <h3 className="typography-h4-demibold">Initial usage</h3>
-            <p className="typography-body text-foreground">
-              We broke delivery into phases to provide value without overwhelming
-              users, launching Bookkeeping first with MTD to follow.
-            </p>
-            <p className="typography-body text-foreground">
-              We're tracking organic traffic to understand how landlords use
-              the feature compared to the old transactions list. Bookkeeping
-              usage is steadily increasing while the previous transactions page
-              remains static.
-            </p>
-            <p className="typography-body text-foreground">
-              Combined with NPS capture, the data shows the feature gaining
-              steady adoption.
-            </p>
-            <p className="typography-body text-foreground">
-              We've also seen strong appetite for Making Tax Digital, with
-              a ~9% CTR on emails and ~35% of recipients signing up to the MTD
-              waitlist.
+            <h3 className="typography-h4-demibold">Engagement</h3>
+            <p className="typography-body text-foreground min-h-[2lh]">
+              To measure engagement, with bookkeeping we tracked how many users were tracking their income and expenses through open banking and how manysigned up for Making Tax Digital. We&apos;ve seen a significant uptake in both features: <span className="font-bold">200+ MTD sign ups</span> from new users in 2 months, <span className="font-bold">564 active banking connections</span>, and nearly <span className="font-bold">60,000+ transactions</span> added since release.
             </p>
           </div>
 
@@ -548,7 +532,7 @@ export default function GGBookkeepingPage() {
             alt="Analytics dashboard showing bookkeeping feature usage"
             width={1920}
             height={1080}
-            className="w-full h-auto rounded-lg mb-8"
+            className="mt-8 w-full h-auto rounded-lg mb-8"
             loading="lazy"
           />
         </>
