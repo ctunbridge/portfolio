@@ -180,7 +180,7 @@ function LayoutContent({ children }: ClientLayoutProps) {
             onClick: () => handleSuggestionClick("Tell me about recent work"),
           },
           {
-            label: "What does Chris do outside of design...?",
+            label: "What does Chris do outside of design?",
             onClick: () => handleSuggestionClick("What does Chris do outside of design?"),
           },
           {

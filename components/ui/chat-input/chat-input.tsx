@@ -114,7 +114,7 @@ function ChatInput({
         disabled={disabled || isLoading}
         autoFocus={autoFocus}
         className={cn(
-          "flex-1 h-11 pl-4 pr-2 pt-2.5 pb-2 bg-transparent typography-body-sm",
+          "flex-1 h-11 pl-4 pr-2 pt-2.5 pb-2.5 bg-transparent typography-body-sm",
           "placeholder:text-muted-foreground",
           "outline-none border-none",
           "disabled:cursor-not-allowed"
@@ -125,7 +125,7 @@ function ChatInput({
         type="submit"
         disabled={!canSubmit}
         className={cn(
-          "flex items-center justify-center size-7 mr-2 rounded-full transition-all",
+          "flex items-center justify-center size-7 mr-2 rounded-full transition-all pb-0.5",
           "outline-none focus-visible:ring-ring/50 focus-visible:ring-[3px]",
           canSubmit
             ? "bg-muted-foreground text-card hover:bg-foreground"

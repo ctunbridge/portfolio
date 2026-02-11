@@ -195,7 +195,7 @@ function ChatPanel({
                     key={index}
                     onClick={suggestion.onClick}
                     className={cn(
-                      "w-full flex items-center p-3",
+                      "w-full flex items-center px-3 pt-3 pb-3.5",
                       "bg-background rounded-2xl",
                       "hover:bg-muted/50 transition-colors",
                       "outline-none focus-visible:ring-ring/50 focus-visible:ring-[3px]",
