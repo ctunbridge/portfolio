@@ -249,7 +249,7 @@ function ChatPanel({
         <div
           className="absolute inset-x-0 bottom-0 h-28 pointer-events-none z-10"
           style={{
-            background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 100%)",
+            background: "linear-gradient(to bottom, color-mix(in srgb, var(--background) 0%, transparent) 0%, color-mix(in srgb, var(--background) 85%, transparent) 100%)",
           }}
           aria-hidden="true"
         />
