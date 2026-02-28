@@ -15,6 +15,12 @@ interface ChatContextValue {
   setIsOpen: (open: boolean) => void
   /** Function to toggle the chat panel */
   toggle: () => void
+  /** Message queued from the home input before the panel opened */
+  pendingMessage: string | null
+  /** Open the panel and queue a message to be submitted */
+  openWithMessage: (message: string) => void
+  /** Clear the pending message after it has been processed */
+  clearPendingMessage: () => void
 }
 
 const ChatContext = React.createContext<ChatContextValue | undefined>(undefined)
@@ -25,14 +31,24 @@ interface ChatProviderProps {
 
 function ChatProvider({ children }: ChatProviderProps) {
   const [isOpen, setIsOpen] = React.useState(false)
+  const [pendingMessage, setPendingMessage] = React.useState<string | null>(null)
 
   const toggle = React.useCallback(() => {
     setIsOpen((prev) => !prev)
   }, [])
 
+  const openWithMessage = React.useCallback((message: string) => {
+    setPendingMessage(message)
+    setIsOpen(true)
+  }, [])
+
+  const clearPendingMessage = React.useCallback(() => {
+    setPendingMessage(null)
+  }, [])
+
   const value = React.useMemo(
-    () => ({ isOpen, setIsOpen, toggle }),
-    [isOpen, toggle]
+    () => ({ isOpen, setIsOpen, toggle, pendingMessage, openWithMessage, clearPendingMessage }),
+    [isOpen, toggle, pendingMessage, openWithMessage, clearPendingMessage]
   )
 
   return <ChatContext.Provider value={value}>{children}</ChatContext.Provider>

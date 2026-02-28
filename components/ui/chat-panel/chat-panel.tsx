@@ -69,7 +69,7 @@ function ChatPanel({
   isOpen = false,
   onClose,
   onNewChat,
-  title = "What would you like to do?",
+  title = "What would you like to know?",
   suggestions = [],
   messages = [],
   onSubmit,
@@ -131,10 +131,10 @@ function ChatPanel({
           "fixed top-0 right-0 h-screen w-full bg-white",
           "flex flex-col",
           "z-50",
-          // Desktop: side panel anchored to bottom, fills to max height
-          "lg:top-auto lg:right-4 lg:bottom-4 lg:h-[min(1200px,calc(100vh-32px))]",
+          // Desktop: side panel anchored to bottom, starts at 600px and grows with content
+          "lg:top-auto lg:right-4 lg:bottom-4 lg:h-auto lg:min-h-[600px] lg:max-h-[min(1200px,calc(100vh-32px))]",
           "lg:w-[356px] lg:rounded-3xl lg:border lg:border-border",
-          "lg:shadow-panel",
+          "lg:shadow-panel lg:overflow-hidden",
           // Transitions
           "transition-transform duration-300",
           isOpen ? "translate-x-0" : "translate-x-full",
@@ -175,28 +175,27 @@ function ChatPanel({
           </div>
         </div>
 
-        {/* Content area */}
-        <div 
+        {/* Content area - scrollable, takes all remaining flex space */}
+        <div
           className={cn(
-            "flex-1 overflow-y-auto px-6 scrollbar-hide",
-            showSuggestions && "flex flex-col justify-center"
+            "flex-1 overflow-y-auto px-6 pb-24 scrollbar-hide",
+            showSuggestions && "flex flex-col justify-end"
           )}
           onScroll={handleScroll}
         >
           {showSuggestions ? (
-            // Suggestions view - centered empty state
-            <div className="space-y-6">
-              <h2 className="typography-h5-demibold text-foreground">
+            <div className="space-y-3">
+              <h2 className="typography-body-sm-bold text-foreground">
                 {title}
               </h2>
-              <div className="space-y-4">
+              <div className="flex flex-wrap gap-2">
                 {suggestions.map((suggestion, index) => (
                   <button
                     key={index}
                     onClick={suggestion.onClick}
                     className={cn(
-                      "w-full flex items-center px-3 pt-3 pb-3.5",
-                      "bg-background rounded-2xl",
+                      "flex items-center px-3 py-2",
+                      "bg-background rounded-full border border-border",
                       "hover:bg-muted/50 transition-colors",
                       "outline-none focus-visible:ring-ring/50 focus-visible:ring-[3px]",
                       "text-left"
@@ -210,8 +209,7 @@ function ChatPanel({
               </div>
             </div>
           ) : (
-            // Messages view
-            <div className="space-y-6 pb-6">
+            <div className="space-y-6">
               {messages.map((message) => (
                 <div
                   key={message.id}
@@ -237,21 +235,33 @@ function ChatPanel({
           )}
         </div>
 
-        {/* Input area */}
-        <div className="flex-shrink-0 relative">
-          {/* Gradient fade overlay */}
-          <div 
-            className="absolute inset-x-0 -top-8 h-8 pointer-events-none bg-gradient-to-t from-white to-transparent"
-            aria-hidden="true"
+        {/* Progressive blur overlay - absolute on panel, overlaps content bottom */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-28 pointer-events-none z-10"
+          style={{
+            backdropFilter: "blur(6px)",
+            WebkitBackdropFilter: "blur(6px)",
+            WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
+            maskImage: "linear-gradient(to bottom, transparent 0%, black 100%)",
+          }}
+          aria-hidden="true"
+        />
+        <div
+          className="absolute inset-x-0 bottom-0 h-28 pointer-events-none z-10"
+          style={{
+            background: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 100%)",
+          }}
+          aria-hidden="true"
+        />
+
+        {/* Input pinned at bottom - above overlay */}
+        <div className="absolute inset-x-0 bottom-0 z-20 px-4 pb-4 pt-2 lg:rounded-b-3xl">
+          <ChatInput
+            placeholder={placeholder}
+            onSubmit={onSubmit}
+            isLoading={isLoading}
+            autoFocus={shouldAutoFocus}
           />
-          <div className="p-4 bg-white/80 backdrop-blur-sm lg:rounded-b-3xl">
-            <ChatInput
-              placeholder={placeholder}
-              onSubmit={onSubmit}
-              isLoading={isLoading}
-              autoFocus={shouldAutoFocus}
-            />
-          </div>
         </div>
       </div>
     </>
