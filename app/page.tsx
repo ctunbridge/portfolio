@@ -21,7 +21,7 @@ import { useChatContext } from "@/lib/chat-context";
 const INTRO_SHOWN_KEY = "home-intro-shown";
 
 export default function Home() {
-  const { isOpen: isChatPanelOpen, setIsOpen: setIsChatPanelOpen } = useChatContext();
+  const { isOpen: isChatPanelOpen, openWithMessage } = useChatContext();
   const [showContent, setShowContent] = React.useState(false);
   const [showFloatingInput, setShowFloatingInput] = React.useState(false);
   const [showMoreExperience, setShowMoreExperience] = React.useState(false);
@@ -64,10 +64,6 @@ export default function Home() {
       observer.disconnect();
     };
   }, [isChatPanelOpen]);
-
-  const handleChatFocus = () => {
-    setIsChatPanelOpen(true);
-  };
 
   const handleIntroComplete = React.useCallback(() => {
     setShowContent(true);
@@ -127,7 +123,7 @@ export default function Home() {
                   <div ref={inlineInputRef} className="col-span-9 mb-50 w-80 animate-stagger-2">
                     <ChatInput
                       placeholder="Ask something..."
-                      onFocus={handleChatFocus}
+                      onSubmit={(value) => openWithMessage(value)}
                     />
                   </div>
                 )}
@@ -277,7 +273,7 @@ export default function Home() {
           <div className="w-80 mx-auto">
             <ChatInput
               placeholder="Ask something..."
-              onFocus={handleChatFocus}
+              onSubmit={(value) => openWithMessage(value)}
               className="shadow-elevated"
             />
           </div>

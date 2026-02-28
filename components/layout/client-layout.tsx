@@ -19,9 +19,10 @@ interface ClientLayoutProps {
 }
 
 function LayoutContent({ children }: ClientLayoutProps) {
-  const { isOpen, setIsOpen } = useChatContext()
+  const { isOpen, setIsOpen, pendingMessage, clearPendingMessage } = useChatContext()
   const [messages, setMessages] = React.useState<Message[]>([])
   const [isLoading, setIsLoading] = React.useState(false)
+  const handleSubmitRef = React.useRef<(content: string) => void>(() => {})
 
   // Track when chat panel is opened
   React.useEffect(() => {
@@ -36,6 +37,14 @@ function LayoutContent({ children }: ClientLayoutProps) {
       }
     }
   }, [isOpen])
+
+  // Process pending message from home input
+  React.useEffect(() => {
+    if (isOpen && pendingMessage) {
+      handleSubmitRef.current(pendingMessage)
+      clearPendingMessage()
+    }
+  }, [isOpen, pendingMessage, clearPendingMessage])
 
   const handleSubmit = async (content: string) => {
     // Track message sent
@@ -137,6 +146,8 @@ function LayoutContent({ children }: ClientLayoutProps) {
     }
   }
 
+  handleSubmitRef.current = handleSubmit
+
   const handleNewChat = () => {
     setMessages([])
   }
@@ -169,7 +180,7 @@ function LayoutContent({ children }: ClientLayoutProps) {
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
         onNewChat={handleNewChat}
-        title="What would you like to do?"
+        title="What would you like to know?"
         placeholder="Ask something..."
         messages={messages}
         onSubmit={handleSubmit}
