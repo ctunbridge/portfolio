@@ -268,7 +268,7 @@ export default function Home() {
       </div>
 
       {/* Floating Chat Input */}
-      {showFloatingInput && !isChatPanelOpen && (
+      {showFloatingInput && showContent && !isChatPanelOpen && (
         <div className="fixed bottom-4 left-0 right-0 z-50 px-4 animate-fade-in">
           <div className="w-80 mx-auto">
             <ChatInput

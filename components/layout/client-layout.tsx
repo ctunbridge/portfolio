@@ -9,7 +9,6 @@
 import * as React from "react"
 import { track } from "@vercel/analytics"
 
-import { AuthGate } from "@/components/auth-gate/auth-gate"
 import { ChatPanel, type Message } from "@/components/ui/chat-panel/chat-panel"
 import { ChatProvider, useChatContext } from "@/lib/chat-context"
 import { cn } from "@/lib/utils"
@@ -206,11 +205,9 @@ function LayoutContent({ children }: ClientLayoutProps) {
 
 function ClientLayout({ children }: ClientLayoutProps) {
   return (
-    <AuthGate>
-      <ChatProvider>
-        <LayoutContent>{children}</LayoutContent>
-      </ChatProvider>
-    </AuthGate>
+    <ChatProvider>
+      <LayoutContent>{children}</LayoutContent>
+    </ChatProvider>
   )
 }
 
