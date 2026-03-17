@@ -110,6 +110,7 @@ export default function Home() {
                 <h1 className="typography-h1-demibold col-span-9 mb-10 h-75 @3xl:col-span-8 animate-stagger-1">
                   I'm a product designer, founder, and builder of things, like{" "}
                   <CyclingText
+                    key={showContent ? "visible" : "hidden"}
                     texts={[
                       "this portfolio.",
                       "design systems.",
