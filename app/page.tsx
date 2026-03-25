@@ -148,7 +148,7 @@ export default function Home() {
                   businessName="GetGround"
                   year="2025"
                   projectTitle="Bookkeeping & Tax"
-                  impact="200+ MTD sign ups in 2 months, 564 active banking connections, 60,000+ transactions since release."
+                  impact="Figma Make to codebase in days, Capcom system, 200+ MTD sign ups in 2 months."
                   imageSrc="/images/case-studies/gg-home-bk.jpg"
                   imageAlt="GetGround Bookkeeping & MTD"
                   href="/gg-bookkeeping"
