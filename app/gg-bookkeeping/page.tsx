@@ -238,7 +238,7 @@ export default function GGBookkeepingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 mt-8">
+          <div className="mt-8 space-y-6">
             <Image
               src="/images/case-studies/gg-bookkeeping/technical-whiteboard.jpg"
               alt="Technical whiteboard mapping the prototype journey against technical requirements"
@@ -408,7 +408,7 @@ export default function GGBookkeepingPage() {
           </div>
           <div className="mt-30 lg:mt-45 flex justify-center">
             <Button variant="outline" asChild>
-              <Link href="/sage-individual">Next project</Link>
+              <Link href="/gg-plg">Next project</Link>
             </Button>
           </div>
         </div>
