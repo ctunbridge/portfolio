@@ -65,14 +65,14 @@ export function CaseStudyLayout({ sections }: CaseStudyLayoutProps) {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
       {/* Fixed title column - desktop only */}
-      <div className="hidden lg:block lg:col-span-4">
+      <div className="hidden lg:block lg:col-span-3">
         <div className="sticky top-70">
-          <div className="relative min-h-[3rem]">
+          <div className="relative min-h-[2.5rem]">
             {sections.map((section, index) => (
               <h2
                 key={section.id}
                 className={cn(
-                  "typography-h4-normal absolute top-0 left-0 right-0 transition-opacity duration-500",
+                  "typography-h5-normal absolute top-0 left-0 right-0 transition-opacity duration-500",
                   activeSection === index
                     ? "opacity-100"
                     : "opacity-0 pointer-events-none"
@@ -86,7 +86,7 @@ export function CaseStudyLayout({ sections }: CaseStudyLayoutProps) {
       </div>
 
       {/* Scrolling content column */}
-      <div className="col-span-1 lg:col-span-8 space-y-[400px]">
+      <div className="col-span-1 lg:col-span-9 space-y-[400px]">
         {sections.map((section, index) => (
           <section
             key={section.id}
