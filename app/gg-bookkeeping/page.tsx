@@ -408,7 +408,7 @@ export default function GGBookkeepingPage() {
           </div>
           <div className="mt-30 lg:mt-45 flex justify-center">
             <Button variant="outline" asChild>
-              <Link href="/sage-individual">Next project</Link>
+              <Link href="/gg-plg">Next project</Link>
             </Button>
           </div>
         </div>

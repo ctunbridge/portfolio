@@ -255,7 +255,7 @@ export default function GGPLGPage() {
         {/* Next Project Button */}
         <div className="flex justify-center mt-30 lg:mt-45">
           <Button variant="outline" asChild>
-            <Link href="/gg-bookkeeping">Next project</Link>
+            <Link href="/sage-individual">Next project</Link>
           </Button>
         </div>
       </div>
