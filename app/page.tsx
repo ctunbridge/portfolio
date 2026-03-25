@@ -136,22 +136,22 @@ export default function Home() {
                 <CaseStudyCard
                   businessName="GetGround"
                   year="2025/26"
-                  projectTitle="Enabling Product Led Growth"
-                  impact="22% uplift through funnel, 38% more sign ups, 41% more completions."
-                  imageSrc="/images/case-studies/gg-home-ui.jpg"
-                  imageAlt="GetGround Platform UI Refresh"
-                  href="/gg-plg"
+                  projectTitle="Bookkeeping & Tax"
+                  impact="Figma Make to codebase in days, Capcom system, 200+ MTD sign ups in 2 months."
+                  imageSrc="/images/case-studies/gg-home-bk.jpg"
+                  imageAlt="GetGround Bookkeeping & MTD"
+                  href="/gg-bookkeeping"
                   priority
                   staggerClass="animate-stagger-card-1"
                 />
                 <CaseStudyCard
                   businessName="GetGround"
-                  year="2025"
-                  projectTitle="Bookkeeping & Tax"
-                  impact="200+ MTD sign ups in 2 months, 564 active banking connections, 60,000+ transactions since release."
-                  imageSrc="/images/case-studies/gg-home-bk.jpg"
-                  imageAlt="GetGround Bookkeeping & MTD"
-                  href="/gg-bookkeeping"
+                  year="2025/26"
+                  projectTitle="Enabling Product Led Growth"
+                  impact="22% uplift through funnel, 38% more sign ups, 41% more completions."
+                  imageSrc="/images/case-studies/gg-home-ui.jpg"
+                  imageAlt="GetGround Platform UI Refresh"
+                  href="/gg-plg"
                   priority
                   staggerClass="animate-stagger-card-2"
                 />

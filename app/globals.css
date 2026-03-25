@@ -47,6 +47,11 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    /* Anchor links (#section) clear the sticky top nav */
+    @apply scroll-pt-25;
+  }
+
   html,
   body {
     -ms-overflow-style: none;

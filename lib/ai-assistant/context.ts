@@ -29,7 +29,7 @@ export const portfolioContext: PortfolioContext = {
       label: "Bookkeeping & Tax Case Study",
       url: "/gg-bookkeeping",
       description:
-        "Detailed case study on GetGround's bookkeeping and Making Tax Digital feature",
+        "Bookkeeping and MTD: Figma Make to codebase prototype, Capcom design system, code-first delivery with Cursor, and impact metrics",
     },
     {
       label: "Enabling Product Led Growth Case Study",
@@ -206,104 +206,105 @@ export const portfolioContext: PortfolioContext = {
       ],
       sections: [
         {
-          title: "Impact Model",
+          title: "Product principles",
           content: [
-            "Maximising the impact of large projects is essential for GetGround's short and long term business ambitions.",
-            "Working with product managers to produce a model to understand how many users we could capture, conservatively and aggressively, and how this could result in revenue for the business.",
-            "Used real market data to create the model which played a huge role in putting forward a strong value proposition to leaders within the business.",
+            "Show the right thing, not everything; build confidence with every interaction; make it useful every time, not just the first time.",
           ],
         },
         {
-          title: "Discovery",
+          title: "Problem context",
           content: [
-            "Established that the market was there for a more comprehensive bookkeeping experience that included Making Tax Digital.",
-            "Needed to understand current frustrations users face with tax and bookkeeping and the new technical and user facing requirements this would bring.",
+            "Lightweight validation of frustrations and requirements, not a multi-week discovery phase.",
+            "Impact model with product managers: user capture scenarios and revenue, using real market data to support leadership decisions.",
+            "Market sizing and sentiment: spreadsheets vs MTD, self-assessment habits, awareness of MTD.",
+            "Platform needs: richer bookkeeping and transactions; HMRC-compliant MTD submissions via APIs.",
           ],
           metrics: [
             {
               label: "80%",
               value: "of landlords still rely on spreadsheets",
               description:
-                "Not compatible with MTD. Landlords want clarity without complexity when making tax submissions. Common pain-points centred around lack of correct figures, which figures to use, and how to find them.",
+                "Not compatible with MTD; landlords want clarity without complexity for tax submissions.",
             },
             {
               label: "60%",
               value: "of users handle their own self assessments",
               description:
-                "The majority of landlords prefer to manage much of their bookkeeping and tax themselves, rather than appoint an accountant.",
+                "Most landlords prefer to manage bookkeeping and tax themselves rather than use an accountant.",
             },
             {
               label: "35%",
               value: "said they were not aware of Making Tax Digital",
               description:
-                "MTD is not on every landlord's radar, and not well understood. Of those that were familiar there was a mixed understanding of what was required from them.",
+                "MTD is not on every landlord's radar; mixed understanding of requirements among those aware.",
             },
           ],
         },
         {
-          title: "Platform Requirements",
+          title: "Problem to prototype",
           content: [
-            "Bookkeeping: A new and improved transaction, tax deadline, and submission management tool. The current transactions list experience was too basic to provide value. Users need to see their property income and expenses from all sources, manage these transactions efficiently, and see and submit their tax obligations.",
-            "HMRC Compliance: To build an effective Making Tax Digital solution, needed a solid understanding of HMRC's full requirements to allow users to send a complete and compliant tax submission via MTD APIs.",
-          ],
-        },
-        {
-          title: "Ideation and Testing",
-          content: [
-            "As a full product team, engineering included, mapped out each journey for both bookkeeping and MTD to understand how to bring together the identified user needs and technical constraints at the same time.",
-            "Created code-first prototype in Next.js to test the largest unknown: Making Tax Digital submissions.",
-            "Tested with users to understand how they would find the quarterly submission cadence, and how sentiment changed towards MTD before and after making submissions.",
+            "Figma Make: testable prototype for transaction management and quarterly submissions in a couple of days, put in front of users for feedback.",
+            "Cut design and testing time by half; more comprehensive test; spotted journey gaps faster than traditional user flow mapping or working through each scenario in isolation.",
           ],
           metrics: [
             {
               label: "40%",
               value: "confidence uplift",
               description:
-                "Before using the prototype only 20% of participants said they were confident with MTD changes, after 60% said they were confident - a jump of 40%.",
+                "Before the prototype 20% of participants were confident with MTD changes; after, 60% were confident.",
             },
             {
               label: "90%",
               value: "clarity",
               description:
-                "90% of participants said it was clear what needed to be submitted and when while looking at the Personal Tax screen.",
+                "90% of participants said it was clear what needed to be submitted and when on the Personal Tax screen.",
             },
           ],
         },
         {
-          title: "Code First Delivery",
+          title: "Feasibility mapping",
           content: [
-            "Using Cursor, created the core Bookkeeping and MTD front-end directly in the GetGround codebase using Next.js and Tailwind.",
-            "Benefits: Craft the experience to a level not possible through Figma frames, use real data and staging accounts to validate design decisions, save precious engineering time, and raise the quality of overall output.",
-            "Alongside the feature branch, delivered a comprehensive set of supplementary designs in Figma to fill in the gaps, giving engineers full understanding from both technical and design perspective.",
+            "Mapped the user journey we were about to prototype (bookkeeping and MTD) against HMRC rules, MTD APIs, and platform constraints.",
+            "Whiteboard and service blueprint sessions in days with engineering to surface feasibility, engineering spikes, and compliance trade-offs.",
           ],
         },
         {
-          title: "Build & UXQA",
+          title: "Design system",
           content: [
-            "Feature branch and comprehensive designs enabled more focused support during build - smaller, more deliberate decision making.",
-            "Higher quality output confirmed in UXQA with significantly less UI bugs and differences from the intended design.",
+            "Capcom: Figma library, variables, and components; maintain parity with UI components in the codebase.",
+            "Reusable patterns so other squads ship faster.",
+          ],
+        },
+        {
+          title: "Code-first delivery",
+          content: [
+            "Cursor, Next.js, and Tailwind in the GetGround codebase; compose from shared components and tokens.",
+            "Real data and staging validation; AI-augmented production workflow.",
+            "Detailed Figma specs for edge flows so engineers see where the shared system stops and feature-specific UI begins.",
           ],
         },
         {
           title: "Impact",
           content: [
-            "Delivery broken up to ensure continued value without overwhelming users: Bookkeeping first, MTD later.",
-            "Tracking organic traffic shows positive results with bookkeeping usage steadily increasing while previous transactions page remains static.",
-            "Healthy appetite for Making Tax Digital with ~9% CTR on emails and ~35% of those signing up to the MTD waitlist.",
+            "200+ MTD sign ups in two months, 564 active banking connections, 60,000+ transactions since release.",
           ],
         },
         {
-          title: "Next Steps",
+          title: "Next steps",
           content: [
-            "Bookkeeping x AI: Now positioned to bring smarter, AI-enhanced experiences into Bookkeeping. Discovery work ongoing with user data showing desire for deeper, more personal AI-powered experiences.",
-            "MTD April 2026: Continuing to build towards full MTD compliance ahead of the April 2026 deadline.",
+            "Smarter AI-enhanced experiences in Bookkeeping; usage data supports demand.",
+            "Exploring agents and subagents for research and component work; exploring usage monitoring and automated PR suggestions.",
+            "MTD April 2026 cohort and HMRC recognition as an MTD developer.",
           ],
         },
       ],
       skills: [
         "Impact modelling",
         "User research",
-        "Journey mapping",
+        "Feasibility mapping",
+        "Figma Make",
+        "Design systems",
+        "Component architecture",
         "Code-first prototyping",
         "Next.js",
         "Tailwind CSS",
@@ -311,6 +312,7 @@ export const portfolioContext: PortfolioContext = {
         "Figma",
         "HMRC API integration",
         "UXQA",
+        "AI-augmented design",
       ],
     },
     {
