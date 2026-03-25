@@ -273,20 +273,14 @@ export default function GGBookkeepingPage() {
             </p>
           </div>
 
-          <div className="space-y-4 mt-8 rounded-lg border border-border bg-muted/40 p-6">
-            <p className="typography-small text-muted-foreground">
-              Placeholder asset — replace with a Figma library or components screenshot:{" "}
-              <span className="font-mono text-foreground">public/images/case-studies/gg-bookkeeping/design-system-figma-library.svg</span>
-            </p>
-            <Image
-              src="/images/case-studies/gg-bookkeeping/design-system-figma-library.svg"
-              alt="Capcom Figma library overview (placeholder until final screenshot is added)"
-              width={1200}
-              height={675}
-              className="w-full h-auto rounded-lg"
-              loading="lazy"
-            />
-          </div>
+          <Image
+            src="/images/case-studies/gg-bookkeeping/design-system-figma-library.jpg"
+            alt="Capcom design system library in Figma: components and variables"
+            width={1920}
+            height={1080}
+            className="mt-8 w-full h-auto rounded-lg"
+            loading="lazy"
+          />
         </>
       ),
     },
