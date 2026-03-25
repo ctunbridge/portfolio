@@ -28,7 +28,13 @@ function TopNav({ className, name = "CT", items = [], ...props }: TopNavProps) {
   const [activeSection, setActiveSection] = React.useState<string>("")
   const scrollContainerRef = React.useRef<HTMLDivElement>(null)
 
-  // Scroll active item into view on mobile/tablet (horizontal scroll only)
+  const firstSectionId = React.useMemo(
+    () => items.find((item) => item.id && !item.action)?.id,
+    [items]
+  )
+
+  // Keep the active label in view (horizontal scroll only). Start-align so the
+  // first item is never clipped; centering was scrolling past "Introduction".
   React.useEffect(() => {
     if (!activeSection || !scrollContainerRef.current) return
 
@@ -37,23 +43,22 @@ function TopNav({ className, name = "CT", items = [], ...props }: TopNavProps) {
       `[data-section-id="${activeSection}"]`
     ) as HTMLElement
 
-    if (activeButton) {
-      // Calculate scroll position to center the button in the container
-      const containerRect = container.getBoundingClientRect()
-      const buttonRect = activeButton.getBoundingClientRect()
-      const scrollLeft =
-        buttonRect.left -
-        containerRect.left +
-        container.scrollLeft -
-        containerRect.width / 2 +
-        buttonRect.width / 2
+    if (!activeButton) return
 
-      container.scrollTo({
-        left: Math.max(0, scrollLeft),
-        behavior: "smooth",
-      })
+    if (activeSection === firstSectionId) {
+      container.scrollTo({ left: 0, behavior: "smooth" })
+      return
     }
-  }, [activeSection])
+
+    const delta =
+      activeButton.getBoundingClientRect().left -
+      container.getBoundingClientRect().left
+    const nextLeft = container.scrollLeft + delta
+    container.scrollTo({
+      left: Math.max(0, nextLeft),
+      behavior: "smooth",
+    })
+  }, [activeSection, firstSectionId])
 
   // Scroll-based active state
   React.useEffect(() => {
@@ -111,29 +116,23 @@ function TopNav({ className, name = "CT", items = [], ...props }: TopNavProps) {
     }
   }, [items])
 
-  const handleItemClick = (item: TopNavItem, index: number) => {
+  /** Matches `scroll-pt-25` on `html` so section headings sit below the sticky nav. */
+  const NAV_SCROLL_OFFSET_PX = 100
+
+  const handleItemClick = (item: TopNavItem) => {
     if (item.action) {
-      // Execute the action callback
       item.action()
     } else if (item.id) {
-      // First item scrolls to absolute top (0), others scroll with 80px offset
-      if (index === 0) {
+      const element = document.getElementById(item.id)
+      if (element) {
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY
+        const offsetPosition = elementPosition - NAV_SCROLL_OFFSET_PX
+
         window.scrollTo({
-          top: 0,
+          top: Math.max(0, offsetPosition),
           behavior: "smooth",
         })
-      } else {
-        const element = document.getElementById(item.id)
-        if (element) {
-          const elementPosition =
-            element.getBoundingClientRect().top + window.scrollY
-          const offsetPosition = elementPosition - 100
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          })
-        }
       }
     }
   }
@@ -165,23 +164,26 @@ function TopNav({ className, name = "CT", items = [], ...props }: TopNavProps) {
         {items.length > 0 && (
           <div
             ref={scrollContainerRef}
-            className="scrollbar-hide flex h-full w-full items-center gap-6 overflow-x-auto pl-16 pr-6 md:gap-8 md:pl-20 md:pr-8 lg:h-auto lg:justify-end lg:pl-0 lg:pr-0"
+            className="scrollbar-hide flex h-full min-w-0 flex-1 items-center overflow-x-auto pl-16 pr-6 md:pl-20 md:pr-8 lg:h-auto lg:pl-0 lg:pr-0"
           >
-            {items.map((item, index) => (
-              <button
-                key={`${item.id || item.label}-${index}`}
-                data-section-id={item.id}
-                onClick={() => handleItemClick(item, index)}
-                className={cn(
-                  "typography-body whitespace-nowrap text-secondary transition-colors hover:text-foreground",
-                  !item.action &&
-                    activeSection === item.id &&
-                    "typography-body-bold text-foreground"
-                )}
-              >
-                {item.label}
-              </button>
-            ))}
+            <div className="flex w-max items-center justify-start gap-6 md:gap-8">
+              {items.map((item, index) => (
+                <button
+                  key={`${item.id || item.label}-${index}`}
+                  data-section-id={item.id}
+                  type="button"
+                  onClick={() => handleItemClick(item)}
+                  className={cn(
+                    "typography-body shrink-0 whitespace-nowrap text-secondary transition-colors hover:text-foreground",
+                    !item.action &&
+                      activeSection === item.id &&
+                      "typography-body-bold text-foreground"
+                  )}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </div>
