@@ -113,6 +113,7 @@ export default function Home() {
                     key={showContent ? "visible" : "hidden"}
                     texts={[
                       "this portfolio.",
+                      "agentic experiences.",
                       "design systems.",
                       "next.js and tailwind.css sites.",
                       "mobile native apps.",
