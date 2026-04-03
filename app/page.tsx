@@ -108,16 +108,16 @@ export default function Home() {
             <section id="welcome" className="min-h-screen">
               <div className="grid grid-cols-9">
                 <h1 className="typography-h1-demibold col-span-9 mb-10 h-75 @3xl:col-span-8 animate-stagger-1">
-                  I'm a product designer, founder, and builder of things, like{" "}
+                  I’m a senior product designer and design engineer building{" "}
                   <CyclingText
                     key={showContent ? "visible" : "hidden"}
                     texts={[
-                      "this portfolio.",
-                      "agentic experiences.",
-                      "design systems.",
-                      "next.js and tailwind.css sites.",
-                      "mobile native apps.",
-                      "react apps.",
+                      "digital products with measurable impact.",
+                      "AI-assisted product experiences.",
+                      "design systems that scale across teams.",
+                      "Next.js and Tailwind prototypes that ship faster.",
+                      "mobile apps for real customer needs.",
+                      "React products from concept to delivery.",
                     ]}
                   />
                 </h1>
@@ -137,7 +137,7 @@ export default function Home() {
                   businessName="GetGround"
                   year="2025/26"
                   projectTitle="Bookkeeping & Tax"
-                  impact="Figma Make to codebase in days, Capcom system, 200+ MTD sign ups in 2 months."
+                  impact="From Figma Make to production in days, with 200+ MTD sign-ups in 2 months and a reusable design system foundation."
                   imageSrc="/images/case-studies/gg-home-bk.jpg"
                   imageAlt="GetGround Bookkeeping & MTD"
                   href="/gg-bookkeeping"
@@ -148,7 +148,7 @@ export default function Home() {
                   businessName="GetGround"
                   year="2025/26"
                   projectTitle="Enabling Product Led Growth"
-                  impact="22% uplift through funnel, 38% more sign ups, 41% more completions."
+                  impact="22% funnel uplift, 38% more sign-ups, and 41% more completions through clearer journeys and a more consistent product experience."
                   imageSrc="/images/case-studies/gg-home-ui.jpg"
                   imageAlt="GetGround Platform UI Refresh"
                   href="/gg-plg"
@@ -159,7 +159,7 @@ export default function Home() {
                   businessName="Sage"
                   year="2021-2024"
                   projectTitle="Sage Individual"
-                  impact="Supporting ~150,000 sole traders across the UK with their business needs."
+                  impact="Helping ~150,000 UK sole traders manage core business tasks with more confidence and less admin friction."
                   imageSrc="/images/case-studies/sage-home-individual.jpg"
                   imageAlt="Sage Individual mobile app"
                   href="/sage-individual"
@@ -169,7 +169,7 @@ export default function Home() {
                   businessName="Sage"
                   year="2021-2024"
                   projectTitle="Graphite Design System"
-                  impact="Native iOS/Android design system built from the ground up."
+                  impact="Built a native iOS and Android design system from the ground up to improve consistency, accessibility, and delivery speed."
                   imageSrc="/images/case-studies/individual-ds-2.jpg"
                   imageAlt="Sage GraphiteDesign System"
                   href="/sage-ds"
@@ -182,8 +182,8 @@ export default function Home() {
             <section id="experience">
               <div className="grid grid-cols-9 gap-y-20">
                 <h5 className="typography-h5-normal col-span-7 col-start-3 text-right mb-20 animate-stagger-5">
-                  <span className="typography-h5-demibold">10 years product design</span>{" "}
-                  experience in start-up, agency, and enterprise environments building web-responsive, mobile-native products and design systems.
+                  <span className="typography-h5-demibold">10 years across product design, systems, and delivery</span>{" "}
+                  in start-up, agency, and enterprise environments shipping responsive web products, native mobile apps, and scalable design systems.
                 </h5>
 
                 <div className="col-span-9 @3xl:col-span-7 flex flex-col gap-20">
@@ -192,8 +192,8 @@ export default function Home() {
                     dates="2024 to Present"
                     jobTitle="Lead Product Designer"
                     summary={[
-                      "Lead Product Designer for multiple features across the GetGround platform, serving 30,000+ property investors. Designed and delivered the bookkeeping and tax submissions area end-to-end, led the platform UI refresh across portfolio, transactions, property details, and financial accounts, and built and maintain the Capcom design system.",
-                      "Designed AI interaction models and dynamic experiences that generate actions and reports based on portfolio, market, and user context. Built business impact models to inform product decisions, integrated AI into the design process through code-first prototyping in Next.js, and created custom agents like CopyKat, a context-aware copywriting tool."
+                      "Lead Product Designer across core areas of the GetGround platform, serving 30,000+ property investors. Designed and delivered bookkeeping and tax submissions end-to-end, led the platform UI refresh across key journeys, and built and maintained the Capcom design system.",
+                      "Designed AI-assisted interaction models and dynamic experiences that generate actions and reports based on portfolio, market, and user context. Built business impact models to inform product decisions, used code-first prototyping in Next.js to speed up validation, and created tools like CopyKat, a context-aware copywriting agent."
                     ]}
                   />
                   <ExperienceCard
@@ -201,8 +201,8 @@ export default function Home() {
                     dates="2021 to 2023"
                     jobTitle="Senior Product Designer"
                     summary={[
-                      "Created and delivered the Sage Individual native app for Android and iOS, targeting the UK's 4.5 million small business owners with features for expense tracking, native tap-to-pay, and tax submissions.",
-                      "Established team practices including retrospectives and design feedback pathways, served as Accessibility Champion for native mobile (WCAG 2.1), and built the Native Mobile Design System from the ground up."
+                      "Created and delivered the Sage Individual native app for Android and iOS, designed for the UK’s 4.5 million small business owners with features for expense tracking, tap to pay, and tax submissions.",
+                      "Established team practices including retrospectives and design feedback pathways, served as Accessibility Champion for native mobile (WCAG 2.1), and helped build the Native Mobile Design System from the ground up."
                     ]}
                   />
                   <ExperienceCard
@@ -210,7 +210,7 @@ export default function Home() {
                     dates="2019 to 2021"
                     jobTitle="Founding Product Designer"
                     summary={[
-                      "Founding Lead Product Designer for a peer-to-peer iOS and Android betting app based on Last Man Standing. Designed the end-to-end experience including UX/UI, design system, content, and marketing materials.",
+                      "Founding Product Designer for a peer-to-peer iOS and Android betting app based on Last Man Standing. Designed the end-to-end experience across UX, UI, design systems, content, and marketing materials.",
                       "Grew to 15,000+ sign-ups and 8,000+ active users within 18 months of launch."
                     ]}
                   />
