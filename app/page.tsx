@@ -137,7 +137,7 @@ export default function Home() {
                   businessName="GetGround"
                   year="2025/26"
                   projectTitle="Bookkeeping & Tax"
-                  impact="Code-first prototyping to production in days, not weeks."
+                  impact="From code first prototypes to production in days, built from our foundational design system Capcom"
                   imageSrc="/images/case-studies/gg-home-bk.jpg"
                   imageAlt="GetGround Bookkeeping & MTD"
                   href="/gg-bookkeeping"

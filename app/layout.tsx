@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     siteName: "Chris Tunbridge Portfolio",
     title: "Chris Tunbridge | Product Designer & Design Engineer",
     description:
-      "Senior product designer and design engineer specialising in digital products, design systems, and AI-assisted experiences.",
+      "Senior product founder specialising in digital products, design systems, and AI-assisted experiences.",
   },
   twitter: {
     card: "summary_large_image",
