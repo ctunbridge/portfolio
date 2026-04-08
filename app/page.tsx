@@ -137,7 +137,7 @@ export default function Home() {
                   businessName="GetGround"
                   year="2025/26"
                   projectTitle="Bookkeeping & Tax"
-                  impact="From Figma Make to production in days, with 200+ MTD sign-ups in 2 months and a reusable design system foundation."
+                  impact="Code first prototyping to production in days, not weeks."
                   imageSrc="/images/case-studies/gg-home-bk.jpg"
                   imageAlt="GetGround Bookkeeping & MTD"
                   href="/gg-bookkeeping"
