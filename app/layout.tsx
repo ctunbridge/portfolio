@@ -12,24 +12,27 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
   title: {
-    default: 'Portfolio',
-    template: '%s | Portfolio',
+    default: "Chris Tunbridge | Product Designer & Design Engineer",
+    template: "%s | Chris Tunbridge",
   },
-  description: 'A modern Next.js application template with shadcn/ui, Tailwind CSS, and a comprehensive design system.',
+  description:
+    "Portfolio of Chris Tunbridge, a senior product designer and product founder building high-impact digital products, design systems, and AI-assisted experiences.",
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: '/',
-    siteName: 'Portfolio',
-    title: 'Portfolio',
-    description: 'A modern Next.js application template with shadcn/ui, Tailwind CSS, and a comprehensive design system.',
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "Chris Tunbridge Portfolio",
+    title: "Chris Tunbridge | Product Designer & Design Engineer",
+    description:
+      "Senior product founder specialising in digital products, design systems, and AI-assisted experiences.",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Portfolio',
-    description: 'A modern Next.js application template with shadcn/ui, Tailwind CSS, and a comprehensive design system.',
+    card: "summary_large_image",
+    title: "Chris Tunbridge | Product Designer & Design Engineer",
+    description:
+      "Senior product designer and product founder specialising in digital products, design systems, and AI-assisted experiences.",
   },
 };
 

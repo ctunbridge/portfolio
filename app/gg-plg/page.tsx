@@ -218,14 +218,14 @@ export default function GGPLGPage() {
               <div className="space-y-4">
                 <p className="typography-body text-foreground">
                   <span className="typography-body-bold">Background</span> ·{" "}
-                  GetGround is a prop-tech SAAS, aiming to democratise property ownership by offering both personal and limited company services such as financial management, lettings, mortgages, and portfolio optimisation.
+                  GetGround is a prop-tech SaaS company focused on making property ownership more accessible, with services spanning financial management, lettings, mortgages, and portfolio optimisation.
                 </p>
                 <p className="typography-body text-foreground">
-                  <span className="typography-body-bold">Problem Statement</span> ·{" "}
-                  With the move to product led growth we introduced a number of new features, new subscriptions including a free tier, and opened up the platform to both personal and limited company landlords, supporting an end to end investment journey
+                  <span className="typography-body-bold">Problem statement</span> ·{" "}
+                  As GetGround shifted to product-led growth, we introduced new features, new subscription tiers including a free plan, and support for both personal and limited company landlords across a more complete investment journey.
                 </p>
                 <p className="typography-body text-foreground">
-                  Many areas of the platform are the outcome of previous experiments and iterations, that are either out of date or need deprecating. We needed to create a foundation for the next stage of user growth by removing what is no longer needed, bringing in a cohesive design language and user experience, and crucially amending onboarding flows that do not facilitate onward free to paid journeys.
+                  Many parts of the platform were the result of earlier experiments and iterations that were now outdated or ready to retire. We needed to create a stronger foundation for growth by removing unnecessary friction, introducing a more cohesive design language, and improving onboarding flows that were not effectively converting free users into paid customers.
                 </p>
               </div>
 
