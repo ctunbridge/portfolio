@@ -192,7 +192,7 @@ export default function Home() {
                     dates="2024 to Present"
                     jobTitle="Lead Product Designer"
                     summary={[
-                      "Lead Product Designer across core areas of the GetGround platform, serving 30,000+ property investors. Designed and delivered bookkeeping and tax submissions end-to-end, led the platform UI refresh across key journeys, and built and maintained the Capcom design system.",
+                      "Lead Product Designer across core areas of the GetGround platform, serving 30,000+ property investors. Designed and delivered Code first prototyping to production in days not weeks.",
                       "Designed AI-assisted interaction models and dynamic experiences that generate actions and reports based on portfolio, market, and user context. Built business impact models to inform product decisions, used code-first prototyping in Next.js to speed up validation, and created tools like CopyKat, a context-aware copywriting agent."
                     ]}
                   />
