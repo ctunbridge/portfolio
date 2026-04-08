@@ -108,16 +108,15 @@ export default function Home() {
             <section id="welcome" className="min-h-screen">
               <div className="grid grid-cols-9">
                 <h1 className="typography-h1-demibold col-span-9 mb-10 h-75 @3xl:col-span-8 animate-stagger-1">
-                  I’m a senior product designer and design engineer building{" "}
+                  I’m a lead product designer and founder, currently building{" "}
                   <CyclingText
                     key={showContent ? "visible" : "hidden"}
                     texts={[
-                      "digital products with measurable impact.",
-                      "AI-assisted product experiences.",
-                      "design systems that scale across teams.",
-                      "Next.js and Tailwind prototypes that ship faster.",
-                      "mobile apps for real customer needs.",
-                      "React products from concept to delivery.",
+                      "this portfolio.",
+                      "agentic first experiences.",
+                      "scalable design systems.",
+                      "mobile native apps.",
+                      "web apps from concept to delivery.",
                     ]}
                   />
                 </h1>
