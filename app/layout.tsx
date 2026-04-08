@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | Chris Tunbridge",
   },
   description:
-    "Portfolio of Chris Tunbridge, a senior product designer and design engineer building high-impact digital products, design systems, and AI-assisted experiences.",
+    "Portfolio of Chris Tunbridge, a senior product designer and product founder building high-impact digital products, design systems, and AI-assisted experiences.",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Chris Tunbridge | Product Designer & Design Engineer",
     description:
-      "Senior product designer and design engineer specialising in digital products, design systems, and AI-assisted experiences.",
+      "Senior product designer and product founder specialising in digital products, design systems, and AI-assisted experiences.",
   },
 };
 
