@@ -1,7 +1,7 @@
 /**
- * GG Bookkeeping Case Study Page
+ * GG Making Tax Digital Case Study Page
  *
- * Bookkeeping & Making Tax Digital — case study for GetGround's bookkeeping and MTD features.
+ * Supporting case study for GetGround's Making Tax Digital work.
  */
 "use client"
 
@@ -423,7 +423,7 @@ export default function GGBookkeepingPage() {
       <div className="space-y-100 pt-40">
         <section id="introduction" className="space-y-8 animate-stagger-1">
           <h1 className="typography-h2-demibold">
-            Bookkeeping & Tax
+            Making Tax Digital
           </h1>
 
           <div className="grid grid-cols-12">

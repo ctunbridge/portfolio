@@ -1,9 +1,7 @@
 /**
  * GG PLG Case Study Page
  *
- * Enabling Product Led Growth - A comprehensive case study showcasing
- * GetGround's shift to product-led growth through onboarding optimization
- * and consistent design language.
+ * Intent-led onboarding and mortgage growth case study for GetGround.
  */
 "use client"
 
@@ -15,85 +13,78 @@ import { Button } from "@/components/ui/button/button"
 import { Footer } from "@/components/ui/footer/footer"
 import { TopNav } from "@/components/ui/top-nav/top-nav"
 
+const onboardingDecisions = [
+  "Capture enough property context to understand the user’s investment stage.",
+  "Avoid forcing a long data-entry flow before users see value.",
+  "Personalise onward journeys based on ownership type and buying/refinancing intent.",
+  "Use property and mortgage details to create product-led mortgage opportunities.",
+]
+
 export default function GGPLGPage() {
   const navItems = [
     { label: "Introduction", id: "introduction" },
-    { label: "Refactoring onboarding", id: "refactoring-onboarding" },
-    { label: "Design language", id: "design-language" },
+    { label: "Problem", id: "problem" },
+    { label: "Flow", id: "flow" },
+    { label: "Mortgages", id: "mortgages" },
+    { label: "Impact", id: "impact" },
+    { label: "Hindsight", id: "hindsight" },
   ]
 
   const caseStudySections = [
     {
-      id: "refactoring-onboarding",
-      title: "Refactoring onboarding",
+      id: "problem",
+      title: "Problem",
       content: (
-        <>
-          <div className="space-y-4 mb-20">
-            <h3 className="typography-h4-demibold">Identifying the problem</h3>
+        <div className="space-y-8">
+          <div className="space-y-4">
+            <h3 className="typography-h4-demibold">
+              Users were adding an address, not a useful property profile
+            </h3>
             <p className="typography-body text-foreground">
-              Onboarding onto the GetGround platform had been built sales first, with the focus being on landlords who had already purchased a product, and simply setting up their account.
+              GetGround knew landlords usually hold more than one property, but the platform’s cohort of one-property users did not match that reality. Users often added an address and then stopped before adding the details needed to understand what the property meant to them, how they owned it, or what stage of the investment journey they were in.
             </p>
             <p className="typography-body text-foreground">
-              After running end to end customer journey experiments with Making Tax Digital as the hook, it quickly became obvious that the current first time use experience did not gather the right data at the right time to allow us to guide the user to the right product for them.
+              That meant the product could not personalise next steps properly, and GetGround was missing mortgage intent and portfolio context that could create higher-quality product-led opportunities.
             </p>
-            <p className="typography-body text-foreground">
-              Conversion rates dropped as we asked users to find their own way as they moved deeper into the funnel.
-            </p>
-            <Image
-              src="/images/case-studies/gg-plg/mtd-cx.jpg"
-              alt="Customer experience data"
-              width={1920}
-              height={1080}
-              className="w-full h-auto rounded-lg"
-              loading="lazy"
-            />
-            <Image
-              src="/images/case-studies/gg-plg/mtd-mixpanel.jpg"
-              alt="Mixpanel analytics data"
-              width={1920}
-              height={1080}
-              className="w-full h-auto rounded-lg"
-              loading="lazy"
-            />
           </div>
 
-          <div className="space-y-4 mb-20">
-            <h3 className="typography-h4-demibold">Solving the problem</h3>
+          <Image
+            src="/images/case-studies/gg-plg/mtd-cx.jpg"
+            alt="Customer journey and funnel analysis for property onboarding"
+            width={1920}
+            height={1080}
+            className="w-full h-auto rounded-lg"
+            loading="lazy"
+          />
+        </div>
+      ),
+    },
+    {
+      id: "flow",
+      title: "Flow",
+      content: (
+        <div className="space-y-8">
+          <div className="space-y-4">
+            <h3 className="typography-h4-demibold">
+              From generic onboarding to intent-led journeys
+            </h3>
             <p className="typography-body text-foreground">
-              Myself and the Growth team identified 3 areas we could reduce friction, steps, and collect and persist the correct data to create a more effective funnel.
+              The old onboarding treated users too generically and showed too many possible next steps to everyone. The redesign moved from “add an address” to “understand the user’s property context”: capture the minimum details needed to identify intent, then show clearer onward journeys based on investment stage and ownership type.
             </p>
-            <div className="space-y-4">
-              <div>
-                <p className="typography-body-bold text-foreground">Marketing website</p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li className="typography-body text-foreground">
-                    In the initial flow we would show users a quiz where they could determine MTD readiness. We cut this down from 7 vague questions to 4 that were more relevant and easier to complete. We also stored and persisted this data so it could be used later in the flow (such as the number of properties they own).
-                  </li>
-                </ul>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-4">
+            {onboardingDecisions.map((decision) => (
+              <div key={decision} className="rounded-lg border border-border p-6">
+                <p className="typography-body text-foreground">{decision}</p>
               </div>
-              <div>
-                <p className="typography-body-bold text-foreground">Sign up</p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li className="typography-body text-foreground">
-                    We a/b tested the sign up wall in different places within the flow, from the first thing a user sees when moving from the website into the app, to later in the flow when they are more engaged and committed.
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <p className="typography-body-bold text-foreground">Adding a property</p>
-                <ul className="list-disc pl-6 space-y-2">
-                  <li className="typography-body text-foreground">
-                    The previous flow was created to cater for limited company users, and so did not ask the most relevant question, the ownership of the property.
-                  </li>
-                  <li className="typography-body text-foreground">
-                    This simple change allowed us to cut down and focus the MTD experience later in the funnel, and also allow us to suggest other services to users if MTD is not relevant to them, rather than disqualifying them completely
-                  </li>
-                </ul>
-              </div>
-            </div>
+            ))}
+          </div>
+
+          <div className="space-y-6">
             <Image
               src="/images/case-studies/gg-plg/mtd-newflow1.jpg"
-              alt="New onboarding flow - part 1"
+              alt="Intent-led onboarding flow part 1"
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
@@ -101,64 +92,7 @@ export default function GGPLGPage() {
             />
             <Image
               src="/images/case-studies/gg-plg/mtd-newflow2.jpg"
-              alt="New onboarding flow - part 2"
-              width={1920}
-              height={1080}
-              className="w-full h-auto rounded-lg"
-              loading="lazy"
-            />
-          </div>
-
-          <div className="space-y-6 mb-20">
-            <h3 className="typography-h4-demibold">Outcomes</h3>
-            <div className="grid grid-cols-1 gap-8 lg:gap-12 md:grid-cols-3">
-              <div className="space-y-3">
-                <h5 className="typography-h5-demibold">22% through top of funnel</h5>
-                <p className="typography-body text-foreground">
-                  After reworking the top of funnel quiz we noticed a 22% uplift in users making it through to sign up. Fewer and more relevant questions kept users engaged.
-                </p>
-              </div>
-              <div className="space-y-3">
-                <h5 className="typography-h5-demibold">38% more sign ups</h5>
-                <p className="typography-body text-foreground">
-                  From A/B testing we saw 30% more sign ups when the sign up wall was later in the flow, catching users when they are more invested.
-                </p>
-              </div>
-              <div className="space-y-3">
-                <h5 className="typography-h5-demibold">41% more funnel completions</h5>
-                <p className="typography-body text-foreground">
-                  By changing the add property flow we saw 41% more completions of the full flow, and of those users that didn't we were able to capture them elsewhere.
-                </p>
-              </div>
-            </div>
-          </div>
-        </>
-      ),
-    },
-    {
-      id: "design-language",
-      title: "Creating a consistent design language",
-      content: (
-        <>
-          <div className="space-y-4 mb-20">
-            <h3 className="typography-h4-demibold">Current inconsistency</h3>
-            <p className="typography-body text-foreground">
-              When mapping out the customer journey on all the potential touch-points, we became alarmingly aware of the inconsistency in terms of brand, design language, and identity.
-            </p>
-            <p className="typography-body text-foreground">
-              Product led growth requires a consistent brand awareness from meta ads, all the way through to the sign up or purchase point. Inconsistent identify erodes trust rapidly, leading to a fall in conversion throughout the funnel.
-            </p>
-            <Image
-              src="/images/case-studies/gg-plg/brand-inconsistency1.jpg"
-              alt="Brand inconsistency examples - part 1"
-              width={1920}
-              height={1080}
-              className="w-full h-auto rounded-lg"
-              loading="lazy"
-            />
-            <Image
-              src="/images/case-studies/gg-plg/brand-inconsistency2.jpg"
-              alt="Brand inconsistency examples - part 2"
+              alt="Intent-led onboarding flow part 2"
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
@@ -167,39 +101,86 @@ export default function GGPLGPage() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="typography-h4-demibold">Consistency, step by step</h3>
+            <h4 className="typography-h5-demibold">One trade-off, kept simple</h4>
             <p className="typography-body text-foreground">
-              We're still in this process, but as a design team we split focus across top of funnel - meta ads, sales decks, and the marketing site, and the platform. We first created a refreshed, stronger, and more recognisable brand identity, standardising the use of colour, dropping our outdated serif fonts, and refining the logo mark and text.
+              We considered gathering more property detail upfront, but chose the minimum detail needed to identify user intent and defer the rest until it became contextually relevant. This avoided turning onboarding into a long data-entry flow while still giving the product enough signal to personalise next steps.
             </p>
-            <p className="typography-body text-foreground">
-              My main focus was on the platform refresh, updating the design system I curated to reflect the new brand, and introducing more consistent UI patterns and tools.
-            </p>
-            <Image
-              src="/images/case-studies/gg-plg/capcom-ds.jpg"
-              alt="Capcom design system"
-              width={1920}
-              height={1080}
-              className="w-full h-auto rounded-lg"
-              loading="lazy"
-            />
-            <Image
-              src="/images/case-studies/gg-plg/brand-consistency1.jpg"
-              alt="Brand consistency examples - part 1"
-              width={1920}
-              height={1080}
-              className="w-full h-auto rounded-lg"
-              loading="lazy"
-            />
-            <Image
-              src="/images/case-studies/gg-plg/brand-consistency2.jpg"
-              alt="Brand consistency examples - part 2"
-              width={1920}
-              height={1080}
-              className="w-full h-auto rounded-lg"
-              loading="lazy"
-            />
           </div>
-        </>
+        </div>
+      ),
+    },
+    {
+      id: "mortgages",
+      title: "Mortgages",
+      content: (
+        <div className="space-y-8">
+          <div className="space-y-4">
+            <h3 className="typography-h4-demibold">
+              Turning property context into mortgage intent
+            </h3>
+            <p className="typography-body text-foreground">
+              The redesigned flow created two product-led mortgage opportunity paths: existing users with mortgage details could receive remortgage nudges, while users adding a property they were buying could book a mortgage call at the moment their intent was clearest.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <div className="rounded-lg border border-border p-6 space-y-3">
+              <h4 className="typography-h5-demibold">Remortgage engine</h4>
+              <p className="typography-body text-foreground">
+                Encourage users who already had a mortgage to add details, then use that information to surface relevant remortgage nudges.
+              </p>
+            </div>
+            <div className="rounded-lg border border-border p-6 space-y-3">
+              <h4 className="typography-h5-demibold">Buying journey</h4>
+              <p className="typography-body text-foreground">
+                When a user added a property they were buying, the product could route them into a book-a-mortgage-call journey.
+              </p>
+            </div>
+          </div>
+        </div>
+      ),
+    },
+    {
+      id: "impact",
+      title: "Impact",
+      content: (
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="space-y-3">
+            <h3 className="typography-h4-demibold">1.71 → 2.31</h3>
+            <p className="typography-body text-foreground">
+              Average properties per user increased after the March 2026 release.
+            </p>
+          </div>
+          <div className="space-y-3">
+            <h3 className="typography-h4-demibold">40%</h3>
+            <p className="typography-body text-foreground">
+              Increase in property additions after the onboarding changes.
+            </p>
+          </div>
+          <div className="space-y-3">
+            <h3 className="typography-h4-demibold">50%</h3>
+            <p className="typography-body text-foreground">
+              More HubSpot mortgage deals from product-led journeys than current sales-led channels.
+            </p>
+          </div>
+        </div>
+      ),
+    },
+    {
+      id: "hindsight",
+      title: "Hindsight",
+      content: (
+        <div className="space-y-4">
+          <h3 className="typography-h4-demibold">What I would sharpen next</h3>
+          <p className="typography-body text-foreground">
+            If revisiting this today, I’d push the intent-led model further by testing more distinct paths for users who are buying, refinancing, or simply managing an existing portfolio, rather than relying on one primary onboarding structure.
+          </p>
+          <div className="mt-30 lg:mt-45 flex justify-center">
+            <Button variant="outline" asChild>
+              <Link href="/gg-bookkeeping">Next project</Link>
+            </Button>
+          </div>
+        </div>
       ),
     },
   ]
@@ -209,28 +190,18 @@ export default function GGPLGPage() {
       <TopNav items={navItems} />
 
       <div className="space-y-100 pt-40">
-        {/* Introduction Section */}
         <section id="introduction" className="space-y-8 animate-stagger-1">
-          <h1 className="typography-h2-demibold">Enabling Product Led Growth</h1>
+          <h1 className="typography-h2-demibold">
+            Intent-led Onboarding for Property and Mortgage Growth
+          </h1>
 
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-6">
-              <div className="space-y-4">
-                <p className="typography-body text-foreground">
-                  <span className="typography-body-bold">Background</span> ·{" "}
-                  GetGround is a prop-tech SaaS company focused on making property ownership more accessible, with services spanning financial management, lettings, mortgages, and portfolio optimisation.
-                </p>
-                <p className="typography-body text-foreground">
-                  <span className="typography-body-bold">Problem statement</span> ·{" "}
-                  As GetGround shifted to product-led growth, we introduced new features, new subscription tiers including a free plan, and support for both personal and limited company landlords across a more complete investment journey.
-                </p>
-                <p className="typography-body text-foreground">
-                  Many parts of the platform were the result of earlier experiments and iterations that were now outdated or ready to retire. We needed to create a stronger foundation for growth by removing unnecessary friction, introducing a more cohesive design language, and improving onboarding flows that were not effectively converting free users into paid customers.
-                </p>
-              </div>
-
               <p className="typography-body text-foreground">
-                <span className="typography-body-bold">Role</span> · Lead Product Designer
+                <span className="typography-body-bold">Problem statement</span> · Users were adding properties without enough context for GetGround to understand their ownership type, buying stage, or mortgage opportunity. The redesign captured the minimum useful details earlier, then routed users into clearer next steps.
+              </p>
+              <p className="typography-body text-foreground">
+                <span className="typography-body-bold">Role</span> · Lead Product Designer across problem framing, journey design, onboarding interaction design, and product-led mortgage opportunity mapping.
               </p>
             </div>
           </div>
@@ -238,7 +209,7 @@ export default function GGPLGPage() {
           <div className="animate-stagger-2">
             <Image
               src="/images/case-studies/gg-plg/gg-plg-intro.jpg"
-              alt="GetGround Platform Refresh overview showing before and after UI designs"
+              alt="GetGround intent-led onboarding overview"
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
@@ -247,20 +218,11 @@ export default function GGPLGPage() {
           </div>
         </section>
 
-        {/* Case Study Sections with Fixed Left Title */}
         <div className="animate-stagger-3">
           <CaseStudyLayout sections={caseStudySections} />
         </div>
-
-        {/* Next Project Button */}
-        <div className="flex justify-center mt-30 lg:mt-45">
-          <Button variant="outline" asChild>
-            <Link href="/sage-individual">Next project</Link>
-          </Button>
-        </div>
       </div>
 
-      {/* Footer */}
       <div className="grid grid-cols-12 mt-80 pb-40">
         <div className="col-span-12 lg:col-span-9 lg:col-start-3">
           <Footer staggerClass="animate-stagger-7" />

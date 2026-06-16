@@ -112,11 +112,11 @@ export default function Home() {
                   <CyclingText
                     key={showContent ? "visible" : "hidden"}
                     texts={[
-                      "this portfolio.",
                       "agentic first experiences.",
+                      "complex product flows.",
                       "scalable design systems.",
                       "mobile native apps.",
-                      "web apps from concept to delivery.",
+                      "this portfolio.",
                     ]}
                   />
                 </h1>
@@ -135,24 +135,34 @@ export default function Home() {
                 <CaseStudyCard
                   businessName="GetGround"
                   year="2025/26"
-                  projectTitle="Bookkeeping & Tax"
-                  impact="From code first prototypes to production in days, built from our foundational design system Capcom"
+                  projectTitle="Designing an Inbox for Agentic Property Management"
+                  impact="A persistent action surface for assistant-led reviews, confirmation flows, and WhatsApp nudges — increasing categorised transactions from 50% to 64%."
                   imageSrc="/images/case-studies/gg-home-bk.jpg"
-                  imageAlt="GetGround Bookkeeping & MTD"
-                  href="/gg-bookkeeping"
+                  imageAlt="GetGround Inbox and assistant action case study"
+                  href="/gg-inbox"
                   priority
                   staggerClass="animate-stagger-card-1"
                 />
                 <CaseStudyCard
                   businessName="GetGround"
                   year="2025/26"
-                  projectTitle="Enabling Product Led Growth"
-                  impact="22% funnel uplift, 38% more sign-ups, and 41% more completions through clearer journeys and a more consistent product experience."
+                  projectTitle="Intent-led Onboarding for Property and Mortgage Growth"
+                  impact="Property context increased from 1.71 to 2.31 properties per user, creating a stronger product-led route into mortgage opportunities."
                   imageSrc="/images/case-studies/gg-home-ui.jpg"
-                  imageAlt="GetGround Platform UI Refresh"
+                  imageAlt="GetGround intent-led onboarding and mortgage growth"
                   href="/gg-plg"
                   priority
                   staggerClass="animate-stagger-card-2"
+                />
+                <CaseStudyCard
+                  businessName="GetGround"
+                  year="2025/26"
+                  projectTitle="Making Tax Digital"
+                  impact="A supporting case study for helping landlords understand quarterly tax obligations and prepare for HMRC’s MTD requirements."
+                  imageSrc="/images/case-studies/gg-home-bk.jpg"
+                  imageAlt="GetGround Making Tax Digital"
+                  href="/gg-bookkeeping"
+                  staggerClass="animate-stagger-card-3"
                 />
                 <CaseStudyCard
                   businessName="Sage"
@@ -162,16 +172,6 @@ export default function Home() {
                   imageSrc="/images/case-studies/sage-home-individual.jpg"
                   imageAlt="Sage Individual mobile app"
                   href="/sage-individual"
-                  staggerClass="animate-stagger-card-3"
-                />
-                <CaseStudyCard
-                  businessName="Sage"
-                  year="2021-2024"
-                  projectTitle="Graphite Design System"
-                  impact="Built a native iOS and Android design system from the ground up to improve consistency, accessibility, and delivery speed."
-                  imageSrc="/images/case-studies/individual-ds-2.jpg"
-                  imageAlt="Sage GraphiteDesign System"
-                  href="/sage-ds"
                   staggerClass="animate-stagger-card-4"
                 />
               </div>
