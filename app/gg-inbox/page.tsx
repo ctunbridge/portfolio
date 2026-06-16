@@ -249,7 +249,7 @@ export default function GGInboxPage() {
                 <span className="typography-body-bold">Problem statement</span> · GetGround needed to improve in-year bookkeeping and create a clearer home for assistant-led actions. The solution became a broader Inbox: one persistent surface for users to understand, review, and complete high-intent actions across their portfolio.
               </p>
               <p className="typography-body text-foreground">
-                <span className="typography-body-bold">Role</span> · Lead Product Designer. I led the product framing, code-first prototyping, user testing synthesis, and first-release interaction model.
+                <span className="typography-body-bold">Role</span> · Lead Product Designer and product manager for the feature team. I owned the product framing, roadmap, delivery plan, code-first prototyping, user testing synthesis, and first-release interaction model.
               </p>
             </div>
           </div>

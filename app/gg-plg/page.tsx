@@ -201,7 +201,7 @@ export default function GGPLGPage() {
                 <span className="typography-body-bold">Problem statement</span> · Users were adding properties without enough context for GetGround to understand their ownership type, buying stage, or mortgage opportunity. The redesign captured the minimum useful details earlier, then routed users into clearer next steps.
               </p>
               <p className="typography-body text-foreground">
-                <span className="typography-body-bold">Role</span> · Lead Product Designer across problem framing, journey design, onboarding interaction design, and product-led mortgage opportunity mapping.
+                <span className="typography-body-bold">Role</span> · Lead Product Designer and product manager for the feature team. I set the roadmap, defined the delivery plan, and led the design work across problem framing, journey design, onboarding interaction design, and product-led mortgage opportunity mapping.
               </p>
             </div>
           </div>
