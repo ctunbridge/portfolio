@@ -7,7 +7,7 @@
  * Uses Vercel AI SDK for SSE streaming responses.
  */
 
-import { openai } from "@ai-sdk/openai"
+import { anthropic } from "@ai-sdk/anthropic"
 import { streamText, type CoreMessage } from "ai"
 
 import { getAssistantConfig } from "@/lib/ai-assistant/assistant"
@@ -23,8 +23,8 @@ interface ChatMessage {
 export async function POST(req: Request) {
   try {
     // Check for API key
-    if (!process.env.OPENAI_API_KEY) {
-      console.error("OPENAI_API_KEY is not set")
+    if (!process.env.ANTHROPIC_API_KEY) {
+      console.error("ANTHROPIC_API_KEY is not set")
       return new Response(
         JSON.stringify({ error: "API key not configured" }),
         { status: 500, headers: { "Content-Type": "application/json" } }
@@ -52,7 +52,7 @@ export async function POST(req: Request) {
     }))
 
     const result = streamText({
-      model: openai(config.model),
+      model: anthropic(config.model),
       system: config.systemPrompt,
       messages: coreMessages,
       temperature: config.temperature,
