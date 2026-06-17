@@ -18,13 +18,13 @@ const principles = [
     number: "1",
     title: "Show the right thing, not everything",
     description:
-      "Help users focus by surfacing what matters most in the moment. Prioritise clarity over completeness — not everything needs to be shown.",
+      "Help users focus by surfacing what matters most in the moment. Prioritise clarity over completeness; not everything needs to be shown.",
   },
   {
     number: "2",
     title: "Build confidence with every interaction",
     description:
-      "Make it easy to understand, hard to get lost, and reassuring to use. Guide naturally, place support where it's needed, and use data-led insights where possible to build trust and confidence.",
+      "Make it easy to understand, hard to get lost, and reassuring to use. Guide naturally, place support where it's needed, and use data-led insights to build trust.",
   },
   {
     number: "3",
@@ -37,7 +37,7 @@ const principles = [
 const interactionModels = [
   {
     label: "Pull",
-    description: "For when the user tells us directly what they need in that moment",
+    description: "When the user tells us what they need in that moment",
     bullets: [
       "We assemble the UI required to complete that job",
       "Includes both adaptive (dynamic) and stable (static) content",
@@ -46,17 +46,17 @@ const interactionModels = [
   {
     label: "Push",
     description:
-      "For when the system detects something meaningful and surfaces it proactively.",
+      "When the system detects something meaningful and surfaces it proactively.",
     bullets: [
       "Surfaces insights in predictable locations",
       "UI structure never moves, only the content adapts",
-      "Driven by scenario detection (portfolio changes, compliance needs, market shifts and patterns)",
+      "Driven by scenario detection (portfolio changes, compliance needs, market shifts, and patterns)",
     ],
   },
   {
     label: "Persistent",
     description:
-      "For when the user is exploring, reviewing, or seeking understanding, without asking a question or reacting to a scenario.",
+      "When the user is exploring or reviewing without asking a question or reacting to a scenario.",
     bullets: [
       "Stable surfaces like tables, documents, navigation, asset overviews",
       "Accessible regardless of scenario, giving users reliable anchors",
@@ -67,26 +67,26 @@ const interactionModels = [
 const impactMetrics = [
   {
     title: "34% more transactions categorised",
-    body: "In the first 2 weeks the proportion of categorised transactions increased due to Inbox nudges and suggested categorisations",
+    body: "Inbox nudges and suggested categorisations increased the proportion of categorised transactions by 34% in the first two weeks.",
   },
   {
     title: "21% increase in property details added",
-    body: "We saw more users adding property details after we surfaced these tasks in the inbox rather than on the property details page.",
+    body: "Surfacing property-detail tasks in the Inbox rather than on the property page drove a 21% increase in users adding property details.",
   },
   {
     title: "43% increase in transactions linked to documents",
-    body: "With suggested linking we saw a big increase in document and transaction linking, vital for clean bookkeeping data.",
+    body: "Suggested linking increased document-transaction links by 43%, improving bookkeeping data quality.",
   },
 ]
 
 const noteItems = [
   {
-    title: "Better curation of To dos",
-    body: "We were not diligent enough in stripping out current tasks and so everything made it into the inbox. We've noticed some users have too many To dos, diluting the impact of the Inbox",
+    title: "Better curation of to-dos",
+    body: "We weren't diligent enough in filtering tasks, so too much landed in the Inbox. Some users now have long to-do lists, which dilutes the surface's impact.",
   },
   {
     title: "Refine agent instruction earlier",
-    body: "We've had some feedback that the agent is suggesting changes based on previous documents such as mortgage statements and receipts from previous tax years. We should have done a better job at training the agent to understand what is current, and what is previous.",
+    body: "Users reported the agent suggesting changes from outdated documents (mortgage statements, receipts from prior tax years). We should have trained it earlier to distinguish current from historical data.",
   },
 ]
 
@@ -130,13 +130,13 @@ export default function GGInboxPage() {
               A bookkeeping problem became a system problem
             </h3>
             <p className="typography-body text-foreground">
-              The work started as an in-year bookkeeping improvement. The business needed users to keep records cleaner throughout the year so our in-house accounting process could become more efficient, and the old end-of-year accounting flow could carry less burden.
+              The work started as an in-year bookkeeping improvement. Cleaner records throughout the year would make our in-house accounting more efficient and reduce burden on the end-of-year flow.
             </p>
             <p className="typography-body text-foreground">
-              Early Bookkeeping discovery showed the issue was wider than Bookkeeping. Actions lived across Tasks, Bookkeeping, and future assistant-led jobs that did not yet have a clear home. Refactoring Bookkeeping into an inbox-style experience would have created two competing task systems.
+              Discovery showed the problem was wider than Bookkeeping. Actions lived across Tasks, Bookkeeping, and assistant-led jobs with no clear home. Refactoring Bookkeeping into an inbox would have created two competing task systems.
             </p>
             <p className="typography-body text-foreground">
-              We also found that usage of Bookkeeping was low (only 24% of log-ins visited), users were not finding value in the current screens, so the question became if we even needed it, rather than should we refactor it. Tasks on the other hand had more than double the usage (55%).
+              Bookkeeping had low reach (24% of logins) and users weren&apos;t finding value in the screens. The question wasn&apos;t how to refactor it, but whether we needed it at all. Tasks had more than double the usage (55%).
             </p>
           </div>
 
@@ -161,37 +161,39 @@ export default function GGInboxPage() {
         <div className="space-y-8">
           <div className="space-y-4">
             <h3 className="typography-h4-demibold">
-              Pull, push and persistent UI. An agent first interaction model.
+              Pull, push, and persistent UI: an agent-first interaction model
             </h3>
             <p className="typography-body text-foreground">
-              As part of the wider discovery work, I led the creation of a platform wide interaction model that could enable agentic ai and existing functionality to live alongside each other. It was based on primary, secondary and tertiary user needs, and how a user can interact with agentic and deterministic UI to complete them without favouring one or the other and therefore giving the user freedom to choose.
+              I led a platform-wide interaction model so agentic AI and existing functionality could live side by side. It mapped primary, secondary, and tertiary user needs to agentic and deterministic UI, without favouring either approach.
             </p>
           </div>
 
-          <div className="space-y-8">
-            {interactionModels.map((model) => (
-              <div key={model.label} className="space-y-3">
-                <p className="typography-body-bold text-foreground">
-                  {model.label}
-                </p>
-                <p className="typography-body text-foreground">
-                  {model.description}
-                </p>
-                <ul className="list-disc space-y-2 pl-6">
-                  {model.bullets.map((bullet) => (
-                    <li
-                      key={bullet}
-                      className="typography-body text-foreground"
-                    >
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-            <p className="typography-body text-foreground">
-              Using the interaction model, I mapped out our core jobs to be done and how each interaction might solve for them, whether that&apos;s through a chat conversation, dynamic task, or deterministic flow that always exists in the same place.
-            </p>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.4fr] lg:items-start lg:gap-12">
+            <div className="space-y-8">
+              {interactionModels.map((model) => (
+                <div key={model.label} className="space-y-3">
+                  <p className="typography-body-bold text-foreground">
+                    {model.label}
+                  </p>
+                  <p className="typography-body text-foreground">
+                    {model.description}
+                  </p>
+                  <ul className="list-disc space-y-2 pl-6">
+                    {model.bullets.map((bullet) => (
+                      <li
+                        key={bullet}
+                        className="typography-body text-foreground"
+                      >
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+              <p className="typography-body text-foreground">
+                I mapped core jobs to be done to each interaction type: chat, dynamic tasks, or deterministic flows that stay in the same place.
+              </p>
+            </div>
             <Image
               src="/images/case-studies/gg-inbox/InboxInteractionModel.jpg"
               alt="Interaction model mapping how users can interact with Bookkeeping and Inbox across pull, push, and persistent UI"
@@ -208,10 +210,10 @@ export default function GGInboxPage() {
               Testing code-first prototypes
             </h3>
             <p className="typography-body text-foreground">
-              I used a design/playground branch in our monorepo to prototype with production-like components and real product patterns rather than static screens. This made the information architecture problem visible earlier: Inbox needed to be a broader action surface, not just a Bookkeeping refactor.
+              I prototyped on a design/playground branch in our monorepo with production-like components and real product patterns, not static screens. That made the information architecture problem visible earlier: Inbox needed to be a broader action surface, not a Bookkeeping refactor.
             </p>
             <p className="typography-body text-foreground">
-              We tested comprehension of the new surfaces and removal of Bookkeeping face to face with 5 existing users to overall positive feedback. The standout finding from the testing was a consensus on having the final action when updating information, especially when it comes to finances.
+              We tested comprehension of the new surfaces and removal of Bookkeeping face-to-face with 5 existing users to overall positive feedback. The standout finding was consensus on keeping the final action with the user when updating financial information.
             </p>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -243,22 +245,25 @@ export default function GGInboxPage() {
         <div className="space-y-8">
           <div className="space-y-4">
             <h3 className="typography-h4-demibold">
-              Supporting existing tasks & setting a framework
+              Supporting existing tasks and setting a framework
             </h3>
             <p className="typography-body text-foreground">
-              The first release of Inbox needed to do two things. First was to migrate all existing tasks to the new inbox, second was to set a framework for how agentic actions appeared, and whether that was as a To Do or Activity.
+              The first release had two goals: migrate existing tasks into the Inbox, and define how agentic actions appeared as to-dos or activity items.
             </p>
+          </div>
+
+          <div className="space-y-4">
             <h4 className="typography-h5-demibold text-foreground">
               Skills, for us, and the agent
             </h4>
             <p className="typography-body text-foreground">
-              To migrate over existing tasks I built a skill based on the design principles we set out for the Inbox. The skill is able to take either an existing task, or a description of a feature, and advise on Inbox content, including whether it&apos;s a To do, activity.
+              To migrate existing tasks, I built a skill based on our Inbox design principles. It takes an existing task or feature description and advises on Inbox content, including whether it should be a to-do or activity item.
             </p>
             <p className="typography-body text-foreground">
-              By creating a skill for team members to use, we were able to tweak it based on output, and then inject it straight into our existing ai assistant so it can now reliably decide how to surface actions.
+              The team iterated on the skill from real output, then wired it into our AI assistant so it could reliably decide how to surface actions.
             </p>
             <p className="typography-body text-foreground">
-              I used it to look through our monorepo and create documentation for engineers to migrate all existing tasks into the new Inbox surface.
+              I used it to scan our monorepo and produce migration documentation for engineers.
             </p>
             <Image
               src="/images/case-studies/gg-inbox/InboxSkill.jpg"
@@ -272,9 +277,9 @@ export default function GGInboxPage() {
           </div>
 
           <div className="space-y-4 mt-30 lg:mt-45">
-            <h3 className="typography-h4-demibold">Setting the Framework</h3>
+            <h3 className="typography-h4-demibold">Setting the framework</h3>
             <p className="typography-body text-foreground">
-              A key but simple element to the Inbox was the UI framework. How does a To do appear vs Activity, what does the detail show, and when does it show, and how do media vs container queries work within the inbox, what happens when the side chat is open. These questions were worked through in static designs and I then built our components in the ui package ready to be used.
+              A key part of the Inbox was the UI framework: how to-dos and activity items appear, what detail to show and when, how media and container queries behave, and what happens when the side chat is open. I resolved these in static designs, then built the components in our UI package for production use.
             </p>
             <div className="space-y-6">
               <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.7fr_1fr] lg:items-start">
@@ -311,10 +316,10 @@ export default function GGInboxPage() {
 
           <div className="space-y-4 mt-30 lg:mt-45">
             <h3 className="typography-h4-demibold">
-              Enabling parallel work-streams: First Agentic Actions
+              Enabling parallel work-streams: first agentic actions
             </h3>
             <p className="typography-body text-foreground">
-              I was also leading our document extraction project at the time, which fed straight into inbox, as the primary surface where users would review suggested actions based on data extracted from documents and user context. The first two use cased were updating property details, and linking suggested transactions to documents, both of which ladder up to the ultimate goal of gathering better data from users to build context, and improve user facing and internal flows such as end of year accounting.
+              I was also leading document extraction, which fed directly into the Inbox as the primary surface for reviewing suggested actions from extracted document data and user context. The first two use cases were updating property details and linking transactions to documents; both gather better data to improve user-facing and internal flows, including end-of-year accounting.
             </p>
             <Image
               src="/images/case-studies/gg-inbox/AgenticActions.jpg"
@@ -349,15 +354,15 @@ export default function GGInboxPage() {
       content: (
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <div className="space-y-3">
-            <h3 className="typography-h4-demibold">Populate the Activity Feed</h3>
+            <h3 className="typography-h4-demibold">Populate the activity feed</h3>
             <p className="typography-body text-foreground">
-              Currently the activity feed is fairly sparse and does not push context aware suggestions and insights to users. The next step is engage more users with the aim of increasing WAU and MAU.
+              The activity feed is still sparse and doesn&apos;t push context-aware suggestions. Next: populate it with insights to grow weekly and monthly active users.
             </p>
           </div>
           <div className="space-y-3">
-            <h3 className="typography-h4-demibold">Introduce True Agency</h3>
+            <h3 className="typography-h4-demibold">Act without user triggers</h3>
             <p className="typography-body text-foreground">
-              Currently the assistant acts based on user input, chat, uploading a document, adding a transaction. Next we want to give the agent a heartbeat, and have it act without user triggers.
+              Today the assistant only acts on user input: chat, document uploads, or new transactions. Next: give the agent a heartbeat so it can act without explicit triggers.
             </p>
           </div>
         </div>
@@ -365,7 +370,7 @@ export default function GGInboxPage() {
     },
     {
       id: "note",
-      title: "A note on what I would change...",
+      title: "What I would change",
       content: (
         <div className="space-y-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -393,17 +398,17 @@ export default function GGInboxPage() {
       <div className="space-y-100 pt-40">
         <section id="introduction" className="space-y-8 animate-stagger-1">
           <h1 className="typography-h2-demibold">
-            Creating an Inbox to Enable Agentic Actions
+            Building an Inbox for agentic actions
           </h1>
 
           <div className="grid grid-cols-12">
             <div className="col-span-12 space-y-6 lg:col-span-9">
               <p className="typography-body text-foreground">
                 <span className="typography-body-bold">Problem statement</span>{" "}
-                · GetGround needed to improve in-year bookkeeping and create a
-                clearer home for assistant-led actions. The solution became a
-                broader Inbox; one persistent surface for users to understand,
-                review, and complete high-intent actions across their portfolio.
+                · GetGround needed cleaner in-year bookkeeping and a single home
+                for assistant-led actions. We built an Inbox: one persistent
+                surface where users understand, review, and complete high-intent
+                actions across their portfolio.
               </p>
               <p className="typography-body text-foreground">
                 <span className="typography-body-bold">Role</span> · Lead

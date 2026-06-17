@@ -135,8 +135,8 @@ export default function Home() {
                 <CaseStudyCard
                   businessName="GetGround"
                   year="2025/26"
-                  projectTitle="Designing an Inbox for Agentic Property Management"
-                  impact="A persistent action surface for assistant-led reviews, confirmation flows, and WhatsApp nudges — increasing categorised transactions from 50% to 64%."
+                  projectTitle="Building an Inbox for agentic actions"
+                  impact="One persistent surface for high-intent actions across the portfolio, with Inbox nudges increasing categorised transactions by 34% in the first two weeks."
                   imageSrc="/images/case-studies/gg-home-bk.jpg"
                   imageAlt="GetGround Inbox and assistant action case study"
                   href="/gg-inbox"
