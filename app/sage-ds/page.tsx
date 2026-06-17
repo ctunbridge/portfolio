@@ -205,7 +205,7 @@ export default function SageDSPage() {
 
       {/* Footer */}
       <div className="grid grid-cols-12 mt-80 pb-40">
-        <div className="col-span-12 lg:col-span-9 lg:col-start-3">
+        <div className="col-span-12">
           <Footer staggerClass="animate-stagger-7" />
         </div>
       </div>

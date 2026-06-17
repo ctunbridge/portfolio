@@ -449,7 +449,7 @@ export default function SageIndividualPage() {
         <section id="introduction" className="space-y-8 animate-stagger-1">
           <div className="grid grid-cols-12">
             <div className="col-span-12 lg:col-span-9 space-y-4">
-              <h1 className="typography-h2-demibold">Sage Individual</h1>
+              <h1 className="typography-h2-demibold">Accounting for sole traders</h1>
               <p className="typography-h4-normal text-foreground">
                 Helping self-employed individuals run their business, track income and expenses,
                 get paid by their customers faster, and submit their self-assessment.
@@ -460,7 +460,7 @@ export default function SageIndividualPage() {
           <div className="animate-stagger-2">
             <Image
               src="/images/case-studies/sage-individual/individualhero.jpg"
-              alt="Sage Individual app showing transaction splitting interface"
+              alt="Sage accounting for sole traders app showing transaction splitting interface"
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg mt-10"
@@ -496,7 +496,7 @@ export default function SageIndividualPage() {
 
       {/* Footer */}
       <div className="grid grid-cols-12 mt-80 pb-40">
-        <div className="col-span-12 lg:col-span-9 lg:col-start-3">
+        <div className="col-span-12">
           <Footer staggerClass="animate-stagger-7" />
         </div>
       </div>

@@ -13,26 +13,14 @@ import { ChatInput } from "@/components/ui/chat-input/chat-input";
 import { CyclingText } from "@/components/ui/cycling-text/cycling-text";
 import { ExperienceCard } from "@/components/ui/experience-card/experience-card";
 import { Footer } from "@/components/ui/footer/footer";
-import { HomeIntro } from "@/components/home-intro/home-intro";
 import { SideNav } from "@/components/ui/side-nav/side-nav";
-import { cn } from "@/lib/utils";
 import { useChatContext } from "@/lib/chat-context";
-
-const INTRO_SHOWN_KEY = "home-intro-shown";
 
 export default function Home() {
   const { isOpen: isChatPanelOpen, openWithMessage } = useChatContext();
-  const [showContent, setShowContent] = React.useState(false);
   const [showFloatingInput, setShowFloatingInput] = React.useState(false);
   const [showMoreExperience, setShowMoreExperience] = React.useState(false);
   const inlineInputRef = React.useRef<HTMLDivElement>(null);
-
-  // Check if intro was already shown to avoid content flash
-  React.useEffect(() => {
-    if (sessionStorage.getItem(INTRO_SHOWN_KEY) === "true") {
-      setShowContent(true);
-    }
-  }, []);
 
   // Track when inline input goes out of view
   React.useEffect(() => {
@@ -65,10 +53,6 @@ export default function Home() {
     };
   }, [isChatPanelOpen]);
 
-  const handleIntroComplete = React.useCallback(() => {
-    setShowContent(true);
-  }, []);
-
   const handleSendEnquiry = () => {
     window.location.href = "mailto:hello@christunbridge.co.uk";
   };
@@ -92,14 +76,7 @@ export default function Home() {
 
   return (
     <>
-      <HomeIntro onComplete={handleIntroComplete} />
-
-      <div
-        className={cn(
-          "min-h-screen",
-          !showContent && "hidden"
-        )}
-      >
+      <div className="min-h-screen">
         <div className="grid grid-cols-12 gap-4">
           <SideNav items={navItems} />
 
@@ -110,13 +87,12 @@ export default function Home() {
                 <h1 className="typography-h1-demibold col-span-9 mb-10 h-75 @3xl:col-span-8 animate-stagger-1">
                   I’m a lead product designer and founder, currently building{" "}
                   <CyclingText
-                    key={showContent ? "visible" : "hidden"}
                     texts={[
-                      "this portfolio.",
                       "agentic first experiences.",
+                      "complex product flows.",
                       "scalable design systems.",
                       "mobile native apps.",
-                      "web apps from concept to delivery.",
+                      "this portfolio.",
                     ]}
                   />
                 </h1>
@@ -135,43 +111,43 @@ export default function Home() {
                 <CaseStudyCard
                   businessName="GetGround"
                   year="2025/26"
-                  projectTitle="Bookkeeping & Tax"
-                  impact="From code first prototypes to production in days, built from our foundational design system Capcom"
-                  imageSrc="/images/case-studies/gg-home-bk.jpg"
-                  imageAlt="GetGround Bookkeeping & MTD"
-                  href="/gg-bookkeeping"
+                  projectTitle="Building an Inbox for user tasks and agentic actions"
+                  impact="Harmonising required and agentic actions into one place, leading to an increase of 34% in required tasks."
+                  imageSrc="/images/case-studies/GG%20Home%20-%20Inbox.jpg"
+                  imageAlt="GetGround Inbox and assistant action case study"
+                  href="/gg-inbox"
                   priority
                   staggerClass="animate-stagger-card-1"
                 />
                 <CaseStudyCard
                   businessName="GetGround"
                   year="2025/26"
-                  projectTitle="Enabling Product Led Growth"
-                  impact="22% funnel uplift, 38% more sign-ups, and 41% more completions through clearer journeys and a more consistent product experience."
-                  imageSrc="/images/case-studies/gg-home-ui.jpg"
-                  imageAlt="GetGround Platform UI Refresh"
+                  projectTitle="Product led growth through intent-led onboarding"
+                  impact="Solving the problem of incomplete user data, increasing properties added by 30%."
+                  imageSrc="/images/case-studies/GG%20Home%20-%20PLG.jpg"
+                  imageAlt="GetGround intent-led onboarding"
                   href="/gg-plg"
                   priority
                   staggerClass="animate-stagger-card-2"
                 />
                 <CaseStudyCard
-                  businessName="Sage"
-                  year="2021-2024"
-                  projectTitle="Sage Individual"
-                  impact="Helping ~150,000 UK sole traders manage core business tasks with more confidence and less admin friction."
-                  imageSrc="/images/case-studies/sage-home-individual.jpg"
-                  imageAlt="Sage Individual mobile app"
-                  href="/sage-individual"
+                  businessName="GetGround"
+                  year="2025/26"
+                  projectTitle="Keeping investors compliant with bookkeeping"
+                  impact="Helping landlords understand quarterly tax obligations and prepare for Making Tax Digital."
+                  imageSrc="/images/case-studies/gg-home-bk.jpg"
+                  imageAlt="GetGround keeping investors compliant with bookkeeping"
+                  href="/gg-bookkeeping"
                   staggerClass="animate-stagger-card-3"
                 />
                 <CaseStudyCard
                   businessName="Sage"
                   year="2021-2024"
-                  projectTitle="Graphite Design System"
-                  impact="Built a native iOS and Android design system from the ground up to improve consistency, accessibility, and delivery speed."
-                  imageSrc="/images/case-studies/individual-ds-2.jpg"
-                  imageAlt="Sage GraphiteDesign System"
-                  href="/sage-ds"
+                  projectTitle="Accounting, tax, and invoicing for sole traders"
+                  impact="Helping ~150,000 UK sole traders manage core business tasks with more confidence and less admin friction."
+                  imageSrc="/images/case-studies/sage-home-individual.jpg"
+                  imageAlt="Sage accounting for sole traders"
+                  href="/sage-individual"
                   staggerClass="animate-stagger-card-4"
                 />
               </div>
@@ -191,7 +167,7 @@ export default function Home() {
                     dates="2024 to Present"
                     jobTitle="Lead Product Designer"
                     summary={[
-                      "Lead Product Designer across core areas of the GetGround platform, serving 30,000+ property investors. Designed and delivered Code first prototyping to production in days not weeks.",
+                      "Lead Product Designer and product manager across core areas of the GetGround platform, serving 30,000+ property investors. Set feature roadmaps, shaped team delivery, and used code-first prototyping to move from strategy to production in days not weeks.",
                       "Designed AI-assisted interaction models and dynamic experiences that generate actions and reports based on portfolio, market, and user context. Built business impact models to inform product decisions, used code-first prototyping in Next.js to speed up validation, and created tools like CopyKat, a context-aware copywriting agent."
                     ]}
                   />
@@ -269,7 +245,7 @@ export default function Home() {
       </div>
 
       {/* Floating Chat Input */}
-      {showFloatingInput && showContent && !isChatPanelOpen && (
+      {showFloatingInput && !isChatPanelOpen && (
         <div className="fixed bottom-4 left-0 right-0 z-50 px-4 animate-fade-in">
           <div className="w-80 mx-auto">
             <ChatInput

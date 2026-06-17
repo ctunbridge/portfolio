@@ -26,7 +26,7 @@ export const portfolioContext: PortfolioContext = {
       description: "Portfolio homepage with overview of work and experience",
     },
     {
-      label: "Bookkeeping & Tax Case Study",
+      label: "Keeping investors compliant with bookkeeping",
       url: "/gg-bookkeeping",
       description:
         "Bookkeeping and MTD: Figma Make to codebase prototype, Capcom design system, code-first delivery with Cursor, and impact metrics",
@@ -38,7 +38,7 @@ export const portfolioContext: PortfolioContext = {
         "Case study on GetGround's product led growth: onboarding refactoring and design language",
     },
     {
-      label: "Sage Individual Case Study",
+      label: "Accounting for sole traders",
       url: "/sage-individual",
       description:
         "Case study on transaction splitting for small business owners",
@@ -182,7 +182,7 @@ export const portfolioContext: PortfolioContext = {
       slug: "gg-bookkeeping",
       url: "/gg-bookkeeping",
       businessName: "GetGround",
-      projectTitle: "Bookkeeping & Tax",
+      projectTitle: "Keeping investors compliant with bookkeeping",
       year: "2025",
       role: "Lead Product Designer",
       problemStatement:
@@ -319,7 +319,7 @@ export const portfolioContext: PortfolioContext = {
       slug: "sage-individual",
       url: "/sage-individual",
       businessName: "Sage",
-      projectTitle: "Sage Individual - Transaction Splitting",
+      projectTitle: "Accounting for sole traders",
       year: "2021-2024",
       role: "Senior Product Designer",
       problemStatement:

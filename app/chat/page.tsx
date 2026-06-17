@@ -91,10 +91,12 @@ export default function ChatPage() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          messages: [...messages, userMessage].map((m) => ({
-            role: m.role,
-            content: m.content,
-          })),
+          messages: [...messages, userMessage]
+            .filter((m) => m.content.trim().length > 0)
+            .map((m) => ({
+              role: m.role,
+              content: m.content,
+            })),
         }),
       })
 
@@ -137,6 +139,10 @@ export default function ChatPage() {
         )
       }
       
+      if (!fullContent.trim()) {
+        throw new Error("No response received from the assistant")
+      }
+
       // Track successful response
       try {
         track("assistant_response_completed", {
@@ -149,7 +155,16 @@ export default function ChatPage() {
       }
     } catch (err) {
       console.error("Chat error:", err)
-      setError(err instanceof Error ? err.message : "Something went wrong")
+      const errorMessage =
+        err instanceof Error ? err.message : "Something went wrong"
+      setError(errorMessage)
+      setMessages((prev) => {
+        const last = prev[prev.length - 1]
+        if (last?.role === "assistant" && !last.content.trim()) {
+          return prev.slice(0, -1)
+        }
+        return prev
+      })
     } finally {
       setIsLoading(false)
     }

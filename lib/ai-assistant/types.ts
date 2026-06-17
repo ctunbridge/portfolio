@@ -19,7 +19,7 @@ export interface Message {
  * Configuration for creating an AI assistant instance
  */
 export interface AssistantConfig {
-  /** Anthropic model to use (e.g., 'claude-3-5-haiku-latest') */
+  /** Anthropic model to use (e.g., 'claude-haiku-4-5') */
   model?: string
   /** Custom system prompt (overrides default) */
   systemPrompt?: string
