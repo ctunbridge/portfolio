@@ -17,8 +17,8 @@ interface HomeIntroProps {
   className?: string;
 }
 
-const INTRO_UNLOCKED_KEY = "portfolio-password-unlocked";
 const INTRO_PASSWORD = "CTPortfolio26";
+const PASSWORD_ERROR_MESSAGE = "Email hello@christunbridge.co.uk for the password";
 const EXIT_ANIMATION_DURATION_MS = 1000;
 
 function HomeIntro({ onComplete, className }: HomeIntroProps) {
@@ -26,17 +26,6 @@ function HomeIntro({ onComplete, className }: HomeIntroProps) {
   const [error, setError] = React.useState("");
   const [isExiting, setIsExiting] = React.useState(false);
   const [isComplete, setIsComplete] = React.useState(false);
-  const [isUnlocked, setIsUnlocked] = React.useState<boolean | null>(null);
-
-  React.useEffect(() => {
-    const unlocked = sessionStorage.getItem(INTRO_UNLOCKED_KEY) === "true";
-    setIsUnlocked(unlocked);
-
-    if (unlocked) {
-      setIsComplete(true);
-      onComplete?.();
-    }
-  }, [onComplete]);
 
   React.useEffect(() => {
     if (!isExiting) {
@@ -57,17 +46,15 @@ function HomeIntro({ onComplete, className }: HomeIntroProps) {
     event.preventDefault();
 
     if (password !== INTRO_PASSWORD) {
-      setError("Incorrect password");
+      setError(PASSWORD_ERROR_MESSAGE);
       return;
     }
 
-    sessionStorage.setItem(INTRO_UNLOCKED_KEY, "true");
     setError("");
-    setIsUnlocked(true);
     setIsExiting(true);
   };
 
-  if (isUnlocked === null || isComplete) {
+  if (isComplete) {
     return null;
   }
 
@@ -98,12 +85,10 @@ function HomeIntro({ onComplete, className }: HomeIntroProps) {
 
           <form onSubmit={handleSubmit} className="w-full max-w-80 space-y-4">
             <div className="space-y-2">
-              <label htmlFor="portfolio-password" className="typography-small text-foreground">
-                Enter password to view portfolio
-              </label>
               <Input
                 id="portfolio-password"
                 type="password"
+                placeholder="Enter password"
                 value={password}
                 onChange={(event) => {
                   setPassword(event.target.value);
@@ -112,22 +97,23 @@ function HomeIntro({ onComplete, className }: HomeIntroProps) {
                   }
                 }}
                 autoComplete="current-password"
+                aria-label="Enter password"
                 aria-invalid={error ? true : undefined}
                 aria-describedby={error ? "portfolio-password-error" : undefined}
+                className="typography-body py-0 leading-10"
               />
-            </div>
 
-            <div className="flex items-center gap-3">
-              <Button type="submit">Enter portfolio</Button>
               {error ? (
                 <p
                   id="portfolio-password-error"
-                  className="typography-small text-destructive"
+                  className="typography-caption text-destructive"
                 >
                   {error}
                 </p>
               ) : null}
             </div>
+
+            <Button type="submit">Enter</Button>
           </form>
         </div>
       </div>
@@ -135,5 +121,5 @@ function HomeIntro({ onComplete, className }: HomeIntroProps) {
   );
 }
 
-export { HomeIntro, EXIT_ANIMATION_DURATION_MS, INTRO_UNLOCKED_KEY };
+export { HomeIntro, EXIT_ANIMATION_DURATION_MS };
 
