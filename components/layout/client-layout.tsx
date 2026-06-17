@@ -9,6 +9,7 @@
 import * as React from "react"
 import { track } from "@vercel/analytics"
 
+import { HomeIntro } from "@/components/home-intro/home-intro"
 import { ChatPanel, type Message } from "@/components/ui/chat-panel/chat-panel"
 import { ChatProvider, useChatContext } from "@/lib/chat-context"
 import { cn } from "@/lib/utils"
@@ -21,6 +22,7 @@ function LayoutContent({ children }: ClientLayoutProps) {
   const { isOpen, setIsOpen, pendingMessage, clearPendingMessage } = useChatContext()
   const [messages, setMessages] = React.useState<Message[]>([])
   const [isLoading, setIsLoading] = React.useState(false)
+  const [isIntroComplete, setIsIntroComplete] = React.useState(false)
   const handleSubmitRef = React.useRef<(content: string) => void>(() => {})
 
   // Track when chat panel is opened
@@ -185,50 +187,55 @@ function LayoutContent({ children }: ClientLayoutProps) {
   }
 
   return (
-    <div className="flex min-h-screen">
-      {/* Main content area with container queries */}
-      <main
-        className={cn(
-          "@container flex-1 flex flex-col",
-          "transition-[margin] duration-300 ease-in-out",
-          // On lg+ screens, add margin when panel is open
-          // Panel width (356px) + edge padding (16px) = 372px
-          isOpen && "lg:mr-[372px]"
-        )}
-      >
-        <div className="flex-1 px-6 @3xl:px-8 @5xl:px-14">
-          <div className="mx-auto max-w-7xl">
-            {children}
-          </div>
-        </div>
-      </main>
+    <>
+      <HomeIntro onComplete={() => setIsIntroComplete(true)} />
 
-      {/* Chat Panel */}
-      <ChatPanel
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        onNewChat={handleNewChat}
-        title="What would you like to know?"
-        placeholder="Ask something..."
-        messages={messages}
-        onSubmit={handleSubmit}
-        isLoading={isLoading}
-        suggestions={[
-          {
-            label: "Tell me about recent work...",
-            onClick: () => handleSuggestionClick("Tell me about recent work"),
-          },
-          {
-            label: "What does Chris do outside of design?",
-            onClick: () => handleSuggestionClick("What does Chris do outside of design?"),
-          },
-          {
-            label: "Get in touch",
-            onClick: () => handleSuggestionClick("How can I get in touch with Chris?"),
-          },
-        ]}
-      />
-    </div>
+      <div className="flex min-h-screen">
+        {/* Main content area with container queries */}
+        <main
+          className={cn(
+            "@container flex-1 flex flex-col",
+            "transition-[margin] duration-300 ease-in-out",
+            !isIntroComplete && "pointer-events-none select-none",
+            // On lg+ screens, add margin when panel is open
+            // Panel width (356px) + edge padding (16px) = 372px
+            isOpen && "lg:mr-[372px]"
+          )}
+        >
+          <div className="flex-1 px-6 @3xl:px-8 @5xl:px-14">
+            <div className="mx-auto max-w-7xl">
+              {children}
+            </div>
+          </div>
+        </main>
+
+        {/* Chat Panel */}
+        <ChatPanel
+          isOpen={isOpen && isIntroComplete}
+          onClose={() => setIsOpen(false)}
+          onNewChat={handleNewChat}
+          title="What would you like to know?"
+          placeholder="Ask something..."
+          messages={messages}
+          onSubmit={handleSubmit}
+          isLoading={isLoading}
+          suggestions={[
+            {
+              label: "Tell me about recent work...",
+              onClick: () => handleSuggestionClick("Tell me about recent work"),
+            },
+            {
+              label: "What does Chris do outside of design?",
+              onClick: () => handleSuggestionClick("What does Chris do outside of design?"),
+            },
+            {
+              label: "Get in touch",
+              onClick: () => handleSuggestionClick("How can I get in touch with Chris?"),
+            },
+          ]}
+        />
+      </div>
+    </>
   )
 }
 
