@@ -41,12 +41,23 @@ export async function POST(req: Request) {
       )
     }
 
+    const validMessages = messages.filter(
+      (msg) => typeof msg.content === "string" && msg.content.trim().length > 0
+    )
+
+    if (validMessages.length === 0) {
+      return new Response(
+        JSON.stringify({ error: "At least one non-empty message is required" }),
+        { status: 400, headers: { "Content-Type": "application/json" } }
+      )
+    }
+
     // Get assistant configuration with system prompt
     const config = getAssistantConfig()
-    console.log("Chat request received, messages:", messages.length)
+    console.log("Chat request received, messages:", validMessages.length)
 
     // Convert simple messages to CoreMessage format
-    const coreMessages: CoreMessage[] = messages.map((msg) => ({
+    const coreMessages: CoreMessage[] = validMessages.map((msg) => ({
       role: msg.role,
       content: msg.content,
     }))

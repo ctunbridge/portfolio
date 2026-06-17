@@ -15,7 +15,7 @@ import { buildSystemPrompt } from "./prompts"
 export const defaultConfig: Required<
   Pick<AssistantConfig, "model" | "temperature" | "maxTokens">
 > = {
-  model: "claude-3-5-haiku-latest",
+  model: "claude-haiku-4-5",
   temperature: 0.7,
   maxTokens: 1024,
 }
@@ -43,7 +43,7 @@ export function getAssistantConfig(
   systemPrompt: string
 } {
   return {
-    model: config?.model ?? defaultConfig.model,
+    model: config?.model ?? process.env.ANTHROPIC_MODEL ?? defaultConfig.model,
     temperature: config?.temperature ?? defaultConfig.temperature,
     maxTokens: config?.maxTokens ?? defaultConfig.maxTokens,
     systemPrompt: createSystemPrompt(config),

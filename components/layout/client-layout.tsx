@@ -79,10 +79,12 @@ function LayoutContent({ children }: ClientLayoutProps) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          messages: updatedMessages.map((m) => ({
-            role: m.role,
-            content: m.content,
-          })),
+          messages: updatedMessages
+            .filter((m) => m.content.trim().length > 0)
+            .map((m) => ({
+              role: m.role,
+              content: m.content,
+            })),
         }),
       })
 
@@ -118,28 +120,55 @@ function LayoutContent({ children }: ClientLayoutProps) {
           )
         }
         
-        // Track successful response
-        try {
-          track("assistant_response_completed", {
-            location: "home_page",
-            response_length: content.length,
-          })
-        } catch (error) {
-          // Silently fail if analytics is blocked
-          console.debug("Analytics tracking failed:", error)
+        if (!content.trim()) {
+          setMessages((prev) =>
+            prev.map((m) =>
+              m.id === assistantMessageId
+                ? {
+                    ...m,
+                    content:
+                      "Sorry, I couldn't generate a response. Please try again.",
+                  }
+                : m
+            )
+          )
+        } else {
+          // Track successful response
+          try {
+            track("assistant_response_completed", {
+              location: "home_page",
+              response_length: content.length,
+            })
+          } catch (error) {
+            // Silently fail if analytics is blocked
+            console.debug("Analytics tracking failed:", error)
+          }
         }
       }
     } catch (error) {
       console.error("Chat error:", error)
-      // Add error message
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: (Date.now() + 1).toString(),
-          role: "assistant",
-          content: "Sorry, I encountered an error. Please try again.",
-        },
-      ])
+      setMessages((prev) => {
+        const last = prev[prev.length - 1]
+        if (last?.role === "assistant" && !last.content.trim()) {
+          return prev.map((m, index) =>
+            index === prev.length - 1
+              ? {
+                  ...m,
+                  content: "Sorry, I encountered an error. Please try again.",
+                }
+              : m
+          )
+        }
+
+        return [
+          ...prev,
+          {
+            id: (Date.now() + 1).toString(),
+            role: "assistant",
+            content: "Sorry, I encountered an error. Please try again.",
+          },
+        ]
+      })
     } finally {
       setIsLoading(false)
     }
