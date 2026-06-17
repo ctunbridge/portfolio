@@ -15,7 +15,7 @@ import { buildSystemPrompt } from "./prompts"
 export const defaultConfig: Required<
   Pick<AssistantConfig, "model" | "temperature" | "maxTokens">
 > = {
-  model: "gpt-4o-mini",
+  model: "claude-3-5-haiku-latest",
   temperature: 0.7,
   maxTokens: 1024,
 }

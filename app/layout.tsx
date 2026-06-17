@@ -14,25 +14,25 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
   title: {
-    default: "Chris Tunbridge | Product Designer & Design Engineer",
+    default: "Chris Tunbridge | Lead Product Designer & Founder",
     template: "%s | Chris Tunbridge",
   },
   description:
-    "Portfolio of Chris Tunbridge, a senior product designer and product founder building high-impact digital products, design systems, and AI-assisted experiences.",
+    "Portfolio of Chris Tunbridge, a lead product designer and founder building high-impact digital products, design systems, and AI-assisted experiences.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "/",
     siteName: "Chris Tunbridge Portfolio",
-    title: "Chris Tunbridge | Product Designer & Design Engineer",
+    title: "Chris Tunbridge | Lead Product Designer & Founder",
     description:
-      "Senior product founder specialising in digital products, design systems, and AI-assisted experiences.",
+      "Lead product designer and founder specialising in digital products, design systems, and AI-assisted experiences.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chris Tunbridge | Product Designer & Design Engineer",
+    title: "Chris Tunbridge | Lead Product Designer & Founder",
     description:
-      "Senior product designer and product founder specialising in digital products, design systems, and AI-assisted experiences.",
+      "Lead product designer and founder specialising in digital products, design systems, and AI-assisted experiences.",
   },
 };
 

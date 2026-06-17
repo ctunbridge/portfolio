@@ -19,7 +19,7 @@ export interface Message {
  * Configuration for creating an AI assistant instance
  */
 export interface AssistantConfig {
-  /** OpenAI model to use (e.g., 'gpt-4o', 'gpt-4o-mini') */
+  /** Anthropic model to use (e.g., 'claude-3-5-haiku-latest') */
   model?: string
   /** Custom system prompt (overrides default) */
   systemPrompt?: string
