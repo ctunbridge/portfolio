@@ -110,7 +110,7 @@ export default function Home() {
               <div id="work" className="grid grid-cols-1 gap-x-10 gap-y-25 mb-80 @3xl:grid-cols-2">
                 <CaseStudyCard
                   businessName="GetGround"
-                  year="2025/26"
+                  year="2026"
                   projectTitle="Building an Inbox for user tasks and agentic actions"
                   impact="Harmonising required and agentic actions into one place, leading to an increase of 34% in required tasks."
                   imageSrc="/images/case-studies/GG%20Home%20-%20Inbox.jpg"
@@ -121,7 +121,7 @@ export default function Home() {
                 />
                 <CaseStudyCard
                   businessName="GetGround"
-                  year="2025/26"
+                  year="2026"
                   projectTitle="Product led growth through intent-led onboarding"
                   impact="Solving the problem of incomplete user data, increasing properties added by 30%."
                   imageSrc="/images/case-studies/GG%20Home%20-%20PLG.jpg"
