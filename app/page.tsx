@@ -13,26 +13,14 @@ import { ChatInput } from "@/components/ui/chat-input/chat-input";
 import { CyclingText } from "@/components/ui/cycling-text/cycling-text";
 import { ExperienceCard } from "@/components/ui/experience-card/experience-card";
 import { Footer } from "@/components/ui/footer/footer";
-import { HomeIntro } from "@/components/home-intro/home-intro";
 import { SideNav } from "@/components/ui/side-nav/side-nav";
-import { cn } from "@/lib/utils";
 import { useChatContext } from "@/lib/chat-context";
-
-const INTRO_SHOWN_KEY = "home-intro-shown";
 
 export default function Home() {
   const { isOpen: isChatPanelOpen, openWithMessage } = useChatContext();
-  const [showContent, setShowContent] = React.useState(false);
   const [showFloatingInput, setShowFloatingInput] = React.useState(false);
   const [showMoreExperience, setShowMoreExperience] = React.useState(false);
   const inlineInputRef = React.useRef<HTMLDivElement>(null);
-
-  // Check if intro was already shown to avoid content flash
-  React.useEffect(() => {
-    if (sessionStorage.getItem(INTRO_SHOWN_KEY) === "true") {
-      setShowContent(true);
-    }
-  }, []);
 
   // Track when inline input goes out of view
   React.useEffect(() => {
@@ -65,10 +53,6 @@ export default function Home() {
     };
   }, [isChatPanelOpen]);
 
-  const handleIntroComplete = React.useCallback(() => {
-    setShowContent(true);
-  }, []);
-
   const handleSendEnquiry = () => {
     window.location.href = "mailto:hello@christunbridge.co.uk";
   };
@@ -92,14 +76,7 @@ export default function Home() {
 
   return (
     <>
-      <HomeIntro onComplete={handleIntroComplete} />
-
-      <div
-        className={cn(
-          "min-h-screen",
-          !showContent && "hidden"
-        )}
-      >
+      <div className="min-h-screen">
         <div className="grid grid-cols-12 gap-4">
           <SideNav items={navItems} />
 
@@ -110,7 +87,6 @@ export default function Home() {
                 <h1 className="typography-h1-demibold col-span-9 mb-10 h-75 @3xl:col-span-8 animate-stagger-1">
                   I’m a lead product designer and founder, currently building{" "}
                   <CyclingText
-                    key={showContent ? "visible" : "hidden"}
                     texts={[
                       "agentic first experiences.",
                       "complex product flows.",
@@ -269,7 +245,7 @@ export default function Home() {
       </div>
 
       {/* Floating Chat Input */}
-      {showFloatingInput && showContent && !isChatPanelOpen && (
+      {showFloatingInput && !isChatPanelOpen && (
         <div className="fixed bottom-4 left-0 right-0 z-50 px-4 animate-fade-in">
           <div className="w-80 mx-auto">
             <ChatInput
