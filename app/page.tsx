@@ -135,9 +135,9 @@ export default function Home() {
                 <CaseStudyCard
                   businessName="GetGround"
                   year="2025/26"
-                  projectTitle="Building an Inbox for agentic actions"
-                  impact="One persistent surface for high-intent actions across the portfolio, with Inbox nudges increasing categorised transactions by 34% in the first two weeks."
-                  imageSrc="/images/case-studies/gg-home-bk.jpg"
+                  projectTitle="Building an Inbox for user tasks and agentic actions"
+                  impact="Harmonising required and agentic actions into one place, leading to an increase of 34% in required tasks."
+                  imageSrc="/images/case-studies/GG%20Home%20-%20Inbox.jpg"
                   imageAlt="GetGround Inbox and assistant action case study"
                   href="/gg-inbox"
                   priority
@@ -146,10 +146,10 @@ export default function Home() {
                 <CaseStudyCard
                   businessName="GetGround"
                   year="2025/26"
-                  projectTitle="Intent-led Onboarding for Property and Mortgage Growth"
-                  impact="Property context increased from 1.71 to 2.31 properties per user, creating a stronger product-led route into mortgage opportunities."
-                  imageSrc="/images/case-studies/gg-home-ui.jpg"
-                  imageAlt="GetGround intent-led onboarding and mortgage growth"
+                  projectTitle="Product led growth through intent-led onboarding"
+                  impact="Solving the problem of incomplete user data, increasing properties added by 30%."
+                  imageSrc="/images/case-studies/GG%20Home%20-%20PLG.jpg"
+                  imageAlt="GetGround intent-led onboarding"
                   href="/gg-plg"
                   priority
                   staggerClass="animate-stagger-card-2"
@@ -157,20 +157,20 @@ export default function Home() {
                 <CaseStudyCard
                   businessName="GetGround"
                   year="2025/26"
-                  projectTitle="Making Tax Digital"
-                  impact="A supporting case study for helping landlords understand quarterly tax obligations and prepare for HMRC’s MTD requirements."
+                  projectTitle="Keeping investors compliant with bookkeeping"
+                  impact="Helping landlords understand quarterly tax obligations and prepare for Making Tax Digital."
                   imageSrc="/images/case-studies/gg-home-bk.jpg"
-                  imageAlt="GetGround Making Tax Digital"
+                  imageAlt="GetGround keeping investors compliant with bookkeeping"
                   href="/gg-bookkeeping"
                   staggerClass="animate-stagger-card-3"
                 />
                 <CaseStudyCard
                   businessName="Sage"
                   year="2021-2024"
-                  projectTitle="Sage Individual"
+                  projectTitle="Accounting, tax, and invoicing for sole traders"
                   impact="Helping ~150,000 UK sole traders manage core business tasks with more confidence and less admin friction."
                   imageSrc="/images/case-studies/sage-home-individual.jpg"
-                  imageAlt="Sage Individual mobile app"
+                  imageAlt="Sage accounting for sole traders"
                   href="/sage-individual"
                   staggerClass="animate-stagger-card-4"
                 />

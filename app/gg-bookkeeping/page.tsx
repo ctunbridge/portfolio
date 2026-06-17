@@ -1,7 +1,7 @@
 /**
- * GG Making Tax Digital Case Study Page
+ * GG Bookkeeping Case Study Page
  *
- * Supporting case study for GetGround's Making Tax Digital work.
+ * Keeping investors compliant with bookkeeping case study for GetGround.
  */
 "use client"
 
@@ -13,6 +13,21 @@ import { Button } from "@/components/ui/button/button"
 import { CaseStudyLayout } from "@/components/layout/case-study-layout/case-study-layout"
 import { Footer } from "@/components/ui/footer/footer"
 import { TopNav } from "@/components/ui/top-nav/top-nav"
+
+const impactMetrics = [
+  {
+    title: "New user sign-ups increased by 56%",
+    body: "We saw a large increase in sign-ups by personal landlords and users adding personal properties, driven in part by the free MTD solution.",
+  },
+  {
+    title: "564 active open banking connections",
+    body: "Since releasing open banking we've had a steady increase in connections. We're seeing more adoption from new users than our older cohort.",
+  },
+  {
+    title: "60,000+ transactions added since release",
+    body: "With open banking providing automated income and expense tracking, the number of transactions per user per month has increased by 27%.",
+  },
+]
 
 const principles = [
   {
@@ -358,60 +373,50 @@ export default function GGBookkeepingPage() {
       id: "impact",
       title: "Impact",
       content: (
-        <>
-          <div className="space-y-4">
-            <h3 className="typography-h4-demibold">Engagement</h3>
-            <p className="typography-body text-foreground min-h-[2lh]">
-              To measure engagement, we tracked how many users were tracking income and expenses through open banking and how many signed up for Making Tax Digital. We&apos;ve seen a significant uptake in both features:{" "}
-              <span className="font-bold">1000+ sign ups</span> from new users in 2 months,{" "}
-              <span className="font-bold">564 active banking connections</span>, and nearly{" "}
-              <span className="font-bold">60,000+ transactions</span> added since release.
-            </p>
-          </div>
-
-          <Image
-            src="/images/case-studies/gg-bookkeeping/mixpanel.jpg"
-            alt="Analytics dashboard showing bookkeeping feature usage"
-            width={1920}
-            height={1080}
-            className="mt-8 w-full h-auto rounded-lg mb-8"
-            loading="lazy"
-          />
-        </>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          {impactMetrics.map((metric) => (
+            <div key={metric.title} className="space-y-3">
+              <h3 className="typography-h4-demibold">{metric.title}</h3>
+              <p className="typography-body text-foreground">{metric.body}</p>
+            </div>
+          ))}
+        </div>
       ),
     },
     {
       id: "next-steps",
       title: "Next steps",
       content: (
-        <div className="space-y-8">
-          <div className="space-y-4">
-            <h3 className="typography-h4-demibold">A personal accounting agent</h3>
-            <p className="typography-body text-foreground">
-              Combined with open banking, transaction management, and insight
-              improvements, we are positioned to bring smarter, AI-enhanced experiences into Bookkeeping. Usage data already points to demand for deeper, more personal help inside the product.
-            </p>
-          </div>
-          <div className="space-y-4 mt-30 lg:mt-45">
-            <h3 className="typography-h4-demibold">Exploring automated improvements</h3>
-            <p className="typography-body text-foreground">
-              We are currently looking at how{" "}
-              <span className="font-semibold">agents and subagents</span> can speed up research and component creation, and whether {" "}
-              <span className="font-semibold">AI systems can monitor usage in the background</span>, suggest improvements, and open pull requests automatically when changes are safe.
-            </p>
-          </div>
-          <div className="space-y-4 mt-30 lg:mt-45">
-            <h3 className="typography-h4-demibold">MTD April 2026</h3>
-            <p className="typography-body text-foreground">
-              The first cohort of landlords who must use MTD starts in April 2026 (income over £50k). The design and engineering work we have done so far means we are now recognised as an MTD developer by HMRC; the next step is to put our MTD solution into the hands of our users.
-            </p>
+        <>
+          <div className="space-y-10">
+            <div className="space-y-4">
+              <h3 className="typography-h4-demibold">A personal accounting agent</h3>
+              <p className="typography-body text-foreground">
+                Combined with open banking, transaction management, and insight
+                improvements, we are positioned to bring smarter, AI-enhanced experiences into Bookkeeping. Usage data already points to demand for deeper, more personal help inside the product.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <h3 className="typography-h4-demibold">Exploring automated improvements</h3>
+              <p className="typography-body text-foreground">
+                We are currently looking at how{" "}
+                <span className="font-semibold">agents and subagents</span> can speed up research and component creation, and whether {" "}
+                <span className="font-semibold">AI systems can monitor usage in the background</span>, suggest improvements, and open pull requests automatically when changes are safe.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <h3 className="typography-h4-demibold">MTD April 2026</h3>
+              <p className="typography-body text-foreground">
+                The first cohort of landlords who must use MTD starts in April 2026 (income over £50k). The design and engineering work we have done so far means we are now recognised as an MTD developer by HMRC; the next step is to put our MTD solution into the hands of our users.
+              </p>
+            </div>
           </div>
           <div className="mt-30 lg:mt-45 flex justify-center">
             <Button variant="outline" asChild>
               <Link href="/gg-plg">Next project</Link>
             </Button>
           </div>
-        </div>
+        </>
       ),
     },
   ]
@@ -423,7 +428,7 @@ export default function GGBookkeepingPage() {
       <div className="space-y-100 pt-40">
         <section id="introduction" className="space-y-8 animate-stagger-1">
           <h1 className="typography-h2-demibold">
-            Making Tax Digital
+            Keeping investors compliant with bookkeeping
           </h1>
 
           <div className="grid grid-cols-12">
@@ -449,7 +454,7 @@ export default function GGBookkeepingPage() {
           <div className="animate-stagger-2">
             <Image
               src="/images/case-studies/gg-bookkeeping/gg-hero-bk.jpg"
-              alt="GetGround Bookkeeping and Making Tax Digital overview"
+              alt="GetGround keeping investors compliant with bookkeeping overview"
               width={1920}
               height={1080}
               className="w-full h-auto rounded-lg"
