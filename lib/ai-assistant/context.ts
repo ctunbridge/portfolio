@@ -10,9 +10,9 @@ import type { PortfolioContext } from "./types"
 export const portfolioContext: PortfolioContext = {
   bio: {
     name: "Chris Tunbridge",
-    title: "Product Designer",
+    title: "Lead Product Designer",
     summary:
-      "Product designer, founder and builder with 10 years of experience. Specialises in design systems, Next.js and Tailwind CSS sites, mobile native apps, and React applications. Currently Lead Product Designer at GetGround. While not an engineer by training, Chris takes an AI-first approach to coding, using tools like Cursor to work directly in codebases and build prototypes from scratch—demonstrating his ability to bridge design and development through modern AI-assisted workflows.",
+      "Lead product designer and founder with 10 years of experience across start-up, agency, and enterprise environments. Currently at GetGround, where Chris leads product design and product management across core platform areas serving 30,000+ property investors. Specialises in agentic-first experiences, complex product flows, scalable design systems, and native mobile apps. Uses a code-first approach with Cursor, Next.js, and Tailwind CSS to move from strategy to production in days, not weeks.",
     email: "hello@christunbridge.co.uk",
     location: "United Kingdom",
     personalLife:
@@ -26,27 +26,33 @@ export const portfolioContext: PortfolioContext = {
       description: "Portfolio homepage with overview of work and experience",
     },
     {
+      label: "Building an Inbox for user tasks and agentic actions",
+      url: "/gg-inbox",
+      description:
+        "GetGround Inbox: unified surface for user and agentic actions, pull/push/persistent interaction model, code-first prototyping, and impact metrics",
+    },
+    {
+      label: "Product led growth through intent-led onboarding",
+      url: "/gg-plg",
+      description:
+        "Intent-led onboarding at GetGround: capturing property context earlier to drive product-led growth",
+    },
+    {
       label: "Keeping investors compliant with bookkeeping",
       url: "/gg-bookkeeping",
       description:
-        "Bookkeeping and MTD: Figma Make to codebase prototype, Capcom design system, code-first delivery with Cursor, and impact metrics",
+        "Bookkeeping and MTD: impact modelling, Figma Make prototyping, Capcom design system, and code-first delivery",
     },
     {
-      label: "Enabling Product Led Growth Case Study",
-      url: "/gg-plg",
-      description:
-        "Case study on GetGround's product led growth: onboarding refactoring and design language",
-    },
-    {
-      label: "Accounting for sole traders",
+      label: "Accounting, tax, and invoicing for sole traders",
       url: "/sage-individual",
       description:
-        "Case study on transaction splitting for small business owners",
+        "Sage Individual native app and transaction splitting for UK sole traders",
     },
     {
-      label: "Graphite Design System Case Study",
+      label: "Graphite Design System",
       url: "/sage-ds",
-      description: "Case study on Sage's native mobile design system",
+      description: "Sage's native mobile design system for iOS and Android",
     },
   ],
 
@@ -56,8 +62,8 @@ export const portfolioContext: PortfolioContext = {
       jobTitle: "Lead Product Designer",
       dates: "2024 to Present",
       summary: [
-        "Lead Product Designer for multiple features across the GetGround platform, serving 30,000+ property investors. Designed and delivered the bookkeeping and tax submissions area end-to-end, enabled product led growth through onboarding refactoring and a consistent design language, and built and maintain the Capcom design system.",
-        "Designed AI interaction models and dynamic experiences that generate actions and reports based on portfolio, market, and user context. Built business impact models to inform product decisions, integrated AI into the design process through code-first prototyping in Next.js, and created custom agents like CopyKat, a context-aware copywriting tool.",
+        "Lead Product Designer and product manager across core areas of the GetGround platform, serving 30,000+ property investors. Sets feature roadmaps, shapes team delivery, and uses code-first prototyping to move from strategy to production in days, not weeks.",
+        "Designed AI-assisted interaction models and dynamic experiences that generate actions and reports based on portfolio, market, and user context. Built business impact models to inform product decisions, used code-first prototyping in Next.js to speed up validation, and created tools like CopyKat, a context-aware copywriting agent.",
       ],
     },
     {
@@ -65,10 +71,8 @@ export const portfolioContext: PortfolioContext = {
       jobTitle: "Senior Product Designer",
       dates: "2021 to 2023",
       summary: [
-        "Took a lead role in the creation and delivery of the Sage Individual native app for Android and iOS. Targeted the UK's 4.5 million small business owners, Sage Individual allowed users to track income and expenses, get paid faster using native tap to pay, send and receive invoices, and submit tax obligations.",
-        "Introduced new ways of working to improve team efficiency, psychological safety, skills and quality of output. This included: team retrospectives; design feedback pathways; workshop formats for wireframing, user journey mapping and prioritisation; training on problem statement framing; design delivery templates; processes to ensure consistency and pixel perfect design delivery to developers.",
-        "Accessibility Champion for native mobile, ensuring the Sage Individual product meets WCAG 2.1 standards.",
-        "Introduced and led the curation of the Native Mobile Design System (Graphite). Built from the ground up to be robust and usable by all Sage's mobile products.",
+        "Created and delivered the Sage Individual native app for Android and iOS, designed for the UK's 4.5 million small business owners with features for expense tracking, tap to pay, and tax submissions.",
+        "Established team practices including retrospectives and design feedback pathways, served as Accessibility Champion for native mobile (WCAG 2.1), and helped build the Native Mobile Design System (Graphite) from the ground up.",
       ],
     },
     {
@@ -76,8 +80,8 @@ export const portfolioContext: PortfolioContext = {
       jobTitle: "Founding Product Designer",
       dates: "2019 to 2021",
       summary: [
-        "Football Survivor was a peer to peer iOS and Android app based on the popular game 'Last Man Standing'. As the founding Lead Product Designer responsibilities included: reimagining user needs and requirements for the game to be viable on a mobile platform; creating the UX and UI; curating the design system; content design; creating app store assets and marketing materials; supporting the development team; continual improvements, fixes and the design delivery of new features.",
-        "Football Survivor grew to 15,000+ sign ups and 8,000+ active users within 18 months of launching.",
+        "Founding Product Designer for a peer-to-peer iOS and Android betting app based on Last Man Standing. Designed the end-to-end experience across UX, UI, design systems, content, and marketing materials.",
+        "Grew to 15,000+ sign-ups and 8,000+ active users within 18 months of launch.",
       ],
     },
     {
@@ -122,60 +126,172 @@ export const portfolioContext: PortfolioContext = {
 
   caseStudies: [
     {
-      slug: "gg-plg",
-      url: "/gg-plg",
+      slug: "gg-inbox",
+      url: "/gg-inbox",
       businessName: "GetGround",
-      projectTitle: "Enabling Product Led Growth",
-      year: "2025",
-      role: "Lead Product Designer",
+      projectTitle: "Building an Inbox for user tasks and agentic actions",
+      year: "2026",
+      role: "Lead Product Designer and Product Manager",
       problemStatement:
-        "GetGround's move to product led growth introduced new features, subscriptions including a free tier, and support for personal and limited company landlords. Many areas of the platform were the outcome of previous experiments and iterations that were either out of date or needed deprecating. The team needed to create a foundation for the next stage of user growth by removing what was no longer needed, bringing in a cohesive design language and user experience, and amending onboarding flows so they facilitate onward free-to-paid journeys.",
+        "GetGround needed cleaner in-year bookkeeping and a single home for assistant-led actions. The team built an Inbox: one persistent surface where users understand, review, and complete high-intent actions across their portfolio.",
+      principles: [
+        {
+          title: "Show the right thing, not everything",
+          description:
+            "Help users focus by surfacing what matters most in the moment. Prioritise clarity over completeness; not everything needs to be shown.",
+        },
+        {
+          title: "Build confidence with every interaction",
+          description:
+            "Make it easy to understand, hard to get lost, and reassuring to use. Guide naturally, place support where it's needed, and use data-led insights to build trust.",
+        },
+        {
+          title: "Make it useful every time, not just the first time",
+          description:
+            "Create features that are clear, intuitive, and valuable every time they're used. If it needs constant explanation, it's not intuitive enough.",
+        },
+      ],
       sections: [
         {
-          title: "Refactoring onboarding",
+          title: "Problem",
           content: [
-            "Onboarding had been built sales-first, focused on landlords who had already purchased; the first-time experience did not gather the right data at the right time to guide users to the right product.",
-            "End-to-end customer journey experiments with Making Tax Digital as the hook showed conversion rates dropped as users moved deeper into the funnel.",
-            "Identified three areas to reduce friction and persist the correct data: marketing website (quiz cut from 7 to 4 questions, data persisted); sign-up (A/B tested sign-up wall placement); adding a property (flow updated to ask about ownership, enabling focused MTD experience and other service suggestions).",
+            "The work started as an in-year bookkeeping improvement, but discovery showed actions lived across Tasks, Bookkeeping, and assistant-led jobs with no clear home.",
+            "Refactoring Bookkeeping into an inbox would have created two competing task systems. Bookkeeping had low reach (24% of logins); Tasks had more than double the usage (55%).",
+            "The question was not how to refactor Bookkeeping, but whether a broader action surface was needed.",
+          ],
+        },
+        {
+          title: "Shaping the solution",
+          content: [
+            "Led a platform-wide interaction model mapping pull, push, and persistent UI so agentic AI and existing functionality could live side by side.",
+            "Pull: user tells the system what they need; UI assembles to complete the job. Push: system detects something meaningful and surfaces it proactively in predictable locations. Persistent: stable surfaces like tables and navigation that stay accessible regardless of scenario.",
+            "Prototyped on a design/playground branch in the monorepo with production-like components. Tested with 5 existing users; consensus was that users should keep final control when updating financial information.",
+          ],
+        },
+        {
+          title: "Release",
+          content: [
+            "First release migrated existing tasks into the Inbox and defined how agentic actions appeared as to-dos or activity items.",
+            "Built an inbox-classifier skill based on design principles to advise on Inbox content and wired it into the AI assistant.",
+            "Resolved UI framework for to-dos and activity items, then built components in the shared UI package for production.",
+            "Led document extraction feeding into the Inbox as the primary surface for reviewing suggested actions from extracted document data.",
+          ],
+        },
+        {
+          title: "Impact",
+          content: [
+            "Inbox nudges and suggested categorisations increased the proportion of categorised transactions by 34% in the first two weeks.",
+            "Surfacing property-detail tasks in the Inbox drove a 21% increase in users adding property details.",
+            "Suggested linking increased document-transaction links by 43%, improving bookkeeping data quality.",
           ],
           metrics: [
             {
-              label: "22%",
-              value: "through top of funnel",
+              label: "34%",
+              value: "more transactions categorised",
               description:
-                "Uplift in users making it through to sign up after reworking the quiz.",
+                "Inbox nudges and suggested categorisations in the first two weeks.",
             },
             {
-              label: "38%",
-              value: "more sign ups",
+              label: "21%",
+              value: "increase in property details added",
               description:
-                "From A/B testing when the sign-up wall was later in the flow.",
+                "Surfacing property-detail tasks in the Inbox rather than on the property page.",
             },
             {
-              label: "41%",
-              value: "more funnel completions",
-              description: "By changing the add property flow.",
+              label: "43%",
+              value: "increase in transactions linked to documents",
+              description:
+                "Suggested linking improved bookkeeping data quality.",
             },
           ],
         },
         {
-          title: "Creating a consistent design language",
+          title: "Next steps",
           content: [
-            "Mapping the customer journey revealed inconsistency in brand, design language, and identity across touchpoints. Product led growth requires consistent brand from meta ads through to sign-up or purchase; inconsistency erodes trust and conversion.",
-            "Design team split focus across top of funnel (meta ads, sales decks, marketing site) and the platform. Created a refreshed brand identity, standardising colour, dropping outdated serif fonts, and refining the logo.",
-            "Chris's main focus was the platform refresh: updating the Capcom design system to reflect the new brand and introducing more consistent UI patterns and tools.",
+            "Populate the activity feed with context-aware suggestions to grow weekly and monthly active users.",
+            "Give the agent a heartbeat so it can act without explicit user triggers.",
+          ],
+        },
+      ],
+      skills: [
+        "Agentic UI design",
+        "Interaction models",
+        "Product management",
+        "User research",
+        "Code-first prototyping",
+        "Design systems",
+        "Component architecture",
+        "Next.js",
+        "Cursor",
+        "AI skills and agents",
+        "Document extraction",
+      ],
+    },
+    {
+      slug: "gg-plg",
+      url: "/gg-plg",
+      businessName: "GetGround",
+      projectTitle: "Product led growth through intent-led onboarding",
+      year: "2026",
+      role: "Lead Product Designer and Product Manager",
+      problemStatement:
+        "Users were adding properties without enough context for GetGround to understand ownership type, buying stage, or mortgage opportunity. The redesign captured minimum useful details earlier, then routed users into clearer next steps.",
+      sections: [
+        {
+          title: "Problem",
+          content: [
+            "Landlords typically hold two or more properties; GetGround users averaged 1.7. Users added an address and stopped before sharing ownership type or investment stage.",
+            "Without property context, the product could not personalise next steps or create product-led opportunities in mortgage, insurance, or lettings.",
+            "Between Jan 2025 and Jan 2026, only 39% of signups confirmed how they owned their property; 73% never confirmed ownership.",
+            "Only 16.6% of confirmed users connected open banking or HMRC. Just 142 users (3.9% of signups) completed all five journey stages.",
+          ],
+        },
+        {
+          title: "Rethinking adding a property",
+          content: [
+            "The old empty portfolio flow treated every user the same and surfaced too many next steps.",
+            "The redesign moved from adding an address to understanding property context: capture minimum details to identify intent, then route users into clearer journeys based on investment stage and ownership type.",
+            "Shipped a data-gathering experiment for users adding a property they were buying to test whether they would add financing details or book a call.",
+          ],
+        },
+        {
+          title: "Impact",
+          content: [
+            "After a mid-March release, properties per user rose from 1.7 to 2.2, a 30% increase.",
+            "Financial data connections doubled from 8% between Jan 2025 and Jan 2026 to 17.5% after March.",
+          ],
+          metrics: [
+            {
+              label: "30%",
+              value: "more properties per user",
+              description:
+                "Properties per user rose from 1.7 to 2.2 after a mid-March release.",
+            },
+            {
+              label: "100%",
+              value: "increase in financial data connection rate",
+              description:
+                "Connections doubled from 8% to 17.5% after March.",
+            },
+          ],
+        },
+        {
+          title: "What's next",
+          content: [
+            "Test what data matters most through in-product experiments: remortgage nudges, income and expense reviews, and insurance renewals.",
+            "Improve data gathering; only 10% of properties have mortgage fixed-term end dates, a crucial input for mortgage services.",
           ],
         },
       ],
       skills: [
         "Onboarding design",
+        "Product led growth",
         "Conversion optimisation",
-        "A/B testing",
-        "Design systems",
-        "Brand consistency",
         "User research",
         "Funnel design",
+        "Data-led experimentation",
         "Figma",
+        "Code-first prototyping",
       ],
     },
     {
@@ -183,7 +299,7 @@ export const portfolioContext: PortfolioContext = {
       url: "/gg-bookkeeping",
       businessName: "GetGround",
       projectTitle: "Keeping investors compliant with bookkeeping",
-      year: "2025",
+      year: "2025/26",
       role: "Lead Product Designer",
       problemStatement:
         "As a landlord I need to keep track of and manage my income and expenses, understand my tax obligations, and submit my self assessment online according to HMRC's Making Tax Digital rules.",
@@ -286,7 +402,30 @@ export const portfolioContext: PortfolioContext = {
         {
           title: "Impact",
           content: [
-            "200+ MTD sign ups in two months, 564 active banking connections, 60,000+ transactions since release.",
+            "New user sign-ups increased by 56%, driven in part by the free MTD solution for personal landlords.",
+            "564 active open banking connections since release, with more adoption from new users than older cohorts.",
+            "60,000+ transactions added since release; transactions per user per month increased by 27%.",
+            "Recognised as an MTD developer by HMRC; preparing for the April 2026 cohort (landlords with income over £50k).",
+          ],
+          metrics: [
+            {
+              label: "56%",
+              value: "increase in new user sign-ups",
+              description:
+                "Driven in part by the free MTD solution for personal landlords.",
+            },
+            {
+              label: "564",
+              value: "active open banking connections",
+              description:
+                "Steady increase since release, with more adoption from new users.",
+            },
+            {
+              label: "60,000+",
+              value: "transactions added since release",
+              description:
+                "Transactions per user per month increased by 27% with open banking.",
+            },
           ],
         },
         {
@@ -294,7 +433,7 @@ export const portfolioContext: PortfolioContext = {
           content: [
             "Smarter AI-enhanced experiences in Bookkeeping; usage data supports demand.",
             "Exploring agents and subagents for research and component work; exploring usage monitoring and automated PR suggestions.",
-            "MTD April 2026 cohort and HMRC recognition as an MTD developer.",
+            "MTD April 2026 cohort and putting the HMRC-recognised MTD solution into users' hands.",
           ],
         },
       ],
@@ -319,11 +458,11 @@ export const portfolioContext: PortfolioContext = {
       slug: "sage-individual",
       url: "/sage-individual",
       businessName: "Sage",
-      projectTitle: "Accounting for sole traders",
+      projectTitle: "Accounting, tax, and invoicing for sole traders",
       year: "2021-2024",
       role: "Senior Product Designer",
       problemStatement:
-        "Helping small businesses handle the complexity of managing both business and personal finances from a single account, keeping these separate for accounting and tax purposes.",
+        "Helping self-employed individuals run their business, track income and expenses, get paid by customers faster, and submit self-assessment. A key feature was transaction splitting: helping sole traders manage business and personal finances from a single account while keeping them separate for accounting and tax purposes.",
       principles: [
         {
           title: "Let simplicity build confidence and understanding",
@@ -510,7 +649,9 @@ export const portfolioContext: PortfolioContext = {
 
   skills: [
     "Product Design",
+    "Product Management",
     "UX/UI Design",
+    "Agentic UI Design",
     "Design Systems",
     "User Research",
     "Usability Testing",

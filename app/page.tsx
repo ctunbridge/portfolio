@@ -15,6 +15,7 @@ import { ExperienceCard } from "@/components/ui/experience-card/experience-card"
 import { Footer } from "@/components/ui/footer/footer";
 import { SideNav } from "@/components/ui/side-nav/side-nav";
 import { useChatContext } from "@/lib/chat-context";
+import { cn } from "@/lib/utils";
 
 export default function Home() {
   const { isOpen: isChatPanelOpen, openWithMessage } = useChatContext();
@@ -84,7 +85,12 @@ export default function Home() {
             {/* Welcome Section */}
             <section id="welcome" className="min-h-screen">
               <div className="grid grid-cols-9">
-                <h1 className="typography-h1-demibold col-span-9 mb-10 h-75 @3xl:col-span-8 animate-stagger-1">
+                <h1
+                  className={cn(
+                    "typography-h1-demibold col-span-9 mb-10 @3xl:col-span-8 animate-stagger-1",
+                    isChatPanelOpen ? "min-h-75" : "h-75"
+                  )}
+                >
                   I’m a lead product designer and founder, currently building{" "}
                   <CyclingText
                     texts={[
@@ -96,18 +102,30 @@ export default function Home() {
                     ]}
                   />
                 </h1>
-                {!isChatPanelOpen && (
-                  <div ref={inlineInputRef} className="col-span-9 mb-50 w-80 animate-stagger-2">
+                <div
+                  ref={inlineInputRef}
+                  className={cn(
+                    "col-span-9 mb-50 w-80 animate-stagger-2 min-h-11",
+                    isChatPanelOpen && "mb-60"
+                  )}
+                >
+                  {!isChatPanelOpen && (
                     <ChatInput
                       placeholder="Ask something..."
                       onSubmit={(value) => openWithMessage(value)}
                     />
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
 
               {/* Work Section */}
-              <div id="work" className="grid grid-cols-1 gap-x-10 gap-y-25 mb-80 @3xl:grid-cols-2">
+              <div
+                id="work"
+                className={cn(
+                  "grid grid-cols-1 gap-x-10 gap-y-25 mb-80 @3xl:grid-cols-2",
+                  isChatPanelOpen && "mt-10"
+                )}
+              >
                 <CaseStudyCard
                   businessName="GetGround"
                   year="2026"

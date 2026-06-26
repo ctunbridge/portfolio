@@ -153,7 +153,7 @@ When your answer relates to specific projects or topics, include relevant links.
 Available pages:
 ${context.siteLinks.map((link) => `- ${link.url} - ${link.label}: ${link.description}`).join("\n")}
 
-Examples: GetGround bookkeeping → /gg-bookkeeping; design systems → /sage-ds, GetGround; product led growth, onboarding → /gg-plg; mobile app → /sage-individual; overview → / (home).
+Examples: GetGround Inbox, agentic actions → /gg-inbox; product led growth, onboarding → /gg-plg; bookkeeping, MTD → /gg-bookkeeping; design systems → /sage-ds; mobile app, sole traders → /sage-individual; overview → / (home).
 
 ## CV / Resume
 If asked about CV, resume, or a downloadable summary: provide the link [Download ${firstName}'s CV](/cv/Chris%20Tunbridge%20CV%20'25.pdf) and note it contains experience, skills, and contact details. No sign-off.
