@@ -1,4 +1,4 @@
-import { act, render, screen } from "@testing-library/react"
+import { act, fireEvent, render, screen } from "@testing-library/react"
 import { beforeEach, describe, expect, it, vi } from "vitest"
 
 import {
@@ -8,22 +8,33 @@ import {
 
 describe("HomeIntro", () => {
   beforeEach(() => {
-    sessionStorage.clear()
     vi.useRealTimers()
   })
 
-  it("shows the intro immediately, then completes after the intro and exit animation", () => {
+  it("shows an error for an incorrect password", () => {
+    render(<HomeIntro />)
+
+    fireEvent.change(screen.getByPlaceholderText(/enter password/i), {
+      target: { value: "wrong-password" },
+    })
+    fireEvent.click(screen.getByRole("button", { name: /^enter$/i }))
+
+    expect(
+      screen.getByText(/email hello@christunbridge\.co\.uk for the password/i)
+    ).toBeInTheDocument()
+    expect(screen.getByPlaceholderText(/enter password/i)).toBeInTheDocument()
+  })
+
+  it("completes after the exit animation when the password is correct", () => {
     vi.useFakeTimers()
     const onComplete = vi.fn()
 
     render(<HomeIntro onComplete={onComplete} />)
 
-    expect(screen.getByText(/chris tunbridge/i)).toBeInTheDocument()
-    expect(onComplete).not.toHaveBeenCalled()
-
-    act(() => {
-      vi.advanceTimersByTime(EXIT_ANIMATION_DURATION_MS)
+    fireEvent.change(screen.getByPlaceholderText(/enter password/i), {
+      target: { value: "CTPortfolio26" },
     })
+    fireEvent.submit(screen.getByRole("button", { name: /^enter$/i }).closest("form")!)
 
     expect(onComplete).not.toHaveBeenCalled()
 
@@ -32,17 +43,6 @@ describe("HomeIntro", () => {
     })
 
     expect(onComplete).toHaveBeenCalledTimes(1)
-    expect(sessionStorage.getItem("home-intro-shown")).toBe("true")
-    expect(screen.queryByText(/chris tunbridge/i)).not.toBeInTheDocument()
-  })
-
-  it("skips the intro when it has already been shown this session", () => {
-    sessionStorage.setItem("home-intro-shown", "true")
-    const onComplete = vi.fn()
-
-    render(<HomeIntro onComplete={onComplete} />)
-
-    expect(onComplete).toHaveBeenCalledTimes(1)
-    expect(screen.queryByText(/chris tunbridge/i)).not.toBeInTheDocument()
+    expect(screen.queryByPlaceholderText(/enter password/i)).not.toBeInTheDocument()
   })
 })
