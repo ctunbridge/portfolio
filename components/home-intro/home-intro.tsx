@@ -1,13 +1,15 @@
 /**
  * Home Intro Component
  *
- * Full-screen intro/loading state that displays name and title,
- * then animates up and out to reveal the main content.
+ * Full-screen password gate that keeps the intro text visible until the
+ * correct password is entered, then animates up and out to reveal the site.
  */
 "use client";
 
 import * as React from "react";
 
+import { Button } from "@/components/ui/button/button";
+import { Input } from "@/components/ui/input/input";
 import { cn } from "@/lib/utils";
 
 interface HomeIntroProps {
@@ -15,47 +17,44 @@ interface HomeIntroProps {
   className?: string;
 }
 
-const INTRO_SHOWN_KEY = "home-intro-shown";
+const INTRO_PASSWORD = "CTPortfolio26";
+const PASSWORD_ERROR_MESSAGE = "Email hello@christunbridge.co.uk for the password";
 const EXIT_ANIMATION_DURATION_MS = 1000;
-const INTRO_DURATION_MS = 1000;
 
 function HomeIntro({ onComplete, className }: HomeIntroProps) {
+  const [password, setPassword] = React.useState("");
+  const [error, setError] = React.useState("");
   const [isExiting, setIsExiting] = React.useState(false);
   const [isComplete, setIsComplete] = React.useState(false);
-  const [hasBeenShown, setHasBeenShown] = React.useState<boolean | null>(null);
 
   React.useEffect(() => {
-    const shown = sessionStorage.getItem(INTRO_SHOWN_KEY) === "true";
-    setHasBeenShown(shown);
-
-    if (shown) {
-      setIsComplete(true);
-      onComplete?.();
-    }
-  }, [onComplete]);
-
-  React.useEffect(() => {
-    if (hasBeenShown !== false) {
+    if (!isExiting) {
       return;
     }
 
-    const exitTimer = window.setTimeout(() => {
-      setIsExiting(true);
-    }, INTRO_DURATION_MS);
-
     const completeTimer = window.setTimeout(() => {
       setIsComplete(true);
-      sessionStorage.setItem(INTRO_SHOWN_KEY, "true");
       onComplete?.();
-    }, INTRO_DURATION_MS + EXIT_ANIMATION_DURATION_MS);
+    }, EXIT_ANIMATION_DURATION_MS);
 
     return () => {
-      window.clearTimeout(exitTimer);
       window.clearTimeout(completeTimer);
     };
-  }, [hasBeenShown, onComplete]);
+  }, [isExiting, onComplete]);
 
-  if (hasBeenShown === null || isComplete) {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    if (password !== INTRO_PASSWORD) {
+      setError(PASSWORD_ERROR_MESSAGE);
+      return;
+    }
+
+    setError("");
+    setIsExiting(true);
+  };
+
+  if (isComplete) {
     return null;
   }
 
@@ -71,16 +70,51 @@ function HomeIntro({ onComplete, className }: HomeIntroProps) {
       <div className="grid grid-cols-12 gap-4">
         <div
           className={cn(
-            "col-span-12 flex flex-col items-start text-left lg:col-start-4 lg:col-span-9",
-            isExiting ? "animate-fade-out-up" : "animate-fade-in"
+            "col-span-12 flex flex-col items-start gap-8 text-left lg:col-start-4 lg:col-span-9",
+            isExiting && "animate-fade-out-up"
           )}
         >
-          <h1 className="typography-h1-demibold text-foreground">
-            Chris Tunbridge
-          </h1>
-          <p className="typography-h1-normal text-secondary">
-            Product Designer
-          </p>
+          <div>
+            <h1 className="typography-h1-demibold text-foreground">
+              Chris Tunbridge
+            </h1>
+            <p className="typography-h1-normal text-secondary">
+              Product Designer
+            </p>
+          </div>
+
+          <form onSubmit={handleSubmit} className="w-full max-w-80 space-y-4">
+            <div className="space-y-2">
+              <Input
+                id="portfolio-password"
+                type="password"
+                placeholder="Enter password"
+                value={password}
+                onChange={(event) => {
+                  setPassword(event.target.value);
+                  if (error) {
+                    setError("");
+                  }
+                }}
+                autoComplete="current-password"
+                aria-label="Enter password"
+                aria-invalid={error ? true : undefined}
+                aria-describedby={error ? "portfolio-password-error" : undefined}
+                className="typography-body py-0 leading-10"
+              />
+
+              {error ? (
+                <p
+                  id="portfolio-password-error"
+                  className="typography-caption text-destructive"
+                >
+                  {error}
+                </p>
+              ) : null}
+            </div>
+
+            <Button type="submit">Enter</Button>
+          </form>
         </div>
       </div>
     </div>
