@@ -130,7 +130,7 @@ export default function Home() {
                   businessName="GetGround"
                   year="2026"
                   projectTitle="Building an Inbox for user tasks and agentic actions"
-                  impact="Unified user and agentic actions into one place, increasing task completion rate by 34%."
+                  impact="Turned document extraction and onboarding to-dos into richer property data, driving a 1,550% uplift in mortgage end dates added."
                   imageSrc="/images/case-studies/GG%20Home%20-%20Inbox.jpg"
                   imageAlt="GetGround Inbox and assistant action case study"
                   href="/gg-inbox"

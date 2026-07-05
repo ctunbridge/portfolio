@@ -180,28 +180,35 @@ export const portfolioContext: PortfolioContext = {
         {
           title: "Impact",
           content: [
-            "Inbox nudges and suggested categorisations increased the proportion of categorised transactions by 34% in the first two weeks.",
-            "Surfacing property-detail tasks in the Inbox drove a 21% increase in users adding property details.",
-            "Suggested linking increased document-transaction links by 43%, improving bookkeeping data quality.",
+            "Document extraction and Inbox drove a 1,550% uplift in mortgage fixed-term end dates added. Before launch, users added around 2 per day; in the week after launch, this rose to an average of 33 per day, with the biggest day reaching 158.",
+            "Mortgage fixed-term end dates now feed automatically into the remortgage engine, giving the mortgage team nearly double the leads they had previously.",
+            "Lettings and insurance details increased from 1% to 5% after introducing Inbox with onboarding to-dos, creating better data for future lettings and insurance engines.",
+            "Some signals are still too early to judge: users log in every 2-3 weeks, there is not enough NPS or qualitative data yet, and transaction categorisation has only seen a small uplift of around 3% more per day.",
           ],
           metrics: [
             {
-              label: "34%",
-              value: "more transactions categorised",
+              label: "1,550%",
+              value: "uplift in mortgage end dates added",
               description:
-                "Inbox nudges and suggested categorisations in the first two weeks.",
+                "From around 2 per day to an average of 33 per day after document extraction and Inbox launched.",
             },
             {
-              label: "21%",
-              value: "increase in property details added",
+              label: "158",
+              value: "biggest day for mortgage end dates",
               description:
-                "Surfacing property-detail tasks in the Inbox rather than on the property page.",
+                "Peak day in the week after release.",
             },
             {
-              label: "43%",
-              value: "increase in transactions linked to documents",
+              label: "1% to 5%",
+              value: "lettings and insurance details added",
               description:
-                "Suggested linking improved bookkeeping data quality.",
+                "Increase after introducing Inbox with onboarding to-dos.",
+            },
+            {
+              label: "~3%",
+              value: "more transactions categorised per day",
+              description:
+                "A small early uplift; Inbox is the foundation for deeper bookkeeping engagement.",
             },
           ],
         },

@@ -64,18 +64,29 @@ const interactionModels = [
   },
 ]
 
-const impactMetrics = [
+const primaryImpactMetrics = [
   {
-    title: "34% more transactions categorised",
-    body: "Inbox nudges and suggested categorisations increased the proportion of categorised transactions by 34% in the first two weeks.",
+    title: "1,550% uplift in mortgage end dates added",
+    body: "Previously, users added around 2 fixed-term end dates per day. In the week after document extraction and Inbox launched, this rose to an average of 33 per day, with the biggest day reaching 158. This data is now automatically part of the remortgage engine, giving the mortgage team nearly double the leads they had previously.",
   },
   {
-    title: "21% increase in property details added",
-    body: "Surfacing property-detail tasks in the Inbox rather than on the property page drove a 21% increase in users adding property details.",
+    title: "Lettings and insurance details increased from 1% to 5%",
+    body: "Previously, only 1% of users added their lettings and insurance details. Since introducing Inbox with onboarding to-dos, this has risen to 5%. This data is gold for building out the lettings and insurance engines as we have done for mortgages.",
+  },
+]
+
+const earlyImpactSignals = [
+  {
+    title: "Tasks/To-dos completed",
+    body: "Users log in once every 2-3 weeks. Inbox is too new to start tracking any reduction in outstanding tasks.",
   },
   {
-    title: "43% increase in transactions linked to documents",
-    body: "Suggested linking increased document-transaction links by 43%, improving bookkeeping data quality.",
+    title: "NPS and real feedback",
+    body: "We have not yet had enough data to see if NPS is affected, positively or negatively, and what the qualitative data tells us.",
+  },
+  {
+    title: "Transaction activity",
+    body: "There has been a small uplift in transactions categorised, around 3% more per day, but Inbox is just the foundation to enable and encourage more bookkeeping engagement.",
   },
 ]
 
@@ -338,13 +349,27 @@ export default function GGInboxPage() {
       id: "impact",
       title: "Impact",
       content: (
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {impactMetrics.map((metric) => (
-            <div key={metric.title} className="space-y-3">
-              <h3 className="typography-h4-demibold">{metric.title}</h3>
-              <p className="typography-body text-foreground">{metric.body}</p>
+        <div className="space-y-12">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            {primaryImpactMetrics.map((metric) => (
+              <div key={metric.title} className="space-y-3">
+                <h3 className="typography-h4-demibold">{metric.title}</h3>
+                <p className="typography-body text-foreground">{metric.body}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="space-y-6">
+            <h3 className="typography-h4-demibold">Too early to tell</h3>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              {earlyImpactSignals.map((signal) => (
+                <div key={signal.title} className="space-y-3">
+                  <h4 className="typography-h5-demibold">{signal.title}</h4>
+                  <p className="typography-body text-foreground">{signal.body}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       ),
     },
