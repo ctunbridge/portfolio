@@ -91,7 +91,7 @@ export default function Home() {
                     isChatPanelOpen ? "min-h-75" : "h-75"
                   )}
                 >
-                  I’m a lead product designer and founder, currently building{" "}
+                  I’m a principal product designer and founder, currently building{" "}
                   <CyclingText
                     texts={[
                       "agentic first experiences.",
@@ -182,10 +182,10 @@ export default function Home() {
                 <div className="col-span-9 @3xl:col-span-7 flex flex-col gap-20">
                   <ExperienceCard
                     employer="GetGround"
-                    dates="2024 to Present"
-                    jobTitle="Lead Product Designer"
+                    dates="Lead Designer 2024 to 2026 • Principal Designer 2026 to Present"
+                    jobTitle="Principal Product Designer"
                     summary={[
-                      "Lead Product Designer and product manager across core areas of the GetGround platform, serving 30,000+ property investors. Set feature roadmaps, shaped team delivery, and used code-first prototyping to move from strategy to production in days not weeks.",
+                      "Principal Product Designer and product manager across core areas of the GetGround platform, serving 30,000+ property investors. Set feature roadmaps, shaped team delivery, and used code-first prototyping to move from strategy to production in days not weeks.",
                       "Designed AI-assisted interaction models and dynamic experiences that generate actions and reports based on portfolio, market, and user context. Built business impact models to inform product decisions, used code-first prototyping in Next.js to speed up validation, and created tools like CopyKat, a context-aware copywriting agent."
                     ]}
                   />

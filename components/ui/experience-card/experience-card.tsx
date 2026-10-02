@@ -63,7 +63,7 @@ export function ExperienceCard({
       )}
 
       {/* Employer and Dates */}
-      <div className="flex items-baseline gap-3 mb-6">
+      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-6">
         <span className="typography-body-bold text-muted-foreground">{employer}</span>
         <span className="typography-body text-muted-foreground">{dates}</span>
       </div>
