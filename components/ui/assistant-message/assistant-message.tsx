@@ -14,17 +14,21 @@ import * as React from "react"
 import Link from "next/link"
 import ReactMarkdown from "react-markdown"
 import { Loader2 } from "lucide-react"
+import { Renderer } from "@openuidev/react-lang"
 
+import { portfolioOpenUILibrary } from "@/components/openui/portfolio-openui-library"
 import { cn } from "@/lib/utils"
 
 interface AssistantMessageProps {
-  /** The message content (supports markdown) */
+  /** The message content (OpenUI Lang, with Markdown fallback while migrating). */
   content: string
+  /** Whether this message is still receiving streamed content. */
+  isStreaming?: boolean
   /** Additional class names for the text container */
   className?: string
 }
 
-function AssistantMessage({ content, className }: AssistantMessageProps) {
+function AssistantMessage({ content, isStreaming = false, className }: AssistantMessageProps) {
   if (!content) {
     return (
       <div className={cn("flex items-center gap-2 w-full max-w-225", className)}>
@@ -38,51 +42,64 @@ function AssistantMessage({ content, className }: AssistantMessageProps) {
     )
   }
 
+  const isOpenUIResponse = /(?:^|\n)root\s*=\s*PortfolioResponse\b/.test(content)
+
   return (
     <div className={cn("space-y-3 typography-body w-full max-w-225", className)}>
-      <ReactMarkdown
-        components={{
-          // Style links with accent color
-          a: ({ href, children }) => (
-            <Link
-              href={href || "#"}
-              className="text-accent underline hover:no-underline"
-            >
-              {children}
-            </Link>
-          ),
-          // Style bold text
-          strong: ({ children }) => (
-            <strong className="font-bold">{children}</strong>
-          ),
-          // Style lists - no extra margins
-          ul: ({ children }) => <ul className="list-disc pl-5">{children}</ul>,
-          ol: ({ children }) => (
-            <ol className="list-decimal pl-5">{children}</ol>
-          ),
-          li: ({ children }) => <li>{children}</li>,
-          // Style headings
-          h1: ({ children }) => (
-            <h1 className="typography-h5-demibold">{children}</h1>
-          ),
-          h2: ({ children }) => (
-            <h2 className="typography-body-bold">{children}</h2>
-          ),
-          h3: ({ children }) => (
-            <h3 className="typography-body-bold">{children}</h3>
-          ),
-          // Style paragraphs - no margin, natural flow
-          p: ({ children }) => <p>{children}</p>,
-          // Style code
-          code: ({ children }) => (
-            <code className="bg-muted px-1 py-0.5 rounded text-sm font-mono">
-              {children}
-            </code>
-          ),
-        }}
-      >
-        {content}
-      </ReactMarkdown>
+      {isOpenUIResponse ? (
+        <Renderer
+          response={content}
+          library={portfolioOpenUILibrary}
+          isStreaming={isStreaming}
+          onError={(errors) => {
+            if (errors.length) console.debug("OpenUI render errors", errors)
+          }}
+        />
+      ) : (
+        <ReactMarkdown
+          components={{
+            // Style links with accent color
+            a: ({ href, children }) => (
+              <Link
+                href={href || "#"}
+                className="text-accent underline hover:no-underline"
+              >
+                {children}
+              </Link>
+            ),
+            // Style bold text
+            strong: ({ children }) => (
+              <strong className="font-bold">{children}</strong>
+            ),
+            // Style lists - no extra margins
+            ul: ({ children }) => <ul className="list-disc pl-5">{children}</ul>,
+            ol: ({ children }) => (
+              <ol className="list-decimal pl-5">{children}</ol>
+            ),
+            li: ({ children }) => <li>{children}</li>,
+            // Style headings
+            h1: ({ children }) => (
+              <h1 className="typography-h5-demibold">{children}</h1>
+            ),
+            h2: ({ children }) => (
+              <h2 className="typography-body-bold">{children}</h2>
+            ),
+            h3: ({ children }) => (
+              <h3 className="typography-body-bold">{children}</h3>
+            ),
+            // Style paragraphs - no margin, natural flow
+            p: ({ children }) => <p>{children}</p>,
+            // Style code
+            code: ({ children }) => (
+              <code className="bg-muted px-1 py-0.5 rounded text-sm font-mono">
+                {children}
+              </code>
+            ),
+          }}
+        >
+          {content}
+        </ReactMarkdown>
+      )}
     </div>
   )
 }

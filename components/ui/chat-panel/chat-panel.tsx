@@ -210,7 +210,7 @@ function ChatPanel({
             </div>
           ) : (
             <div className="space-y-6">
-              {messages.map((message) => (
+              {messages.map((message, index) => (
                 <div
                   key={message.id}
                   className={cn(
@@ -221,7 +221,10 @@ function ChatPanel({
                   {message.role === "user" ? (
                     <UserChatBubble>{message.content}</UserChatBubble>
                   ) : (
-                    <AssistantMessage content={message.content} />
+                    <AssistantMessage
+                      content={message.content}
+                      isStreaming={isLoading && index === messages.length - 1}
+                    />
                   )}
                 </div>
               ))}

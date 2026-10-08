@@ -10,6 +10,7 @@
 import { openai } from "@ai-sdk/openai"
 import { streamText, type CoreMessage } from "ai"
 
+import { portfolioOpenUILibrary } from "@/components/openui/portfolio-openui-library"
 import { getAssistantConfig } from "@/lib/ai-assistant/assistant"
 
 // Allow streaming responses up to 30 seconds
@@ -54,6 +55,14 @@ export async function POST(req: Request) {
 
     // Get assistant configuration with system prompt
     const config = getAssistantConfig()
+    const openUISystemPrompt = portfolioOpenUILibrary.prompt({
+      preamble: `${config.systemPrompt}\n\n## Generative UI response format\nYou can now return a small interactive portfolio surface instead of Markdown. Use the supplied OpenUI components when they make the answer easier to scan or act on. Use CaseStudyCard for relevant project recommendations, CapabilityList for a concise skills/experience comparison, and ContactCard only when the visitor asks to contact Chris or wants to draft a message. TextInput is optional and never sends data by itself.\n\nReturn only valid OpenUI Lang. Every response must start with root = PortfolioResponse([summary]), with referenced component definitions on following lines using positional arguments, for example: root = PortfolioResponse([summary, project]), summary = PortfolioSummary(\"Title\", \"Body\"), project = CaseStudyCard(\"Project\", \"Organisation\", \"Summary\", \"/project\"). Prefer PortfolioSummary first. Never invent project URLs, outcomes, organisations, or contact details.`,
+      additionalRules: [
+        "Use at most three components per response.",
+        "Use only internal portfolio URLs supplied in the portfolio context.",
+        "Do not create contact forms unless the visitor explicitly asks to contact Chris or send a message.",
+      ],
+    })
     console.log("Chat request received, messages:", validMessages.length)
 
     // Convert simple messages to CoreMessage format
@@ -64,7 +73,7 @@ export async function POST(req: Request) {
 
     const result = streamText({
       model: openai.chat(config.model),
-      system: config.systemPrompt,
+      system: openUISystemPrompt,
       messages: coreMessages,
       temperature: config.temperature,
       maxOutputTokens: config.maxTokens,

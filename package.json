@@ -16,6 +16,7 @@
   "dependencies": {
     "@ai-sdk/openai": "^2.0.109",
     "@ai-sdk/react": "^2.0.106",
+    "@openuidev/react-lang": "^0.3.2",
     "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-slot": "^1.2.0",
     "@vercel/analytics": "^1.6.1",
